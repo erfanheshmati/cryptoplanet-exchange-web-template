@@ -116,3 +116,40 @@ document.addEventListener("DOMContentLoaded", function () {
     .getElementById("currency-tab-btn")
     .addEventListener("click", () => switchTab("currency"));
 });
+
+// Toggle light and dark mode
+function toggleTheme() {
+  const htmlElement = document.documentElement;
+  const themeIcon = document.getElementById("theme-icon");
+
+  if (htmlElement.classList.contains("dark")) {
+    // Switch to Light Mode
+    htmlElement.classList.remove("dark");
+    themeIcon.classList.remove("fa-sun");
+    themeIcon.classList.add("fa-moon");
+    localStorage.setItem("theme", "light");
+  } else {
+    // Switch to Dark Mode
+    htmlElement.classList.add("dark");
+    themeIcon.classList.remove("fa-moon");
+    themeIcon.classList.add("fa-sun");
+    localStorage.setItem("theme", "dark");
+  }
+}
+
+// Initialize theme on page load
+document.addEventListener("DOMContentLoaded", () => {
+  const savedTheme = localStorage.getItem("theme");
+  const htmlElement = document.documentElement;
+  const themeIcon = document.getElementById("theme-icon");
+
+  if (savedTheme === "dark") {
+    htmlElement.classList.add("dark");
+    themeIcon.classList.remove("fa-moon");
+    themeIcon.classList.add("fa-sun");
+  } else {
+    htmlElement.classList.remove("dark");
+    themeIcon.classList.remove("fa-sun");
+    themeIcon.classList.add("fa-moon");
+  }
+});
