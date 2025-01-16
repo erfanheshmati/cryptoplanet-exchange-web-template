@@ -85,6 +85,8 @@ module.exports = {
           main: "#121318",
           backgroung: "#080808",
         },
+        lightLogo: "#2B3140",
+        darkLogo: "#f5f5f5",
       },
     },
   },
