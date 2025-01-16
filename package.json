@@ -3,6 +3,10 @@
   "version": "1.0.0",
   "main": "index.js",
   "scripts": {
+    "dev": "next dev",
+    "build:tailwind": "npx tailwindcss -i ./src/style.css -o ./dist/style.css --watch",
+    "build": "npm run build:tailwind && next build",
+    "start": "next start",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [],
