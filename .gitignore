@@ -11,7 +11,7 @@ node_modules/
 *.css
 
 # Generated output (e.g., from PostCSS, Tailwind CLI, etc.)
-dist/
+# dist/
 build/
 
 # Environment files
