@@ -1,0 +1,1235 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="../public/favicon.ico" type="image/x-icon">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="../dist/style.css">
+    <link rel="stylesheet" href="./custom.css">
+    <title>Crypto Planet - Coin Wallet</title>
+</head>
+
+<body class="bg-[#E6E9F1] dark:bg-dark-backgroung">
+    <!-- Header -->
+    <header class="flex items-center w-full bg-white">
+        <nav class="flex items-center justify-between wrapper py-6">
+            <!-- Logo & Theme Button -->
+            <div class="flex items-center gap-8">
+                <!-- Logo -->
+                <a href="./index.html" class="border-r border-neutral-200 pr-7">
+                    <svg id="Logo" xmlns="http://www.w3.org/2000/svg" width="182.186" height="40.001"
+                        viewBox="0 0 182.186 40.001" class="text-lightLogo dark:text-darkLogo">
+                        <rect id="Logo_Background_" data-name="Logo (Background)" width="182.186" height="40"
+                            fill="none" />
+                        <g id="Group_1281" data-name="Group 1281">
+                            <g id="Icon">
+                                <path id="Fill_2" data-name="Fill 2"
+                                    d="M19.027,10.683H0V0H36.306A19.5,19.5,0,0,1,19.027,10.683Z"
+                                    transform="translate(1.682 29.318)" fill="#5367ff" />
+                                <path id="Fill_3" data-name="Fill 3"
+                                    d="M0,10.682V0H20.708A19.5,19.5,0,0,1,37.986,10.682Z" fill="#5367ff" />
+                                <path id="Fill_4" data-name="Fill 4"
+                                    d="M34.927,9.933H0V0H34.927a19.777,19.777,0,0,1,0,9.933Z"
+                                    transform="translate(4.438 15.033)" fill="#5367ff" />
+                            </g>
+                            <path id="Vector"
+                                d="M33.313,17.658V3.6h2.9V5.314h.13a3.719,3.719,0,0,1,.56-.839,2.933,2.933,0,0,1,.966-.719,3.39,3.39,0,0,1,1.491-.293A4.037,4.037,0,0,1,43.068,5.8a6.468,6.468,0,0,1,.587,2.923,6.573,6.573,0,0,1-.572,2.889,4.136,4.136,0,0,1-1.546,1.778,4.077,4.077,0,0,1-2.182.6,3.5,3.5,0,0,1-1.457-.274,3,3,0,0,1-.973-.686,3.473,3.473,0,0,1-.581-.845h-.089v5.473Zm-10.236-.086a3.963,3.963,0,0,1-.8-.206l.662-2.118a3.78,3.78,0,0,0,.932.166,1.214,1.214,0,0,0,.724-.186,1.394,1.394,0,0,0,.5-.68l.173-.433L21.469,3.6h3.092l2.2,7.51h.111L29.083,3.6H32.2L28.076,14.928a4.728,4.728,0,0,1-.807,1.438,3.3,3.3,0,0,1-1.277.952,4.628,4.628,0,0,1-1.864.339A6.04,6.04,0,0,1,23.078,17.572Zm86.561-4.189a4.449,4.449,0,0,1-1.809-1.824,5.857,5.857,0,0,1-.635-2.8,5.81,5.81,0,0,1,.635-2.77,4.6,4.6,0,0,1,1.788-1.858,5.369,5.369,0,0,1,2.72-.666,5.707,5.707,0,0,1,1.954.327,4.3,4.3,0,0,1,2.651,2.589,6.233,6.233,0,0,1,.38,2.278v.778H110.1v.007a2.783,2.783,0,0,0,.29,1.311,2.082,2.082,0,0,0,.835.852,2.588,2.588,0,0,0,1.278.3,2.86,2.86,0,0,0,.9-.133,1.886,1.886,0,0,0,.7-.4,1.724,1.724,0,0,0,.442-.653l2.72.173a3.527,3.527,0,0,1-.85,1.651,4.257,4.257,0,0,1-1.642,1.092,6.378,6.378,0,0,1-2.312.387A5.83,5.83,0,0,1,109.639,13.383Zm4.915-5.706a2.116,2.116,0,0,0-.275-1.085,1.95,1.95,0,0,0-.768-.739,2.246,2.246,0,0,0-1.124-.273,2.33,2.33,0,0,0-1.188.3,2.141,2.141,0,0,0-.8.792,2.163,2.163,0,0,0-.293,1.005ZM54.289,13.363a4.58,4.58,0,0,1-1.8-1.851,5.79,5.79,0,0,1-.635-2.763,5.781,5.781,0,0,1,.635-2.769,4.525,4.525,0,0,1,1.8-1.851,6.13,6.13,0,0,1,5.557,0A4.52,4.52,0,0,1,61.655,5.98a5.781,5.781,0,0,1,.634,2.769,5.79,5.79,0,0,1-.634,2.763,4.575,4.575,0,0,1-1.809,1.851,6.182,6.182,0,0,1-5.557,0Zm31.956.313a2.9,2.9,0,0,1-1.256-1.019,2.972,2.972,0,0,1-.455-1.691,2.9,2.9,0,0,1,.324-1.432,2.583,2.583,0,0,1,.884-.932,4.376,4.376,0,0,1,1.27-.532,10.009,10.009,0,0,1,1.506-.254q.925-.093,1.491-.173a2.168,2.168,0,0,0,.821-.253.548.548,0,0,0,.256-.492v-.04a1.2,1.2,0,0,0-.414-.978,1.739,1.739,0,0,0-1.16-.346,2.113,2.113,0,0,0-1.263.339,1.571,1.571,0,0,0-.622.839L84.906,6.5a3.511,3.511,0,0,1,.814-1.612,3.924,3.924,0,0,1,1.567-1.052,6.2,6.2,0,0,1,2.237-.373,7.019,7.019,0,0,1,1.691.2,4.5,4.5,0,0,1,1.443.619,3.042,3.042,0,0,1,1,1.079,3.148,3.148,0,0,1,.366,1.564v6.9H91.237V12.4h-.083a2.911,2.911,0,0,1-.683.845,3.2,3.2,0,0,1-1.029.566,4.4,4.4,0,0,1-1.388.2A4.569,4.569,0,0,1,86.245,13.676ZM3.2,13.183A5.954,5.954,0,0,1,.856,10.794,7.8,7.8,0,0,1,0,7a7.709,7.709,0,0,1,.869-3.8A5.951,5.951,0,0,1,3.231.825,6.812,6.812,0,0,1,6.586,0,7.484,7.484,0,0,1,8.864.333a5.872,5.872,0,0,1,1.871.972,5.06,5.06,0,0,1,1.326,1.552,5.634,5.634,0,0,1,.662,2.1H9.7a2.755,2.755,0,0,0-.338-1.005,2.583,2.583,0,0,0-.655-.76,2.942,2.942,0,0,0-.925-.48,3.673,3.673,0,0,0-1.126-.166,3.441,3.441,0,0,0-1.912.526A3.383,3.383,0,0,0,3.479,4.595,5.831,5.831,0,0,0,3.03,7a5.939,5.939,0,0,0,.449,2.45,3.355,3.355,0,0,0,1.27,1.5,3.5,3.5,0,0,0,1.885.506,3.836,3.836,0,0,0,1.111-.153,2.959,2.959,0,0,0,.919-.446,2.588,2.588,0,0,0,.662-.725A2.765,2.765,0,0,0,9.7,9.162l3.024.013a5.139,5.139,0,0,1-.587,1.811,5.48,5.48,0,0,1-1.249,1.552,5.933,5.933,0,0,1-1.865,1.078,7.073,7.073,0,0,1-2.436.393A6.864,6.864,0,0,1,3.2,13.183Zm118.025.507a2.583,2.583,0,0,1-1.237-.972,2.9,2.9,0,0,1-.435-1.665V5.726h-1.45V3.6h1.45V1.145h2.94V3.6h2v2.13h-2V10.68a1.249,1.249,0,0,0,.125.612.674.674,0,0,0,.345.3,1.481,1.481,0,0,0,.525.086,2.665,2.665,0,0,0,.414-.032l.318-.06.463,2.111q-.221.066-.621.153a5.177,5.177,0,0,1-.974.113q-.122,0-.24,0A4.431,4.431,0,0,1,121.228,13.69Zm-73.626,0a2.581,2.581,0,0,1-1.236-.972,2.889,2.889,0,0,1-.436-1.665V5.726h-1.45V3.6h1.45V1.145h2.941V3.6h2v2.13h-2V10.68a1.25,1.25,0,0,0,.124.612.676.676,0,0,0,.346.3,1.471,1.471,0,0,0,.525.086,2.682,2.682,0,0,0,.414-.032l.318-.06.463,2.111q-.221.066-.622.153a5.166,5.166,0,0,1-.973.113q-.122,0-.24,0A4.432,4.432,0,0,1,47.6,13.69Zm55.151.133V7.817a2.013,2.013,0,0,0-.5-1.464,1.819,1.819,0,0,0-1.388-.533,2.165,2.165,0,0,0-1.049.247,1.746,1.746,0,0,0-.7.719,2.439,2.439,0,0,0-.256,1.125v5.913h-2.94V3.6h2.8V5.4h.124a2.876,2.876,0,0,1,1.181-1.411,3.67,3.67,0,0,1,2.009-.526,3.839,3.839,0,0,1,1.926.466,3.217,3.217,0,0,1,1.277,1.332,4.323,4.323,0,0,1,.456,2.05v6.512Zm-22.631,0V.186h2.94V13.823Zm-12.143,0V.186h5.578A5.847,5.847,0,0,1,76.3.779,4.092,4.092,0,0,1,78.024,2.41a4.7,4.7,0,0,1,.6,2.4,4.66,4.66,0,0,1-.607,2.4,4.13,4.13,0,0,1-1.76,1.618,6.1,6.1,0,0,1-2.776.579H70.969v4.422ZM73,7.091A3.111,3.111,0,0,0,74.42,6.8,1.928,1.928,0,0,0,75.263,6a2.447,2.447,0,0,0,.284-1.192,2.382,2.382,0,0,0-.284-1.185,1.854,1.854,0,0,0-.842-.793,3.172,3.172,0,0,0-1.436-.286H70.969V7.091ZM14.423,13.823V3.6h2.851V5.38h.111a2.568,2.568,0,0,1,2.548-1.931,4.563,4.563,0,0,1,.476.027,3.59,3.59,0,0,1,.448.073V6.066a3.919,3.919,0,0,0-.572-.107,5.414,5.414,0,0,0-.67-.046,2.424,2.424,0,0,0-1.16.273,2.049,2.049,0,0,0-.8.746,2.09,2.09,0,0,0-.29,1.105v5.786Z"
+                                transform="translate(52.5 11.172)" fill="currentColor" />
+                        </g>
+                    </svg>
+                </a>
+                <!-- Menu -->
+                <div class="flex items-center">
+                    <ul class="flex items-center gap-8">
+                        <li class="text-p2">
+                            <a href="#" class="hover:text-main effect">Market</a>
+                        </li>
+                        <li class="text-p2">
+                            <a href="#" class="hover:text-main effect">Watchlist</a>
+                        </li>
+                        <li class="text-p2 text-main">
+                            <a href="#" class="hover:text-main effect border-b-2 pb-8 border-main">Portfolio</a>
+                        </li>
+                        <li class="text-p2">
+                            <a href="#" class="hover:text-main effect">Learn</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <!-- Dropdown & Buttons -->
+            <div class="flex items-center gap-4">
+                <!-- Language & Currency -->
+                <div class="flex items-center relative">
+                    <button onclick="toggleDropdown(event)" class="flex items-center gap-2 hover:opacity-80 effect">
+                        <span class="text-p3 border-r pr-2">English</span>
+                        <span class="text-p3">USD</span>
+                        <span class="fa-solid fa-chevron-down fa-2xs"></span>
+                    </button>
+                    <!-- Dropdown Content -->
+                    <div id="dropdown-language-currency"
+                        class="absolute top-10 -right-28 w-[340px] bg-white shadow-lg rounded-lg hidden z-10">
+                        <div class="p-4">
+                            <div class="flex items-center gap-8 border-b">
+                                <span id="language-tab-btn"
+                                    class="text-neutral-600 text-p2 cursor-pointer hover:opacity-80 pb-5">Language</span>
+                                <span id="currency-tab-btn"
+                                    class="text-neutral-600 text-p2 cursor-pointer hover:opacity-80 pb-5">Currency</span>
+                            </div>
+                        </div>
+                        <!-- Tab Content -->
+                        <div id="language-tab" class="h-[200px] overflow-auto mb-4" style="scrollbar-width: thin;">
+                            <ul class="flex flex-col gap-2 px-2">
+                                <li
+                                    class="text-neutral-600 text-p2 p-2 rounded-[4px] cursor-pointer hover:bg-main hover:text-white effect">
+                                    English
+                                </li>
+                                <li
+                                    class="text-neutral-600 text-p2 p-2 rounded-[4px] cursor-pointer hover:bg-main hover:text-white effect">
+                                    English
+                                </li>
+                                <li
+                                    class="text-neutral-600 text-p2 p-2 rounded-[4px] cursor-pointer hover:bg-main hover:text-white effect">
+                                    English
+                                </li>
+                                <li
+                                    class="text-neutral-600 text-p2 p-2 rounded-[4px] cursor-pointer hover:bg-main hover:text-white effect">
+                                    English
+                                </li>
+                                <li
+                                    class="text-neutral-600 text-p2 p-2 rounded-[4px] cursor-pointer hover:bg-main hover:text-white effect">
+                                    English
+                                </li>
+                                <li
+                                    class="text-neutral-600 text-p2 p-2 rounded-[4px] cursor-pointer hover:bg-main hover:text-white effect">
+                                    English
+                                </li>
+                            </ul>
+                        </div>
+                        <div id="currency-tab" class="h-[200px] overflow-auto mb-4" style="scrollbar-width: thin;">
+                            <ul class="flex flex-col gap-2 px-2">
+                                <li
+                                    class="text-neutral-600 text-p2 p-2 rounded-[4px] cursor-pointer hover:bg-main hover:text-white effect">
+                                    USD
+                                </li>
+                                <li
+                                    class="text-neutral-600 text-p2 p-2 rounded-[4px] cursor-pointer hover:bg-main hover:text-white effect">
+                                    USD
+                                </li>
+                                <li
+                                    class="text-neutral-600 text-p2 p-2 rounded-[4px] cursor-pointer hover:bg-main hover:text-white effect">
+                                    USD
+                                </li>
+                                <li
+                                    class="text-neutral-600 text-p2 p-2 rounded-[4px] cursor-pointer hover:bg-main hover:text-white effect">
+                                    USD
+                                </li>
+                                <li
+                                    class="text-neutral-600 text-p2 p-2 rounded-[4px] cursor-pointer hover:bg-main hover:text-white effect">
+                                    USD
+                                </li>
+                                <li
+                                    class="text-neutral-600 text-p2 p-2 rounded-[4px] cursor-pointer hover:bg-main hover:text-white effect">
+                                    USD
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <!-- Trade History -->
+                <button
+                    class="flex items-center gap-3 bg-neutral-200 dark:bg-neutral-800 rounded-md px-4 py-3 hover:opacity-80 effect">
+                    <svg id="Icon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
+                        <g id="Icon_Trade" data-name="Icon Trade">
+                            <rect id="Icon_Trade_Background_" data-name="Icon Trade (Background)" width="24" height="24"
+                                fill="none" />
+                            <path id="Mask"
+                                d="M7.111,22a1,1,0,0,1-.994-1.107L6.886,13.8H1a1,1,0,0,1-.831-1.556L8.058.445a1,1,0,0,1,1.825.663L9.114,8.2H15a1,1,0,0,1,.831,1.556l-7.889,11.8A1,1,0,0,1,7.111,22ZM7.455,4.944,2.871,11.8H8a1,1,0,0,1,.994,1.107l-.448,4.151L13.129,10.2H8a1,1,0,0,1-.994-1.107l.448-4.149Z"
+                                transform="translate(4 1)" fill="#9295a6" />
+                        </g>
+                    </svg>
+                    <span class="text-p3 text-neutral-700">Trade History</span>
+                </button>
+                <!-- Wallet -->
+                <button
+                    class="flex items-center gap-3 border border-main bg-primary-50 dark:bg-neutral-800 rounded-md px-4 py-3 hover:opacity-80 effect">
+                    <svg id="Icon_Wallet" data-name="Icon Wallet" xmlns="http://www.w3.org/2000/svg" width="24"
+                        height="24" viewBox="0 0 24 24">
+                        <rect id="Icon_Wallet_Background_" data-name="Icon Wallet (Background)" width="24" height="24"
+                            fill="none" />
+                        <path id="icon"
+                            d="M2,19.674a2,2,0,0,1-2-2H.027A1.985,1.985,0,0,1,0,17.349V5.429A2.008,2.008,0,0,1,1.451,3.506l12-3.429A2,2,0,0,1,16,2V13.92a2.01,2.01,0,0,1-1.451,1.923L8.142,17.674H18v-8H16v-2h2v-2H16v-2h2a2,2,0,0,1,2,2v12a2,2,0,0,1-2,2ZM2,5.429v11.92L14,13.92V2Zm8,2.245a1,1,0,1,1,1,1A1,1,0,0,1,10,7.673Z"
+                            transform="translate(2 1.326)" class="fill-main" />
+                    </svg>
+                    <span class="text-p3 text-main">Wallet</span>
+                </button>
+                <!-- Toggle Theme Button -->
+                <button id="theme-toggle" onclick="toggleTheme()"
+                    class="bg-neutral-200 dark:bg-neutral-800 rounded-md px-4 py-3 hover:opacity-80 effect">
+                    <span id="theme-icon" class="fa-solid fa-moon fa-lg text-neutral-500 dark:text-neutral-300"></span>
+                </button>
+                <!-- User Profile -->
+                <div class="flex items-center">
+                    <button class="flex items-center gap-2 hover:opacity-80 effect">
+                        <svg id="Icon" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+                            width="48" height="48" viewBox="0 0 64 64">
+                            <defs>
+                                <clipPath id="clip-path">
+                                    <rect id="Icon_Background_Mask_" data-name="Icon (Background/Mask)" width="30"
+                                        height="30" fill="none" />
+                                </clipPath>
+                            </defs>
+                            <g id="Placeholder">
+                                <rect id="Placeholder_Background_" data-name="Placeholder (Background)" width="64"
+                                    height="64" rx="32" fill="#d8d8d8" />
+                                <g id="Icon-2" data-name="Icon" transform="translate(17 17)">
+                                    <rect id="Icon_Background_Mask_2" data-name="Icon (Background/Mask)" width="30"
+                                        height="30" fill="none" />
+                                    <g id="Icon-3" data-name="Icon" clip-path="url(#clip-path)">
+                                        <g id="Group" transform="translate(0 4.285)">
+                                            <g id="Group-2" data-name="Group">
+                                                <path id="Vector"
+                                                    d="M3.214,21.428A3.214,3.214,0,0,1,0,18.214v-15A3.214,3.214,0,0,1,3.214,0H26.786A3.214,3.214,0,0,1,30,3.214v15a3.214,3.214,0,0,1-3.214,3.214Z"
+                                                    fill="#7b7b7b" />
+                                            </g>
+                                        </g>
+                                        <g id="Group-3" data-name="Group" transform="translate(6.429 8.572)">
+                                            <g id="Group-4" data-name="Group">
+                                                <path id="Vector-2" data-name="Vector"
+                                                    d="M3.214,6.429A3.214,3.214,0,1,1,6.429,3.214,3.214,3.214,0,0,1,3.214,6.429Z"
+                                                    fill="#7b7b7b" />
+                                            </g>
+                                        </g>
+                                    </g>
+                                </g>
+                            </g>
+                        </svg>
+                        <span class="text-p3 text-neutral-700">Allie Grater</span>
+                        <i class="fa-solid fa-chevron-down fa-2xs text-neutral-700"></i>
+                    </button>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Content -->
+    <section class="flex wrapper gap-6 my-16">
+        <section class="w-9/12 flex flex-col gap-6">
+            <!--  Watchlist -->
+            <section class="bg-white rounded-xl py-8">
+                <div class="flex flex-col gap-8 px-8">
+                    <!-- Heading -->
+                    <div class="flex items-center justify-between">
+                        <!-- Title -->
+                        <div class="flex flex-col">
+                            <h2 class="text-h5 font-medium">Wallet</h2>
+                            <p class="text-p3 text-neutral-700">Update 16/02/2022 at 02:30 PM</p>
+                        </div>
+                        <!-- Button -->
+                        <div class="flex items-center gap-8">
+                            <button class="flex items-center gap-2 group">
+                                <i
+                                    class="fa-regular fa-pen-to-square fa-sm pt-1 text-neutral-500 group-hover:text-main effect"></i>
+                                <span class="text-p3 text-neutral-500 group-hover:text-main effect">Edit</span>
+                            </button>
+                            <button class="flex items-center gap-2 group">
+                                <i
+                                    class="fa-solid fa-plus fa-sm pt-1 text-neutral-500 group-hover:text-main effect"></i>
+                                <span class="text-p3 text-neutral-500 group-hover:text-main effect">Create New
+                                    Portfolio</span>
+                            </button>
+                        </div>
+                    </div>
+                    <!-- Balance -->
+                    <div class="flex items-center justify-between">
+                        <!-- Available Balance -->
+                        <div class="flex flex-col gap-2">
+                            <div class="flex items-center gap-2">
+                                <svg id="Icon" xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+                                    viewBox="0 0 24 24">
+                                    <rect id="Icon_Background_" data-name="Icon (Background)" width="24" height="24"
+                                        fill="none" />
+                                    <path id="icon-2" data-name="icon"
+                                        d="M2,19.674a2,2,0,0,1-2-2H.027A1.985,1.985,0,0,1,0,17.349V5.429A2.008,2.008,0,0,1,1.451,3.506l12-3.429A2,2,0,0,1,16,2V13.92a2.01,2.01,0,0,1-1.451,1.923L8.142,17.674H18v-8H16v-2h2v-2H16v-2h2a2,2,0,0,1,2,2v12a2,2,0,0,1-2,2ZM2,5.429v11.92L14,13.92V2Zm8,2.245a1,1,0,1,1,1,1A1,1,0,0,1,10,7.673Z"
+                                        transform="translate(2 1.326)" fill="#9295a6" />
+                                </svg>
+                                <span class="text-p3 text-neutral-600">Available Balance</span>
+                            </div>
+                            <div class="flex items-center gap-6">
+                                <span class="text-h3 font-medium">$32,455.12</span>
+                                <button
+                                    class="flex items-center gap-2 bg-primary-50 rounded-md p-2 hover:opacity-80 effect">
+                                    <span class="text-p3 text-neutral-600">Hide Price</span>
+                                    <i class="fa-regular fa-eye-slash fa-sm pt-1 text-neutral-600"></i>
+                                </button>
+                            </div>
+                        </div>
+                        <!-- Card -->
+                        <div class="flex flex-col gap-4 bg-primary-50 rounded-lg p-4 w-1/2">
+                            <div class="flex items-center justify-between">
+                                <div class="flex items-center gap-2">
+                                    <svg id="Icon" xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+                                        viewBox="0 0 24 24">
+                                        <rect id="Icon_Background_" data-name="Icon (Background)" width="24" height="24"
+                                            fill="none" />
+                                        <path id="icon-2" data-name="icon"
+                                            d="M11.82,11.672l3.37-3.328,1.286,1.27L15.3,10.774h4.169v1.8H15.3l1.175,1.16L15.189,15ZM10,14.365H1.653A1.731,1.731,0,0,1,0,12.569V1.8A1.731,1.731,0,0,1,1.653,0H18.347A1.731,1.731,0,0,1,20,1.8V8.08H18.182V6.286H1.818v6.283H10v1.8h0ZM18.182,4.49v-2.7H1.818v2.7Z"
+                                            transform="translate(2 5)" fill="#6c7080" />
+                                    </svg>
+                                    <span class="text-p3 text-neutral-600">Total Deposited</span>
+                                </div>
+                                <div class="flex items-center gap-2">
+                                    <svg id="Icon" xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+                                        viewBox="0 0 24 24">
+                                        <rect id="Icon_Background_" data-name="Icon (Background)" width="24" height="24"
+                                            fill="none" />
+                                        <path id="Mask"
+                                            d="M15,17H1a1,1,0,0,1-1-1V14a1,1,0,1,1,2,0v1H14V14a1,1,0,1,1,2,0v2a1,1,0,0,1-1,1ZM7.425,11.817,3.425,9a1,1,0,1,1,1.15-1.636L7,9.075Q7,9.038,7,9V1A1,1,0,1,1,9,1V9l2.4-1.8a1,1,0,0,1,1.2,1.6l-4,3a1,1,0,0,1-1.175.018Z"
+                                            transform="translate(4 3)" fill="#03a66d" />
+                                    </svg>
+                                    <span class="text-p2 font-medium">$30,445.12</span>
+                                </div>
+                            </div>
+                            <div class="flex items-center justify-between">
+                                <div class="flex items-center gap-2">
+                                    <svg id="Icon" xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+                                        viewBox="0 0 24 24">
+                                        <rect id="Icon_Background_" data-name="Icon (Background)" width="24" height="24"
+                                            fill="none" />
+                                        <path id="Mask"
+                                            d="M9,17.98A9,9,0,0,1,8.012.039C8.434.011,8.722,0,9.006,0s.568.011.982.038A9,9,0,0,1,9,17.98ZM9,2.23a6.75,6.75,0,1,0,6.75,6.75A6.758,6.758,0,0,0,9,2.23Zm2,8.751H8a1,1,0,0,1-1-1v-3a1,1,0,0,1,2,0v2h2a1,1,0,0,1,0,2Z"
+                                            transform="translate(3 3)" fill="#6c7080" />
+                                    </svg>
+                                    <span class="text-p3 text-neutral-600">Total Withdrawlas</span>
+                                </div>
+                                <div class="flex items-center gap-2">
+                                    <svg id="Icon" xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+                                        viewBox="0 0 24 24">
+                                        <rect id="Icon_Background_" data-name="Icon (Background)" width="24" height="24"
+                                            fill="none" />
+                                        <path id="Mask"
+                                            d="M15,17H1a1,1,0,0,1-1-1V14a1,1,0,1,1,2,0v1H14V14a1,1,0,1,1,2,0v2a1,1,0,0,1-1,1ZM7,11V3L4.6,4.8A1,1,0,1,1,3.4,3.2l4-3A1,1,0,0,1,8.575.182l4,2.814a1,1,0,0,1-1.15,1.636L9,2.924Q9,2.961,9,3v8a1,1,0,1,1-2,0Z"
+                                            transform="translate(4 3)" fill="#dc2626" />
+                                    </svg>
+                                    <span class="text-p2 font-medium">$30,445.12</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <!-- Transaction History -->
+            <section class="bg-white rounded-xl py-8">
+                <div class="flex flex-col gap-8 px-8">
+                    <!-- Heading -->
+                    <div class="flex items-center justify-between">
+                        <h2 class="text-h5 font-medium">Transaction History</h2>
+                        <!-- Search -->
+                        <div class="relative">
+                            <i
+                                class="fa fa-search absolute left-3 top-1/2 transform -translate-y-1/2 text-neutral-500 cursor-pointer"></i>
+                            <input type="text" placeholder="Search Coin Name" class="border rounded-lg pl-10 pr-4 py-3">
+                        </div>
+                    </div>
+                    <!-- Options -->
+                    <div class="flex items-center justify-between border-b">
+                        <!-- Tabs -->
+                        <div class="flex items-center">
+                            <ul class="flex items-center gap-10">
+                                <li
+                                    class="text-p2 text-neutral-700 hover:opacity-80 hover:text-main effect cursor-pointer pb-6">
+                                    Wallet History
+                                </li>
+                                <li
+                                    class="text-p2 text-main hover:opacity-80 hover:text-main effect cursor-pointer border-b-2 border-main pb-6">
+                                    Coin Wallet
+                                </li>
+                            </ul>
+                        </div>
+                        <!-- Buttons -->
+                        <div class="flex items-center gap-6 pb-6">
+                            <button class="flex items-center gap-1 group">
+                                <svg id="Icon" xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+                                    viewBox="0 0 24 24">
+                                    <rect id="Icon_Background_" data-name="Icon (Background)" width="24" height="24"
+                                        fill="none" />
+                                    <path id="Mask"
+                                        d="M15,20H3a3,3,0,0,1-3-3V5A3,3,0,0,1,3,2H4V1A1,1,0,0,1,6,1V2h6V1a1,1,0,0,1,2,0V2h1a3,3,0,0,1,3,3V17A3,3,0,0,1,15,20ZM2,11v6a1,1,0,0,0,1,1H15a1,1,0,0,0,1-1V11ZM3,4A1,1,0,0,0,2,5V9H16V5a1,1,0,0,0-1-1H14V5a1,1,0,0,1-2,0V4H6V5A1,1,0,0,1,4,5V4ZM13,15H9a1,1,0,1,1,0-2h4a1,1,0,0,1,0,2ZM5,15a1,1,0,1,1,1-1A1,1,0,0,1,5,15Z"
+                                        transform="translate(3 2)" fill="#9295a6"
+                                        class="group-hover:fill-main effect" />
+                                </svg>
+                                <select
+                                    class="text-neutral-600 outline-none group-hover:text-main effect cursor-pointer">
+                                    <option value="">Month</option>
+                                    <option value="">Year</option>
+                                    <option value="">Day</option>
+                                </select>
+                            </button>
+                            <button type="button" class="flex items-center gap-2">
+                                <i
+                                    class="fa-solid fa-ellipsis-vertical fa-lg text-neutral-500 hover:text-main effect"></i>
+                            </button>
+                        </div>
+                    </div>
+                    <!-- Crypto Table -->
+                    <table class="table-auto w-full -mt-6">
+                        <thead class="border-b">
+                            <tr>
+                                <td>
+                                    <div class="flex items-center gap-2 py-4">
+                                        <span class="text-p3 text-neutral-500">Pair</span>
+                                        <i class="fa-solid fa-caret-up text-neutral-500 fa-xs pt-1"></i>
+                                    </div>
+                                </td>
+                                <td>
+                                    <div class="flex items-center gap-2 py-4">
+                                        <span class="text-p3 text-neutral-500">Avbl. Balance</span>
+                                        <i class="fa-solid fa-caret-up text-neutral-500 fa-xs pt-1"></i>
+                                    </div>
+                                </td>
+                                <td>
+                                    <div class="flex items-center gap-2 py-4">
+                                        <span class="text-p3 text-neutral-500">Locked</span>
+                                        <i class="fa-solid fa-caret-up text-neutral-500 fa-xs pt-1"></i>
+                                    </div>
+                                </td>
+                                <td>
+                                    <div class="flex items-center gap-2 py-4">
+                                        <span class="text-p3 text-neutral-500">Amount</span>
+                                        <i class="fa-solid fa-caret-up text-neutral-500 fa-xs pt-1"></i>
+                                    </div>
+                                </td>
+                                <td>
+                                    <div class="flex items-center justify-center gap-2 py-4">
+                                        <span class="text-p3 text-neutral-500">Action</span>
+                                        <i class="fa-solid fa-caret-up text-neutral-500 fa-xs pt-1"></i>
+                                    </div>
+                                </td>
+                            </tr>
+                        </thead>
+                        <tbody class="border-b">
+                            <tr>
+                                <td>
+                                    <div class="flex items-center gap-2 py-4">
+                                        <img src="../public/Ethereum.png" alt="Crypto Logo" width="30" height="30">
+                                        <span class="text-p1">Ethereum</span>
+                                        <span class="bg-neutral-200 rounded-lg px-3 py-1 text-p3 text-main">ETH</span>
+                                    </div>
+                                </td>
+                                <td>
+                                    <span class="text-p2 text-neutral-700 py-4">$43,975.72</span>
+                                </td>
+                                <td>
+                                    <span class="text-p2 text-neutral-700 py-4">0</span>
+                                </td>
+                                <td>
+                                    <span class="text-p2 text-neutral-700 py-4">$43,975.72</span>
+                                </td>
+                                <td>
+                                    <div class="flex items-center justify-center gap-4 py-4">
+                                        <button class="flex items-center gap-2 bg-primary-50 rounded-md px-3 py-1 hover:opacity-80 effect">
+                                            <span class="text-p3 text-main">Deposit</span>
+                                            <i class="fa-solid fa-arrow-up-right-from-square fa-sm text-main"></i>
+                                        </button>
+                                        <button class="flex items-center gap-2 bg-primary-50 rounded-md px-3 py-1 hover:opacity-80 effect">
+                                            <span class="text-p3 text-main">Withdraw</span>
+                                            <i class="fa-solid fa-arrow-up-right-from-square fa-sm text-main"></i>
+                                        </button>
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <div class="flex items-center gap-2 py-4">
+                                        <img src="../public/Ethereum.png" alt="Crypto Logo" width="30" height="30">
+                                        <span class="text-p1">Ethereum</span>
+                                        <span class="bg-neutral-200 rounded-lg px-3 py-1 text-p3 text-main">ETH</span>
+                                    </div>
+                                </td>
+                                <td>
+                                    <span class="text-p2 text-neutral-700 py-4">$43,975.72</span>
+                                </td>
+                                <td>
+                                    <span class="text-p2 text-neutral-700 py-4">0</span>
+                                </td>
+                                <td>
+                                    <span class="text-p2 text-neutral-700 py-4">$43,975.72</span>
+                                </td>
+                                <td>
+                                    <div class="flex items-center justify-center gap-4 py-4">
+                                        <button class="flex items-center gap-2 bg-primary-50 rounded-md px-3 py-1 hover:opacity-80 effect">
+                                            <span class="text-p3 text-main">Deposit</span>
+                                            <i class="fa-solid fa-arrow-up-right-from-square fa-sm text-main"></i>
+                                        </button>
+                                        <button class="flex items-center gap-2 bg-primary-50 rounded-md px-3 py-1 hover:opacity-80 effect">
+                                            <span class="text-p3 text-main">Withdraw</span>
+                                            <i class="fa-solid fa-arrow-up-right-from-square fa-sm text-main"></i>
+                                        </button>
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <div class="flex items-center gap-2 py-4">
+                                        <img src="../public/Ethereum.png" alt="Crypto Logo" width="30" height="30">
+                                        <span class="text-p1">Ethereum</span>
+                                        <span class="bg-neutral-200 rounded-lg px-3 py-1 text-p3 text-main">ETH</span>
+                                    </div>
+                                </td>
+                                <td>
+                                    <span class="text-p2 text-neutral-700 py-4">$43,975.72</span>
+                                </td>
+                                <td>
+                                    <span class="text-p2 text-neutral-700 py-4">0</span>
+                                </td>
+                                <td>
+                                    <span class="text-p2 text-neutral-700 py-4">$43,975.72</span>
+                                </td>
+                                <td>
+                                    <div class="flex items-center justify-center gap-4 py-4">
+                                        <button class="flex items-center gap-2 bg-primary-50 rounded-md px-3 py-1 hover:opacity-80 effect">
+                                            <span class="text-p3 text-main">Deposit</span>
+                                            <i class="fa-solid fa-arrow-up-right-from-square fa-sm text-main"></i>
+                                        </button>
+                                        <button class="flex items-center gap-2 bg-primary-50 rounded-md px-3 py-1 hover:opacity-80 effect">
+                                            <span class="text-p3 text-main">Withdraw</span>
+                                            <i class="fa-solid fa-arrow-up-right-from-square fa-sm text-main"></i>
+                                        </button>
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <div class="flex items-center gap-2 py-4">
+                                        <img src="../public/Ethereum.png" alt="Crypto Logo" width="30" height="30">
+                                        <span class="text-p1">Ethereum</span>
+                                        <span class="bg-neutral-200 rounded-lg px-3 py-1 text-p3 text-main">ETH</span>
+                                    </div>
+                                </td>
+                                <td>
+                                    <span class="text-p2 text-neutral-700 py-4">$43,975.72</span>
+                                </td>
+                                <td>
+                                    <span class="text-p2 text-neutral-700 py-4">0</span>
+                                </td>
+                                <td>
+                                    <span class="text-p2 text-neutral-700 py-4">$43,975.72</span>
+                                </td>
+                                <td>
+                                    <div class="flex items-center justify-center gap-4 py-4">
+                                        <button class="flex items-center gap-2 bg-primary-50 rounded-md px-3 py-1 hover:opacity-80 effect">
+                                            <span class="text-p3 text-main">Deposit</span>
+                                            <i class="fa-solid fa-arrow-up-right-from-square fa-sm text-main"></i>
+                                        </button>
+                                        <button class="flex items-center gap-2 bg-primary-50 rounded-md px-3 py-1 hover:opacity-80 effect">
+                                            <span class="text-p3 text-main">Withdraw</span>
+                                            <i class="fa-solid fa-arrow-up-right-from-square fa-sm text-main"></i>
+                                        </button>
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <div class="flex items-center gap-2 py-4">
+                                        <img src="../public/Ethereum.png" alt="Crypto Logo" width="30" height="30">
+                                        <span class="text-p1">Ethereum</span>
+                                        <span class="bg-neutral-200 rounded-lg px-3 py-1 text-p3 text-main">ETH</span>
+                                    </div>
+                                </td>
+                                <td>
+                                    <span class="text-p2 text-neutral-700 py-4">$43,975.72</span>
+                                </td>
+                                <td>
+                                    <span class="text-p2 text-neutral-700 py-4">0</span>
+                                </td>
+                                <td>
+                                    <span class="text-p2 text-neutral-700 py-4">$43,975.72</span>
+                                </td>
+                                <td>
+                                    <div class="flex items-center justify-center gap-4 py-4">
+                                        <button class="flex items-center gap-2 bg-primary-50 rounded-md px-3 py-1 hover:opacity-80 effect">
+                                            <span class="text-p3 text-main">Deposit</span>
+                                            <i class="fa-solid fa-arrow-up-right-from-square fa-sm text-main"></i>
+                                        </button>
+                                        <button class="flex items-center gap-2 bg-primary-50 rounded-md px-3 py-1 hover:opacity-80 effect">
+                                            <span class="text-p3 text-main">Withdraw</span>
+                                            <i class="fa-solid fa-arrow-up-right-from-square fa-sm text-main"></i>
+                                        </button>
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <div class="flex items-center gap-2 py-4">
+                                        <img src="../public/Ethereum.png" alt="Crypto Logo" width="30" height="30">
+                                        <span class="text-p1">Ethereum</span>
+                                        <span class="bg-neutral-200 rounded-lg px-3 py-1 text-p3 text-main">ETH</span>
+                                    </div>
+                                </td>
+                                <td>
+                                    <span class="text-p2 text-neutral-700 py-4">$43,975.72</span>
+                                </td>
+                                <td>
+                                    <span class="text-p2 text-neutral-700 py-4">0</span>
+                                </td>
+                                <td>
+                                    <span class="text-p2 text-neutral-700 py-4">$43,975.72</span>
+                                </td>
+                                <td>
+                                    <div class="flex items-center justify-center gap-4 py-4">
+                                        <button class="flex items-center gap-2 bg-primary-50 rounded-md px-3 py-1 hover:opacity-80 effect">
+                                            <span class="text-p3 text-main">Deposit</span>
+                                            <i class="fa-solid fa-arrow-up-right-from-square fa-sm text-main"></i>
+                                        </button>
+                                        <button class="flex items-center gap-2 bg-primary-50 rounded-md px-3 py-1 hover:opacity-80 effect">
+                                            <span class="text-p3 text-main">Withdraw</span>
+                                            <i class="fa-solid fa-arrow-up-right-from-square fa-sm text-main"></i>
+                                        </button>
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <div class="flex items-center gap-2 py-4">
+                                        <img src="../public/Ethereum.png" alt="Crypto Logo" width="30" height="30">
+                                        <span class="text-p1">Ethereum</span>
+                                        <span class="bg-neutral-200 rounded-lg px-3 py-1 text-p3 text-main">ETH</span>
+                                    </div>
+                                </td>
+                                <td>
+                                    <span class="text-p2 text-neutral-700 py-4">$43,975.72</span>
+                                </td>
+                                <td>
+                                    <span class="text-p2 text-neutral-700 py-4">0</span>
+                                </td>
+                                <td>
+                                    <span class="text-p2 text-neutral-700 py-4">$43,975.72</span>
+                                </td>
+                                <td>
+                                    <div class="flex items-center justify-center gap-4 py-4">
+                                        <button class="flex items-center gap-2 bg-primary-50 rounded-md px-3 py-1 hover:opacity-80 effect">
+                                            <span class="text-p3 text-main">Deposit</span>
+                                            <i class="fa-solid fa-arrow-up-right-from-square fa-sm text-main"></i>
+                                        </button>
+                                        <button class="flex items-center gap-2 bg-primary-50 rounded-md px-3 py-1 hover:opacity-80 effect">
+                                            <span class="text-p3 text-main">Withdraw</span>
+                                            <i class="fa-solid fa-arrow-up-right-from-square fa-sm text-main"></i>
+                                        </button>
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <div class="flex items-center gap-2 py-4">
+                                        <img src="../public/Ethereum.png" alt="Crypto Logo" width="30" height="30">
+                                        <span class="text-p1">Ethereum</span>
+                                        <span class="bg-neutral-200 rounded-lg px-3 py-1 text-p3 text-main">ETH</span>
+                                    </div>
+                                </td>
+                                <td>
+                                    <span class="text-p2 text-neutral-700 py-4">$43,975.72</span>
+                                </td>
+                                <td>
+                                    <span class="text-p2 text-neutral-700 py-4">0</span>
+                                </td>
+                                <td>
+                                    <span class="text-p2 text-neutral-700 py-4">$43,975.72</span>
+                                </td>
+                                <td>
+                                    <div class="flex items-center justify-center gap-4 py-4">
+                                        <button class="flex items-center gap-2 bg-primary-50 rounded-md px-3 py-1 hover:opacity-80 effect">
+                                            <span class="text-p3 text-main">Deposit</span>
+                                            <i class="fa-solid fa-arrow-up-right-from-square fa-sm text-main"></i>
+                                        </button>
+                                        <button class="flex items-center gap-2 bg-primary-50 rounded-md px-3 py-1 hover:opacity-80 effect">
+                                            <span class="text-p3 text-main">Withdraw</span>
+                                            <i class="fa-solid fa-arrow-up-right-from-square fa-sm text-main"></i>
+                                        </button>
+                                    </div>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <!-- Pagination -->
+                    <div class="flex items-center justify-between">
+                        <div class="flex items-center">
+                            <span class="text-p3 text-neutral-600">52 assets</span>
+                        </div>
+                        <div class="flex items-center gap-6">
+                            <button type="button" class="px-4 py-2">
+                                <i class="fa-solid fa-chevron-left fa-xs text-neutral-500"></i>
+                            </button>
+                            <div class="flex items-center">
+                                <button type="button" class="px-4 py-2">
+                                    <span class="text-p2">1</span>
+                                </button>
+                                <button type="button" class="px-4 py-2">
+                                    <span class="text-p2 text-neutral-500">2</span>
+                                </button>
+                                <button type="button" class="px-4 py-2">
+                                    <span class="text-p2 text-neutral-500">3</span>
+                                </button>
+                                <button type="button" class="px-4 py-2">
+                                    <span class="text-p2 text-neutral-500">4</span>
+                                </button>
+                                <button type="button" class="px-4 py-2">
+                                    <span class="text-p2 text-neutral-500">...</span>
+                                </button>
+                                <button type="button" class="px-4 py-2">
+                                    <span class="text-p2 text-neutral-500">6</span>
+                                </button>
+                            </div>
+                            <button type="button" class="px-4 py-2">
+                                <i class="fa-solid fa-chevron-right fa-xs text-main"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </section>
+
+        <!-- Sidebar -->
+        <section class="w-3/12 flex flex-col gap-6">
+            <!-- Buy Crypto -->
+            <div class="bg-white rounded-xl py-8">
+                <div class="flex flex-col gap-10 px-6">
+                    <!-- Title -->
+                    <div class="flex items-center">
+                        <h3 class="text-h6 font-medium">Select Currency and Payment</h3>
+                    </div>
+                    <!-- Currency -->
+                    <div class="flex flex-col gap-6">
+                        <div class="flex flex-col gap-4">
+                            <span class="text-p3 text-neutral-500">Select Currency</span>
+                            <div class="flex items-center gap-1 px-2">
+                                <img src="../public/usd.png" alt="Crypto Icon" width="24" height="24">
+                                <select class="text-p3 text-neutral-700 w-full outline-none cursor-pointer">
+                                    <option value="" class="text-p3 text-neutral-700">USD</option>
+                                    <option value="" class="text-p3 text-neutral-700">EUR</option>
+                                    <option value="" class="text-p3 text-neutral-700">USDT</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="flex flex-col gap-4">
+                            <span class="text-p3 text-neutral-500">Amount</span>
+                            <input type="text" placeholder="$0"
+                                class="text-p2 font-medium mx-2 border-l border-neutral-600 pl-1 focus:outline-none">
+                        </div>
+                    </div>
+                    <!-- Payment -->
+                    <div class="flex flex-col gap-4">
+                        <span class="text-p3 text-neutral-500">Choose Payment Method:</span>
+                        <div class="flex items-center justify-between">
+                            <div class="flex items-center gap-2 cursor-pointer">
+                                <input type="radio" name="selection" class="peer cursor-pointer">
+                                <span class="text-p3 text-neutral-700 peer-checked:text-main">Pay Pal</span>
+                            </div>
+                            <svg id="Group_1273" data-name="Group 1273" xmlns="http://www.w3.org/2000/svg"
+                                width="80.001" height="20.001" viewBox="0 0 80.001 20.001">
+                                <path id="Vector"
+                                    d="M.381,11.8A.333.333,0,0,1,0,11.429L1.778.5A.842.842,0,0,1,2.413,0H6.73a5.2,5.2,0,0,1,3.3.994,3.2,3.2,0,0,1,.508,2.733q-.572,4.1-4.953,4.1H4.19a.577.577,0,0,0-.635.5l-.509,3.106a.333.333,0,0,1-.381.373Z"
+                                    transform="translate(55.109 5.217)" fill="#139ad6" />
+                                <g id="Group" transform="translate(24 5.217)">
+                                    <path id="Vector-2" data-name="Vector"
+                                        d="M.381,11.8A.333.333,0,0,1,0,11.429L1.778.5A.842.842,0,0,1,2.413,0H6.73a4.952,4.952,0,0,1,3.3.994,3.2,3.2,0,0,1,.508,2.733q-.572,4.1-4.953,4.1H4.19a.577.577,0,0,0-.635.5L3.047,11.3a.84.84,0,0,1-.635.5Z"
+                                        fill="#263b80" />
+                                    <path id="Vector-3" data-name="Vector"
+                                        d="M.842,7.205A3.643,3.643,0,0,1,.079,4.1,4.844,4.844,0,0,1,4.778,0,3.025,3.025,0,0,1,7.191.869l.127.248L7.445.5c0-.124.254-.248.381-.248H9.858c.127,0,.381.248.508.373L9.222,7.578a.84.84,0,0,1-.635.5H6.683A.333.333,0,0,1,6.3,7.7l.127-.621A4.1,4.1,0,0,1,3.508,8.2,3.237,3.237,0,0,1,.842,7.205Z"
+                                        transform="translate(9.953 3.727)" fill="#263b80" />
+                                </g>
+                                <path id="Vector-4" data-name="Vector"
+                                    d="M.842,7.205A3.643,3.643,0,0,1,.079,4.1,4.844,4.844,0,0,1,4.778,0,3.025,3.025,0,0,1,7.191.869l.127.248L7.445.5c0-.124.254-.248.381-.248H9.858c.254,0,.381.248.508.373L9.222,7.578a.84.84,0,0,1-.635.5H6.683A.333.333,0,0,1,6.3,7.7l.127-.621A4.1,4.1,0,0,1,3.508,8.2,3.237,3.237,0,0,1,.842,7.205Z"
+                                    transform="translate(64.936 8.943)" fill="#139ad6" />
+                                <path id="Vector-5" data-name="Vector"
+                                    d="M7.619,0a.664.664,0,0,0-.508.248L4.317,4.472,3.048.5A.588.588,0,0,0,2.413.124H.381C.127.124,0,.373,0,.621L2.286,7.205.127,10.187c-.127.248,0,.621.254.621H2.413a.664.664,0,0,0,.508-.248L9.9.745C10.286.373,10.032,0,9.778,0Z"
+                                    transform="translate(45.078 9.193)" fill="#263b80" />
+                                <path id="Vector-6" data-name="Vector"
+                                    d="M0,11.478a.333.333,0,0,0,.381.373H2.159a.841.841,0,0,0,.635-.5L4.571.421A.333.333,0,0,0,4.19.049H2.159C2.032-.075,1.9.049,1.778.3Z"
+                                    transform="translate(75.43 5.293)" fill="#139ad6" />
+                                <path id="Vector-7" data-name="Vector"
+                                    d="M9.778,0H3.429A1.083,1.083,0,0,0,2.54.745L0,17.019a.572.572,0,0,0,.508.621H4.444L5.46,11.553V11.8a1.083,1.083,0,0,1,.889-.745h1.9c3.683,0,6.476-1.491,7.365-5.59V5.093h0a4.274,4.274,0,0,0-1.016-3.6C13.714.5,12.063,0,9.778,0Z"
+                                    fill="#263b80" />
+                                <path id="Vector-8" data-name="Vector"
+                                    d="M11.429.373C10.54,4.6,7.746,5.963,4.063,5.963h-1.9a1.083,1.083,0,0,0-.889.745L0,14.286a.46.46,0,0,0,.508.5h3.3a.707.707,0,0,0,.762-.621v-.124l.635-3.851V9.938a.707.707,0,0,1,.762-.621h.508c3.175,0,5.714-1.242,6.349-4.969A4.486,4.486,0,0,0,12.19.621,1.293,1.293,0,0,0,11.429,0Z"
+                                    transform="translate(4.064 5.094)" fill="#139ad6" />
+                                <path id="Vector-9" data-name="Vector"
+                                    d="M8.762.248A.473.473,0,0,1,8.381.124,6.854,6.854,0,0,0,6.73,0H1.778A.473.473,0,0,0,1.4.124a.681.681,0,0,0-.381.621L0,7.205v.248a1.083,1.083,0,0,1,.889-.745h1.9c3.683,0,6.476-1.491,7.365-5.59a.45.45,0,0,1,.127-.373C10.032.621,9.9.5,9.651.5,9.27.373,9.27.373,9.143.373S8.889.248,8.762.248Z"
+                                    transform="translate(5.457 4.348)" fill="#232c65" />
+                            </svg>
+                        </div>
+                        <div class="flex items-center justify-between">
+                            <div class="flex items-center gap-2 cursor-pointer">
+                                <input type="radio" name="selection" class="peer cursor-pointer">
+                                <span class="text-p3 text-neutral-700 peer-checked:text-main">Credit & Debit Card</span>
+                            </div>
+                            <div class="flex items-center gap-2">
+                                <svg id="Group" xmlns="http://www.w3.org/2000/svg" width="48.75" height="15"
+                                    viewBox="0 0 48.75 15">
+                                    <path id="Vector" d="M2.478,0,0,14.537H3.96L6.445,0Z"
+                                        transform="translate(17.043 0.248)" fill="#0091ff" />
+                                    <path id="Vector-2" data-name="Vector"
+                                        d="M13.982,0h-4.2L5.9,9.915l-.414-1.5A15.512,15.512,0,0,0,0,2.393L3.548,14.518l4.195,0Z"
+                                        transform="translate(3.938 0.258)" fill="#0091ff" />
+                                    <path id="Vector-3" data-name="Vector"
+                                        d="M7.985,6.085C6.6,5.413,5.751,4.965,5.762,4.284c0-.6.716-1.249,2.269-1.249A7.318,7.318,0,0,1,11,3.592l.358.164L11.892.607A10.276,10.276,0,0,0,8.339,0c-3.916,0-6.673,1.97-6.7,4.8-.025,2.09,1.971,3.254,3.473,3.95,1.542.71,2.06,1.164,2.05,1.8-.01.974-1.229,1.418-2.369,1.418A8.316,8.316,0,0,1,1.064,11.2L.557,10.97,0,14.228A12.505,12.505,0,0,0,4.413,15c4.165,0,6.872-1.945,6.9-4.966C11.329,8.383,10.269,7.124,7.985,6.085Z"
+                                        transform="translate(23.488)" fill="#0091ff" />
+                                    <path id="Vector-4" data-name="Vector"
+                                        d="M10.554,14.527s-.364-1.672-.483-2.179L5,12.344c-.155.393-.831,2.183-.831,2.183H0L5.887,1.2A1.97,1.97,0,0,1,7.961,0h3.06l3.209,14.527Z"
+                                        transform="translate(34.52 0.264)" fill="#0091ff" />
+                                    <path id="Vector-5" data-name="Vector"
+                                        d="M7.922,1.184A1.6,1.6,0,0,0,6.194,0H.055L0,.293C4.782,1.453,7.946,4.249,9.261,7.607Z"
+                                        transform="translate(0 0.119)" fill="#f79f1a" />
+                                </svg>
+                                <svg id="Maestro" xmlns="http://www.w3.org/2000/svg" width="31.999" height="20"
+                                    viewBox="0 0 31.999 20">
+                                    <g id="Group">
+                                        <path id="Vector"
+                                            d="M19.15,10.009A10.233,10.233,0,0,0,16,2.586,9.27,9.27,0,0,0,9.584,0,9.81,9.81,0,0,0,0,10.009,9.792,9.792,0,0,0,9.584,20,9.264,9.264,0,0,0,16,17.413,10.154,10.154,0,0,0,19.15,10.009Z"
+                                            fill="#25a1ff" />
+                                        <path id="Vector-2" data-name="Vector"
+                                            d="M3.152,7.424A10.233,10.233,0,0,0,0,0V14.828A10.154,10.154,0,0,0,3.152,7.424Z"
+                                            transform="translate(15.998 2.586)" fill="#009ddd" />
+                                    </g>
+                                    <path id="Vector-3" data-name="Vector"
+                                        d="M2.925,2.586a12.631,12.631,0,0,0-.957,1.058H3.9A12.84,12.84,0,0,1,4.632,4.7h-3.4Q.928,5.23.674,5.759h4.5c.151.352.3.706.413,1.058H.282A9.908,9.908,0,0,0,0,7.894H5.87a11.1,11.1,0,0,1,.207,2.115,10.472,10.472,0,0,1-.489,3.174H.282q.167.528.393,1.058h4.5A11.036,11.036,0,0,1,4.632,15.3h-3.4a10.621,10.621,0,0,0,.732,1.058H3.9a10.11,10.11,0,0,1-.975,1.058A9.348,9.348,0,0,0,9.359,20a9.776,9.776,0,0,0,9.566-9.99A9.794,9.794,0,0,0,9.359,0,9.351,9.351,0,0,0,2.925,2.586Z"
+                                        transform="translate(13.074)" fill="#ef4444" />
+                                    <g id="Group-2" data-name="Group" transform="translate(3.191 7.426)">
+                                        <path id="Vector-4" data-name="Vector"
+                                            d="M0,.313A.319.319,0,0,1,.319,0a.3.3,0,0,1,.3.313.319.319,0,0,1-.3.333A.336.336,0,0,1,0,.313Z"
+                                            transform="translate(25.508 4.426)" fill="#fff" />
+                                        <path id="Vector-5" data-name="Vector"
+                                            d="M4,5.073l.712-3.9-1.631,3.9H1.988L1.8,1.194,1.088,5.073H0L.919,0H2.794l.094,3.133L4.2,0h1.93L5.2,5.073Z"
+                                            fill="#fff" />
+                                        <path id="Vector-6" data-name="Vector"
+                                            d="M.938,5.151A.829.829,0,0,1,0,4.25a2.89,2.89,0,0,1,.038-.373l.075-.411L.17,3.153.713,0H1.894L1.726.939h.618l-.168,1H1.557l-.3,1.723a.986.986,0,0,0-.038.176c0,.216.132.313.413.313a1.307,1.307,0,0,0,.319-.039l-.15.9A2.926,2.926,0,0,1,.938,5.151Z"
+                                            transform="translate(16.709)" fill="#fff" />
+                                        <path id="Vector-7" data-name="Vector"
+                                            d="M2.965.039C2.908.019,2.87.019,2.87,0H2.74c-.395,0-.676.176-1.032.665L1.819.039H.731L0,4.172H1.2c.431-2.528.6-2.978,1.181-2.978.038,0,.095.02.15.02l.132.039L3.1.079A.309.309,0,0,0,2.965.039Z"
+                                            transform="translate(18.887 0.9)" fill="#fff" />
+                                        <path id="Vector-8" data-name="Vector"
+                                            d="M1.37,2.526c.488.215.563.274.563.47,0,.254-.226.372-.694.372A3.715,3.715,0,0,1,.15,3.193L0,4.153H.057l.206.058c.075,0,.187.02.319.02a4.7,4.7,0,0,0,.676.038c1.257,0,1.857-.431,1.857-1.371a1.139,1.139,0,0,0-.863-1.156c-.507-.2-.563-.255-.563-.451,0-.215.206-.333.6-.333a7.527,7.527,0,0,1,.862.058L3.32.078A6.9,6.9,0,0,0,2.269,0C.919,0,.45.626.45,1.389.45,1.9.732,2.271,1.37,2.526Z"
+                                            transform="translate(13.336 0.861)" fill="#fff" />
+                                        <path id="Vector-9" data-name="Vector"
+                                            d="M0,3.153c0-1,.768-1.587,2.1-1.587a4.325,4.325,0,0,1,.488.021.831.831,0,0,0,.037-.255c0-.275-.207-.373-.77-.373a4.869,4.869,0,0,0-.975.1l-.168.059L.6,1.136.769.215A5.182,5.182,0,0,1,2.2,0c1.03,0,1.556.41,1.556,1.194a4.573,4.573,0,0,1-.094.823l-.244,1.47-.038.254-.038.217-.019.136L3.3,4.211H2.325l.02-.431a1.592,1.592,0,0,1-1.257.49A1.052,1.052,0,0,1,0,3.153Z"
+                                            transform="translate(5.758 0.861)" fill="#fff" />
+                                        <path id="Vector-10" data-name="Vector"
+                                            d="M0,2.449A2.22,2.22,0,0,1,2.083,0,1.446,1.446,0,0,1,3.677,1.489a4.363,4.363,0,0,1-.131,1.019H1.163v.138c0,.47.338.724,1.032.724a3.056,3.056,0,0,0,1.237-.254L3.245,4.134a4.386,4.386,0,0,1-1.22.176C.7,4.309,0,3.663,0,2.449Z"
+                                            transform="translate(9.73 0.842)" fill="#fff" />
+                                        <path id="Vector-11" data-name="Vector"
+                                            d="M0,2.45A2.266,2.266,0,0,1,2.344,0,1.762,1.762,0,0,1,4.238,1.861a2.227,2.227,0,0,1-.038.51A2.135,2.135,0,0,1,1.874,4.349,1.719,1.719,0,0,1,0,2.45Z"
+                                            transform="translate(21.494 0.82)" fill="#fff" />
+                                    </g>
+                                </svg>
+                                <svg xmlns="http://www.w3.org/2000/svg" width="23.999" height="20"
+                                    viewBox="0 0 23.999 20">
+                                    <g id="Group_1274" data-name="Group 1274" transform="translate(0 0)">
+                                        <path id="Vector"
+                                            d="M4.018,16.642a1.872,1.872,0,0,1-2.172-1.494L.029,5.022A1.845,1.845,0,0,1,1.55,2.888L18.056.028a1.872,1.872,0,0,1,2.172,1.494l1.817,10.125a1.845,1.845,0,0,1-1.521,2.134h0Z"
+                                            transform="translate(1.926)" fill="#3555a2" />
+                                        <path id="Vector-2" data-name="Vector"
+                                            d="M0,1.458,2.468,15.212l8.253-1.43a1.845,1.845,0,0,0,1.521-2.134L10.425,1.523A1.872,1.872,0,0,0,8.253.028h0Z"
+                                            transform="translate(11.729)" fill="#1b3555" />
+                                        <path id="Vector-3" data-name="Vector"
+                                            d="M1.875,13.713A1.859,1.859,0,0,1,0,11.87V1.842A1.859,1.859,0,0,1,1.875,0H18.281a1.859,1.859,0,0,1,1.875,1.842V11.87a1.859,1.859,0,0,1-1.875,1.842Z"
+                                            transform="translate(0 6.287)" fill="#64ced7" />
+                                        <path id="Vector-4" data-name="Vector"
+                                            d="M0,0V13.713H8.2a1.859,1.859,0,0,0,1.875-1.842V1.842A1.859,1.859,0,0,0,8.2,0H0Z"
+                                            transform="translate(10.078 6.287)" fill="#18a8c9" />
+                                        <path id="Vector-5" data-name="Vector" d="M20.156,0V3.134H0V0Z"
+                                            transform="translate(0 9.422)" fill="#ecf6fd" />
+                                        <path id="Vector-6" data-name="Vector"
+                                            d="M.7,0A.7.7,0,0,0,0,.691a.7.7,0,0,0,.7.691h3.19A.7.7,0,0,0,4.6.691.7.7,0,0,0,3.893,0H.7Z"
+                                            transform="translate(1.689 16.959)" fill="#eaf6ff" />
+                                        <path id="Vector-7" data-name="Vector" d="M10.078,0V3.134H0V0Z"
+                                            transform="translate(10.078 9.422)" fill="#d6e8fe" />
+                                    </g>
+                                </svg>
+                            </div>
+                        </div>
+                    </div>
+                    <hr>
+                    <!-- Gateway -->
+                    <div class="flex flex-col gap-6">
+                        <div class="flex flex-col gap-2">
+                            <span class="text-p3 text-neutral-600">Number</span>
+                            <div class="flex items-center justify-between">
+                                <input type="text" placeholder="1234 5678 9876 5432"
+                                    class="text-p3 text-neutral-700 border-l border-neutral-700 pl-2 mx-2 outline-none">
+                                <svg id="visa_1_2" data-name="visa (1) 2" xmlns="http://www.w3.org/2000/svg"
+                                    xmlns:xlink="http://www.w3.org/1999/xlink" width="24" height="24"
+                                    viewBox="0 0 24 24">
+                                    <defs>
+                                        <clipPath id="clip-path">
+                                            <rect id="visa_1_2_Background_Mask_"
+                                                data-name="visa (1) 2 (Background/Mask)" width="24" height="24"
+                                                fill="none" />
+                                        </clipPath>
+                                    </defs>
+                                    <rect id="visa_1_2_Background_Mask_2" data-name="visa (1) 2 (Background/Mask)"
+                                        width="24" height="24" fill="none" />
+                                    <g id="visa_1_2-2" data-name="visa (1) 2" clip-path="url(#clip-path)">
+                                        <path id="Vector"
+                                            d="M11.611,9.191l.351-2.055a3.434,3.434,0,0,0,1.993.592c.558-.012,1.156-.287,1.16-.915,0-.412-.249-.706-1.005-1.166a2.987,2.987,0,0,1-1.7-2.55A3.067,3.067,0,0,1,15.689,0,4.314,4.314,0,0,1,17.5.415L17.162,2.4a3.014,3.014,0,0,0-1.912-.419.859.859,0,0,0-.822.786c-.02,1.105,2.726,1.24,2.716,3.712a3.1,3.1,0,0,1-3.376,3.209A4.9,4.9,0,0,1,11.611,9.191Zm10.595.35-.233-1.4H19.484l-.4,1.4H17.044L19.953.858A.907.907,0,0,1,20.778.17h1.656L24,9.541Zm-13.866,0L9.945.17h1.939l-1.6,9.371Zm-4.419,0L2.376,2.064c-.1-.462-.176-.629-.462-.825A7.093,7.093,0,0,0,0,.443L.048.17h3.3c.421,0,.8.351.895.956l.816,5.423L7.075.17H9.113L5.971,9.541Z"
+                                            transform="translate(0 7)" fill="#5367ff" />
+                                    </g>
+                                </svg>
+                            </div>
+                        </div>
+                        <div class="flex items-center justify-between">
+                            <div class="flex flex-col gap-2 w-full">
+                                <span class="text-p3 text-neutral-600">Valid</span>
+                                <div class="flex items-center justify-between">
+                                    <input type="date"
+                                        class="text-p3 text-neutral-500 outline-none px-2 cursor-pointer">
+                                </div>
+                            </div>
+                            <div class="flex flex-col gap-2 w-full">
+                                <span class="text-p3 text-neutral-600">CVV</span>
+                                <div class="flex items-center justify-between pl-2">
+                                    <input type="text" placeholder="..."
+                                        class="text-p3 text-neutral-500 outline-none w-20">
+                                    <svg id="visa_1_2" data-name="visa (1) 2" xmlns="http://www.w3.org/2000/svg"
+                                        width="24" height="24" viewBox="0 0 24 24">
+                                        <rect id="visa_1_2_Background_" data-name="visa (1) 2 (Background)" width="24"
+                                            height="24" fill="none" />
+                                        <path id="Mask"
+                                            d="M9,18a9,9,0,1,1,9-9A9.01,9.01,0,0,1,9,18ZM9,1.8A7.2,7.2,0,1,0,16.2,9,7.208,7.208,0,0,0,9,1.8ZM9,13.5a.9.9,0,0,1-.9-.9V8.1a.9.9,0,0,1,1.8,0v4.5A.9.9,0,0,1,9,13.5ZM9,6.3a.9.9,0,1,1,.9-.9A.9.9,0,0,1,9,6.3Z"
+                                            transform="translate(3 3)" class="fill-neutral-500" />
+                                    </svg>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="flex items-center justify-between">
+                            <div class="flex flex-col gap-2 w-full">
+                                <span class="text-p3 text-neutral-600">Name</span>
+                                <div class="flex items-center justify-between">
+                                    <input type="text" placeholder="Card Holder"
+                                        class="text-p3 text-neutral-500 outline-none px-2">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Btn -->
+                    <button
+                        class="flex items-center justify-center bg-main rounded-lg text-white py-3 hover:opacity-80 effect">
+                        Add Money
+                    </button>
+                </div>
+            </div>
+        </section>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-[#0D0D2B] pt-20 pb-8">
+        <div class="flex flex-col gap-8 wrapper">
+            <div class="flex items-center justify-between w-full">
+                <div class="flex flex-col">
+                    <!-- Logo -->
+                    <a href="./index.html">
+                        <svg id="Logo" xmlns="http://www.w3.org/2000/svg" width="182.186" height="40.001"
+                            viewBox="0 0 182.186 40.001">
+                            <rect id="Logo_Background_" data-name="Logo (Background)" width="182.186" height="40"
+                                fill="none" />
+                            <g id="Group_1281" data-name="Group 1281">
+                                <g id="Icon">
+                                    <path id="Fill_2" data-name="Fill 2"
+                                        d="M19.027,10.683H0V0H36.306A19.5,19.5,0,0,1,19.027,10.683Z"
+                                        transform="translate(1.682 29.318)" fill="#5367ff" />
+                                    <path id="Fill_3" data-name="Fill 3"
+                                        d="M0,10.682V0H20.708A19.5,19.5,0,0,1,37.986,10.682Z" fill="#5367ff" />
+                                    <path id="Fill_4" data-name="Fill 4"
+                                        d="M34.927,9.933H0V0H34.927a19.777,19.777,0,0,1,0,9.933Z"
+                                        transform="translate(4.438 15.033)" fill="#5367ff" />
+                                </g>
+                                <path id="Vector"
+                                    d="M33.313,17.658V3.6h2.9V5.314h.13a3.719,3.719,0,0,1,.56-.839,2.933,2.933,0,0,1,.966-.719,3.39,3.39,0,0,1,1.491-.293A4.037,4.037,0,0,1,43.068,5.8a6.468,6.468,0,0,1,.587,2.923,6.573,6.573,0,0,1-.572,2.889,4.136,4.136,0,0,1-1.546,1.778,4.077,4.077,0,0,1-2.182.6,3.5,3.5,0,0,1-1.457-.274,3,3,0,0,1-.973-.686,3.473,3.473,0,0,1-.581-.845h-.089v5.473Zm-10.236-.086a3.963,3.963,0,0,1-.8-.206l.662-2.118a3.78,3.78,0,0,0,.932.166,1.214,1.214,0,0,0,.724-.186,1.394,1.394,0,0,0,.5-.68l.173-.433L21.469,3.6h3.092l2.2,7.51h.111L29.083,3.6H32.2L28.076,14.928a4.728,4.728,0,0,1-.807,1.438,3.3,3.3,0,0,1-1.277.952,4.628,4.628,0,0,1-1.864.339A6.04,6.04,0,0,1,23.078,17.572Zm86.561-4.189a4.449,4.449,0,0,1-1.809-1.824,5.857,5.857,0,0,1-.635-2.8,5.81,5.81,0,0,1,.635-2.77,4.6,4.6,0,0,1,1.788-1.858,5.369,5.369,0,0,1,2.72-.666,5.707,5.707,0,0,1,1.954.327,4.3,4.3,0,0,1,2.651,2.589,6.233,6.233,0,0,1,.38,2.278v.778H110.1v.007a2.783,2.783,0,0,0,.29,1.311,2.082,2.082,0,0,0,.835.852,2.588,2.588,0,0,0,1.278.3,2.86,2.86,0,0,0,.9-.133,1.886,1.886,0,0,0,.7-.4,1.724,1.724,0,0,0,.442-.653l2.72.173a3.527,3.527,0,0,1-.85,1.651,4.257,4.257,0,0,1-1.642,1.092,6.378,6.378,0,0,1-2.312.387A5.83,5.83,0,0,1,109.639,13.383Zm4.915-5.706a2.116,2.116,0,0,0-.275-1.085,1.95,1.95,0,0,0-.768-.739,2.246,2.246,0,0,0-1.124-.273,2.33,2.33,0,0,0-1.188.3,2.141,2.141,0,0,0-.8.792,2.163,2.163,0,0,0-.293,1.005ZM54.289,13.363a4.58,4.58,0,0,1-1.8-1.851,5.79,5.79,0,0,1-.635-2.763,5.781,5.781,0,0,1,.635-2.769,4.525,4.525,0,0,1,1.8-1.851,6.13,6.13,0,0,1,5.557,0A4.52,4.52,0,0,1,61.655,5.98a5.781,5.781,0,0,1,.634,2.769,5.79,5.79,0,0,1-.634,2.763,4.575,4.575,0,0,1-1.809,1.851,6.182,6.182,0,0,1-5.557,0Zm31.956.313a2.9,2.9,0,0,1-1.256-1.019,2.972,2.972,0,0,1-.455-1.691,2.9,2.9,0,0,1,.324-1.432,2.583,2.583,0,0,1,.884-.932,4.376,4.376,0,0,1,1.27-.532,10.009,10.009,0,0,1,1.506-.254q.925-.093,1.491-.173a2.168,2.168,0,0,0,.821-.253.548.548,0,0,0,.256-.492v-.04a1.2,1.2,0,0,0-.414-.978,1.739,1.739,0,0,0-1.16-.346,2.113,2.113,0,0,0-1.263.339,1.571,1.571,0,0,0-.622.839L84.906,6.5a3.511,3.511,0,0,1,.814-1.612,3.924,3.924,0,0,1,1.567-1.052,6.2,6.2,0,0,1,2.237-.373,7.019,7.019,0,0,1,1.691.2,4.5,4.5,0,0,1,1.443.619,3.042,3.042,0,0,1,1,1.079,3.148,3.148,0,0,1,.366,1.564v6.9H91.237V12.4h-.083a2.911,2.911,0,0,1-.683.845,3.2,3.2,0,0,1-1.029.566,4.4,4.4,0,0,1-1.388.2A4.569,4.569,0,0,1,86.245,13.676ZM3.2,13.183A5.954,5.954,0,0,1,.856,10.794,7.8,7.8,0,0,1,0,7a7.709,7.709,0,0,1,.869-3.8A5.951,5.951,0,0,1,3.231.825,6.812,6.812,0,0,1,6.586,0,7.484,7.484,0,0,1,8.864.333a5.872,5.872,0,0,1,1.871.972,5.06,5.06,0,0,1,1.326,1.552,5.634,5.634,0,0,1,.662,2.1H9.7a2.755,2.755,0,0,0-.338-1.005,2.583,2.583,0,0,0-.655-.76,2.942,2.942,0,0,0-.925-.48,3.673,3.673,0,0,0-1.126-.166,3.441,3.441,0,0,0-1.912.526A3.383,3.383,0,0,0,3.479,4.595,5.831,5.831,0,0,0,3.03,7a5.939,5.939,0,0,0,.449,2.45,3.355,3.355,0,0,0,1.27,1.5,3.5,3.5,0,0,0,1.885.506,3.836,3.836,0,0,0,1.111-.153,2.959,2.959,0,0,0,.919-.446,2.588,2.588,0,0,0,.662-.725A2.765,2.765,0,0,0,9.7,9.162l3.024.013a5.139,5.139,0,0,1-.587,1.811,5.48,5.48,0,0,1-1.249,1.552,5.933,5.933,0,0,1-1.865,1.078,7.073,7.073,0,0,1-2.436.393A6.864,6.864,0,0,1,3.2,13.183Zm118.025.507a2.583,2.583,0,0,1-1.237-.972,2.9,2.9,0,0,1-.435-1.665V5.726h-1.45V3.6h1.45V1.145h2.94V3.6h2v2.13h-2V10.68a1.249,1.249,0,0,0,.125.612.674.674,0,0,0,.345.3,1.481,1.481,0,0,0,.525.086,2.665,2.665,0,0,0,.414-.032l.318-.06.463,2.111q-.221.066-.621.153a5.177,5.177,0,0,1-.974.113q-.122,0-.24,0A4.431,4.431,0,0,1,121.228,13.69Zm-73.626,0a2.581,2.581,0,0,1-1.236-.972,2.889,2.889,0,0,1-.436-1.665V5.726h-1.45V3.6h1.45V1.145h2.941V3.6h2v2.13h-2V10.68a1.25,1.25,0,0,0,.124.612.676.676,0,0,0,.346.3,1.471,1.471,0,0,0,.525.086,2.682,2.682,0,0,0,.414-.032l.318-.06.463,2.111q-.221.066-.622.153a5.166,5.166,0,0,1-.973.113q-.122,0-.24,0A4.432,4.432,0,0,1,47.6,13.69Zm55.151.133V7.817a2.013,2.013,0,0,0-.5-1.464,1.819,1.819,0,0,0-1.388-.533,2.165,2.165,0,0,0-1.049.247,1.746,1.746,0,0,0-.7.719,2.439,2.439,0,0,0-.256,1.125v5.913h-2.94V3.6h2.8V5.4h.124a2.876,2.876,0,0,1,1.181-1.411,3.67,3.67,0,0,1,2.009-.526,3.839,3.839,0,0,1,1.926.466,3.217,3.217,0,0,1,1.277,1.332,4.323,4.323,0,0,1,.456,2.05v6.512Zm-22.631,0V.186h2.94V13.823Zm-12.143,0V.186h5.578A5.847,5.847,0,0,1,76.3.779,4.092,4.092,0,0,1,78.024,2.41a4.7,4.7,0,0,1,.6,2.4,4.66,4.66,0,0,1-.607,2.4,4.13,4.13,0,0,1-1.76,1.618,6.1,6.1,0,0,1-2.776.579H70.969v4.422ZM73,7.091A3.111,3.111,0,0,0,74.42,6.8,1.928,1.928,0,0,0,75.263,6a2.447,2.447,0,0,0,.284-1.192,2.382,2.382,0,0,0-.284-1.185,1.854,1.854,0,0,0-.842-.793,3.172,3.172,0,0,0-1.436-.286H70.969V7.091ZM14.423,13.823V3.6h2.851V5.38h.111a2.568,2.568,0,0,1,2.548-1.931,4.563,4.563,0,0,1,.476.027,3.59,3.59,0,0,1,.448.073V6.066a3.919,3.919,0,0,0-.572-.107,5.414,5.414,0,0,0-.67-.046,2.424,2.424,0,0,0-1.16.273,2.049,2.049,0,0,0-.8.746,2.09,2.09,0,0,0-.29,1.105v5.786Z"
+                                    transform="translate(52.5 11.172)" fill="#fff" />
+                            </g>
+                        </svg>
+                    </a>
+                </div>
+                <div class="flex items-center gap-4">
+                    <!-- OS Card -->
+                    <a href="#">
+                        <div
+                            class="flex items-center min-w-fit gap-3 bg-neutral-700 px-4 py-3 rounded-lg hover:opacity-80 effect">
+                            <div class="flex">
+                                <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+                                    width="35" height="35" viewBox="0 0 35 35">
+                                    <defs>
+                                        <clipPath id="clip-path">
+                                            <rect id="Component_9_Background_Mask_"
+                                                data-name="Component 9 (Background/Mask)" width="35" height="35"
+                                                fill="none" />
+                                        </clipPath>
+                                    </defs>
+                                    <g id="Icon" transform="translate(-57)">
+                                        <g id="Component_9" data-name="Component 9" transform="translate(57)">
+                                            <rect id="Component_9_Background_Mask_2"
+                                                data-name="Component 9 (Background/Mask)" width="35" height="35"
+                                                fill="none" />
+                                            <g id="Component_9-2" data-name="Component 9" clip-path="url(#clip-path)">
+                                                <path id="Vector"
+                                                    d="M.636,1.71A.729.729,0,0,0,0,2.439V12.648a.729.729,0,0,0,.729.729H13.854a.729.729,0,0,0,.729-.729V.727A.729.729,0,0,0,14.335.18a.746.746,0,0,0-.575-.175Z"
+                                                    transform="translate(0 3.396)" fill="#fff" />
+                                                <path id="Vector-2" data-name="Vector"
+                                                    d="M18.136.005.636,2.287A.729.729,0,0,0,0,3.017v12.3a.729.729,0,0,0,.729.729h17.5a.729.729,0,0,0,.729-.729V.734a.74.74,0,0,0-.823-.729Z"
+                                                    transform="translate(16.041 0.727)" fill="#fff" />
+                                                <path id="Vector-3" data-name="Vector"
+                                                    d="M.729,0A.729.729,0,0,0,0,.729V10.938a.729.729,0,0,0,.636.729l13.125,1.712a.686.686,0,0,0,.093,0,.729.729,0,0,0,.729-.729V.729A.729.729,0,0,0,13.854,0Z"
+                                                    transform="translate(0 18.23)" fill="#fff" />
+                                                <path id="Vector-4" data-name="Vector"
+                                                    d="M.729,0A.729.729,0,0,0,0,.729v12.3a.729.729,0,0,0,.636.729l17.5,2.282a.686.686,0,0,0,.093,0,.729.729,0,0,0,.729-.729V.729A.729.729,0,0,0,18.229,0Z"
+                                                    transform="translate(16.041 18.23)" fill="#fff" />
+                                            </g>
+                                        </g>
+                                    </g>
+                                </svg>
+                            </div>
+                            <div class="flex flex-col">
+                                <span class="text-footer font-medium text-white">Download PC-Client</span>
+                                <span class="text-caption font-medium text-white">Windows</span>
+                            </div>
+                        </div>
+                    </a>
+                    <!-- OS Card -->
+                    <a href="#">
+                        <div
+                            class="flex items-center min-w-fit gap-3 bg-neutral-700 px-4 py-3 rounded-lg hover:opacity-80 effect">
+                            <div class="flex">
+                                <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+                                    width="35" height="37" viewBox="0 0 35 37">
+                                    <defs>
+                                        <clipPath id="clip-path">
+                                            <rect id="Component_9_Background_Mask_"
+                                                data-name="Component 9 (Background/Mask)" width="35" height="37"
+                                                fill="none" />
+                                        </clipPath>
+                                    </defs>
+                                    <g id="Icon" transform="translate(-56.5)">
+                                        <g id="Component_9" data-name="Component 9" transform="translate(56.5)">
+                                            <rect id="Component_9_Background_Mask_2"
+                                                data-name="Component 9 (Background/Mask)" width="35" height="37"
+                                                fill="none" />
+                                            <g id="Component_9-2" data-name="Component 9" clip-path="url(#clip-path)">
+                                                <g id="Group" transform="translate(0 0.002)">
+                                                    <path id="Vector"
+                                                        d="M7.069,0A7.277,7.277,0,0,0,0,7.473V29.527A7.275,7.275,0,0,0,7.069,37H27.931A7.279,7.279,0,0,0,35,29.522V7.473A7.283,7.283,0,0,0,27.927,0H7.069Z"
+                                                        fill="#4e5161" />
+                                                    <g id="Group-2" data-name="Group"
+                                                        transform="translate(4.663 6.355)">
+                                                        <path id="Vector-2" data-name="Vector"
+                                                            d="M13.395.849a1.548,1.548,0,0,1,2.178-.62,1.739,1.739,0,0,1,.586,2.3l-6.829,12.5h4.939c1.6,0,2.5,1.989,1.8,3.367H1.592a1.686,1.686,0,0,1,0-3.367h4.06l5.2-9.522L9.226,2.528a1.741,1.741,0,0,1,.586-2.3,1.55,1.55,0,0,1,2.178.62l.7,1.3Z"
+                                                            fill="#fff" />
+                                                        <path id="Vector-3" data-name="Vector"
+                                                            d="M2.977,3.943A1.548,1.548,0,0,1,.8,4.563a1.739,1.739,0,0,1-.586-2.3L1.35.179a2.64,2.64,0,0,1,3.158.957h0Z"
+                                                            transform="translate(2.036 18.992)" fill="#fff" />
+                                                        <path id="Vector-4" data-name="Vector"
+                                                            d="M10.055,8.578a1.686,1.686,0,0,1,0,3.367h-2.3l1.553,2.849a1.741,1.741,0,0,1-.586,2.3,1.55,1.55,0,0,1-2.178-.62Q2.619,9.283.659,5.7A4.855,4.855,0,0,1,1.219,0Q2.787,2.844,5.913,8.578h4.143Z"
+                                                            transform="translate(13.816 6.459)" fill="#fff" />
+                                                    </g>
+                                                </g>
+                                            </g>
+                                        </g>
+                                    </g>
+                                </svg>
+                            </div>
+                            <div class="flex flex-col">
+                                <span class="text-footer font-medium text-white">Download on the</span>
+                                <span class="text-caption font-medium text-white">App Store</span>
+                            </div>
+                        </div>
+                    </a>
+                    <!-- OS Card -->
+                    <a href="#">
+                        <div
+                            class="flex items-center min-w-fit gap-3 w-fit bg-neutral-700 px-4 py-3 rounded-lg hover:opacity-80 effect">
+                            <div class="flex">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="35" height="37" viewBox="0 0 35 37">
+                                    <g id="Icon" transform="translate(-56.5)">
+                                        <g id="Component_9" data-name="Component 9" transform="translate(56.5)">
+                                            <g id="XMLID_37_" transform="translate(0 8.771)">
+                                                <path id="Vector"
+                                                    d="M4.491,23.49c2,2.5,4.022,4.739,6.793,4.739l.159,0A9.423,9.423,0,0,0,14.6,27.5a9.746,9.746,0,0,1,3.736-.765,9.187,9.187,0,0,1,3.555.739,8.487,8.487,0,0,0,3.405.706c3.122-.05,5.039-2.469,6.729-4.6a19.3,19.3,0,0,0,2.949-5.218l.012-.033a.29.29,0,0,0-.187-.371l-.025-.009c-.55-.195-5.373-2.043-5.423-7.08C29.3,6.772,32.964,4.606,33.7,4.213l.034-.019A.3.3,0,0,0,33.888,4a.266.266,0,0,0-.055-.232A10.725,10.725,0,0,0,25.866.029C25.641.01,25.406,0,25.172,0a15.689,15.689,0,0,0-5,1.078,9.035,9.035,0,0,1-2.394.619A8.831,8.831,0,0,1,15.3,1.072,13.546,13.546,0,0,0,10.933.114h-.111A11.055,11.055,0,0,0,1.806,4.83C-1.814,10.258.487,18.5,4.491,23.49Z"
+                                                    fill="#fff" />
+                                            </g>
+                                            <g id="XMLID_34_" transform="translate(17.035)">
+                                                <path id="Vector-2" data-name="Vector"
+                                                    d="M2.376,2.862C1.027,4.21-.291,6.462.056,8.73a.335.335,0,0,0,.322.263q.225.015.454.015a8.77,8.77,0,0,0,6.093-2.7A7.625,7.625,0,0,0,9.195.27.34.34,0,0,0,8.831,0,10.374,10.374,0,0,0,2.376,2.862Z"
+                                                    fill="#fff" />
+                                            </g>
+                                        </g>
+                                    </g>
+                                </svg>
+                            </div>
+                            <div class="flex flex-col">
+                                <span class="text-footer font-medium text-white">Download for the</span>
+                                <span class="text-caption font-medium text-white">Mac OS</span>
+                            </div>
+                        </div>
+                    </a>
+                    <!-- OS Card -->
+                    <a href="#">
+                        <div
+                            class="flex items-center min-w-fit gap-3 w-fit bg-neutral-700 px-4 py-3 rounded-lg hover:opacity-80 effect">
+                            <div class="flex">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="35" height="37" viewBox="0 0 35 37">
+                                    <g id="Icon" transform="translate(-56.5)">
+                                        <g id="Component_9" data-name="Component 9" transform="translate(56.5)">
+                                            <g id="Group" transform="translate(21.42 13.271)">
+                                                <g id="Group-2" data-name="Group">
+                                                    <path id="Vector"
+                                                        d="M5.827,0,0,5.358l5.325,4.9L12.913,6.09a1.241,1.241,0,0,0,0-2.2Z"
+                                                        fill="#fff" />
+                                                </g>
+                                            </g>
+                                            <g id="Group-3" data-name="Group" transform="translate(1.159)">
+                                                <g id="Group-4" data-name="Group">
+                                                    <path id="Vector-2" data-name="Vector"
+                                                        d="M17.088,8.33,0,0,19.3,17.747l5.585-5.136Z" fill="#fff" />
+                                                </g>
+                                            </g>
+                                            <g id="Group-5" data-name="Group" transform="translate(1.442 19.514)">
+                                                <g id="Group-6" data-name="Group">
+                                                    <path id="Vector-3" data-name="Vector"
+                                                        d="M16.835,8.665,24.1,4.674,19.018,0,0,17.486Z" fill="#fff" />
+                                                </g>
+                                            </g>
+                                            <g id="Group-7" data-name="Group" transform="translate(0 0.719)">
+                                                <g id="Group-8" data-name="Group">
+                                                    <path id="Vector-4" data-name="Vector"
+                                                        d="M0,35.841l19.5-17.93L.017,0Z" fill="#fff" />
+                                                </g>
+                                            </g>
+                                        </g>
+                                    </g>
+                                </svg>
+                            </div>
+                            <div class="flex flex-col">
+                                <span class="text-footer font-medium text-white">Get in on</span>
+                                <span class="text-caption font-medium text-white">Google Play</span>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+            </div>
+            <div class="flex items-start justify-between border-b border-neutral-500/30 py-10">
+                <!-- Exchange Links -->
+                <div class="flex flex-col gap-6">
+                    <span class="text-h6 font-medium text-white">Exchange</span>
+                    <ul class="flex flex-col gap-3">
+                        <li class="text-p3 text-neutral-400"><a href="#" class="hover:underline">Exchange Home</a></li>
+                        <li class="text-p3 text-neutral-400"><a href="#" class="hover:underline">Margin Trading</a></li>
+                        <li class="text-p3 text-neutral-400"><a href="#" class="hover:underline">Derivatives Trading</a>
+                        </li>
+                        <li class="text-p3 text-neutral-400"><a href="#" class="hover:underline">Supercharger</a></li>
+                    </ul>
+                </div>
+                <!-- Support Links -->
+                <div class="flex flex-col gap-6">
+                    <span class="text-h6 font-medium text-white">Support</span>
+                    <ul class="flex flex-col gap-3">
+                        <li class="text-p3 text-neutral-400"><a href="#" class="hover:underline">Request form</a></li>
+                        <li class="text-p3 text-neutral-400"><a href="#" class="hover:underline">Contact Support</a>
+                        </li>
+                        <li class="text-p3 text-neutral-400"><a href="#" class="hover:underline">FAQ</a>
+                        </li>
+                        <li class="text-p3 text-neutral-400"><a href="#" class="hover:underline">Security</a></li>
+                    </ul>
+                </div>
+                <!-- Company Links -->
+                <div class="flex flex-col gap-6">
+                    <span class="text-h6 font-medium text-white">Company</span>
+                    <ul class="flex flex-col gap-3">
+                        <li class="text-p3 text-neutral-400"><a href="#" class="hover:underline">About us</a></li>
+                        <li class="text-p3 text-neutral-400"><a href="#" class="hover:underline">Careers</a>
+                        </li>
+                        <li class="text-p3 text-neutral-400"><a href="#" class="hover:underline">News</a>
+                        </li>
+                        <li class="text-p3 text-neutral-400"><a href="#" class="hover:underline">Security</a></li>
+                        <li class="text-p3 text-neutral-400"><a href="#" class="hover:underline">Community</a></li>
+                        <li class="text-p3 text-neutral-400"><a href="#" class="hover:underline">Announcements</a></li>
+                    </ul>
+                </div>
+                <!-- Resources Links -->
+                <div class="flex flex-col gap-6">
+                    <span class="text-h6 font-medium text-white">Resources</span>
+                    <ul class="flex flex-col gap-3">
+                        <li class="text-p3 text-neutral-400"><a href="#" class="hover:underline">Downloads</a></li>
+                        <li class="text-p3 text-neutral-400"><a href="#" class="hover:underline">Desktop Application</a>
+                        </li>
+                        <li class="text-p3 text-neutral-400"><a href="#" class="hover:underline">Buy Crypto</a>
+                        </li>
+                        <li class="text-p3 text-neutral-400"><a href="#" class="hover:underline">Referral</a></li>
+                        <li class="text-p3 text-neutral-400"><a href="#" class="hover:underline">Listing Trading</a>
+                        </li>
+                    </ul>
+                </div>
+                <!-- Newsletter -->
+                <div class="flex flex-col gap-6">
+                    <span class="text-h6 font-medium text-white">Newsletter</span>
+                    <form class="flex items-center gap-4">
+                        <input type="email" placeholder="Enter your email" required
+                            class="bg-transparent w-full border-b border-neutral-500/30 pb-2 hover:outline-none">
+                        <button type="submit"
+                            class="bg-main px-4 py-2 rounded-lg text-white text-p2 font-medium hover:opacity-80 effect">Send</button>
+                    </form>
+                    <span class="text-p1 text-neutral-400 mt-6">We accept following payment systems</span>
+                    <div class="flex items-center gap-4">
+                        <!-- Payment Card -->
+                        <figure class="flex items-center justify-center px-4 bg-neutral-800 rounded-lg h-12">
+                            <img src="../public/paypal.png" alt="logo">
+                        </figure>
+                        <!-- Payment Card -->
+                        <figure class="flex items-center justify-center px-4 bg-neutral-800 rounded-lg h-12">
+                            <img src="../public/mastercard.png" alt="logo">
+                        </figure>
+                        <!-- Payment Card -->
+                        <figure class="flex items-center justify-center px-4 bg-neutral-800 rounded-lg h-12">
+                            <img src="../public/bitcoinlogo.png" alt="logo">
+                        </figure>
+                        <!-- Payment Card -->
+                        <figure class="flex items-center justify-center px-4 bg-neutral-800 rounded-lg h-12">
+                            <img src="../public/visacard.png" alt="logo">
+                        </figure>
+                    </div>
+                </div>
+            </div>
+            <!-- Footnote -->
+            <div class="flex items-center justify-between w-full">
+                <!-- Copyright -->
+                <div class="flex items-center gap-14">
+                    <div class="text-neutral-400 text-p3">&copy; 2022 dynamic | All rights reserved.</div>
+                    <div class="flex items-center gap-8">
+                        <a href="" class="text-neutral-400 text-p3 hover:underline">Privacy</a>
+                        <a href="" class="text-neutral-400 text-p3 hover:underline">Terms</a>
+                        <a href="" class="text-neutral-400 text-p3 hover:underline">Sitemap</a>
+                    </div>
+                </div>
+                <!-- Socials -->
+                <div class="flex items-center gap-6">
+                    <a href="#">
+                        <i class="fa-brands fa-facebook-f fa-lg text-white hover:text-blue-500 effect"></i>
+                    </a>
+                    <a href="#">
+                        <i class="fa-brands fa-instagram fa-lg text-white hover:text-pink-500 effect"></i>
+                    </a>
+                    <a href="#">
+                        <i class="fa-brands fa-youtube fa-lg text-white hover:text-red-500 effect"></i>
+                    </a>
+                    <a href="#">
+                        <i class="fa-brands fa-twitter fa-lg text-white hover:text-cyan-500 effect"></i>
+                    </a>
+                    <a href="#">
+                        <i class="fa-brands fa-linkedin fa-lg text-white hover:text-blue-500 effect"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="./script.js"></script>
+</body>
+
+</html>
