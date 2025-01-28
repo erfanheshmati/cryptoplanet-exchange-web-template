@@ -82,8 +82,8 @@ module.exports = {
           900: "#7f1d1d",
         },
         dark: {
-          main: "#121318",
-          backgroung: "#080808",
+          main: "#080808",
+          backgroung: "#121318",
         },
         lightLogo: "#2B3140",
         darkLogo: "#f5f5f5",

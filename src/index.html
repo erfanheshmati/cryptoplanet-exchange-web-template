@@ -11,14 +11,15 @@
     <title>Crypto Planet</title>
 </head>
 
-<body class="dark:bg-dark-backgroung">
+<body class="dark:bg-dark-main">
+
     <!-- Header -->
-    <header class="flex items-center w-full">
-        <nav class="flex items-center justify-between wrapper py-6">
-            <!-- Logo & Theme Button -->
+    <header class="flex items-center w-full md:bg-white md:dark:bg-dark-main sticky top-0 z-50">
+        <nav
+            class="flex items-center justify-between wrapper bg-white dark:bg-dark-backgroung md:dark:bg-dark-main py-6 rounded-b-3xl md:rounded-none shadow-md md:shadow-none z-50">
+            <!-- Logo -->
             <div class="flex items-center gap-8">
-                <!-- Logo -->
-                <a href="./index.html" class="border-r pr-7">
+                <a href="./index.html" class="md:hidden lg:block border-r pr-2 md:pr-7">
                     <svg id="Logo" xmlns="http://www.w3.org/2000/svg" width="182.186" height="40.001"
                         viewBox="0 0 182.186 40.001" class="text-lightLogo dark:text-darkLogo">
                         <rect id="Logo_Background_" data-name="Logo (Background)" width="182.186" height="40"
@@ -40,47 +41,47 @@
                         </g>
                     </svg>
                 </a>
-                <!-- Toggle Theme Button -->
-                <button id="theme-toggle" onclick="toggleTheme()"
-                    class="bg-neutral-200 dark:bg-neutral-800 rounded-md px-3 py-2 hover:opacity-80 effect">
-                    <span id="theme-icon" class="fa-solid fa-moon fa-lg text-neutral-700 dark:text-neutral-300"></span>
-                </button>
+                <!-- Menu -->
+                <div class="hidden md:flex items-center">
+                    <ul class="flex items-center gap-6 xl:gap-8">
+                        <li class="text-p2">
+                            <a href="#" class="hover:text-main effect">Market</a>
+                        </li>
+                        <li class="text-p2">
+                            <a href="#" class="hover:text-main effect">Watchlist</a>
+                        </li>
+                        <li class="text-p2">
+                            <a href="#" class="hover:text-main effect">Portfolio</a>
+                        </li>
+                        <li class="text-p2">
+                            <a href="#" class="hover:text-main effect">Learn</a>
+                        </li>
+                    </ul>
+                </div>
             </div>
-            <!-- Menu -->
-            <div class="flex items-center">
-                <ul class="flex items-center gap-8">
-                    <li class="text-p2">
-                        <a href="#" class="hover:text-main effect">Market</a>
-                    </li>
-                    <li class="text-p2">
-                        <a href="#" class="hover:text-main effect">Watchlist</a>
-                    </li>
-                    <li class="text-p2">
-                        <a href="#" class="hover:text-main effect">Portfolio</a>
-                    </li>
-                    <li class="text-p2">
-                        <a href="#" class="hover:text-main effect">Learn</a>
-                    </li>
-                </ul>
-            </div>
-            <!-- Dropdown & Buttons -->
-            <div class="flex items-center gap-8">
+            <!-- Right Side -->
+            <div class="hidden md:flex items-center gap-4">
                 <!-- Language & Currency -->
                 <div class="flex items-center relative">
-                    <button onclick="toggleDropdown(event)" class="flex items-center gap-2 hover:opacity-80 effect">
-                        <span class="text-p3 border-r pr-2">English</span>
+                    <button onclick="toggleDropdown(event)" class="flex items-center gap-2 hover:opacity-70 effect">
+                        <span class="text-p3">English</span>
+                        <span class="text-p3">|</span>
                         <span class="text-p3">USD</span>
                         <span class="fa-solid fa-chevron-down fa-2xs"></span>
                     </button>
                     <!-- Dropdown Content -->
                     <div id="dropdown-language-currency"
-                        class="absolute top-10 -right-28 w-[340px] bg-white shadow-lg rounded-lg hidden">
+                        class="absolute top-10 -right-28 w-[300px] bg-white dark:bg-dark-backgroung shadow-lg rounded-lg hidden">
                         <div class="p-4">
-                            <div class="flex items-center gap-8 border-b">
+                            <div class="flex items-center gap-8 border-b dark:border-b-neutral-700">
                                 <span id="language-tab-btn"
-                                    class="text-neutral-600 text-p2 cursor-pointer hover:opacity-80 pb-5">Language</span>
+                                    class="text-neutral-600 text-p2 cursor-pointer hover:opacity-80 pb-5">
+                                    Language
+                                </span>
                                 <span id="currency-tab-btn"
-                                    class="text-neutral-600 text-p2 cursor-pointer hover:opacity-80 pb-5">Currency</span>
+                                    class="text-neutral-600 text-p2 cursor-pointer hover:opacity-80 pb-5">
+                                    Currency
+                                </span>
                             </div>
                         </div>
                         <!-- Tab Content -->
@@ -142,9 +143,16 @@
                         </div>
                     </div>
                 </div>
+                <!-- Toggle Theme Button -->
+                <button id="theme-toggle" onclick="toggleTheme()"
+                    class="hidden md:block bg-neutral-200 dark:bg-neutral-800 rounded-md px-3 py-2 hover:opacity-80 effect">
+                    <span id="theme-icon" class="fa-solid fa-moon fa-lg text-neutral-700 dark:text-neutral-300">
+                    </span>
+                </button>
                 <!-- Sign-in & Register -->
                 <div class="flex items-center gap-4">
-                    <a href="#" class="bg-neutral-200 text-main rounded-lg px-8 py-3 text-p3 hover:opacity-80 effect">
+                    <a href="#"
+                        class="bg-neutral-200 dark:bg-neutral-800 text-main dark:text-main rounded-lg px-8 py-3 text-p3 hover:opacity-80 effect">
                         Sign in
                     </a>
                     <a href="#" class="bg-main text-white rounded-lg px-8 py-3 text-p3 hover:opacity-80 effect">
@@ -152,30 +160,283 @@
                     </a>
                 </div>
             </div>
+            <!-- Mobile Buttons -->
+            <div class="flex md:hidden items-center gap-6">
+                <button class="w-6 h-6">
+                    <i class="fa-solid fa-search fa-lg text-neutral-700"></i>
+                </button>
+                <button id="menuToggle" class="w-6 h-6">
+                    <i id="menuIcon" class="fa-solid fa-bars fa-lg text-neutral-700"></i>
+                </button>
+            </div>
         </nav>
+        <!-- Mobile Menu -->
+        <div id="fullscreenMenu"
+            class="wrapper fixed top-0 left-0 w-full h-full overflow-y-auto pt-[7.5rem] pb-4 bg-[#E6E9F1] dark:bg-dark-main hidden z-40">
+            <ul class="bg-white dark:bg-dark-backgroung rounded-xl flex flex-col gap-6 p-4">
+                <li class="flex items-center justify-between">
+                    <a href="./profile-my-profile.html" class="flex items-center gap-3">
+                        <img src="../public/avatar.png" alt="Avatar" class="w-12 h-12">
+                        <span class="flex flex-col">
+                            <span class="text-p2 font-medium text-neutral-700">Allie Grater</span>
+                            <span class="text-p3 text-neutral-600 dark:text-neutral-500">AllieGrater123@</span>
+                        </span>
+                    </a>
+                    <button id="theme-toggle" onclick="toggleTheme()"
+                        class="w-12 h-12 bg-neutral-200 dark:bg-neutral-800 rounded-md">
+                        <span id="theme-icon"
+                            class="fa-solid fa-moon fa-xl text-neutral-700 dark:text-neutral-300"></span>
+                    </button>
+                </li>
+                <hr class="dark:border-neutral-700">
+                <li class="flex">
+                    <a href="./market-v1.html" class="flex items-center justify-between w-full">
+                        <span class="flex items-center gap-3">
+                            <svg id="Icon_Trade" data-name="Icon Trade" xmlns="http://www.w3.org/2000/svg" width="24"
+                                height="24" viewBox="0 0 24 24">
+                                <rect id="Icon_Trade_Background_" data-name="Icon Trade (Background)" width="24"
+                                    height="24" fill="none" />
+                                <path id="Mask"
+                                    d="M7.111,22a1,1,0,0,1-.994-1.107L6.886,13.8H1a1,1,0,0,1-.831-1.556L8.058.445a1,1,0,0,1,1.825.663L9.114,8.2H15a1,1,0,0,1,.831,1.556l-7.889,11.8A1,1,0,0,1,7.111,22ZM7.455,4.944,2.871,11.8H8a1,1,0,0,1,.994,1.107l-.448,4.15L13.129,10.2H8a1,1,0,0,1-.994-1.107l.448-4.149Z"
+                                    transform="translate(4 1)" class="fill-neutral-500" />
+                            </svg>
+                            <span class="text-p2 text-neutral-500">Market</span>
+                        </span>
+                        <span><i class="fa-solid fa-chevron-right fa-xs text-neutral-500"></i></span>
+                    </a>
+                </li>
+                <li class="flex">
+                    <a href="./watchlist.html" class="flex items-center justify-between w-full">
+                        <span class="flex items-center gap-3">
+                            <svg id="Icon_Trade" data-name="Icon Trade" xmlns="http://www.w3.org/2000/svg" width="24"
+                                height="24" viewBox="0 0 24 24">
+                                <rect id="Icon_Trade_Background_" data-name="Icon Trade (Background)" width="24"
+                                    height="24" fill="none" />
+                                <path id="Mask"
+                                    d="M13,18a1,1,0,0,1-.491-.13L6.836,14.663l-5.323,3.2A1,1,0,0,1,0,17V2.334A2.272,2.272,0,0,1,2.2,0h9.6A2.273,2.273,0,0,1,14,2.334V17a1,1,0,0,1-1,1ZM6.821,12.506a1,1,0,0,1,.492.129L12,15.286V2.334c0-.2-.12-.334-.2-.334H2.2c-.08,0-.2.133-.2.334v12.9l4.306-2.586A1,1,0,0,1,6.821,12.506Z"
+                                    transform="translate(5 3)" class="fill-neutral-500" />
+                            </svg>
+                            <span class="text-p2 text-neutral-500">Watchlist</span>
+                        </span>
+                        <span><i class="fa-solid fa-chevron-right fa-xs text-neutral-500"></i></span>
+                    </a>
+                </li>
+                <li class="flex">
+                    <a href="./portfolio.html" class="flex items-center justify-between w-full">
+                        <span class="flex items-center gap-3">
+                            <svg id="Icon_Trade" data-name="Icon Trade" xmlns="http://www.w3.org/2000/svg" width="24"
+                                height="24" viewBox="0 0 24 24">
+                                <rect id="Icon_Trade_Background_" data-name="Icon Trade (Background)" width="24"
+                                    height="24" fill="none" />
+                                <path id="Mask"
+                                    d="M17,18H3a3,3,0,0,1-3-3V7A3,3,0,0,1,3,4H6V2.5A2.5,2.5,0,0,1,8.5,0h3A2.5,2.5,0,0,1,14,2.5V4h3a3,3,0,0,1,3,3v8A3,3,0,0,1,17,18ZM15,6V16h2a1,1,0,0,0,1-1V7a1,1,0,0,0-1-1ZM7,6V16h6V6ZM3,6A1,1,0,0,0,2,7v8a1,1,0,0,0,1,1H5V6ZM8.5,2a.5.5,0,0,0-.5.5V4h4V2.5a.5.5,0,0,0-.5-.5Z"
+                                    transform="translate(2 3)" class="fill-neutral-500" />
+                            </svg>
+                            <span class="text-p2 text-neutral-500">Portfolio</span>
+                        </span>
+                        <span><i class="fa-solid fa-chevron-right fa-xs text-neutral-500"></i></span>
+                    </a>
+                </li>
+                <li class="flex">
+                    <a href="./trade.html" class="flex items-center justify-between w-full">
+                        <span class="flex items-center gap-3">
+                            <svg id="Icon_Trade" data-name="Icon Trade" xmlns="http://www.w3.org/2000/svg" width="24"
+                                height="24" viewBox="0 0 24 24">
+                                <rect id="Icon_Trade_Background_" data-name="Icon Trade (Background)" width="24"
+                                    height="24" fill="none" />
+                                <path id="Mask"
+                                    d="M7.111,22a1,1,0,0,1-.994-1.107L6.886,13.8H1a1,1,0,0,1-.831-1.556L8.058.445a1,1,0,0,1,1.825.663L9.114,8.2H15a1,1,0,0,1,.831,1.556l-7.889,11.8A1,1,0,0,1,7.111,22ZM7.455,4.944,2.871,11.8H8a1,1,0,0,1,.994,1.107l-.448,4.15L13.129,10.2H8a1,1,0,0,1-.994-1.107l.448-4.149Z"
+                                    transform="translate(4 1)" class="fill-neutral-500" />
+                            </svg>
+                            <span class="text-p2 text-neutral-500">Trade History</span>
+                        </span>
+                        <span><i class="fa-solid fa-chevron-right fa-xs text-neutral-500"></i></span>
+                    </a>
+                </li>
+                <li class="flex">
+                    <a href="./wallet-wallet-history.html" class="flex items-center justify-between w-full">
+                        <span class="flex items-center gap-3">
+                            <svg id="Icon_Trade" data-name="Icon Trade" xmlns="http://www.w3.org/2000/svg" width="24"
+                                height="24" viewBox="0 0 24 24">
+                                <rect id="Icon_Trade_Background_" data-name="Icon Trade (Background)" width="24"
+                                    height="24" fill="none" />
+                                <path id="icon"
+                                    d="M2,19.675a2,2,0,0,1-2-2H.027A1.985,1.985,0,0,1,0,17.349V5.429A2.008,2.008,0,0,1,1.451,3.506l12-3.429A2,2,0,0,1,16,2V13.92a2.01,2.01,0,0,1-1.451,1.923L8.138,17.675H18v-8H16v-2h2v-2H16v-2h2a2,2,0,0,1,2,2v12a2,2,0,0,1-2,2ZM2,5.429V17.349L14,13.92V2Zm8,2.246a1,1,0,1,1,1,1A1,1,0,0,1,10,7.675Z"
+                                    transform="translate(2 1.325)" class="fill-neutral-500" />
+                            </svg>
+                            <span class="text-p2 text-neutral-500">Wallet</span>
+                        </span>
+                        <span><i class="fa-solid fa-chevron-right fa-xs text-neutral-500"></i></span>
+                    </a>
+                </li>
+                <li class="flex">
+                    <a href="#" class="flex items-center justify-between w-full">
+                        <span class="flex items-center gap-3">
+                            <svg id="Icon_Trade" data-name="Icon Trade" xmlns="http://www.w3.org/2000/svg" width="24"
+                                height="24" viewBox="0 0 24 24">
+                                <rect id="Icon_Trade_Background_" data-name="Icon Trade (Background)" width="24"
+                                    height="24" fill="none" />
+                                <path id="Mask"
+                                    d="M15,18H3a3,3,0,0,1-3-3V3A3,3,0,0,1,3,0H15a1,1,0,0,1,1,1V17A1,1,0,0,1,15,18ZM3,14a1,1,0,0,0,0,2H14V14ZM3,2A1,1,0,0,0,2,3v9.185A2.932,2.932,0,0,1,3,12H14V2Z"
+                                    transform="translate(4 3)" class="fill-neutral-500" />
+                            </svg>
+                            <span class="text-p2 text-neutral-500">Learn</span>
+                        </span>
+                        <span><i class="fa-solid fa-chevron-right fa-xs text-neutral-500"></i></span>
+                    </a>
+                </li>
+                <hr class="dark:border-neutral-700">
+                <li class="flex flex-col">
+                    <div onclick="toggleAccordion(this)" class="flex items-center justify-between w-full">
+                        <span class="flex items-center gap-3">
+                            <svg id="Icon_Trade" data-name="Icon Trade" xmlns="http://www.w3.org/2000/svg" width="24"
+                                height="24" viewBox="0 0 24 24">
+                                <rect id="Icon_Trade_Background_" data-name="Icon Trade (Background)" width="24"
+                                    height="24" fill="none" />
+                                <path id="Mask"
+                                    d="M10,20A10,10,0,1,1,20,10,10.011,10.011,0,0,1,10,20ZM2.963,13.8a7.995,7.995,0,0,0,10.144,3.573,2.268,2.268,0,0,0-.514-1.081l-.038-.058c-.117-.178-.237-.361-.345-.549-.989-1.719-.255-2.946.392-4.028l.1-.168a2.934,2.934,0,0,0,.287-1.464,7.351,7.351,0,0,1,.138-1.372c.4-1.846,2.4-2.33,3.865-2.533A8.005,8.005,0,0,0,13.665,2.9a4.617,4.617,0,0,1-1.417,1.866,8.486,8.486,0,0,1-.907.6l-.008.005-.006,0a2.9,2.9,0,0,0-1.113.912,4.751,4.751,0,0,0-.373,2.344c0,1.379,0,3.1-1.715,4.438a4.955,4.955,0,0,1-3.137,1.012A8.268,8.268,0,0,1,2.963,13.8ZM17.746,8.038c-.937.112-2.5.3-2.668,1.042a5.74,5.74,0,0,0-.093,1.012V10.1a4.688,4.688,0,0,1-.565,2.408l-.1.173c-.631,1.056-.765,1.331-.376,2.007.092.162.2.319.3.472l.016.025a6.2,6.2,0,0,1,.63,1.134,7.916,7.916,0,0,0,2.858-8.28ZM10,2a7.965,7.965,0,0,0-7.867,9.416,7.741,7.741,0,0,0,2.836.667,3.036,3.036,0,0,0,1.924-.6c.9-.707.948-1.508.948-2.863a6.52,6.52,0,0,1,.617-3.3,4.521,4.521,0,0,1,1.849-1.674l.044-.026a6.207,6.207,0,0,0,.662-.433,2.636,2.636,0,0,0,.774-.98A7.949,7.949,0,0,0,10,2Z"
+                                    transform="translate(2 2)" class="fill-neutral-500 accordion-icon-mobile" />
+                            </svg>
+                            <span id="accordion-title-mobile" class="text-p2 text-neutral-500">English | USD</span>
+                        </span>
+                        <span class="chevron">
+                            <i class="fa-solid fa-chevron-right fa-xs text-neutral-500"></i>
+                        </span>
+                    </div>
+                    <!-- Accordion Content -->
+                    <div class="accordion-content hidden mt-6 bg-neutral-200 dark:bg-dark-main rounded-lg p-2">
+                        <!-- Tabs -->
+                        <div class="px-2">
+                            <div
+                                class="flex items-center gap-8 border-b border-b-neutral-300 dark:border-b-neutral-700">
+                                <span id="language-tab-btn-mobile" onclick="switchTabMobile('language')"
+                                    class="tab-btn-mobile text-neutral-600 dark:text-neutral-500 text-p3 pb-3">Language</span>
+                                <span id="currency-tab-btn-mobile" onclick="switchTabMobile('currency')"
+                                    class="tab-btn-mobile text-neutral-600 dark:text-neutral-500 text-p3 pb-3">Currency</span>
+                            </div>
+                        </div>
+                        <!-- Tab Content -->
+                        <div id="language-tab-mobile" class="tab-content-mobile h-[200px] overflow-auto hidden">
+                            <ul class="flex flex-col gap-2 px-1 py-2">
+                                <li class="text-neutral-600 dark:text-neutral-500 text-p3 p-2 rounded-[4px]">
+                                    English
+                                </li>
+                                <li class="text-neutral-600 dark:text-neutral-500 text-p3 p-2 rounded-[4px]">
+                                    English
+                                </li>
+                                <li class="text-neutral-600 dark:text-neutral-500 text-p3 p-2 rounded-[4px]">
+                                    English
+                                </li>
+                                <li class="text-neutral-600 dark:text-neutral-500 text-p3 p-2 rounded-[4px]">
+                                    English
+                                </li>
+                                <li class="text-neutral-600 dark:text-neutral-500 text-p3 p-2 rounded-[4px]">
+                                    English
+                                </li>
+                                <li class="text-neutral-600 dark:text-neutral-500 text-p3 p-2 rounded-[4px]">
+                                    English
+                                </li>
+                            </ul>
+                        </div>
+                        <div id="currency-tab-mobile" class="tab-content-mobile h-[200px] overflow-auto hidden">
+                            <ul class="flex flex-col gap-2 px-1 py-2">
+                                <li class="text-neutral-600 dark:text-neutral-500 text-p3 p-2 rounded-[4px]">
+                                    USD
+                                </li>
+                                <li class="text-neutral-600 dark:text-neutral-500 text-p3 p-2 rounded-[4px]">
+                                    USD
+                                </li>
+                                <li class="text-neutral-600 dark:text-neutral-500 text-p3 p-2 rounded-[4px]">
+                                    USD
+                                </li>
+                                <li class="text-neutral-600 dark:text-neutral-500 text-p3 p-2 rounded-[4px]">
+                                    USD
+                                </li>
+                                <li class="text-neutral-600 dark:text-neutral-500 text-p3 p-2 rounded-[4px]">
+                                    USD
+                                </li>
+                                <li class="text-neutral-600 dark:text-neutral-500 text-p3 p-2 rounded-[4px]">
+                                    USD
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </li>
+                <hr class="dark:border-neutral-700">
+                <div class="flex items-center w-full gap-6 sm:gap-16">
+                    <a href="./login.html"
+                        class="flex items-center justify-center w-1/2 bg-neutral-200 text-main dark:text-main rounded-lg px-8 py-3 text-p3 hover:opacity-80 effect">
+                        Sign in
+                    </a>
+                    <a href="./register.html"
+                        class="flex items-center justify-center w-1/2 bg-main text-white rounded-lg px-8 py-3 text-p3 hover:opacity-80 effect">
+                        Register
+                    </a>
+                </div>
+            </ul>
+            <!-- Footnote -->
+            <div class="flex flex-col items-center justify-between w-full gap-4 mt-8">
+                <!-- Copyright -->
+                <div class="flex flex-col items-center gap-4">
+                    <div class="text-neutral-600 dark:text-neutral-500 text-p3">&copy; 2022 dynamic | All rights
+                        reserved.</div>
+                    <div class="flex items-center gap-6">
+                        <a href="#" class="text-neutral-600 dark:text-neutral-500 text-p3 hover:underline">Privacy</a>
+                        <span class="text-neutral-600 dark:text-neutral-500 text-p3">|</span>
+                        <a href="#" class="text-neutral-600 dark:text-neutral-500 text-p3 hover:underline">Terms</a>
+                        <span class="text-neutral-600 dark:text-neutral-500 text-p3">|</span>
+                        <a href="#" class="text-neutral-600 dark:text-neutral-500 text-p3 hover:underline">Sitemap</a>
+                    </div>
+                </div>
+                <!-- Socials -->
+                <div class="flex items-center gap-6">
+                    <a href="#">
+                        <i
+                            class="fa-brands fa-facebook-f fa-lg text-neutral-600 dark:text-neutral-500 hover:text-blue-500 effect"></i>
+                    </a>
+                    <a href="#">
+                        <i
+                            class="fa-brands fa-instagram fa-lg text-neutral-600 dark:text-neutral-500 hover:text-pink-500 effect"></i>
+                    </a>
+                    <a href="#">
+                        <i
+                            class="fa-brands fa-youtube fa-lg text-neutral-600 dark:text-neutral-500 hover:text-red-500 effect"></i>
+                    </a>
+                    <a href="#">
+                        <i
+                            class="fa-brands fa-twitter fa-lg text-neutral-600 dark:text-neutral-500 hover:text-cyan-500 effect"></i>
+                    </a>
+                    <a href="#">
+                        <i
+                            class="fa-brands fa-linkedin fa-lg text-neutral-600 dark:text-neutral-500 hover:text-blue-500 effect"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
     </header>
 
     <!-- Banner -->
-    <section class="bg-[#F4F9FC] mx-8 2xl:mx-16 py-8 rounded-2xl">
-        <div class="flex items-center gap-4 wrapper">
-            <div class="flex flex-col items-start gap-12 w-1/2">
+    <section class="bg-[#F4F9FC] dark:bg-dark-backgroung mt-8 md:mt-2 mx-4 md:mx-8 2xl:mx-16 py-4 md:py-8 rounded-2xl">
+        <div class="flex flex-col-reverse lg:flex-row items-center gap-8 md:gap-4 wrapper">
+            <div class="flex flex-col items-start gap-12 w-full lg:w-1/2">
                 <div class="flex flex-col gap-8">
-                    <h1 class="flex flex-col text-d2 leading-[4rem] font-bold">
+                    <h1 class="flex flex-col text-h4s md:text-d2 md:leading-[4rem] font-bold">
                         <span>Buy & Sell</span>
-                        <span class="text-main">Crypto Instant</span>
+                        <span class="text-main dark:text-main">Crypto Instant</span>
                     </h1>
-                    <p class="text-p1 text-neutral-700">
+                    <p class="text-p3 md:text-p1 text-neutral-700 dark:text-neutral-500">
                         Join world’s biggest & tursted Exchange. Trade in Bitcoin, Ethereum,
                         <br>
                         Ripple and many more currencies.
                     </p>
                 </div>
-                <button class="bg-main rounded-lg px-16 py-4 text-p2 text-white hover:opacity-80 effect">
-                    start trading
+                <button
+                    class="w-full md:max-w-xs bg-main rounded-lg px-16 py-4 text-p2 text-white hover:opacity-80 effect">
+                    Start Trading
                 </button>
                 <img src="../public/logos.png" alt="logos">
             </div>
-            <div class="flex flex-col w-1/2">
+            <div class="flex flex-col w-full lg:w-1/2">
                 <img src="../public/banner.png" alt="logos">
             </div>
         </div>
@@ -184,19 +445,22 @@
     <!-- Top Market -->
     <section class="wrapper py-20">
         <div class="flex flex-col items-center">
-            <span class="text-main text-p1">Top Market</span>
-            <h2 class="text-h1 font-semibold">Get Various Crypto Coin</h2>
-            <div class="grid grid-cols-4 gap-5 mt-8">
+            <span class="text-main dark:text-main text-p2 md:text-p1">Top Market</span>
+            <h2 class="text-h4s md:text-h1 font-semibold">Get Various Crypto Coin</h2>
+            <div id="slider" style="scrollbar-width: none;"
+                class="flex items-center w-full overflow-x-auto md:overflow-visible md:grid grid-cols-2 xl:grid-cols-4 gap-5 mt-8">
                 <!-- Crypto Card -->
-                <div class="flex flex-col gap-6 p-4 rounded-xl border hover:shadow-lg cursor-pointer effect">
+                <div
+                    class="flex flex-col gap-6 p-4 rounded-xl border dark:border-neutral-800 hover:shadow-lg cursor-pointer effect">
                     <div class="flex items-center gap-4">
                         <img src="../public/Bitcoin.png" alt="Bitcoin">
                         <span class="text-h5">Bitcoin</span>
-                        <span class="bg-neutral-200 px-6 py-1 rounded-md text-p2 text-primary-500">BTC</span>
+                        <span
+                            class="bg-neutral-200 dark:bg-neutral-800 px-6 py-1 rounded-md text-p2 text-primary-500">BTC</span>
                     </div>
                     <div class="flex items-center gap-6">
                         <span class="text-h4">$38,447.54</span>
-                        <span class="flex items-center gap-1 text-green-600">
+                        <span class="flex items-center gap-1 text-green-600 dark:text-green-600">
                             +2%
                             <svg id="Icon" xmlns="http://www.w3.org/2000/svg" width="20" height="20"
                                 viewBox="0 0 20 20">
@@ -213,15 +477,17 @@
                     </div>
                 </div>
                 <!-- Crypto Card -->
-                <div class="flex flex-col gap-6 p-4 rounded-xl border hover:shadow-lg cursor-pointer effect">
+                <div
+                    class="flex flex-col gap-6 p-4 rounded-xl border dark:border-neutral-800 hover:shadow-lg cursor-pointer effect">
                     <div class="flex items-center gap-4">
                         <img src="../public/Binance.png" alt="Bitcoin">
                         <span class="text-h5">Binance</span>
-                        <span class="bg-neutral-200 px-6 py-1 rounded-md text-p2 text-primary-500">BNB</span>
+                        <span
+                            class="bg-neutral-200 dark:bg-neutral-800 px-6 py-1 rounded-md text-p2 text-primary-500">BNB</span>
                     </div>
                     <div class="flex items-center gap-6">
                         <span class="text-h4">$38,447.54</span>
-                        <span class="flex items-center gap-1 text-green-600">
+                        <span class="flex items-center gap-1 text-green-600 dark:text-green-600">
                             +2%
                             <svg id="Icon" xmlns="http://www.w3.org/2000/svg" width="20" height="20"
                                 viewBox="0 0 20 20">
@@ -238,15 +504,17 @@
                     </div>
                 </div>
                 <!-- Crypto Card -->
-                <div class="flex flex-col gap-6 p-4 rounded-xl border hover:shadow-lg cursor-pointer effect">
+                <div
+                    class="flex flex-col gap-6 p-4 rounded-xl border dark:border-neutral-800 hover:shadow-lg cursor-pointer effect">
                     <div class="flex items-center gap-4">
                         <img src="../public/Ethereum.png" alt="Bitcoin">
                         <span class="text-h5">Ethereum</span>
-                        <span class="bg-neutral-200 px-6 py-1 rounded-md text-p2 text-primary-500">ETH</span>
+                        <span
+                            class="bg-neutral-200 dark:bg-neutral-800 px-6 py-1 rounded-md text-p2 text-primary-500">ETH</span>
                     </div>
                     <div class="flex items-center gap-6">
                         <span class="text-h4">$38,447.54</span>
-                        <span class="flex items-center gap-1 text-red-600">
+                        <span class="flex items-center gap-1 text-red-600 dark:text-red-600">
                             +2%
                             <svg id="Icon" xmlns="http://www.w3.org/2000/svg" width="20" height="20"
                                 viewBox="0 0 20 20">
@@ -263,15 +531,17 @@
                     </div>
                 </div>
                 <!-- Crypto Card -->
-                <div class="flex flex-col gap-6 p-4 rounded-xl border hover:shadow-lg cursor-pointer effect">
+                <div
+                    class="flex flex-col gap-6 p-4 rounded-xl border dark:border-neutral-800 hover:shadow-lg cursor-pointer effect">
                     <div class="flex items-center gap-4">
                         <img src="../public/Xrp.png" alt="Bitcoin">
                         <span class="text-h5">XRP</span>
-                        <span class="bg-neutral-200 px-6 py-1 rounded-md text-p2 text-primary-500">XRP</span>
+                        <span
+                            class="bg-neutral-200 dark:bg-neutral-800 px-6 py-1 rounded-md text-p2 text-primary-500">XRP</span>
                     </div>
                     <div class="flex items-center gap-6">
                         <span class="text-h4">$38,447.54</span>
-                        <span class="flex items-center gap-1 text-green-600">
+                        <span class="flex items-center gap-1 text-green-600 dark:text-green-600">
                             +2%
                             <svg id="Icon" xmlns="http://www.w3.org/2000/svg" width="20" height="20"
                                 viewBox="0 0 20 20">
@@ -288,102 +558,136 @@
                     </div>
                 </div>
             </div>
+            <!-- Dots -->
+            <div class="flex md:hidden justify-center gap-2 mt-8">
+                <button class="dot w-2 h-2 rounded-full bg-gray-300" data-index="0"></button>
+                <button class="dot w-2 h-2 rounded-full bg-gray-300" data-index="1"></button>
+                <button class="dot w-2 h-2 rounded-full bg-gray-300" data-index="2"></button>
+                <button class="dot w-2 h-2 rounded-full bg-gray-300" data-index="3"></button>
+            </div>
         </div>
     </section>
 
     <!-- Create Profile -->
-    <section class="bg-neutral-100 py-20 relative">
+    <section class="bg-neutral-100 dark:bg-dark-backgroung py-10 md:py-20 relative">
         <!-- Background Image -->
         <div
-            class="absolute -left-48 -top-20 2xl:left-0 2xl:-top-20 bg-[url('../public/ellipse.png')] bg-no-repeat w-full h-full opacity-80 z-10">
+            class="hidden lg:block absolute -left-48 -top-20 2xl:left-0 2xl:-top-20 bg-[url('../public/ellipse.png')] bg-no-repeat w-full h-full opacity-80 z-10">
         </div>
-        <div class="flex items-center gap-8 wrapper">
-            <div class="flex flex-col items-start gap-6 w-1/2 z-20">
-                <span class="text-main text-p1">Create Profile</span>
-                <h2 class="text-h1 font-semibold">Easy Way to Get Started</h2>
-                <p class="text-neutral-700">
+        <div class="flex flex-col lg:flex-row items-center gap-8 wrapper">
+            <div class="flex flex-col items-center lg:items-start gap-6 w-full lg:w-1/2 z-20">
+                <span class="text-main dark:text-main text-p2 md:text-p1">Create Profile</span>
+                <h2 class="text-h4s md:text-h1 font-semibold">Easy Way to Get Started</h2>
+                <p class="text-p3 md:text-p2 text-neutral-700 dark:text-neutral-500 text-center lg:text-left">
                     Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the
                     industry's standard dummy text ever since the 1500s, when an unknown
                 </p>
-                <button class="pt-8 space-x-1">
-                    <span class="text-main text-p1 hover:border-b hover:border-b-main pb-1 effect">Start
+                <button class="hidden md:block pt-8 space-x-1">
+                    <span class="text-main dark:text-main text-p1 hover:border-b hover:border-b-main pb-1 effect">Start
                         Trading
                     </span>
                     <span class="bg-white rounded-full">
-                        <i class="fa fa-chevron-right fa-2xs text-main px-2 py-5"></i>
+                        <i class="fa fa-chevron-right fa-2xs text-main dark:text-main px-2 py-5"></i>
                     </span>
                 </button>
             </div>
-            <div class="flex flex-col gap-8 w-1/2 relative">
+            <div class="flex flex-col items-center gap-5 md:gap-8 w-full lg:w-1/2 relative">
                 <!-- Background Image -->
                 <div
-                    class="absolute left-0 top-0 2xl:top-10 bg-[url('../public/ellipse.png')] bg-cover bg-center w-full h-full opacity-60 z-10">
+                    class="hidden lg:block absolute left-0 top-0 2xl:top-10 bg-[url('../public/ellipse.png')] bg-cover bg-center w-full h-full opacity-60 z-10">
                 </div>
-                <div class="flex items-center gap-5">
+                <div class="flex flex-col md:flex-row md:items-center gap-5">
                     <!-- Service Card -->
-                    <div class="flex flex-col items-center gap-4 bg-white rounded-xl py-6 px-10 z-20">
+                    <div
+                        class="flex flex-row md:flex-col items-center gap-12 md:gap-4 bg-white dark:bg-dark-main rounded-xl py-6 px-4 xl:px-10 z-20">
                         <img src="../public/add-user.png" alt="add-user" width="40" height="40">
-                        <span class="text-h6 font-semibold">Create an Account</span>
-                        <p class="text-p2 text-neutral-700 text-center">
-                            Sign up with your email and
-                            <br>
-                            mobile in just 5 minutes
-                        </p>
+                        <div class="flex flex-col gap-1">
+                            <span class="text-h6s md:text-h6 font-semibold md:text-center">Create an Account</span>
+                            <p class="text-caption md:text-p2 text-neutral-700 dark:text-neutral-500 md:text-center">
+                                Sign up with your email and
+                                <br>
+                                mobile in just 5 minutes
+                            </p>
+                        </div>
                     </div>
                     <!-- Service Card -->
-                    <div class="flex flex-col items-center gap-4 bg-white rounded-xl py-6 px-10 z-20">
+                    <div
+                        class="flex flex-row md:flex-col items-center gap-12 md:gap-4 bg-white dark:bg-dark-main rounded-xl py-6 px-4 xl:px-10 z-20">
                         <img src="../public/credit-card.png" alt="add-user" width="40" height="40">
-                        <span class="text-h6 font-semibold">Verify Bank Account</span>
-                        <p class="text-p2 text-neutral-700 text-center">
-                            Verify Your Bank Account
-                            <br>
-                            in Easy Way
-                        </p>
+                        <div class="flex flex-col gap-1">
+                            <span class="text-h6s md:text-h6 font-semibold md:text-center">Verify Bank Account</span>
+                            <p class="text-caption md:text-p2 text-neutral-700 dark:text-neutral-500 md:text-center">
+                                Verify Your Bank Account
+                                <br>
+                                in Easy Way
+                            </p>
+                        </div>
                     </div>
                 </div>
-                <div class="flex items-center gap-5 pl-10">
+                <div class="flex flex-col md:flex-row md:items-center gap-5 md:pl-2 lg:pl-10">
                     <!-- Service Card -->
-                    <div class="flex flex-col items-center gap-4 bg-white rounded-xl py-6 px-10 z-20">
-                        <img src="../public/add-user.png" alt="add-user" width="40" height="40">
-                        <span class="text-h6 font-semibold">Add Funds to Wallet</span>
-                        <p class="text-p2 text-neutral-700 text-center">
-                            Quickly add money to your
-                            <br>
-                            investment wallet
-                        </p>
+                    <div
+                        class="flex flex-row md:flex-col items-center gap-12 md:gap-4 bg-white dark:bg-dark-main rounded-xl py-6 px-4 xl:px-10 z-20">
+                        <img src="../public/wallet.png" alt="add-user" width="40" height="40">
+                        <div class="flex flex-col gap-1">
+                            <span class="text-h6s md:text-h6 font-semibold md:text-center">Add Funds to Wallet</span>
+                            <p class="text-caption md:text-p2 text-neutral-700 dark:text-neutral-500 md:text-center">
+                                Quickly add money to your
+                                <br>
+                                investment wallet
+                            </p>
+                        </div>
                     </div>
                     <!-- Service Card -->
-                    <div class="flex flex-col items-center gap-4 bg-white rounded-xl py-6 px-10 z-20">
-                        <img src="../public/credit-card.png" alt="add-user" width="40" height="40">
-                        <span class="text-h6 font-semibold">Start Tranding Instantly</span>
-                        <p class="text-p2 text-neutral-700 text-center">
-                            Buy & Sell a variety of top
-                            <br>
-                            coins at the best prices
-                        </p>
+                    <div
+                        class="flex flex-row md:flex-col items-center gap-12 md:gap-4 bg-white dark:bg-dark-main rounded-xl py-6 px-4 xl:px-10 z-20">
+                        <img src="../public/diagram.png" alt="add-user" width="40" height="40">
+                        <div class="flex flex-col gap-1">
+                            <span class="text-h6s md:text-h6 font-semibold md:text-center">Start Tranding
+                                Instantly</span>
+                            <p class="text-caption md:text-p2 text-neutral-700 dark:text-neutral-500 md:text-center">
+                                Buy & Sell a variety of top
+                                <br>
+                                coins at the best prices
+                            </p>
+                        </div>
                     </div>
                 </div>
             </div>
+            <button class="md:hidden pt-8 space-x-1">
+                <span class="text-main dark:text-main text-p1 hover:border-b hover:border-b-main pb-1 effect">
+                    Start Trading
+                </span>
+                <span class="bg-white rounded-full">
+                    <i class="fa fa-chevron-right fa-2xs text-main dark:text-main px-2 py-5"></i>
+                </span>
+            </button>
         </div>
     </section>
 
     <!-- Download App -->
-    <section class="flex items-center gap-16 wrapper py-20">
-        <div class="flex flex-col w-1/3">
+    <section class="flex flex-col lg:flex-row items-center gap-8 md:gap-16 wrapper py-10 md:py-20">
+        <div class="hidden md:flex flex-col w-full md:w-1/3">
             <img src="../public/app.png" alt="app">
         </div>
-        <div class="flex flex-col items-start gap-8 w-2/3">
-            <span class="text-main text-p1">Download the app</span>
-            <h2 class="text-h1 font-semibold">Trade Anywhere, Anytime</h2>
-            <p class="text-p1 text-neutral-700 w-10/12">
-                Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the
-                industry's standard dummy text ever since the 1500s, when an unknown
-            </p>
-            <div class="flex items-center gap-5">
+        <div class="flex flex-col items-center md:items-start gap-8 w-full lg:w-2/3">
+            <div class="flex flex-col items-center md:items-start gap-4">
+                <span class="text-main dark:text-main text-p2 md:text-p1">Download the app</span>
+                <h2 class="text-h4s md:text-h1 font-semibold">Trade Anywhere, Anytime</h2>
+                <p
+                    class="text-p2 md:text-p1 text-neutral-700 dark:text-neutral-500 text-center md:text-left w-full lg:w-10/12">
+                    Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the
+                    industry's standard dummy text ever since the 1500s, when an unknown
+                </p>
+            </div>
+            <div class="flex md:hidden flex-col w-full">
+                <img src="../public/app.png" alt="app">
+            </div>
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-5">
                 <!-- OS Card -->
                 <a href="#">
                     <div
-                        class="flex flex-col gap-6 px-8 py-6 items-center border-r border-neutral-400 hover:border-none hover:bg-primary-50 hover:rounded-xl effect">
+                        class="flex flex-col gap-6 px-3 md:px-8 py-3 md:py-6 items-center border-r border-neutral-400 hover:border-none dark:bg-neutral-800 hover:bg-primary-50 hover:dark:bg-neutral-700 rounded-xl hover:rounded-xl effect">
                         <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="35"
                             height="35" viewBox="0 0 35 35">
                             <defs>
@@ -399,30 +703,32 @@
                                     <g id="Component_9-2" data-name="Component 9" clip-path="url(#clip-path)">
                                         <path id="Vector"
                                             d="M.636,1.71A.729.729,0,0,0,0,2.439V12.648a.729.729,0,0,0,.729.729H13.854a.729.729,0,0,0,.729-.729V.727A.729.729,0,0,0,14.335.18a.746.746,0,0,0-.575-.175Z"
-                                            transform="translate(0 3.396)" fill="#2b3144" />
+                                            transform="translate(0 3.396)" fill="#2b3144" class="dark:fill-white" />
                                         <path id="Vector-2" data-name="Vector"
                                             d="M18.136.005.636,2.287A.729.729,0,0,0,0,3.017v12.3a.729.729,0,0,0,.729.729h17.5a.729.729,0,0,0,.729-.729V.734a.74.74,0,0,0-.823-.729Z"
-                                            transform="translate(16.041 0.727)" fill="#2b3144" />
+                                            transform="translate(16.041 0.727)" fill="#2b3144"
+                                            class="dark:fill-white" />
                                         <path id="Vector-3" data-name="Vector"
                                             d="M.729,0A.729.729,0,0,0,0,.729V10.938a.729.729,0,0,0,.636.729l13.125,1.712a.686.686,0,0,0,.093,0,.729.729,0,0,0,.729-.729V.729A.729.729,0,0,0,13.854,0Z"
-                                            transform="translate(0 18.23)" fill="#2b3144" />
+                                            transform="translate(0 18.23)" fill="#2b3144" class="dark:fill-white" />
                                         <path id="Vector-4" data-name="Vector"
                                             d="M.729,0A.729.729,0,0,0,0,.729v12.3a.729.729,0,0,0,.636.729l17.5,2.282a.686.686,0,0,0,.093,0,.729.729,0,0,0,.729-.729V.729A.729.729,0,0,0,18.229,0Z"
-                                            transform="translate(16.041 18.23)" fill="#2b3144" />
+                                            transform="translate(16.041 18.23)" fill="#2b3144"
+                                            class="dark:fill-white" />
                                     </g>
                                 </g>
                             </g>
                         </svg>
                         <div class="flex flex-col items-center gap-1">
-                            <span class="text-h6">Windows</span>
-                            <span class="text-p3 text-neutral-500">Download PC-Client</span>
+                            <span class="text-h6s md:text-h6">Windows</span>
+                            <span class="text-caption text-neutral-500 dark:text-neutral-500">Download PC-Client</span>
                         </div>
                     </div>
                 </a>
                 <!-- OS Card -->
                 <a href="#">
                     <div
-                        class="flex flex-col gap-6 px-8 py-6 items-center border-r border-neutral-400 hover:border-none hover:bg-primary-50 hover:rounded-xl effect">
+                        class="flex flex-col gap-6 px-3 md:px-8 py-3 md:py-6 items-center border-r border-neutral-400 hover:border-none dark:bg-neutral-800 hover:bg-primary-50 hover:dark:bg-neutral-700 rounded-xl hover:rounded-xl effect">
                         <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="35"
                             height="37" viewBox="0 0 35 37">
                             <defs>
@@ -439,17 +745,19 @@
                                         <g id="Group" transform="translate(0 0.002)">
                                             <path id="Vector"
                                                 d="M7.069,0A7.277,7.277,0,0,0,0,7.473V29.527A7.275,7.275,0,0,0,7.069,37H27.931A7.279,7.279,0,0,0,35,29.522V7.473A7.283,7.283,0,0,0,27.927,0H7.069Z"
-                                                fill="#2b3144" />
+                                                fill="#2b3144" class="dark:fill-white" />
                                             <g id="Group-2" data-name="Group" transform="translate(4.663 6.355)">
                                                 <path id="Vector-2" data-name="Vector"
                                                     d="M13.395.849a1.548,1.548,0,0,1,2.178-.62,1.739,1.739,0,0,1,.586,2.3l-6.829,12.5h4.939c1.6,0,2.5,1.989,1.8,3.367H1.592a1.686,1.686,0,0,1,0-3.367h4.06l5.2-9.522L9.226,2.528a1.741,1.741,0,0,1,.586-2.3,1.55,1.55,0,0,1,2.178.62l.7,1.3Z"
-                                                    fill="#fff" />
+                                                    fill="#fff" class="dark:fill-dark-main" />
                                                 <path id="Vector-3" data-name="Vector"
                                                     d="M2.977,3.943A1.548,1.548,0,0,1,.8,4.563a1.739,1.739,0,0,1-.586-2.3L1.35.179a2.64,2.64,0,0,1,3.158.957h0Z"
-                                                    transform="translate(2.036 18.992)" fill="#fff" />
+                                                    transform="translate(2.036 18.992)" fill="#fff"
+                                                    class="dark:fill-dark-main" />
                                                 <path id="Vector-4" data-name="Vector"
                                                     d="M10.055,8.578a1.686,1.686,0,0,1,0,3.367h-2.3l1.553,2.849a1.741,1.741,0,0,1-.586,2.3,1.55,1.55,0,0,1-2.178-.62Q2.619,9.283.659,5.7A4.855,4.855,0,0,1,1.219,0Q2.787,2.844,5.913,8.578h4.143Z"
-                                                    transform="translate(13.816 6.459)" fill="#fff" />
+                                                    transform="translate(13.816 6.459)" fill="#fff"
+                                                    class="dark:fill-dark-main" />
                                             </g>
                                         </g>
                                     </g>
@@ -457,41 +765,41 @@
                             </g>
                         </svg>
                         <div class="flex flex-col items-center gap-1">
-                            <span class="text-h6">Windows</span>
-                            <span class="text-p3 text-neutral-500">Download on the</span>
+                            <span class="text-h6s md:text-h6">Windows</span>
+                            <span class="text-caption text-neutral-500 dark:text-neutral-500">Download on the</span>
                         </div>
                     </div>
                 </a>
                 <!-- OS Card -->
                 <a href="#">
                     <div
-                        class="flex flex-col gap-6 px-8 py-6 items-center border-r border-neutral-400 hover:border-none hover:bg-primary-50 hover:rounded-xl effect">
+                        class="flex flex-col gap-6 px-3 md:px-8 py-3 md:py-6 items-center border-r border-neutral-400 hover:border-none dark:bg-neutral-800 hover:bg-primary-50 hover:dark:bg-neutral-700 rounded-xl hover:rounded-xl effect">
                         <svg xmlns="http://www.w3.org/2000/svg" width="35" height="37" viewBox="0 0 35 37">
                             <g id="Icon" transform="translate(-56.5)">
                                 <g id="Component_9" data-name="Component 9" transform="translate(56.5)">
                                     <g id="XMLID_37_" transform="translate(0 8.771)">
                                         <path id="Vector"
                                             d="M4.491,23.49c2,2.5,4.022,4.739,6.793,4.739l.159,0A9.423,9.423,0,0,0,14.6,27.5a9.746,9.746,0,0,1,3.736-.765,9.187,9.187,0,0,1,3.555.739,8.487,8.487,0,0,0,3.405.706c3.122-.05,5.039-2.469,6.729-4.6a19.3,19.3,0,0,0,2.949-5.218l.012-.033a.29.29,0,0,0-.187-.371l-.025-.009c-.55-.195-5.373-2.043-5.423-7.08C29.3,6.772,32.964,4.606,33.7,4.213l.034-.019A.3.3,0,0,0,33.888,4a.266.266,0,0,0-.055-.232A10.725,10.725,0,0,0,25.866.029C25.641.01,25.406,0,25.172,0a15.689,15.689,0,0,0-5,1.078,9.035,9.035,0,0,1-2.394.619A8.831,8.831,0,0,1,15.3,1.072,13.546,13.546,0,0,0,10.933.114h-.111A11.055,11.055,0,0,0,1.806,4.83C-1.814,10.258.487,18.5,4.491,23.49Z"
-                                            fill="#2b3144" />
+                                            fill="#2b3144" class="dark:fill-white" />
                                     </g>
                                     <g id="XMLID_34_" transform="translate(17.035)">
                                         <path id="Vector-2" data-name="Vector"
                                             d="M2.376,2.862C1.027,4.21-.291,6.462.056,8.73a.335.335,0,0,0,.322.263q.225.015.454.015a8.77,8.77,0,0,0,6.093-2.7A7.625,7.625,0,0,0,9.195.27.34.34,0,0,0,8.831,0,10.374,10.374,0,0,0,2.376,2.862Z"
-                                            fill="#2b3144" />
+                                            fill="#2b3144" class="dark:fill-white" />
                                     </g>
                                 </g>
                             </g>
                         </svg>
                         <div class="flex flex-col items-center gap-1">
-                            <span class="text-h6">Mac OS</span>
-                            <span class="text-p3 text-neutral-500">Download for the</span>
+                            <span class="text-h6s md:text-h6">Mac OS</span>
+                            <span class="text-caption text-neutral-500 dark:text-neutral-500">Download for the</span>
                         </div>
                     </div>
                 </a>
                 <!-- OS Card -->
                 <a href="#">
                     <div
-                        class="flex flex-col gap-6 px-8 py-6 items-center border-r border-neutral-400 hover:border-none hover:bg-primary-50 hover:rounded-xl effect">
+                        class="flex flex-col gap-6 px-3 md:px-8 py-3 md:py-6 items-center border-r border-neutral-400 hover:border-none dark:bg-neutral-800 hover:bg-primary-50 hover:dark:bg-neutral-700 rounded-xl hover:rounded-xl effect">
                         <svg xmlns="http://www.w3.org/2000/svg" width="35" height="37" viewBox="0 0 35 37">
                             <g id="Icon" transform="translate(-56.5)">
                                 <g id="Component_9" data-name="Component 9" transform="translate(56.5)">
@@ -499,33 +807,35 @@
                                         <g id="Group-2" data-name="Group">
                                             <path id="Vector"
                                                 d="M5.827,0,0,5.358l5.325,4.9L12.913,6.09a1.241,1.241,0,0,0,0-2.2Z"
-                                                fill="#2b3144" />
+                                                fill="#2b3144" class="dark:fill-white" />
                                         </g>
                                     </g>
                                     <g id="Group-3" data-name="Group" transform="translate(1.159)">
                                         <g id="Group-4" data-name="Group">
                                             <path id="Vector-2" data-name="Vector"
-                                                d="M17.088,8.33,0,0,19.3,17.747l5.585-5.136Z" fill="#2b3144" />
+                                                d="M17.088,8.33,0,0,19.3,17.747l5.585-5.136Z" fill="#2b3144"
+                                                class="dark:fill-white" />
                                         </g>
                                     </g>
                                     <g id="Group-5" data-name="Group" transform="translate(1.442 19.514)">
                                         <g id="Group-6" data-name="Group">
                                             <path id="Vector-3" data-name="Vector"
-                                                d="M16.835,8.665,24.1,4.674,19.018,0,0,17.486Z" fill="#2b3144" />
+                                                d="M16.835,8.665,24.1,4.674,19.018,0,0,17.486Z" fill="#2b3144"
+                                                class="dark:fill-white" />
                                         </g>
                                     </g>
                                     <g id="Group-7" data-name="Group" transform="translate(0 0.719)">
                                         <g id="Group-8" data-name="Group">
                                             <path id="Vector-4" data-name="Vector" d="M0,35.841l19.5-17.93L.017,0Z"
-                                                fill="#2b3144" />
+                                                fill="#2b3144" class="dark:fill-white" />
                                         </g>
                                     </g>
                                 </g>
                             </g>
                         </svg>
                         <div class="flex flex-col items-center gap-1">
-                            <span class="text-h6">Google Play</span>
-                            <span class="text-p3 text-neutral-500">Get it on</span>
+                            <span class="text-h6s md:text-h6">Google Play</span>
+                            <span class="text-caption text-neutral-500 dark:text-neutral-500">Get it on</span>
                         </div>
                     </div>
                 </a>
@@ -534,107 +844,131 @@
     </section>
 
     <!-- Benefits -->
-    <section class="flex flex-col items-center wrapper py-20">
-        <span class="text-main text-p1">Benefits</span>
-        <h2 class="text-h1 font-semibold">Our Best Service</h2>
-        <p class="text-p1 text-center text-neutral-700 mt-5">
+    <section class="flex flex-col items-center wrapper py-10 md:py-20">
+        <span class="text-main dark:text-main text-p2 md:text-p1">Benefits</span>
+        <h2 class="text-h4s md:text-h1 font-semibold">Our Best Service</h2>
+        <p class="text-p2 md:text-p1 text-center text-neutral-700 dark:text-neutral-500 mt-5">
             Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the
             <br>
             industry's standard dummy text ever since the 1500s, when an unknown
         </p>
-        <div class="grid grid-cols-4 gap-5 mt-10">
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-5 mt-10">
             <!-- Service Card -->
-            <div class="flex flex-col items-start gap-4 p-5 border border-neutral-400 rounded-lg">
-                <figure class="bg-primary-50 p-2 rounded-xl w-16 h-16">
+            <div
+                class="flex flex-row md:flex-col items-center md:items-start gap-8 md:gap-4 p-5 border dark:border-neutral-700 border-neutral-400 rounded-lg">
+                <figure class="flex items-center justify-center bg-primary-50 p-4 md:p-2 rounded-xl">
                     <img src="../public/safety.png" alt="icon" width="50" height="50">
                 </figure>
-                <h3 class="text-h6 font-medium">Safety Comes First</h3>
-                <p class="text-p2 text-neutral-700">
-                    Lorem ipsum dolor sit amet, dui consectetur adipiscing elit. Nibh aenean dui aliquet amet.
-                </p>
+                <div class="flex flex-col gap-2">
+                    <h3 class="text-h6s md:text-h6 font-medium">Safety Comes First</h3>
+                    <p class="text-p3 md:text-p2 text-neutral-700 dark:text-neutral-500">
+                        Lorem ipsum dolor sit amet, dui consectetur adipiscing elit. Nibh aenean dui aliquet amet.
+                    </p>
+                </div>
             </div>
             <!-- Service Card -->
-            <div class="flex flex-col items-start gap-4 p-5 border border-neutral-400 rounded-lg">
-                <figure class="bg-primary-50 p-2 rounded-xl w-16 h-16">
+            <div
+                class="flex flex-row md:flex-col items-center md:items-start gap-8 md:gap-4 p-5 border dark:border-neutral-700 border-neutral-400 rounded-lg">
+                <figure class="flex items-center justify-center bg-primary-50 p-4 md:p-2 rounded-xl">
                     <img src="../public/deposit.png" alt="icon" width="50" height="50">
                 </figure>
-                <h3 class="text-h6 font-medium">Easy Deposit & Withdrawls</h3>
-                <p class="text-p2 text-neutral-700">
-                    Lorem ipsum dolor sit amet, dui consectetur adipiscing elit. Nibh aenean dui aliquet amet.
-                </p>
+                <div class="flex flex-col gap-2">
+                    <h3 class="text-h6s md:text-h6 font-medium">Easy Deposit & Withdrawls</h3>
+                    <p class="text-p3 md:text-p2 text-neutral-700 dark:text-neutral-500">
+                        Lorem ipsum dolor sit amet, dui consectetur adipiscing elit. Nibh aenean dui aliquet amet.
+                    </p>
+                </div>
             </div>
             <!-- Service Card -->
-            <div class="flex flex-col items-start gap-4 p-5 border border-neutral-400 rounded-lg">
-                <figure class="bg-primary-50 p-2 rounded-xl w-16 h-16">
+            <div
+                class="flex flex-row md:flex-col items-center md:items-start gap-8 md:gap-4 p-5 border dark:border-neutral-700 border-neutral-400 rounded-lg">
+                <figure class="flex items-center justify-center bg-primary-50 p-4 md:p-2 rounded-xl">
                     <img src="../public/low-cost.png" alt="icon" width="50" height="50">
                 </figure>
-                <h3 class="text-h6 font-medium">Low Charges</h3>
-                <p class="text-p2 text-neutral-700">
-                    Lorem ipsum dolor sit amet, dui consectetur adipiscing elit. Nibh aenean dui aliquet amet.
-                </p>
+                <div class="flex flex-col gap-2">
+                    <h3 class="text-h6s md:text-h6 font-medium">Low Charges</h3>
+                    <p class="text-p3 md:text-p2 text-neutral-700 dark:text-neutral-500">
+                        Lorem ipsum dolor sit amet, dui consectetur adipiscing elit. Nibh aenean dui aliquet amet.
+                    </p>
+                </div>
             </div>
             <!-- Service Card -->
-            <div class="flex flex-col items-start gap-4 p-5 border border-neutral-400 rounded-lg">
-                <figure class="bg-primary-50 p-2 rounded-xl w-16 h-16">
+            <div
+                class="flex flex-row md:flex-col items-center md:items-start gap-8 md:gap-4 p-5 border dark:border-neutral-700 border-neutral-400 rounded-lg">
+                <figure class="flex items-center justify-center bg-primary-50 p-4 md:p-2 rounded-xl">
                     <img src="../public/gift.png" alt="icon" width="50" height="50">
                 </figure>
-                <h3 class="text-h6 font-medium">Bonus & Refferal</h3>
-                <p class="text-p2 text-neutral-700">
-                    Lorem ipsum dolor sit amet, dui consectetur adipiscing elit. Nibh aenean dui aliquet amet.
-                </p>
+                <div class="flex flex-col gap-2">
+                    <h3 class="text-h6s md:text-h6 font-medium">Bonus & Refferal</h3>
+                    <p class="text-p3 md:text-p2 text-neutral-700 dark:text-neutral-500">
+                        Lorem ipsum dolor sit amet, dui consectetur adipiscing elit. Nibh aenean dui aliquet amet.
+                    </p>
+                </div>
             </div>
             <!-- Service Card -->
-            <div class="flex flex-col items-start gap-4 p-5 border border-neutral-400 rounded-lg">
-                <figure class="bg-primary-50 p-2 rounded-xl w-16 h-16">
+            <div
+                class="flex flex-row md:flex-col items-center md:items-start gap-8 md:gap-4 p-5 border dark:border-neutral-700 border-neutral-400 rounded-lg">
+                <figure class="flex items-center justify-center bg-primary-50 p-4 md:p-2 rounded-xl">
                     <img src="../public/stopwatch.png" alt="icon" width="50" height="50">
                 </figure>
-                <h3 class="text-h6 font-medium">Fast Transactions</h3>
-                <p class="text-p2 text-neutral-700">
-                    Lorem ipsum dolor sit amet, dui consectetur adipiscing elit. Nibh aenean dui aliquet amet.
-                </p>
+                <div class="flex flex-col gap-2">
+                    <h3 class="text-h6s md:text-h6 font-medium">Fast Transactions</h3>
+                    <p class="text-p3 md:text-p2 text-neutral-700 dark:text-neutral-500">
+                        Lorem ipsum dolor sit amet, dui consectetur adipiscing elit. Nibh aenean dui aliquet amet.
+                    </p>
+                </div>
             </div>
             <!-- Service Card -->
-            <div class="flex flex-col items-start gap-4 p-5 border border-neutral-400 rounded-lg">
-                <figure class="bg-primary-50 p-2 rounded-xl w-16 h-16">
+            <div
+                class="flex flex-row md:flex-col items-center md:items-start gap-8 md:gap-4 p-5 border dark:border-neutral-700 border-neutral-400 rounded-lg">
+                <figure class="flex items-center justify-center bg-primary-50 p-4 md:p-2 rounded-xl">
                     <img src="../public/data-encryption.png" alt="icon" width="50" height="50">
                 </figure>
-                <h3 class="text-h6 font-medium">Deep Encryption </h3>
-                <p class="text-p2 text-neutral-700">
-                    Lorem ipsum dolor sit amet, dui consectetur adipiscing elit. Nibh aenean dui aliquet amet.
-                </p>
+                <div class="flex flex-col gap-2">
+                    <h3 class="text-h6s md:text-h6 font-medium">Deep Encryption </h3>
+                    <p class="text-p3 md:text-p2 text-neutral-700 dark:text-neutral-500">
+                        Lorem ipsum dolor sit amet, dui consectetur adipiscing elit. Nibh aenean dui aliquet amet.
+                    </p>
+                </div>
             </div>
             <!-- Service Card -->
-            <div class="flex flex-col items-start gap-4 p-5 border border-neutral-400 rounded-lg">
-                <figure class="bg-primary-50 p-2 rounded-xl w-16 h-16">
+            <div
+                class="flex flex-row md:flex-col items-center md:items-start gap-8 md:gap-4 p-5 border dark:border-neutral-700 border-neutral-400 rounded-lg">
+                <figure class="flex items-center justify-center bg-primary-50 p-4 md:p-2 rounded-xl">
                     <img src="../public/file.png" alt="icon" width="50" height="50">
                 </figure>
-                <h3 class="text-h6 font-medium">Fast KYC</h3>
-                <p class="text-p2 text-neutral-700">
-                    Lorem ipsum dolor sit amet, dui consectetur adipiscing elit. Nibh aenean dui aliquet amet.
-                </p>
+                <div class="flex flex-col gap-2">
+                    <h3 class="text-h6s md:text-h6 font-medium">Fast KYC</h3>
+                    <p class="text-p3 md:text-p2 text-neutral-700 dark:text-neutral-500">
+                        Lorem ipsum dolor sit amet, dui consectetur adipiscing elit. Nibh aenean dui aliquet amet.
+                    </p>
+                </div>
             </div>
             <!-- Service Card -->
-            <div class="flex flex-col items-start gap-4 p-5 border border-neutral-400 rounded-lg">
-                <figure class="bg-primary-50 p-2 rounded-xl w-16 h-16">
+            <div
+                class="flex flex-row md:flex-col items-center md:items-start gap-8 md:gap-4 p-5 border dark:border-neutral-700 border-neutral-400 rounded-lg">
+                <figure class="flex items-center justify-center bg-primary-50 p-4 md:p-2 rounded-xl">
                     <img src="../public/24-hours-phone-service.png" alt="icon" width="50" height="50">
                 </figure>
-                <h3 class="text-h6 font-medium">24/7 Support</h3>
-                <p class="text-p2 text-neutral-700">
-                    Lorem ipsum dolor sit amet, dui consectetur adipiscing elit. Nibh aenean dui aliquet amet.
-                </p>
+                <div class="flex flex-col gap-2">
+                    <h3 class="text-h6s md:text-h6 font-medium">24/7 Support</h3>
+                    <p class="text-p3 md:text-p2 text-neutral-700 dark:text-neutral-500">
+                        Lorem ipsum dolor sit amet, dui consectetur adipiscing elit. Nibh aenean dui aliquet amet.
+                    </p>
+                </div>
             </div>
         </div>
     </section>
 
     <!-- Supported By -->
-    <section class="bg-neutral-100 py-20">
+    <section class="bg-neutral-100 dark:bg-dark-backgroung py-10 md:py-20">
         <div class="flex flex-col items-center gap-6 wrapper">
             <div class="flex items-center w-full">
-                <div class="flex-grow border-t border-gray-200 w-full"></div>
-                <span class="min-w-fit px-8 text-neutral-600 text-h5 font-medium">Backed By Investors</span>
-                <div class="flex-grow border-t border-gray-200 w-full"></div>
+                <div class="flex-grow border-t border-gray-200 dark:border-gray-600 w-full"></div>
+                <span class="min-w-fit px-8 text-neutral-700 text-h5s md:text-h5 font-medium">Backed By Investors</span>
+                <div class="flex-grow border-t border-gray-200 dark:border-gray-600 w-full"></div>
             </div>
-            <div class="grid grid-cols-6 xl:gap-20 2xl:gap-24 pt-6">
+            <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-10 xl:gap-20 2xl:gap-24 pt-6">
                 <img src="../public/logoipsum-logo-12.png" alt="logo" width="140" height="30">
                 <img src="../public/logoipsum-logo-30.png" alt="logo" width="140" height="30">
                 <img src="../public/logoipsum-logo-50.png" alt="logo" width="140" height="30">
@@ -646,27 +980,30 @@
     </section>
 
     <!-- Subscribe -->
-    <section class="py-20">
-        <div class="flex items-center wrapper">
-            <div class="flex items-center gap-10 w-11/12 p-10 mx-auto rounded-2xl bg-[#3671E9] relative">
+    <section class="py-10 md:py-20">
+        <div class="flex items-center md:wrapper">
+            <div
+                class="flex flex-col lg:flex-row items-center gap-10 w-full md:w-11/12 px-4 py-8 md:p-10 md:mx-auto md:rounded-2xl bg-[#3671E9] relative">
                 <!-- Background Image -->
                 <div
-                    class="absolute -top-10 left-4 bg-[url('../public/bg-vector-1.png')] w-full h-full bg-no-repeat z-10">
+                    class="absolute -top-10 left-12 md:left-4 bg-[url('../public/bg-vector-1.png')] md:w-full h-full bg-no-repeat z-10">
                 </div>
-                <div class="flex flex-col gap-2 w-1/2 z-20">
-                    <h3 class="text-h2 font-medium text-white">Start minig now</h3>
-                    <p class="text-p1 text-white">
+                <div class="flex flex-col items-center lg:items-start gap-2 w-full lg:w-1/2 z-20">
+                    <h3 class="text-h4s md:text-h2 font-medium text-white">Start minig now</h3>
+                    <p class="text-p2 md:text-p1 text-white text-center lg:text-left">
                         Join now with DYNAMIC to get the latest
                         <br>
                         news and start mining now
                     </p>
                 </div>
-                <div class="flex flex-col w-1/2 z-20">
-                    <form class="flex items-center gap-8">
+                <div class="flex flex-col w-full lg:w-1/2 z-20">
+                    <form class="flex flex-col md:flex-row items-center gap-8">
                         <input type="email" placeholder="Enter your email" required
-                            class="bg-transparent text-white text-p2 placeholder:text-white border-b border-neutral-300/50 pb-3 focus:outline-none w-full">
+                            class="bg-transparent text-white text-p3 md:text-p2 placeholder:text-white border-b border-neutral-300/50 pb-3 focus:outline-none w-full">
                         <button type="submit"
-                            class="bg-white px-8 py-3 rounded-full text-p1 font-medium hover:opacity-90 effect">Subscribe</button>
+                            class="flex items-center justify-center w-full md:w-40 bg-white px-8 py-3 rounded-lg md:rounded-full text-p2 md:text-p1 font-medium dark:text-neutral-800 hover:opacity-90 effect">
+                            Subscribe
+                        </button>
                     </form>
                 </div>
             </div>
@@ -674,14 +1011,14 @@
     </section>
 
     <!-- Footer -->
-    <footer class="bg-[#0D0D2B] pt-20 pb-8">
+    <footer class="bg-[#121318] md:bg-[#0D0D2B] dark:bg-dark-backgroung pt-10 md:pt-20 pb-8">
         <div class="flex flex-col gap-8 wrapper">
-            <div class="flex items-center justify-between w-full">
+            <div class="flex md:flex-col lg:flex-row gap-8 items-center justify-between w-full">
                 <div class="flex flex-col">
                     <!-- Logo -->
                     <a href="./index.html">
-                        <svg id="Logo" xmlns="http://www.w3.org/2000/svg" width="182.186" height="40.001"
-                            viewBox="0 0 182.186 40.001">
+                        <svg id="Logo" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 182.186 40.001"
+                            class="w-28 sm:w-44">
                             <rect id="Logo_Background_" data-name="Logo (Background)" width="182.186" height="40"
                                 fill="none" />
                             <g id="Group_1281" data-name="Group 1281">
@@ -702,14 +1039,14 @@
                         </svg>
                     </a>
                 </div>
-                <div class="flex items-center gap-4">
+                <div class="flex items-center gap-2 md:gap-4">
                     <!-- OS Card -->
                     <a href="#">
                         <div
-                            class="flex items-center min-w-fit gap-3 bg-neutral-700 px-4 py-3 rounded-lg hover:opacity-80 effect">
+                            class="flex items-center min-w-fit gap-3 bg-[#080808] md:bg-neutral-700 px-3 md:px-4 py-3 rounded-md md:rounded-lg hover:opacity-80 effect">
                             <div class="flex">
                                 <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
-                                    width="35" height="35" viewBox="0 0 35 35">
+                                    viewBox="0 0 35 35" class="w-4 h-4 md:w-8 md:h-8">
                                     <defs>
                                         <clipPath id="clip-path">
                                             <rect id="Component_9_Background_Mask_"
@@ -740,7 +1077,7 @@
                                     </g>
                                 </svg>
                             </div>
-                            <div class="flex flex-col">
+                            <div class="hidden md:flex flex-col">
                                 <span class="text-footer font-medium text-white">Download PC-Client</span>
                                 <span class="text-caption font-medium text-white">Windows</span>
                             </div>
@@ -749,10 +1086,11 @@
                     <!-- OS Card -->
                     <a href="#">
                         <div
-                            class="flex items-center min-w-fit gap-3 bg-neutral-700 px-4 py-3 rounded-lg hover:opacity-80 effect">
+                            class="flex items-center min-w-fit gap-3 bg-[#080808] md:bg-neutral-700 px-3 md:px-4 py-3 rounded-md md:rounded-lg hover:opacity-80 effect">
                             <div class="flex">
                                 <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
-                                    width="35" height="37" viewBox="0 0 35 37">
+                                    viewBox="0 0 35 37"
+                                    class="w-4 h-4 md:w-8 md:h-8 border border-white rounded-sm md:rounded-md">
                                     <defs>
                                         <clipPath id="clip-path">
                                             <rect id="Component_9_Background_Mask_"
@@ -769,7 +1107,7 @@
                                                 <g id="Group" transform="translate(0 0.002)">
                                                     <path id="Vector"
                                                         d="M7.069,0A7.277,7.277,0,0,0,0,7.473V29.527A7.275,7.275,0,0,0,7.069,37H27.931A7.279,7.279,0,0,0,35,29.522V7.473A7.283,7.283,0,0,0,27.927,0H7.069Z"
-                                                        fill="#4e5161" />
+                                                        class="fill-black md:fill-neutral-700" />
                                                     <g id="Group-2" data-name="Group"
                                                         transform="translate(4.663 6.355)">
                                                         <path id="Vector-2" data-name="Vector"
@@ -788,7 +1126,7 @@
                                     </g>
                                 </svg>
                             </div>
-                            <div class="flex flex-col">
+                            <div class="hidden md:flex flex-col">
                                 <span class="text-footer font-medium text-white">Download on the</span>
                                 <span class="text-caption font-medium text-white">App Store</span>
                             </div>
@@ -797,9 +1135,10 @@
                     <!-- OS Card -->
                     <a href="#">
                         <div
-                            class="flex items-center min-w-fit gap-3 w-fit bg-neutral-700 px-4 py-3 rounded-lg hover:opacity-80 effect">
+                            class="flex items-center min-w-fit gap-3 w-fit bg-[#080808] md:bg-neutral-700 px-3 md:px-4 py-3 rounded-md md:rounded-lg hover:opacity-80 effect">
                             <div class="flex">
-                                <svg xmlns="http://www.w3.org/2000/svg" width="35" height="37" viewBox="0 0 35 37">
+                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 35 37"
+                                    class="w-4 h-4 md:w-8 md:h-8">
                                     <g id="Icon" transform="translate(-56.5)">
                                         <g id="Component_9" data-name="Component 9" transform="translate(56.5)">
                                             <g id="XMLID_37_" transform="translate(0 8.771)">
@@ -816,7 +1155,7 @@
                                     </g>
                                 </svg>
                             </div>
-                            <div class="flex flex-col">
+                            <div class="hidden md:flex flex-col">
                                 <span class="text-footer font-medium text-white">Download for the</span>
                                 <span class="text-caption font-medium text-white">Mac OS</span>
                             </div>
@@ -825,9 +1164,10 @@
                     <!-- OS Card -->
                     <a href="#">
                         <div
-                            class="flex items-center min-w-fit gap-3 w-fit bg-neutral-700 px-4 py-3 rounded-lg hover:opacity-80 effect">
+                            class="flex items-center min-w-fit gap-3 w-fit bg-[#080808] md:bg-neutral-700 px-3 md:px-4 py-3 rounded-md md:rounded-lg hover:opacity-80 effect">
                             <div class="flex">
-                                <svg xmlns="http://www.w3.org/2000/svg" width="35" height="37" viewBox="0 0 35 37">
+                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 35 37"
+                                    class="w-4 h-4 md:w-8 md:h-8">
                                     <g id="Icon" transform="translate(-56.5)">
                                         <g id="Component_9" data-name="Component 9" transform="translate(56.5)">
                                             <g id="Group" transform="translate(21.42 13.271)">
@@ -859,7 +1199,7 @@
                                     </g>
                                 </svg>
                             </div>
-                            <div class="flex flex-col">
+                            <div class="hidden md:flex flex-col">
                                 <span class="text-footer font-medium text-white">Get in on</span>
                                 <span class="text-caption font-medium text-white">Google Play</span>
                             </div>
@@ -867,10 +1207,11 @@
                     </a>
                 </div>
             </div>
-            <div class="flex items-start justify-between border-b border-neutral-500/30 py-10">
+            <div
+                class="grid grid-cols-2 gap-x-6 gap-y-12 md:flex items-start justify-between border-b border-neutral-500/30 py-10">
                 <!-- Exchange Links -->
                 <div class="flex flex-col gap-6">
-                    <span class="text-h6 font-medium text-white">Exchange</span>
+                    <span class="text-p1 md:text-h6 font-medium text-white">Exchange</span>
                     <ul class="flex flex-col gap-3">
                         <li class="text-p3 text-neutral-400"><a href="#" class="hover:underline">Exchange Home</a></li>
                         <li class="text-p3 text-neutral-400"><a href="#" class="hover:underline">Margin Trading</a></li>
@@ -881,7 +1222,7 @@
                 </div>
                 <!-- Support Links -->
                 <div class="flex flex-col gap-6">
-                    <span class="text-h6 font-medium text-white">Support</span>
+                    <span class="text-p1 md:text-h6 font-medium text-white">Support</span>
                     <ul class="flex flex-col gap-3">
                         <li class="text-p3 text-neutral-400"><a href="#" class="hover:underline">Request form</a></li>
                         <li class="text-p3 text-neutral-400"><a href="#" class="hover:underline">Contact Support</a>
@@ -893,7 +1234,7 @@
                 </div>
                 <!-- Company Links -->
                 <div class="flex flex-col gap-6">
-                    <span class="text-h6 font-medium text-white">Company</span>
+                    <span class="text-p1 md:text-h6 font-medium text-white">Company</span>
                     <ul class="flex flex-col gap-3">
                         <li class="text-p3 text-neutral-400"><a href="#" class="hover:underline">About us</a></li>
                         <li class="text-p3 text-neutral-400"><a href="#" class="hover:underline">Careers</a>
@@ -907,7 +1248,7 @@
                 </div>
                 <!-- Resources Links -->
                 <div class="flex flex-col gap-6">
-                    <span class="text-h6 font-medium text-white">Resources</span>
+                    <span class="text-p1 md:text-h6 font-medium text-white">Resources</span>
                     <ul class="flex flex-col gap-3">
                         <li class="text-p3 text-neutral-400"><a href="#" class="hover:underline">Downloads</a></li>
                         <li class="text-p3 text-neutral-400"><a href="#" class="hover:underline">Desktop Application</a>
@@ -920,15 +1261,15 @@
                     </ul>
                 </div>
                 <!-- Newsletter -->
-                <div class="flex flex-col gap-6">
-                    <span class="text-h6 font-medium text-white">Newsletter</span>
+                <div class="flex flex-col gap-6 col-span-2">
+                    <span class="text-p1 md:text-h6 font-medium text-white">Newsletter</span>
                     <form class="flex items-center gap-4">
                         <input type="email" placeholder="Enter your email" required
                             class="bg-transparent w-full border-b border-neutral-500/30 pb-2 hover:outline-none">
                         <button type="submit"
                             class="bg-main px-4 py-2 rounded-lg text-white text-p2 font-medium hover:opacity-80 effect">Send</button>
                     </form>
-                    <span class="text-p1 text-neutral-400 mt-6">We accept following payment systems</span>
+                    <span class="text-p2 md:text-p1 text-neutral-400 mt-6">We accept following payment systems</span>
                     <div class="flex items-center gap-4">
                         <!-- Payment Card -->
                         <figure class="flex items-center justify-center px-4 bg-neutral-800 rounded-lg h-12">
@@ -950,9 +1291,9 @@
                 </div>
             </div>
             <!-- Footnote -->
-            <div class="flex items-center justify-between w-full">
+            <div class="flex flex-col md:flex-row items-center justify-between w-full gap-6">
                 <!-- Copyright -->
-                <div class="flex items-center gap-14">
+                <div class="flex flex-col md:flex-row items-center gap-6 md:gap-14">
                     <div class="text-neutral-400 text-p3">&copy; 2022 dynamic | All rights reserved.</div>
                     <div class="flex items-center gap-8">
                         <a href="" class="text-neutral-400 text-p3 hover:underline">Privacy</a>
