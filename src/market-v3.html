@@ -12,13 +12,14 @@
 </head>
 
 <body class="bg-[#E6E9F1] dark:bg-dark-backgroung relative">
+
     <!-- Header -->
-    <header class="flex items-center w-full bg-white">
-        <nav class="flex items-center justify-between wrapper py-6">
-            <!-- Logo & Theme Button -->
+    <header class="flex items-center w-full lg:bg-white lg:dark:bg-dark-main sticky top-0 z-50">
+        <nav
+            class="flex items-center justify-between wrapper bg-white dark:bg-dark-backgroung lg:dark:bg-dark-main py-6 rounded-b-3xl lg:rounded-none shadow-md lg:shadow-none z-50">
+            <!-- Logo -->
             <div class="flex items-center gap-8">
-                <!-- Logo -->
-                <a href="./index.html" class="border-r border-neutral-200 pr-7">
+                <a href="./index.html" class="lg:hidden xl:block border-r pr-2 md:pr-7">
                     <svg id="Logo" xmlns="http://www.w3.org/2000/svg" width="182.186" height="40.001"
                         viewBox="0 0 182.186 40.001" class="text-lightLogo dark:text-darkLogo">
                         <rect id="Logo_Background_" data-name="Logo (Background)" width="182.186" height="40"
@@ -41,10 +42,10 @@
                     </svg>
                 </a>
                 <!-- Menu -->
-                <div class="flex items-center">
-                    <ul class="flex items-center gap-8">
-                        <li class="text-p2 text-main">
-                            <a href="#" class="hover:text-main effect border-b-2 pb-8 border-main">Market</a>
+                <div class="hidden lg:flex items-center">
+                    <ul class="flex items-center gap-6 xl:gap-8">
+                        <li class="text-p2">
+                            <a href="#" class="hover:text-main effect">Market</a>
                         </li>
                         <li class="text-p2">
                             <a href="#" class="hover:text-main effect">Watchlist</a>
@@ -58,24 +59,29 @@
                     </ul>
                 </div>
             </div>
-            <!-- Dropdown & Buttons -->
-            <div class="flex items-center gap-4">
+            <!-- Right Side -->
+            <div class="hidden lg:flex items-center gap-4">
                 <!-- Language & Currency -->
                 <div class="flex items-center relative">
-                    <button onclick="toggleDropdown(event)" class="flex items-center gap-2 hover:opacity-80 effect">
-                        <span class="text-p3 border-r pr-2">English</span>
+                    <button onclick="toggleDropdown(event)" class="flex items-center gap-2 hover:opacity-70 effect">
+                        <span class="text-p3">English</span>
+                        <span class="text-p3">|</span>
                         <span class="text-p3">USD</span>
                         <span class="fa-solid fa-chevron-down fa-2xs"></span>
                     </button>
                     <!-- Dropdown Content -->
                     <div id="dropdown-language-currency"
-                        class="absolute top-10 -right-28 w-[340px] bg-white shadow-lg rounded-lg hidden z-10">
+                        class="absolute top-10 -right-28 w-[300px] bg-white dark:bg-dark-backgroung shadow-lg rounded-lg hidden">
                         <div class="p-4">
-                            <div class="flex items-center gap-8 border-b">
+                            <div class="flex items-center gap-8 border-b dark:border-b-neutral-700">
                                 <span id="language-tab-btn"
-                                    class="text-neutral-600 text-p2 cursor-pointer hover:opacity-80 pb-5">Language</span>
+                                    class="text-neutral-600 text-p2 cursor-pointer hover:opacity-80 pb-5">
+                                    Language
+                                </span>
                                 <span id="currency-tab-btn"
-                                    class="text-neutral-600 text-p2 cursor-pointer hover:opacity-80 pb-5">Currency</span>
+                                    class="text-neutral-600 text-p2 cursor-pointer hover:opacity-80 pb-5">
+                                    Currency
+                                </span>
                             </div>
                         </div>
                         <!-- Tab Content -->
@@ -137,9 +143,15 @@
                         </div>
                     </div>
                 </div>
+                <!-- Toggle Theme Button -->
+                <button id="theme-toggle" onclick="toggleTheme()"
+                    class="hidden md:block bg-neutral-200 dark:bg-neutral-800 rounded-md px-3 py-2 hover:opacity-80 effect">
+                    <span id="theme-icon" class="fa-solid fa-moon fa-lg text-neutral-700 dark:text-neutral-300">
+                    </span>
+                </button>
                 <!-- Trade History -->
                 <button
-                    class="flex items-center gap-3 bg-neutral-200 dark:bg-neutral-800 rounded-md px-4 py-3 hover:opacity-80 effect">
+                    class="flex items-center gap-3 bg-neutral-200 dark:bg-neutral-800 rounded-md px-4 py-2 hover:opacity-80 effect">
                     <svg id="Icon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
                         <g id="Icon_Trade" data-name="Icon Trade">
                             <rect id="Icon_Trade_Background_" data-name="Icon Trade (Background)" width="24" height="24"
@@ -153,7 +165,7 @@
                 </button>
                 <!-- Wallet -->
                 <button
-                    class="flex items-center gap-3 bg-neutral-200 dark:bg-neutral-800 rounded-md px-4 py-3 hover:opacity-80 effect">
+                    class="flex items-center gap-3 bg-neutral-200 dark:bg-neutral-800 rounded-md px-4 py-2 hover:opacity-80 effect">
                     <svg id="Icon_Wallet" data-name="Icon Wallet" xmlns="http://www.w3.org/2000/svg" width="24"
                         height="24" viewBox="0 0 24 24">
                         <rect id="Icon_Wallet_Background_" data-name="Icon Wallet (Background)" width="24" height="24"
@@ -164,16 +176,11 @@
                     </svg>
                     <span class="text-p3 text-neutral-700">Wallet</span>
                 </button>
-                <!-- Toggle Theme Button -->
-                <button id="theme-toggle" onclick="toggleTheme()"
-                    class="bg-neutral-200 dark:bg-neutral-800 rounded-md px-4 py-3 hover:opacity-80 effect">
-                    <span id="theme-icon" class="fa-solid fa-moon fa-lg text-neutral-500 dark:text-neutral-300"></span>
-                </button>
                 <!-- User Profile -->
                 <div class="flex items-center">
                     <button class="flex items-center gap-2 hover:opacity-80 effect">
                         <svg id="Icon" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
-                            width="48" height="48" viewBox="0 0 64 64">
+                            width="45" height="45" viewBox="0 0 64 64">
                             <defs>
                                 <clipPath id="clip-path">
                                     <rect id="Icon_Background_Mask_" data-name="Icon (Background/Mask)" width="30"
@@ -210,11 +217,263 @@
                     </button>
                 </div>
             </div>
+            <!-- Mobile Buttons -->
+            <div class="flex lg:hidden items-center gap-6">
+                <button class="w-6 h-6">
+                    <i class="fa-solid fa-search fa-lg text-neutral-700"></i>
+                </button>
+                <button id="menuToggle" class="w-6 h-6">
+                    <i id="menuIcon" class="fa-solid fa-bars fa-lg text-neutral-700"></i>
+                </button>
+            </div>
         </nav>
+        <!-- Mobile Menu -->
+        <div id="fullscreenMenu"
+            class="wrapper fixed top-0 left-0 w-full h-full overflow-y-auto pt-[7.5rem] pb-4 bg-[#E6E9F1] dark:bg-dark-main hidden z-40">
+            <ul class="bg-white dark:bg-dark-backgroung rounded-xl flex flex-col gap-6 p-4">
+                <li class="flex items-center justify-between">
+                    <a href="./profile-my-profile.html" class="flex items-center gap-3">
+                        <img src="../public/avatar.png" alt="Avatar" class="w-12 h-12">
+                        <span class="flex flex-col">
+                            <span class="text-p2 font-medium text-neutral-700">Allie Grater</span>
+                            <span class="text-p3 text-neutral-600 dark:text-neutral-500">AllieGrater123@</span>
+                        </span>
+                    </a>
+                    <button id="theme-toggle" onclick="toggleTheme()"
+                        class="w-12 h-12 bg-neutral-200 dark:bg-neutral-800 rounded-md">
+                        <span id="theme-icon"
+                            class="fa-solid fa-moon fa-xl text-neutral-700 dark:text-neutral-300"></span>
+                    </button>
+                </li>
+                <hr class="dark:border-neutral-700">
+                <li class="flex">
+                    <a href="./market-v1.html" class="flex items-center justify-between w-full">
+                        <span class="flex items-center gap-3">
+                            <svg id="Icon_Trade" data-name="Icon Trade" xmlns="http://www.w3.org/2000/svg" width="24"
+                                height="24" viewBox="0 0 24 24">
+                                <rect id="Icon_Trade_Background_" data-name="Icon Trade (Background)" width="24"
+                                    height="24" fill="none" />
+                                <path id="Mask"
+                                    d="M7.111,22a1,1,0,0,1-.994-1.107L6.886,13.8H1a1,1,0,0,1-.831-1.556L8.058.445a1,1,0,0,1,1.825.663L9.114,8.2H15a1,1,0,0,1,.831,1.556l-7.889,11.8A1,1,0,0,1,7.111,22ZM7.455,4.944,2.871,11.8H8a1,1,0,0,1,.994,1.107l-.448,4.15L13.129,10.2H8a1,1,0,0,1-.994-1.107l.448-4.149Z"
+                                    transform="translate(4 1)" class="fill-neutral-500" />
+                            </svg>
+                            <span class="text-p2 text-neutral-500">Market</span>
+                        </span>
+                        <span><i class="fa-solid fa-chevron-right fa-xs text-neutral-500"></i></span>
+                    </a>
+                </li>
+                <li class="flex">
+                    <a href="./watchlist.html" class="flex items-center justify-between w-full">
+                        <span class="flex items-center gap-3">
+                            <svg id="Icon_Trade" data-name="Icon Trade" xmlns="http://www.w3.org/2000/svg" width="24"
+                                height="24" viewBox="0 0 24 24">
+                                <rect id="Icon_Trade_Background_" data-name="Icon Trade (Background)" width="24"
+                                    height="24" fill="none" />
+                                <path id="Mask"
+                                    d="M13,18a1,1,0,0,1-.491-.13L6.836,14.663l-5.323,3.2A1,1,0,0,1,0,17V2.334A2.272,2.272,0,0,1,2.2,0h9.6A2.273,2.273,0,0,1,14,2.334V17a1,1,0,0,1-1,1ZM6.821,12.506a1,1,0,0,1,.492.129L12,15.286V2.334c0-.2-.12-.334-.2-.334H2.2c-.08,0-.2.133-.2.334v12.9l4.306-2.586A1,1,0,0,1,6.821,12.506Z"
+                                    transform="translate(5 3)" class="fill-neutral-500" />
+                            </svg>
+                            <span class="text-p2 text-neutral-500">Watchlist</span>
+                        </span>
+                        <span><i class="fa-solid fa-chevron-right fa-xs text-neutral-500"></i></span>
+                    </a>
+                </li>
+                <li class="flex">
+                    <a href="./portfolio.html" class="flex items-center justify-between w-full">
+                        <span class="flex items-center gap-3">
+                            <svg id="Icon_Trade" data-name="Icon Trade" xmlns="http://www.w3.org/2000/svg" width="24"
+                                height="24" viewBox="0 0 24 24">
+                                <rect id="Icon_Trade_Background_" data-name="Icon Trade (Background)" width="24"
+                                    height="24" fill="none" />
+                                <path id="Mask"
+                                    d="M17,18H3a3,3,0,0,1-3-3V7A3,3,0,0,1,3,4H6V2.5A2.5,2.5,0,0,1,8.5,0h3A2.5,2.5,0,0,1,14,2.5V4h3a3,3,0,0,1,3,3v8A3,3,0,0,1,17,18ZM15,6V16h2a1,1,0,0,0,1-1V7a1,1,0,0,0-1-1ZM7,6V16h6V6ZM3,6A1,1,0,0,0,2,7v8a1,1,0,0,0,1,1H5V6ZM8.5,2a.5.5,0,0,0-.5.5V4h4V2.5a.5.5,0,0,0-.5-.5Z"
+                                    transform="translate(2 3)" class="fill-neutral-500" />
+                            </svg>
+                            <span class="text-p2 text-neutral-500">Portfolio</span>
+                        </span>
+                        <span><i class="fa-solid fa-chevron-right fa-xs text-neutral-500"></i></span>
+                    </a>
+                </li>
+                <li class="flex">
+                    <a href="./trade.html" class="flex items-center justify-between w-full">
+                        <span class="flex items-center gap-3">
+                            <svg id="Icon_Trade" data-name="Icon Trade" xmlns="http://www.w3.org/2000/svg" width="24"
+                                height="24" viewBox="0 0 24 24">
+                                <rect id="Icon_Trade_Background_" data-name="Icon Trade (Background)" width="24"
+                                    height="24" fill="none" />
+                                <path id="Mask"
+                                    d="M7.111,22a1,1,0,0,1-.994-1.107L6.886,13.8H1a1,1,0,0,1-.831-1.556L8.058.445a1,1,0,0,1,1.825.663L9.114,8.2H15a1,1,0,0,1,.831,1.556l-7.889,11.8A1,1,0,0,1,7.111,22ZM7.455,4.944,2.871,11.8H8a1,1,0,0,1,.994,1.107l-.448,4.15L13.129,10.2H8a1,1,0,0,1-.994-1.107l.448-4.149Z"
+                                    transform="translate(4 1)" class="fill-neutral-500" />
+                            </svg>
+                            <span class="text-p2 text-neutral-500">Trade History</span>
+                        </span>
+                        <span><i class="fa-solid fa-chevron-right fa-xs text-neutral-500"></i></span>
+                    </a>
+                </li>
+                <li class="flex">
+                    <a href="./wallet-wallet-history.html" class="flex items-center justify-between w-full">
+                        <span class="flex items-center gap-3">
+                            <svg id="Icon_Trade" data-name="Icon Trade" xmlns="http://www.w3.org/2000/svg" width="24"
+                                height="24" viewBox="0 0 24 24">
+                                <rect id="Icon_Trade_Background_" data-name="Icon Trade (Background)" width="24"
+                                    height="24" fill="none" />
+                                <path id="icon"
+                                    d="M2,19.675a2,2,0,0,1-2-2H.027A1.985,1.985,0,0,1,0,17.349V5.429A2.008,2.008,0,0,1,1.451,3.506l12-3.429A2,2,0,0,1,16,2V13.92a2.01,2.01,0,0,1-1.451,1.923L8.138,17.675H18v-8H16v-2h2v-2H16v-2h2a2,2,0,0,1,2,2v12a2,2,0,0,1-2,2ZM2,5.429V17.349L14,13.92V2Zm8,2.246a1,1,0,1,1,1,1A1,1,0,0,1,10,7.675Z"
+                                    transform="translate(2 1.325)" class="fill-neutral-500" />
+                            </svg>
+                            <span class="text-p2 text-neutral-500">Wallet</span>
+                        </span>
+                        <span><i class="fa-solid fa-chevron-right fa-xs text-neutral-500"></i></span>
+                    </a>
+                </li>
+                <li class="flex">
+                    <a href="#" class="flex items-center justify-between w-full">
+                        <span class="flex items-center gap-3">
+                            <svg id="Icon_Trade" data-name="Icon Trade" xmlns="http://www.w3.org/2000/svg" width="24"
+                                height="24" viewBox="0 0 24 24">
+                                <rect id="Icon_Trade_Background_" data-name="Icon Trade (Background)" width="24"
+                                    height="24" fill="none" />
+                                <path id="Mask"
+                                    d="M15,18H3a3,3,0,0,1-3-3V3A3,3,0,0,1,3,0H15a1,1,0,0,1,1,1V17A1,1,0,0,1,15,18ZM3,14a1,1,0,0,0,0,2H14V14ZM3,2A1,1,0,0,0,2,3v9.185A2.932,2.932,0,0,1,3,12H14V2Z"
+                                    transform="translate(4 3)" class="fill-neutral-500" />
+                            </svg>
+                            <span class="text-p2 text-neutral-500">Learn</span>
+                        </span>
+                        <span><i class="fa-solid fa-chevron-right fa-xs text-neutral-500"></i></span>
+                    </a>
+                </li>
+                <hr class="dark:border-neutral-700">
+                <li class="flex flex-col">
+                    <div onclick="toggleAccordion(this)" class="flex items-center justify-between w-full">
+                        <span class="flex items-center gap-3">
+                            <svg id="Icon_Trade" data-name="Icon Trade" xmlns="http://www.w3.org/2000/svg" width="24"
+                                height="24" viewBox="0 0 24 24">
+                                <rect id="Icon_Trade_Background_" data-name="Icon Trade (Background)" width="24"
+                                    height="24" fill="none" />
+                                <path id="Mask"
+                                    d="M10,20A10,10,0,1,1,20,10,10.011,10.011,0,0,1,10,20ZM2.963,13.8a7.995,7.995,0,0,0,10.144,3.573,2.268,2.268,0,0,0-.514-1.081l-.038-.058c-.117-.178-.237-.361-.345-.549-.989-1.719-.255-2.946.392-4.028l.1-.168a2.934,2.934,0,0,0,.287-1.464,7.351,7.351,0,0,1,.138-1.372c.4-1.846,2.4-2.33,3.865-2.533A8.005,8.005,0,0,0,13.665,2.9a4.617,4.617,0,0,1-1.417,1.866,8.486,8.486,0,0,1-.907.6l-.008.005-.006,0a2.9,2.9,0,0,0-1.113.912,4.751,4.751,0,0,0-.373,2.344c0,1.379,0,3.1-1.715,4.438a4.955,4.955,0,0,1-3.137,1.012A8.268,8.268,0,0,1,2.963,13.8ZM17.746,8.038c-.937.112-2.5.3-2.668,1.042a5.74,5.74,0,0,0-.093,1.012V10.1a4.688,4.688,0,0,1-.565,2.408l-.1.173c-.631,1.056-.765,1.331-.376,2.007.092.162.2.319.3.472l.016.025a6.2,6.2,0,0,1,.63,1.134,7.916,7.916,0,0,0,2.858-8.28ZM10,2a7.965,7.965,0,0,0-7.867,9.416,7.741,7.741,0,0,0,2.836.667,3.036,3.036,0,0,0,1.924-.6c.9-.707.948-1.508.948-2.863a6.52,6.52,0,0,1,.617-3.3,4.521,4.521,0,0,1,1.849-1.674l.044-.026a6.207,6.207,0,0,0,.662-.433,2.636,2.636,0,0,0,.774-.98A7.949,7.949,0,0,0,10,2Z"
+                                    transform="translate(2 2)" class="fill-neutral-500 accordion-icon-mobile" />
+                            </svg>
+                            <span id="accordion-title-mobile" class="text-p2 text-neutral-500">English | USD</span>
+                        </span>
+                        <span class="chevron">
+                            <i class="fa-solid fa-chevron-right fa-xs text-neutral-500"></i>
+                        </span>
+                    </div>
+                    <!-- Accordion Content -->
+                    <div class="accordion-content hidden mt-6 bg-neutral-200 dark:bg-dark-main rounded-lg p-2">
+                        <!-- Tabs -->
+                        <div class="px-2">
+                            <div
+                                class="flex items-center gap-8 border-b border-b-neutral-300 dark:border-b-neutral-700">
+                                <span id="language-tab-btn-mobile" onclick="switchTabMobile('language')"
+                                    class="tab-btn-mobile text-neutral-600 dark:text-neutral-500 text-p3 pb-3">Language</span>
+                                <span id="currency-tab-btn-mobile" onclick="switchTabMobile('currency')"
+                                    class="tab-btn-mobile text-neutral-600 dark:text-neutral-500 text-p3 pb-3">Currency</span>
+                            </div>
+                        </div>
+                        <!-- Tab Content -->
+                        <div id="language-tab-mobile" class="tab-content-mobile h-[200px] overflow-auto hidden">
+                            <ul class="flex flex-col gap-2 px-1 py-2">
+                                <li class="text-neutral-600 dark:text-neutral-500 text-p3 p-2 rounded-[4px]">
+                                    English
+                                </li>
+                                <li class="text-neutral-600 dark:text-neutral-500 text-p3 p-2 rounded-[4px]">
+                                    English
+                                </li>
+                                <li class="text-neutral-600 dark:text-neutral-500 text-p3 p-2 rounded-[4px]">
+                                    English
+                                </li>
+                                <li class="text-neutral-600 dark:text-neutral-500 text-p3 p-2 rounded-[4px]">
+                                    English
+                                </li>
+                                <li class="text-neutral-600 dark:text-neutral-500 text-p3 p-2 rounded-[4px]">
+                                    English
+                                </li>
+                                <li class="text-neutral-600 dark:text-neutral-500 text-p3 p-2 rounded-[4px]">
+                                    English
+                                </li>
+                            </ul>
+                        </div>
+                        <div id="currency-tab-mobile" class="tab-content-mobile h-[200px] overflow-auto hidden">
+                            <ul class="flex flex-col gap-2 px-1 py-2">
+                                <li class="text-neutral-600 dark:text-neutral-500 text-p3 p-2 rounded-[4px]">
+                                    USD
+                                </li>
+                                <li class="text-neutral-600 dark:text-neutral-500 text-p3 p-2 rounded-[4px]">
+                                    USD
+                                </li>
+                                <li class="text-neutral-600 dark:text-neutral-500 text-p3 p-2 rounded-[4px]">
+                                    USD
+                                </li>
+                                <li class="text-neutral-600 dark:text-neutral-500 text-p3 p-2 rounded-[4px]">
+                                    USD
+                                </li>
+                                <li class="text-neutral-600 dark:text-neutral-500 text-p3 p-2 rounded-[4px]">
+                                    USD
+                                </li>
+                                <li class="text-neutral-600 dark:text-neutral-500 text-p3 p-2 rounded-[4px]">
+                                    USD
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </li>
+                <hr class="dark:border-neutral-700">
+                <div class="flex items-center w-full gap-6 sm:gap-16">
+                    <a href="./login.html"
+                        class="flex items-center justify-center w-1/2 bg-neutral-200 text-main dark:text-main rounded-lg px-8 py-3 text-p3 hover:opacity-80 effect">
+                        Sign in
+                    </a>
+                    <a href="./register.html"
+                        class="flex items-center justify-center w-1/2 bg-main text-white rounded-lg px-8 py-3 text-p3 hover:opacity-80 effect">
+                        Register
+                    </a>
+                </div>
+            </ul>
+            <!-- Footnote -->
+            <div class="flex flex-col items-center justify-between w-full gap-4 mt-8">
+                <!-- Copyright -->
+                <div class="flex flex-col items-center gap-4">
+                    <div class="text-neutral-600 dark:text-neutral-500 text-p3">&copy; 2022 dynamic | All rights
+                        reserved.</div>
+                    <div class="flex items-center gap-6">
+                        <a href="#" class="text-neutral-600 dark:text-neutral-500 text-p3 hover:underline">Privacy</a>
+                        <span class="text-neutral-600 dark:text-neutral-500 text-p3">|</span>
+                        <a href="#" class="text-neutral-600 dark:text-neutral-500 text-p3 hover:underline">Terms</a>
+                        <span class="text-neutral-600 dark:text-neutral-500 text-p3">|</span>
+                        <a href="#" class="text-neutral-600 dark:text-neutral-500 text-p3 hover:underline">Sitemap</a>
+                    </div>
+                </div>
+                <!-- Socials -->
+                <div class="flex items-center gap-6">
+                    <a href="#">
+                        <i
+                            class="fa-brands fa-facebook-f fa-lg text-neutral-600 dark:text-neutral-500 hover:text-blue-500 effect"></i>
+                    </a>
+                    <a href="#">
+                        <i
+                            class="fa-brands fa-instagram fa-lg text-neutral-600 dark:text-neutral-500 hover:text-pink-500 effect"></i>
+                    </a>
+                    <a href="#">
+                        <i
+                            class="fa-brands fa-youtube fa-lg text-neutral-600 dark:text-neutral-500 hover:text-red-500 effect"></i>
+                    </a>
+                    <a href="#">
+                        <i
+                            class="fa-brands fa-twitter fa-lg text-neutral-600 dark:text-neutral-500 hover:text-cyan-500 effect"></i>
+                    </a>
+                    <a href="#">
+                        <i
+                            class="fa-brands fa-linkedin fa-lg text-neutral-600 dark:text-neutral-500 hover:text-blue-500 effect"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
     </header>
 
     <!-- Sticky Buttons -->
-    <div class="flex flex-col gap-5 fixed right-0 top-80">
+    <div class="hidden xl:flex flex-col gap-5 fixed right-0 top-80">
         <button class="bg-main rounded-l-md p-3 w-10 hover:opacity-80 effect">
             <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20">
                 <path id="Mask"
@@ -248,11 +507,11 @@
     </div>
 
     <!-- Content -->
-    <section class="flex wrapper gap-6 my-16">
-        <section class="w-9/12 flex flex-col gap-6">
+    <section class="flex flex-col lg:flex-row wrapper gap-6 my-8">
+        <section class="w-full lg:w-9/12 flex flex-col gap-6">
             <!--  Market Coins -->
-            <section class="bg-white rounded-xl py-8">
-                <div class="flex flex-col gap-8 px-8">
+            <section class="bg-white rounded-xl py-4 md:py-8">
+                <div class="flex flex-col gap-6 md:gap-8 px-4 md:px-8">
                     <!-- Heading -->
                     <div class="flex items-center justify-between">
                         <!-- Title & Desc -->
@@ -262,7 +521,7 @@
                                 Lorem Ipsum is simply dummy text of the printing.
                             </p>
                         </div>
-                        <div class="flex items-center gap-8">
+                        <div class="hidden lg:flex items-center gap-8">
                             <!-- Search -->
                             <div class="relative">
                                 <i
@@ -273,15 +532,16 @@
                         </div>
                     </div>
                     <!-- Cards -->
-                    <div class="grid grid-cols-3 gap-6">
+                    <div id="slider" style="scrollbar-width: none;"
+                        class="flex items-center w-full overflow-x-auto md:overflow-visible md:grid grid-cols-3 gap-6">
                         <!-- Crypto Card -->
-                        <div class="flex items-center gap-4 bg-primary-50 rounded-lg p-4">
+                        <div class="flex items-center gap-10 lg:gap-4 bg-primary-50 rounded-lg p-4">
                             <div class="flex flex-col gap-2">
                                 <div class="flex items-center gap-2">
                                     <img src="../public/Ethereum.png" alt="Ethereum" width="30" height="30">
                                     <span class="text-h6 font-medium">Ethereum</span>
                                 </div>
-                                <div class="flex items-center gap-4">
+                                <div class="flex flex-col lg:flex-row items-start lg:items-center gap-1 lg:gap-4">
                                     <span class="text-p2 font-medium">$38,40.54</span>
                                     <span class="flex items-center gap-1 text-green-600 text-p3">
                                         +2%
@@ -297,17 +557,17 @@
                                 </div>
                             </div>
                             <div class="flex flex-col">
-                                <img src="../public/graph-blue.png" alt="Blue Graph">
+                                <img src="../public/graph-blue.png" alt="Blue Graph" class="min-w-20">
                             </div>
                         </div>
                         <!-- Crypto Card -->
-                        <div class="flex items-center gap-4 bg-primary-50 rounded-lg p-4">
+                        <div class="flex items-center gap-10 lg:gap-4 bg-primary-50 rounded-lg p-4">
                             <div class="flex flex-col gap-2">
                                 <div class="flex items-center gap-2">
                                     <img src="../public/Ethereum.png" alt="Ethereum" width="30" height="30">
                                     <span class="text-h6 font-medium">Ethereum</span>
                                 </div>
-                                <div class="flex items-center gap-4">
+                                <div class="flex flex-col lg:flex-row items-start lg:items-center gap-1 lg:gap-4">
                                     <span class="text-p2 font-medium">$38,40.54</span>
                                     <span class="flex items-center gap-1 text-green-600 text-p3">
                                         +2%
@@ -323,17 +583,17 @@
                                 </div>
                             </div>
                             <div class="flex flex-col">
-                                <img src="../public/graph-blue.png" alt="Blue Graph">
+                                <img src="../public/graph-blue.png" alt="Blue Graph" class="min-w-20">
                             </div>
                         </div>
                         <!-- Crypto Card -->
-                        <div class="flex items-center gap-4 bg-primary-50 rounded-lg p-4">
+                        <div class="flex items-center gap-10 lg:gap-4 bg-primary-50 rounded-lg p-4">
                             <div class="flex flex-col gap-2">
                                 <div class="flex items-center gap-2">
                                     <img src="../public/Ethereum.png" alt="Ethereum" width="30" height="30">
                                     <span class="text-h6 font-medium">Ethereum</span>
                                 </div>
-                                <div class="flex items-center gap-4">
+                                <div class="flex flex-col lg:flex-row items-start lg:items-center gap-1 lg:gap-4">
                                     <span class="text-p2 font-medium">$38,40.54</span>
                                     <span class="flex items-center gap-1 text-green-600 text-p3">
                                         +2%
@@ -349,35 +609,43 @@
                                 </div>
                             </div>
                             <div class="flex flex-col">
-                                <img src="../public/graph-blue.png" alt="Blue Graph">
+                                <img src="../public/graph-blue.png" alt="Blue Graph" class="min-w-20">
                             </div>
                         </div>
                     </div>
+                    <!-- Dots -->
+                    <div class="flex md:hidden justify-center gap-2">
+                        <button class="dot w-2 h-2 rounded-full bg-gray-300" data-index="0"></button>
+                        <button class="dot w-2 h-2 rounded-full bg-gray-300" data-index="1"></button>
+                        <button class="dot w-2 h-2 rounded-full bg-gray-300" data-index="2"></button>
+                        <button class="dot w-2 h-2 rounded-full bg-gray-300" data-index="3"></button>
+                    </div>
                 </div>
             </section>
-            <!--  Market Coins -->
-            <section class="bg-white rounded-xl py-8">
-                <div class="flex flex-col gap-4 px-8">
-                    <div class="flex items-center justify-between border-b pb-4">
+            <!--  Market Details -->
+            <section class="bg-white rounded-xl py-4 md:py-8">
+                <div class="flex flex-col gap-4 px-4 md:px-8">
+                    <!-- Heading -->
+                    <div class="flex items-center justify-between gap-4 border-b pb-4">
                         <!-- Tabs -->
-                        <div class="flex items-center gap-6">
+                        <div class="flex items-center gap-6 overflow-x-auto" style="scrollbar-width: none;">
                             <button class="flex items-center gap-2 bg-main rounded-md p-3 hover:opacity-80 effect">
-                                <span class="text-p2 text-white">Category</span>
+                                <span class="text-p3 md:text-p2 text-white">Category</span>
                                 <i class="fa-solid fa-chevron-down fa-2xs text-white pt-1"></i>
                             </button>
                             <button
                                 class="flex items-center gap-2 bg-neutral-200 rounded-md p-3 hover:opacity-80 effect">
-                                <span class="text-p2 text-neutral-600">Algorithm</span>
+                                <span class="text-p3 md:text-p2 text-neutral-600">Algorithm</span>
                                 <i class="fa-solid fa-chevron-down fa-2xs text-neutral-600 pt-1"></i>
                             </button>
                             <button
                                 class="flex items-center gap-2 bg-neutral-200 rounded-md p-3 hover:opacity-80 effect">
-                                <span class="text-p2 text-neutral-600">Platform</span>
+                                <span class="text-p3 md:text-p2 text-neutral-600">Platform</span>
                                 <i class="fa-solid fa-chevron-down fa-2xs text-neutral-600 pt-1"></i>
                             </button>
                             <button
                                 class="flex items-center gap-2 bg-neutral-200 rounded-md p-3 hover:opacity-80 effect">
-                                <span class="text-p2 text-neutral-600">Industry</span>
+                                <span class="text-p3 md:text-p2 text-neutral-600">Industry</span>
                                 <i class="fa-solid fa-chevron-down fa-2xs text-neutral-600 pt-1"></i>
                             </button>
                         </div>
@@ -388,7 +656,7 @@
                                 <!-- Show Qty -->
                                 <div class="flex items-center relative">
                                     <button onclick="toggleDropdown(event)"
-                                        class="group flex items-center gap-2 effect">
+                                        class="group flex items-center gap-2 effect truncate">
                                         <span class="text-p3 text-neutral-500 group-hover:text-main">Show 10</span>
                                         <span
                                             class="fa-solid fa-chevron-down fa-2xs text-neutral-500 group-hover:text-main"></span>
@@ -408,497 +676,225 @@
                                 </div>
                             </div>
                             <!-- Buttons -->
-                            <button type="button" class="flex items-center gap-2">
+                            <button type="button" class="hidden md:flex items-center gap-2">
                                 <i class="fa-solid fa-list text-neutral-500"></i>
                             </button>
                             <button type="button" class="flex items-center gap-2">
                                 <i class="fa-solid fa-border-all text-neutral-500"></i>
                             </button>
-                            <button type="button" class="flex items-center gap-2">
+                            <button type="button" class="hidden md:flex items-center gap-2">
                                 <i class="fa-solid fa-table-columns text-neutral-500"></i>
                             </button>
                         </div>
                     </div>
                     <!-- Crypto Table -->
-                    <table class="table-auto w-full">
-                        <thead class="border-b">
-                            <tr>
-                                <td>
-                                    <div class="flex items-center gap-2 pb-4">
-                                        <span class="text-p3 text-neutral-500">#</span>
-                                        <i class="fa-solid fa-caret-up text-neutral-500 fa-xs pt-1"></i>
-                                    </div>
-                                </td>
-                                <td>
-                                    <div class="flex items-center gap-2 pb-4">
-                                        <span class="text-p3 text-neutral-500">Coin Name</span>
-                                        <i class="fa-solid fa-caret-up text-neutral-500 fa-xs pt-1"></i>
-                                    </div>
-                                </td>
-                                <td>
-                                    <div class="flex items-center gap-2 pb-4">
-                                        <span class="text-p3 text-neutral-500">Coin Price</span>
-                                        <i class="fa-solid fa-caret-up text-neutral-500 fa-xs pt-1"></i>
-                                    </div>
-                                </td>
-                                <td>
-                                    <div class="flex items-center gap-2 pb-4">
-                                        <span class="text-p3 text-neutral-500">24%</span>
-                                        <i class="fa-solid fa-caret-up text-neutral-500 fa-xs pt-1"></i>
-                                    </div>
-                                </td>
-                                <td>
-                                    <div class="flex items-center gap-2 pb-4">
-                                        <span class="text-p3 text-neutral-500">24h High</span>
-                                        <i class="fa-solid fa-caret-up text-neutral-500 fa-xs pt-1"></i>
-                                    </div>
-                                </td>
-                                <td>
-                                    <div class="flex items-center gap-2 pb-4">
-                                        <span class="text-p3 text-neutral-500">24h Low</span>
-                                        <i class="fa-solid fa-caret-up text-neutral-500 fa-xs pt-1"></i>
-                                    </div>
-                                </td>
-                                <td>
-                                    <div class="flex items-center justify-end pr-8 gap-2 pb-4">
-                                        <span class="text-p3 text-neutral-500">Chart</span>
-                                        <i class="fa-solid fa-caret-up text-neutral-500 fa-xs pt-1"></i>
-                                    </div>
-                                </td>
-                            </tr>
-                        </thead>
-                        <tbody class="border-b">
-                            <tr class="bg-red-50">
-                                <td>
-                                    <div class="flex items-center gap-2 py-4">
-                                        <button><i class="fa-regular fa-star text-neutral-500"></i></button>
-                                        <span class="text-p2">1</span>
-                                    </div>
-                                </td>
-                                <td>
-                                    <div class="flex items-center gap-2 py-4">
-                                        <img src="../public/Ethereum.png" alt="Crypto Logo" width="30" height="30">
-                                        <span class="text-p1">Ethereum</span>
-                                        <span class="bg-neutral-200 rounded-lg px-3 py-1 text-p3 text-main">ETH</span>
-                                    </div>
-                                </td>
-                                <td>
-                                    <span class="text-p2 text-neutral-700 py-4">$43,975.72</span>
-                                </td>
-                                <td>
-                                    <div class="flex items-center gap-1">
-                                        <span class="text-p2 text-green-600 py-4">+0.60%</span>
-                                        <svg id="Icon" xmlns="http://www.w3.org/2000/svg" width="20" height="20"
-                                            viewBox="0 0 24 24">
-                                            <rect id="Icon_Background_" data-name="Icon (Background)" width="24"
-                                                height="24" fill="none" />
-                                            <path id="Mask"
-                                                d="M17.95.754A.947.947,0,0,0,17.9.584a.865.865,0,0,0-.1-.142A.98.98,0,0,0,17.673.27C17.664.261,17.66.249,17.65.241a.929.929,0,0,0-.119-.067,1.008,1.008,0,0,0-.187-.1,1,1,0,0,0-.2-.04A.94.94,0,0,0,17,0H12a1,1,0,0,0,0,2h2.826L10.79,6.708,6.514,4.143a1,1,0,0,0-1.283.217l-5,6a1,1,0,0,0,1.537,1.28L6.22,6.3l4.265,2.56a1,1,0,0,0,1.274-.207L16,3.7V6a1,1,0,0,0,2,0V1c0-.013-.007-.024-.008-.037A.881.881,0,0,0,17.95.754Z"
-                                                transform="translate(3 6)" fill="#03a66d" />
-                                        </svg>
-                                    </div>
-                                </td>
-                                <td>
-                                    <span class="text-p2 text-neutral-700 py-4">$43,975.72</span>
-                                </td>
-                                <td>
-                                    <span class="text-p2 text-neutral-700 py-4">$43,975.72</span>
-                                </td>
-                                <td>
-                                    <div class="flex items-center justify-end py-4">
-                                        <img src="../public/graph-blue.png" alt="Blue Graph" width="114" height="44">
-                                    </div>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>
-                                    <div class="flex items-center gap-2 py-4">
-                                        <button><i class="fa-regular fa-star text-neutral-500"></i></button>
-                                        <span class="text-p2">1</span>
-                                    </div>
-                                </td>
-                                <td>
-                                    <div class="flex items-center gap-2 py-4">
-                                        <img src="../public/Ethereum.png" alt="Crypto Logo" width="30" height="30">
-                                        <span class="text-p1">Ethereum</span>
-                                        <span class="bg-neutral-200 rounded-lg px-3 py-1 text-p3 text-main">ETH</span>
-                                    </div>
-                                </td>
-                                <td>
-                                    <span class="text-p2 text-neutral-700 py-4">$43,975.72</span>
-                                </td>
-                                <td>
-                                    <div class="flex items-center gap-1">
-                                        <span class="text-p2 text-green-600 py-4">+0.60%</span>
-                                        <svg id="Icon" xmlns="http://www.w3.org/2000/svg" width="20" height="20"
-                                            viewBox="0 0 24 24">
-                                            <rect id="Icon_Background_" data-name="Icon (Background)" width="24"
-                                                height="24" fill="none" />
-                                            <path id="Mask"
-                                                d="M17.95.754A.947.947,0,0,0,17.9.584a.865.865,0,0,0-.1-.142A.98.98,0,0,0,17.673.27C17.664.261,17.66.249,17.65.241a.929.929,0,0,0-.119-.067,1.008,1.008,0,0,0-.187-.1,1,1,0,0,0-.2-.04A.94.94,0,0,0,17,0H12a1,1,0,0,0,0,2h2.826L10.79,6.708,6.514,4.143a1,1,0,0,0-1.283.217l-5,6a1,1,0,0,0,1.537,1.28L6.22,6.3l4.265,2.56a1,1,0,0,0,1.274-.207L16,3.7V6a1,1,0,0,0,2,0V1c0-.013-.007-.024-.008-.037A.881.881,0,0,0,17.95.754Z"
-                                                transform="translate(3 6)" fill="#03a66d" />
-                                        </svg>
-                                    </div>
-                                </td>
-                                <td>
-                                    <span class="text-p2 text-neutral-700 py-4">$43,975.72</span>
-                                </td>
-                                <td>
-                                    <span class="text-p2 text-neutral-700 py-4">$43,975.72</span>
-                                </td>
-                                <td>
-                                    <div class="flex items-center justify-end py-4">
-                                        <img src="../public/graph-blue.png" alt="Blue Graph" width="114" height="44">
-                                    </div>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>
-                                    <div class="flex items-center gap-2 py-4">
-                                        <button><i class="fa-regular fa-star text-neutral-500"></i></button>
-                                        <span class="text-p2">1</span>
-                                    </div>
-                                </td>
-                                <td>
-                                    <div class="flex items-center gap-2 py-4">
-                                        <img src="../public/Ethereum.png" alt="Crypto Logo" width="30" height="30">
-                                        <span class="text-p1">Ethereum</span>
-                                        <span class="bg-neutral-200 rounded-lg px-3 py-1 text-p3 text-main">ETH</span>
-                                    </div>
-                                </td>
-                                <td>
-                                    <span class="text-p2 text-neutral-700 py-4">$43,975.72</span>
-                                </td>
-                                <td>
-                                    <div class="flex items-center gap-1">
-                                        <span class="text-p2 text-green-600 py-4">+0.60%</span>
-                                        <svg id="Icon" xmlns="http://www.w3.org/2000/svg" width="20" height="20"
-                                            viewBox="0 0 24 24">
-                                            <rect id="Icon_Background_" data-name="Icon (Background)" width="24"
-                                                height="24" fill="none" />
-                                            <path id="Mask"
-                                                d="M17.95.754A.947.947,0,0,0,17.9.584a.865.865,0,0,0-.1-.142A.98.98,0,0,0,17.673.27C17.664.261,17.66.249,17.65.241a.929.929,0,0,0-.119-.067,1.008,1.008,0,0,0-.187-.1,1,1,0,0,0-.2-.04A.94.94,0,0,0,17,0H12a1,1,0,0,0,0,2h2.826L10.79,6.708,6.514,4.143a1,1,0,0,0-1.283.217l-5,6a1,1,0,0,0,1.537,1.28L6.22,6.3l4.265,2.56a1,1,0,0,0,1.274-.207L16,3.7V6a1,1,0,0,0,2,0V1c0-.013-.007-.024-.008-.037A.881.881,0,0,0,17.95.754Z"
-                                                transform="translate(3 6)" fill="#03a66d" />
-                                        </svg>
-                                    </div>
-                                </td>
-                                <td>
-                                    <span class="text-p2 text-neutral-700 py-4">$43,975.72</span>
-                                </td>
-                                <td>
-                                    <span class="text-p2 text-neutral-700 py-4">$43,975.72</span>
-                                </td>
-                                <td>
-                                    <div class="flex items-center justify-end py-4">
-                                        <img src="../public/graph-blue.png" alt="Blue Graph" width="114" height="44">
-                                    </div>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>
-                                    <div class="flex items-center gap-2 py-4">
-                                        <button><i class="fa-regular fa-star text-neutral-500"></i></button>
-                                        <span class="text-p2">1</span>
-                                    </div>
-                                </td>
-                                <td>
-                                    <div class="flex items-center gap-2 py-4">
-                                        <img src="../public/Ethereum.png" alt="Crypto Logo" width="30" height="30">
-                                        <span class="text-p1">Ethereum</span>
-                                        <span class="bg-neutral-200 rounded-lg px-3 py-1 text-p3 text-main">ETH</span>
-                                    </div>
-                                </td>
-                                <td>
-                                    <span class="text-p2 text-neutral-700 py-4">$43,975.72</span>
-                                </td>
-                                <td>
-                                    <div class="flex items-center gap-1">
-                                        <span class="text-p2 text-green-600 py-4">+0.60%</span>
-                                        <svg id="Icon" xmlns="http://www.w3.org/2000/svg" width="20" height="20"
-                                            viewBox="0 0 24 24">
-                                            <rect id="Icon_Background_" data-name="Icon (Background)" width="24"
-                                                height="24" fill="none" />
-                                            <path id="Mask"
-                                                d="M17.95.754A.947.947,0,0,0,17.9.584a.865.865,0,0,0-.1-.142A.98.98,0,0,0,17.673.27C17.664.261,17.66.249,17.65.241a.929.929,0,0,0-.119-.067,1.008,1.008,0,0,0-.187-.1,1,1,0,0,0-.2-.04A.94.94,0,0,0,17,0H12a1,1,0,0,0,0,2h2.826L10.79,6.708,6.514,4.143a1,1,0,0,0-1.283.217l-5,6a1,1,0,0,0,1.537,1.28L6.22,6.3l4.265,2.56a1,1,0,0,0,1.274-.207L16,3.7V6a1,1,0,0,0,2,0V1c0-.013-.007-.024-.008-.037A.881.881,0,0,0,17.95.754Z"
-                                                transform="translate(3 6)" fill="#03a66d" />
-                                        </svg>
-                                    </div>
-                                </td>
-                                <td>
-                                    <span class="text-p2 text-neutral-700 py-4">$43,975.72</span>
-                                </td>
-                                <td>
-                                    <span class="text-p2 text-neutral-700 py-4">$43,975.72</span>
-                                </td>
-                                <td>
-                                    <div class="flex items-center justify-end py-4">
-                                        <img src="../public/graph-blue.png" alt="Blue Graph" width="114" height="44">
-                                    </div>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>
-                                    <div class="flex items-center gap-2 py-4">
-                                        <button><i class="fa-regular fa-star text-neutral-500"></i></button>
-                                        <span class="text-p2">1</span>
-                                    </div>
-                                </td>
-                                <td>
-                                    <div class="flex items-center gap-2 py-4">
-                                        <img src="../public/Ethereum.png" alt="Crypto Logo" width="30" height="30">
-                                        <span class="text-p1">Ethereum</span>
-                                        <span class="bg-neutral-200 rounded-lg px-3 py-1 text-p3 text-main">ETH</span>
-                                    </div>
-                                </td>
-                                <td>
-                                    <span class="text-p2 text-neutral-700 py-4">$43,975.72</span>
-                                </td>
-                                <td>
-                                    <div class="flex items-center gap-1">
-                                        <span class="text-p2 text-green-600 py-4">+0.60%</span>
-                                        <svg id="Icon" xmlns="http://www.w3.org/2000/svg" width="20" height="20"
-                                            viewBox="0 0 24 24">
-                                            <rect id="Icon_Background_" data-name="Icon (Background)" width="24"
-                                                height="24" fill="none" />
-                                            <path id="Mask"
-                                                d="M17.95.754A.947.947,0,0,0,17.9.584a.865.865,0,0,0-.1-.142A.98.98,0,0,0,17.673.27C17.664.261,17.66.249,17.65.241a.929.929,0,0,0-.119-.067,1.008,1.008,0,0,0-.187-.1,1,1,0,0,0-.2-.04A.94.94,0,0,0,17,0H12a1,1,0,0,0,0,2h2.826L10.79,6.708,6.514,4.143a1,1,0,0,0-1.283.217l-5,6a1,1,0,0,0,1.537,1.28L6.22,6.3l4.265,2.56a1,1,0,0,0,1.274-.207L16,3.7V6a1,1,0,0,0,2,0V1c0-.013-.007-.024-.008-.037A.881.881,0,0,0,17.95.754Z"
-                                                transform="translate(3 6)" fill="#03a66d" />
-                                        </svg>
-                                    </div>
-                                </td>
-                                <td>
-                                    <span class="text-p2 text-neutral-700 py-4">$43,975.72</span>
-                                </td>
-                                <td>
-                                    <span class="text-p2 text-neutral-700 py-4">$43,975.72</span>
-                                </td>
-                                <td>
-                                    <div class="flex items-center justify-end py-4">
-                                        <img src="../public/graph-blue.png" alt="Blue Graph" width="114" height="44">
-                                    </div>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>
-                                    <div class="flex items-center gap-2 py-4">
-                                        <button><i class="fa-regular fa-star text-neutral-500"></i></button>
-                                        <span class="text-p2">1</span>
-                                    </div>
-                                </td>
-                                <td>
-                                    <div class="flex items-center gap-2 py-4">
-                                        <img src="../public/Ethereum.png" alt="Crypto Logo" width="30" height="30">
-                                        <span class="text-p1">Ethereum</span>
-                                        <span class="bg-neutral-200 rounded-lg px-3 py-1 text-p3 text-main">ETH</span>
-                                    </div>
-                                </td>
-                                <td>
-                                    <span class="text-p2 text-neutral-700 py-4">$43,975.72</span>
-                                </td>
-                                <td>
-                                    <div class="flex items-center gap-1">
-                                        <span class="text-p2 text-green-600 py-4">+0.60%</span>
-                                        <svg id="Icon" xmlns="http://www.w3.org/2000/svg" width="20" height="20"
-                                            viewBox="0 0 24 24">
-                                            <rect id="Icon_Background_" data-name="Icon (Background)" width="24"
-                                                height="24" fill="none" />
-                                            <path id="Mask"
-                                                d="M17.95.754A.947.947,0,0,0,17.9.584a.865.865,0,0,0-.1-.142A.98.98,0,0,0,17.673.27C17.664.261,17.66.249,17.65.241a.929.929,0,0,0-.119-.067,1.008,1.008,0,0,0-.187-.1,1,1,0,0,0-.2-.04A.94.94,0,0,0,17,0H12a1,1,0,0,0,0,2h2.826L10.79,6.708,6.514,4.143a1,1,0,0,0-1.283.217l-5,6a1,1,0,0,0,1.537,1.28L6.22,6.3l4.265,2.56a1,1,0,0,0,1.274-.207L16,3.7V6a1,1,0,0,0,2,0V1c0-.013-.007-.024-.008-.037A.881.881,0,0,0,17.95.754Z"
-                                                transform="translate(3 6)" fill="#03a66d" />
-                                        </svg>
-                                    </div>
-                                </td>
-                                <td>
-                                    <span class="text-p2 text-neutral-700 py-4">$43,975.72</span>
-                                </td>
-                                <td>
-                                    <span class="text-p2 text-neutral-700 py-4">$43,975.72</span>
-                                </td>
-                                <td>
-                                    <div class="flex items-center justify-end py-4">
-                                        <img src="../public/graph-blue.png" alt="Blue Graph" width="114" height="44">
-                                    </div>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>
-                                    <div class="flex items-center gap-2 py-4">
-                                        <button><i class="fa-regular fa-star text-neutral-500"></i></button>
-                                        <span class="text-p2">1</span>
-                                    </div>
-                                </td>
-                                <td>
-                                    <div class="flex items-center gap-2 py-4">
-                                        <img src="../public/Ethereum.png" alt="Crypto Logo" width="30" height="30">
-                                        <span class="text-p1">Ethereum</span>
-                                        <span class="bg-neutral-200 rounded-lg px-3 py-1 text-p3 text-main">ETH</span>
-                                    </div>
-                                </td>
-                                <td>
-                                    <span class="text-p2 text-neutral-700 py-4">$43,975.72</span>
-                                </td>
-                                <td>
-                                    <div class="flex items-center gap-1">
-                                        <span class="text-p2 text-green-600 py-4">+0.60%</span>
-                                        <svg id="Icon" xmlns="http://www.w3.org/2000/svg" width="20" height="20"
-                                            viewBox="0 0 24 24">
-                                            <rect id="Icon_Background_" data-name="Icon (Background)" width="24"
-                                                height="24" fill="none" />
-                                            <path id="Mask"
-                                                d="M17.95.754A.947.947,0,0,0,17.9.584a.865.865,0,0,0-.1-.142A.98.98,0,0,0,17.673.27C17.664.261,17.66.249,17.65.241a.929.929,0,0,0-.119-.067,1.008,1.008,0,0,0-.187-.1,1,1,0,0,0-.2-.04A.94.94,0,0,0,17,0H12a1,1,0,0,0,0,2h2.826L10.79,6.708,6.514,4.143a1,1,0,0,0-1.283.217l-5,6a1,1,0,0,0,1.537,1.28L6.22,6.3l4.265,2.56a1,1,0,0,0,1.274-.207L16,3.7V6a1,1,0,0,0,2,0V1c0-.013-.007-.024-.008-.037A.881.881,0,0,0,17.95.754Z"
-                                                transform="translate(3 6)" fill="#03a66d" />
-                                        </svg>
-                                    </div>
-                                </td>
-                                <td>
-                                    <span class="text-p2 text-neutral-700 py-4">$43,975.72</span>
-                                </td>
-                                <td>
-                                    <span class="text-p2 text-neutral-700 py-4">$43,975.72</span>
-                                </td>
-                                <td>
-                                    <div class="flex items-center justify-end py-4">
-                                        <img src="../public/graph-blue.png" alt="Blue Graph" width="114" height="44">
-                                    </div>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>
-                                    <div class="flex items-center gap-2 py-4">
-                                        <button><i class="fa-regular fa-star text-neutral-500"></i></button>
-                                        <span class="text-p2">1</span>
-                                    </div>
-                                </td>
-                                <td>
-                                    <div class="flex items-center gap-2 py-4">
-                                        <img src="../public/Ethereum.png" alt="Crypto Logo" width="30" height="30">
-                                        <span class="text-p1">Ethereum</span>
-                                        <span class="bg-neutral-200 rounded-lg px-3 py-1 text-p3 text-main">ETH</span>
-                                    </div>
-                                </td>
-                                <td>
-                                    <span class="text-p2 text-neutral-700 py-4">$43,975.72</span>
-                                </td>
-                                <td>
-                                    <div class="flex items-center gap-1">
-                                        <span class="text-p2 text-green-600 py-4">+0.60%</span>
-                                        <svg id="Icon" xmlns="http://www.w3.org/2000/svg" width="20" height="20"
-                                            viewBox="0 0 24 24">
-                                            <rect id="Icon_Background_" data-name="Icon (Background)" width="24"
-                                                height="24" fill="none" />
-                                            <path id="Mask"
-                                                d="M17.95.754A.947.947,0,0,0,17.9.584a.865.865,0,0,0-.1-.142A.98.98,0,0,0,17.673.27C17.664.261,17.66.249,17.65.241a.929.929,0,0,0-.119-.067,1.008,1.008,0,0,0-.187-.1,1,1,0,0,0-.2-.04A.94.94,0,0,0,17,0H12a1,1,0,0,0,0,2h2.826L10.79,6.708,6.514,4.143a1,1,0,0,0-1.283.217l-5,6a1,1,0,0,0,1.537,1.28L6.22,6.3l4.265,2.56a1,1,0,0,0,1.274-.207L16,3.7V6a1,1,0,0,0,2,0V1c0-.013-.007-.024-.008-.037A.881.881,0,0,0,17.95.754Z"
-                                                transform="translate(3 6)" fill="#03a66d" />
-                                        </svg>
-                                    </div>
-                                </td>
-                                <td>
-                                    <span class="text-p2 text-neutral-700 py-4">$43,975.72</span>
-                                </td>
-                                <td>
-                                    <span class="text-p2 text-neutral-700 py-4">$43,975.72</span>
-                                </td>
-                                <td>
-                                    <div class="flex items-center justify-end py-4">
-                                        <img src="../public/graph-blue.png" alt="Blue Graph" width="114" height="44">
-                                    </div>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>
-                                    <div class="flex items-center gap-2 py-4">
-                                        <button><i class="fa-regular fa-star text-neutral-500"></i></button>
-                                        <span class="text-p2">1</span>
-                                    </div>
-                                </td>
-                                <td>
-                                    <div class="flex items-center gap-2 py-4">
-                                        <img src="../public/Ethereum.png" alt="Crypto Logo" width="30" height="30">
-                                        <span class="text-p1">Ethereum</span>
-                                        <span class="bg-neutral-200 rounded-lg px-3 py-1 text-p3 text-main">ETH</span>
-                                    </div>
-                                </td>
-                                <td>
-                                    <span class="text-p2 text-neutral-700 py-4">$43,975.72</span>
-                                </td>
-                                <td>
-                                    <div class="flex items-center gap-1">
-                                        <span class="text-p2 text-green-600 py-4">+0.60%</span>
-                                        <svg id="Icon" xmlns="http://www.w3.org/2000/svg" width="20" height="20"
-                                            viewBox="0 0 24 24">
-                                            <rect id="Icon_Background_" data-name="Icon (Background)" width="24"
-                                                height="24" fill="none" />
-                                            <path id="Mask"
-                                                d="M17.95.754A.947.947,0,0,0,17.9.584a.865.865,0,0,0-.1-.142A.98.98,0,0,0,17.673.27C17.664.261,17.66.249,17.65.241a.929.929,0,0,0-.119-.067,1.008,1.008,0,0,0-.187-.1,1,1,0,0,0-.2-.04A.94.94,0,0,0,17,0H12a1,1,0,0,0,0,2h2.826L10.79,6.708,6.514,4.143a1,1,0,0,0-1.283.217l-5,6a1,1,0,0,0,1.537,1.28L6.22,6.3l4.265,2.56a1,1,0,0,0,1.274-.207L16,3.7V6a1,1,0,0,0,2,0V1c0-.013-.007-.024-.008-.037A.881.881,0,0,0,17.95.754Z"
-                                                transform="translate(3 6)" fill="#03a66d" />
-                                        </svg>
-                                    </div>
-                                </td>
-                                <td>
-                                    <span class="text-p2 text-neutral-700 py-4">$43,975.72</span>
-                                </td>
-                                <td>
-                                    <span class="text-p2 text-neutral-700 py-4">$43,975.72</span>
-                                </td>
-                                <td>
-                                    <div class="flex items-center justify-end py-4">
-                                        <img src="../public/graph-blue.png" alt="Blue Graph" width="114" height="44">
-                                    </div>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>
-                                    <div class="flex items-center gap-2 py-4">
-                                        <button><i class="fa-regular fa-star text-neutral-500"></i></button>
-                                        <span class="text-p2">1</span>
-                                    </div>
-                                </td>
-                                <td>
-                                    <div class="flex items-center gap-2 py-4">
-                                        <img src="../public/Ethereum.png" alt="Crypto Logo" width="30" height="30">
-                                        <span class="text-p1">Ethereum</span>
-                                        <span class="bg-neutral-200 rounded-lg px-3 py-1 text-p3 text-main">ETH</span>
-                                    </div>
-                                </td>
-                                <td>
-                                    <span class="text-p2 text-neutral-700 py-4">$43,975.72</span>
-                                </td>
-                                <td>
-                                    <div class="flex items-center gap-1">
-                                        <span class="text-p2 text-green-600 py-4">+0.60%</span>
-                                        <svg id="Icon" xmlns="http://www.w3.org/2000/svg" width="20" height="20"
-                                            viewBox="0 0 24 24">
-                                            <rect id="Icon_Background_" data-name="Icon (Background)" width="24"
-                                                height="24" fill="none" />
-                                            <path id="Mask"
-                                                d="M17.95.754A.947.947,0,0,0,17.9.584a.865.865,0,0,0-.1-.142A.98.98,0,0,0,17.673.27C17.664.261,17.66.249,17.65.241a.929.929,0,0,0-.119-.067,1.008,1.008,0,0,0-.187-.1,1,1,0,0,0-.2-.04A.94.94,0,0,0,17,0H12a1,1,0,0,0,0,2h2.826L10.79,6.708,6.514,4.143a1,1,0,0,0-1.283.217l-5,6a1,1,0,0,0,1.537,1.28L6.22,6.3l4.265,2.56a1,1,0,0,0,1.274-.207L16,3.7V6a1,1,0,0,0,2,0V1c0-.013-.007-.024-.008-.037A.881.881,0,0,0,17.95.754Z"
-                                                transform="translate(3 6)" fill="#03a66d" />
-                                        </svg>
-                                    </div>
-                                </td>
-                                <td>
-                                    <span class="text-p2 text-neutral-700 py-4">$43,975.72</span>
-                                </td>
-                                <td>
-                                    <span class="text-p2 text-neutral-700 py-4">$43,975.72</span>
-                                </td>
-                                <td>
-                                    <div class="flex items-center justify-end py-4">
-                                        <img src="../public/graph-blue.png" alt="Blue Graph" width="114" height="44">
-                                    </div>
-                                </td>
-                            </tr>
-                        </tbody>
-                    </table>
+                    <div class="overflow-x-auto">
+                        <table class="table-auto w-full">
+                            <thead class="border-b">
+                                <tr>
+                                    <td class="truncate pr-4 lg:pr-0">
+                                        <div class="flex items-center gap-2 pb-3">
+                                            <span class="text-p3 md:text-p2 text-neutral-500">#</span>
+                                            <i class="fa-solid fa-caret-up text-neutral-500 fa-xs pt-1"></i>
+                                        </div>
+                                    </td>
+                                    <td class="truncate px-4 lg:px-0">
+                                        <div class="flex items-center gap-2 pb-3">
+                                            <span class="text-p3 md:text-p2 text-neutral-500">Coin Name</span>
+                                            <i class="fa-solid fa-caret-up text-neutral-500 fa-xs pt-1"></i>
+                                        </div>
+                                    </td>
+                                    <td class="truncate px-6 lg:px-0">
+                                        <div class="flex items-center gap-2 pb-3">
+                                            <span class="text-p3 md:text-p2 text-neutral-500">Coin Price</span>
+                                            <i class="fa-solid fa-caret-up text-neutral-500 fa-xs pt-1"></i>
+                                        </div>
+                                    </td>
+                                    <td class="truncate px-4 lg:px-0">
+                                        <div class="flex items-center gap-2 pb-3">
+                                            <span class="text-p2 md:text-p3 text-neutral-500">24%</span>
+                                            <i class="fa-solid fa-caret-up text-neutral-500 fa-xs pt-1"></i>
+                                        </div>
+                                    </td>
+                                    <td class="truncate px-4 lg:px-0">
+                                        <div class="flex items-center gap-2 pb-3">
+                                            <span class="text-p3 md:text-p2 text-neutral-500">24h High Price</span>
+                                            <i class="fa-solid fa-caret-up text-neutral-500 fa-xs pt-1"></i>
+                                        </div>
+                                    </td>
+                                    <td class="truncate px-4 lg:px-0">
+                                        <div class="flex items-center gap-2 pb-3">
+                                            <span class="text-p3 md:text-p2 text-neutral-500">24h Low Price</span>
+                                            <i class="fa-solid fa-caret-up text-neutral-500 fa-xs pt-1"></i>
+                                        </div>
+                                    </td>
+                                    <td class="truncate pl-4 lg:pl-0">
+                                        <div class="flex items-center justify-end lg:pr-8 gap-2 pb-3">
+                                            <span class="text-p3 md:text-p2 text-neutral-500">Chart</span>
+                                            <i class="fa-solid fa-caret-up text-neutral-500 fa-xs pt-1"></i>
+                                        </div>
+                                    </td>
+                                </tr>
+                            </thead>
+                            <tbody class="border-b">
+                                <tr>
+                                    <td class="truncate pr-4 lg:pr-0">
+                                        <div class="flex items-center gap-1 md:gap-2 py-2 lg:py-4">
+                                            <button><i class="fa-regular fa-star text-neutral-500"></i></button>
+                                            <span class="text-p2">1</span>
+                                        </div>
+                                    </td>
+                                    <td class="truncate px-4 lg:px-0">
+                                        <div class="flex items-center gap-2 py-4">
+                                            <img src="../public/Ethereum.png" alt="Crypto Logo" width="30" height="30">
+                                            <div class="flex flex-col lg:flex-row lg:items-center lg:gap-2">
+                                                <span class="text-p3 md:text-p2 lg:text-p1">Ethereum</span>
+                                                <span
+                                                    class="lg:bg-neutral-200 lg:rounded-lg lg:px-3 md:py-1 text-footer lg:text-p3 text-primary-500 lg:text-main">
+                                                    ETH
+                                                </span>
+                                            </div>
+                                        </div>
+                                    </td>
+                                    <td class="truncate px-6 lg:px-0">
+                                        <span class="text-p3 md:text-p2 text-neutral-700 py-2 lg:py-4">$43,975.72</span>
+                                    </td>
+                                    <td class="truncate px-4 lg:px-0">
+                                        <span class="text-p3 md:text-p2 text-green-600 py-2 lg:py-4">+0.60%</span>
+                                    </td>
+                                    <td class="truncate px-4 lg:px-0">
+                                        <span class="text-p3 md:text-p2 text-neutral-700 py-2 lg:py-4">$43,975.72</span>
+                                    </td>
+                                    <td class="truncate px-4 lg:px-0">
+                                        <span class="text-p3 md:text-p2 text-neutral-700 py-2 lg:py-4">$43,975.72</span>
+                                    </td>
+                                    <td class="truncate pl-4 lg:pl-0">
+                                        <div class="flex items-center justify-end py-2 lg:py-4">
+                                            <img src="../public/graph-blue.png" alt="Blue Graph" width="114"
+                                                height="44">
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="truncate pr-4 lg:pr-0">
+                                        <div class="flex items-center gap-1 md:gap-2 py-2 lg:py-4">
+                                            <button><i class="fa-regular fa-star text-neutral-500"></i></button>
+                                            <span class="text-p2">1</span>
+                                        </div>
+                                    </td>
+                                    <td class="truncate px-4 lg:px-0">
+                                        <div class="flex items-center gap-2 py-4">
+                                            <img src="../public/Ethereum.png" alt="Crypto Logo" width="30" height="30">
+                                            <div class="flex flex-col lg:flex-row lg:items-center lg:gap-2">
+                                                <span class="text-p3 md:text-p2 lg:text-p1">Ethereum</span>
+                                                <span
+                                                    class="lg:bg-neutral-200 lg:rounded-lg lg:px-3 md:py-1 text-footer lg:text-p3 text-primary-500 lg:text-main">
+                                                    ETH
+                                                </span>
+                                            </div>
+                                        </div>
+                                    </td>
+                                    <td class="truncate px-6 lg:px-0">
+                                        <span class="text-p3 md:text-p2 text-neutral-700 py-2 lg:py-4">$43,975.72</span>
+                                    </td>
+                                    <td class="truncate px-4 lg:px-0">
+                                        <span class="text-p3 md:text-p2 text-green-600 py-2 lg:py-4">+0.60%</span>
+                                    </td>
+                                    <td class="truncate px-4 lg:px-0">
+                                        <span class="text-p3 md:text-p2 text-neutral-700 py-2 lg:py-4">$43,975.72</span>
+                                    </td>
+                                    <td class="truncate px-4 lg:px-0">
+                                        <span class="text-p3 md:text-p2 text-neutral-700 py-2 lg:py-4">$43,975.72</span>
+                                    </td>
+                                    <td class="truncate pl-4 lg:pl-0">
+                                        <div class="flex items-center justify-end py-2 lg:py-4">
+                                            <img src="../public/graph-blue.png" alt="Blue Graph" width="114"
+                                                height="44">
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="truncate pr-4 lg:pr-0">
+                                        <div class="flex items-center gap-1 md:gap-2 py-2 lg:py-4">
+                                            <button><i class="fa-regular fa-star text-neutral-500"></i></button>
+                                            <span class="text-p2">1</span>
+                                        </div>
+                                    </td>
+                                    <td class="truncate px-4 lg:px-0">
+                                        <div class="flex items-center gap-2 py-4">
+                                            <img src="../public/Ethereum.png" alt="Crypto Logo" width="30" height="30">
+                                            <div class="flex flex-col lg:flex-row lg:items-center lg:gap-2">
+                                                <span class="text-p3 md:text-p2 lg:text-p1">Ethereum</span>
+                                                <span
+                                                    class="lg:bg-neutral-200 lg:rounded-lg lg:px-3 md:py-1 text-footer lg:text-p3 text-primary-500 lg:text-main">
+                                                    ETH
+                                                </span>
+                                            </div>
+                                        </div>
+                                    </td>
+                                    <td class="truncate px-6 lg:px-0">
+                                        <span class="text-p3 md:text-p2 text-neutral-700 py-2 lg:py-4">$43,975.72</span>
+                                    </td>
+                                    <td class="truncate px-4 lg:px-0">
+                                        <span class="text-p3 md:text-p2 text-green-600 py-2 lg:py-4">+0.60%</span>
+                                    </td>
+                                    <td class="truncate px-4 lg:px-0">
+                                        <span class="text-p3 md:text-p2 text-neutral-700 py-2 lg:py-4">$43,975.72</span>
+                                    </td>
+                                    <td class="truncate px-4 lg:px-0">
+                                        <span class="text-p3 md:text-p2 text-neutral-700 py-2 lg:py-4">$43,975.72</span>
+                                    </td>
+                                    <td class="truncate pl-4 lg:pl-0">
+                                        <div class="flex items-center justify-end py-2 lg:py-4">
+                                            <img src="../public/graph-blue.png" alt="Blue Graph" width="114"
+                                                height="44">
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="truncate pr-4 lg:pr-0">
+                                        <div class="flex items-center gap-1 md:gap-2 py-2 lg:py-4">
+                                            <button><i class="fa-regular fa-star text-neutral-500"></i></button>
+                                            <span class="text-p2">1</span>
+                                        </div>
+                                    </td>
+                                    <td class="truncate px-4 lg:px-0">
+                                        <div class="flex items-center gap-2 py-4">
+                                            <img src="../public/Ethereum.png" alt="Crypto Logo" width="30" height="30">
+                                            <div class="flex flex-col lg:flex-row lg:items-center lg:gap-2">
+                                                <span class="text-p3 md:text-p2 lg:text-p1">Ethereum</span>
+                                                <span
+                                                    class="lg:bg-neutral-200 lg:rounded-lg lg:px-3 md:py-1 text-footer lg:text-p3 text-primary-500 lg:text-main">
+                                                    ETH
+                                                </span>
+                                            </div>
+                                        </div>
+                                    </td>
+                                    <td class="truncate px-6 lg:px-0">
+                                        <span class="text-p3 md:text-p2 text-neutral-700 py-2 lg:py-4">$43,975.72</span>
+                                    </td>
+                                    <td class="truncate px-4 lg:px-0">
+                                        <span class="text-p3 md:text-p2 text-green-600 py-2 lg:py-4">+0.60%</span>
+                                    </td>
+                                    <td class="truncate px-4 lg:px-0">
+                                        <span class="text-p3 md:text-p2 text-neutral-700 py-2 lg:py-4">$43,975.72</span>
+                                    </td>
+                                    <td class="truncate px-4 lg:px-0">
+                                        <span class="text-p3 md:text-p2 text-neutral-700 py-2 lg:py-4">$43,975.72</span>
+                                    </td>
+                                    <td class="truncate pl-4 lg:pl-0">
+                                        <div class="flex items-center justify-end py-2 lg:py-4">
+                                            <img src="../public/graph-blue.png" alt="Blue Graph" width="114"
+                                                height="44">
+                                        </div>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
                     <!-- Pagination -->
-                    <div class="flex items-center justify-between py-2">
-                        <div class="flex items-center gap-1">
-                            <span class="text-p3 text-neutral-700">1-10</span>
-                            <span class="text-p3 text-neutral-700">of</span>
-                            <span class="text-p3 text-neutral-700">9,383</span>
-                            <span class="text-p3 text-neutral-700">assets</span>
-                        </div>
-                        <div class="flex items-center gap-6">
+                    <div class="flex flex-col gap-2 md:flex-row items-center justify-between py-2">
+                        <div class="flex items-center justify-between md:gap-6">
                             <button type="button" class="rounded-lg px-4 py-2">
                                 <i class="fa-solid fa-chevron-left fa-xs text-neutral-500"></i>
                             </button>
@@ -913,34 +909,29 @@
                                     <span class="text-p2 text-neutral-500">3</span>
                                 </button>
                                 <button type="button" class="px-4 py-2">
-                                    <span class="text-p2 text-neutral-500">4</span>
-                                </button>
-                                <button type="button" class="px-4 py-2">
                                     <span class="text-p2 text-neutral-500">...</span>
                                 </button>
                                 <button type="button" class="px-4 py-2">
-                                    <span class="text-p2 text-neutral-500">99</span>
-                                </button>
-                                <button type="button" class="px-4 py-2">
-                                    <span class="text-p2 text-neutral-500">100</span>
+                                    <span class="text-p2 text-neutral-500">20</span>
                                 </button>
                             </div>
                             <button type="button" class="px-4 py-2">
                                 <i class="fa-solid fa-chevron-right fa-xs text-main"></i>
                             </button>
                         </div>
-                        <div class="flex items-center">
-                            <button class="flex items-center gap-4 hover:opacity-80">
-                                <span class="text-p3 text-neutral-700">Jump to page</span>
-                                <span class="text-p3 text-neutral-700">1</span>
-                            </button>
+                        <div class="flex items-center gap-1">
+                            <span class="text-p3 text-neutral-700">1-20</span>
+                            <span class="text-p3 text-neutral-700">of</span>
+                            <span class="text-p3 text-neutral-700">9,383</span>
+                            <span class="text-p3 text-neutral-700">assets</span>
                         </div>
                     </div>
                 </div>
             </section>
         </section>
+
         <!-- Sidebar -->
-        <section class="w-3/12 flex flex-col gap-6">
+        <section class="w-full lg:w-3/12 hidden lg:flex flex-col gap-6">
             <!-- Buy Crypto -->
             <div class="bg-white rounded-xl py-8">
                 <div class="flex flex-col gap-6 px-6">
@@ -1305,17 +1296,23 @@
                 </div>
             </div>
         </section>
+
+        <!-- Buy & Sell Button -->
+        <button id="buySellBtn"
+            class="flex md:hidden items-center justify-center text-p1 font-medium text-white bg-main rounded-lg py-3 fixed bottom-4 left-1/2 transform -translate-x-1/2 w-[calc(100%-2rem)] effect">
+            Buy & Sell
+        </button>
     </section>
 
     <!-- Footer -->
-    <footer class="bg-[#0D0D2B] pt-20 pb-8">
+    <footer id="footer" class="bg-[#121318] md:bg-[#0D0D2B] dark:bg-dark-backgroung pt-10 md:pt-20 pb-8">
         <div class="flex flex-col gap-8 wrapper">
-            <div class="flex items-center justify-between w-full">
+            <div class="flex md:flex-col lg:flex-row gap-8 items-center justify-between w-full">
                 <div class="flex flex-col">
                     <!-- Logo -->
                     <a href="./index.html">
-                        <svg id="Logo" xmlns="http://www.w3.org/2000/svg" width="182.186" height="40.001"
-                            viewBox="0 0 182.186 40.001">
+                        <svg id="Logo" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 182.186 40.001"
+                            class="w-28 sm:w-44">
                             <rect id="Logo_Background_" data-name="Logo (Background)" width="182.186" height="40"
                                 fill="none" />
                             <g id="Group_1281" data-name="Group 1281">
@@ -1336,14 +1333,14 @@
                         </svg>
                     </a>
                 </div>
-                <div class="flex items-center gap-4">
+                <div class="flex items-center gap-2 md:gap-4">
                     <!-- OS Card -->
                     <a href="#">
                         <div
-                            class="flex items-center min-w-fit gap-3 bg-neutral-700 px-4 py-3 rounded-lg hover:opacity-80 effect">
+                            class="flex items-center min-w-fit gap-3 bg-[#080808] md:bg-neutral-700 px-3 md:px-4 py-3 rounded-md md:rounded-lg hover:opacity-80 effect">
                             <div class="flex">
                                 <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
-                                    width="35" height="35" viewBox="0 0 35 35">
+                                    viewBox="0 0 35 35" class="w-4 h-4 md:w-8 md:h-8">
                                     <defs>
                                         <clipPath id="clip-path">
                                             <rect id="Component_9_Background_Mask_"
@@ -1374,7 +1371,7 @@
                                     </g>
                                 </svg>
                             </div>
-                            <div class="flex flex-col">
+                            <div class="hidden md:flex flex-col">
                                 <span class="text-footer font-medium text-white">Download PC-Client</span>
                                 <span class="text-caption font-medium text-white">Windows</span>
                             </div>
@@ -1383,10 +1380,11 @@
                     <!-- OS Card -->
                     <a href="#">
                         <div
-                            class="flex items-center min-w-fit gap-3 bg-neutral-700 px-4 py-3 rounded-lg hover:opacity-80 effect">
+                            class="flex items-center min-w-fit gap-3 bg-[#080808] md:bg-neutral-700 px-3 md:px-4 py-3 rounded-md md:rounded-lg hover:opacity-80 effect">
                             <div class="flex">
                                 <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
-                                    width="35" height="37" viewBox="0 0 35 37">
+                                    viewBox="0 0 35 37"
+                                    class="w-4 h-4 md:w-8 md:h-8 border border-white rounded-sm md:rounded-md">
                                     <defs>
                                         <clipPath id="clip-path">
                                             <rect id="Component_9_Background_Mask_"
@@ -1403,7 +1401,7 @@
                                                 <g id="Group" transform="translate(0 0.002)">
                                                     <path id="Vector"
                                                         d="M7.069,0A7.277,7.277,0,0,0,0,7.473V29.527A7.275,7.275,0,0,0,7.069,37H27.931A7.279,7.279,0,0,0,35,29.522V7.473A7.283,7.283,0,0,0,27.927,0H7.069Z"
-                                                        fill="#4e5161" />
+                                                        class="fill-black md:fill-neutral-700" />
                                                     <g id="Group-2" data-name="Group"
                                                         transform="translate(4.663 6.355)">
                                                         <path id="Vector-2" data-name="Vector"
@@ -1422,7 +1420,7 @@
                                     </g>
                                 </svg>
                             </div>
-                            <div class="flex flex-col">
+                            <div class="hidden md:flex flex-col">
                                 <span class="text-footer font-medium text-white">Download on the</span>
                                 <span class="text-caption font-medium text-white">App Store</span>
                             </div>
@@ -1431,9 +1429,10 @@
                     <!-- OS Card -->
                     <a href="#">
                         <div
-                            class="flex items-center min-w-fit gap-3 w-fit bg-neutral-700 px-4 py-3 rounded-lg hover:opacity-80 effect">
+                            class="flex items-center min-w-fit gap-3 w-fit bg-[#080808] md:bg-neutral-700 px-3 md:px-4 py-3 rounded-md md:rounded-lg hover:opacity-80 effect">
                             <div class="flex">
-                                <svg xmlns="http://www.w3.org/2000/svg" width="35" height="37" viewBox="0 0 35 37">
+                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 35 37"
+                                    class="w-4 h-4 md:w-8 md:h-8">
                                     <g id="Icon" transform="translate(-56.5)">
                                         <g id="Component_9" data-name="Component 9" transform="translate(56.5)">
                                             <g id="XMLID_37_" transform="translate(0 8.771)">
@@ -1450,7 +1449,7 @@
                                     </g>
                                 </svg>
                             </div>
-                            <div class="flex flex-col">
+                            <div class="hidden md:flex flex-col">
                                 <span class="text-footer font-medium text-white">Download for the</span>
                                 <span class="text-caption font-medium text-white">Mac OS</span>
                             </div>
@@ -1459,9 +1458,10 @@
                     <!-- OS Card -->
                     <a href="#">
                         <div
-                            class="flex items-center min-w-fit gap-3 w-fit bg-neutral-700 px-4 py-3 rounded-lg hover:opacity-80 effect">
+                            class="flex items-center min-w-fit gap-3 w-fit bg-[#080808] md:bg-neutral-700 px-3 md:px-4 py-3 rounded-md md:rounded-lg hover:opacity-80 effect">
                             <div class="flex">
-                                <svg xmlns="http://www.w3.org/2000/svg" width="35" height="37" viewBox="0 0 35 37">
+                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 35 37"
+                                    class="w-4 h-4 md:w-8 md:h-8">
                                     <g id="Icon" transform="translate(-56.5)">
                                         <g id="Component_9" data-name="Component 9" transform="translate(56.5)">
                                             <g id="Group" transform="translate(21.42 13.271)">
@@ -1493,7 +1493,7 @@
                                     </g>
                                 </svg>
                             </div>
-                            <div class="flex flex-col">
+                            <div class="hidden md:flex flex-col">
                                 <span class="text-footer font-medium text-white">Get in on</span>
                                 <span class="text-caption font-medium text-white">Google Play</span>
                             </div>
@@ -1501,10 +1501,11 @@
                     </a>
                 </div>
             </div>
-            <div class="flex items-start justify-between border-b border-neutral-500/30 py-10">
+            <div
+                class="grid grid-cols-2 gap-x-6 gap-y-12 md:flex items-start justify-between border-b border-neutral-500/30 py-10">
                 <!-- Exchange Links -->
                 <div class="flex flex-col gap-6">
-                    <span class="text-h6 font-medium text-white">Exchange</span>
+                    <span class="text-p1 md:text-h6 font-medium text-white">Exchange</span>
                     <ul class="flex flex-col gap-3">
                         <li class="text-p3 text-neutral-400"><a href="#" class="hover:underline">Exchange Home</a></li>
                         <li class="text-p3 text-neutral-400"><a href="#" class="hover:underline">Margin Trading</a></li>
@@ -1515,7 +1516,7 @@
                 </div>
                 <!-- Support Links -->
                 <div class="flex flex-col gap-6">
-                    <span class="text-h6 font-medium text-white">Support</span>
+                    <span class="text-p1 md:text-h6 font-medium text-white">Support</span>
                     <ul class="flex flex-col gap-3">
                         <li class="text-p3 text-neutral-400"><a href="#" class="hover:underline">Request form</a></li>
                         <li class="text-p3 text-neutral-400"><a href="#" class="hover:underline">Contact Support</a>
@@ -1527,7 +1528,7 @@
                 </div>
                 <!-- Company Links -->
                 <div class="flex flex-col gap-6">
-                    <span class="text-h6 font-medium text-white">Company</span>
+                    <span class="text-p1 md:text-h6 font-medium text-white">Company</span>
                     <ul class="flex flex-col gap-3">
                         <li class="text-p3 text-neutral-400"><a href="#" class="hover:underline">About us</a></li>
                         <li class="text-p3 text-neutral-400"><a href="#" class="hover:underline">Careers</a>
@@ -1541,7 +1542,7 @@
                 </div>
                 <!-- Resources Links -->
                 <div class="flex flex-col gap-6">
-                    <span class="text-h6 font-medium text-white">Resources</span>
+                    <span class="text-p1 md:text-h6 font-medium text-white">Resources</span>
                     <ul class="flex flex-col gap-3">
                         <li class="text-p3 text-neutral-400"><a href="#" class="hover:underline">Downloads</a></li>
                         <li class="text-p3 text-neutral-400"><a href="#" class="hover:underline">Desktop Application</a>
@@ -1554,15 +1555,15 @@
                     </ul>
                 </div>
                 <!-- Newsletter -->
-                <div class="flex flex-col gap-6">
-                    <span class="text-h6 font-medium text-white">Newsletter</span>
+                <div class="flex flex-col gap-6 col-span-2">
+                    <span class="text-p1 md:text-h6 font-medium text-white">Newsletter</span>
                     <form class="flex items-center gap-4">
                         <input type="email" placeholder="Enter your email" required
                             class="bg-transparent w-full border-b border-neutral-500/30 pb-2 hover:outline-none">
                         <button type="submit"
                             class="bg-main px-4 py-2 rounded-lg text-white text-p2 font-medium hover:opacity-80 effect">Send</button>
                     </form>
-                    <span class="text-p1 text-neutral-400 mt-6">We accept following payment systems</span>
+                    <span class="text-p2 md:text-p1 text-neutral-400 mt-6">We accept following payment systems</span>
                     <div class="flex items-center gap-4">
                         <!-- Payment Card -->
                         <figure class="flex items-center justify-center px-4 bg-neutral-800 rounded-lg h-12">
@@ -1584,9 +1585,9 @@
                 </div>
             </div>
             <!-- Footnote -->
-            <div class="flex items-center justify-between w-full">
+            <div class="flex flex-col md:flex-row items-center justify-between w-full gap-6">
                 <!-- Copyright -->
-                <div class="flex items-center gap-14">
+                <div class="flex flex-col md:flex-row items-center gap-6 md:gap-14">
                     <div class="text-neutral-400 text-p3">&copy; 2022 dynamic | All rights reserved.</div>
                     <div class="flex items-center gap-8">
                         <a href="" class="text-neutral-400 text-p3 hover:underline">Privacy</a>

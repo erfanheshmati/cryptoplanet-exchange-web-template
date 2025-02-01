@@ -313,3 +313,21 @@ document.addEventListener("DOMContentLoaded", function () {
 });
 
 // *****************************************************
+
+// Hide buy & sell button on footer viewport
+function toggleButtonVisibility() {
+  const button = document.getElementById("buySellBtn");
+  const footer = document.getElementById("footer");
+  const footerTop = footer.getBoundingClientRect().top;
+  const windowHeight = window.innerHeight;
+
+  if (footerTop <= windowHeight) {
+    button.classList.add("opacity-0", "pointer-events-none"); // Hide button
+  } else {
+    button.classList.remove("opacity-0", "pointer-events-none"); // Show button
+  }
+}
+
+window.addEventListener("scroll", toggleButtonVisibility);
+
+// *****************************************************
