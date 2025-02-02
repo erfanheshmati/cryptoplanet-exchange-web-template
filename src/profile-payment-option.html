@@ -577,7 +577,7 @@
                             </svg>
                             <span class="text-p2">Bank Account</span>
                         </div>
-                        <button class="flex items-center gap-2 group">
+                        <button id="addBankDetailsBtn" class="flex items-center gap-2 group">
                             <i
                                 class="fa-regular fa-square-plus fa-lg pt-0.5 text-neutral-500 group-hover:text-main effect"></i>
                             <span class="text-p3 text-neutral-500 group-hover:text-main effect">Add</span>
@@ -703,7 +703,7 @@
                             </svg>
                             <span class="text-p2">UPI Payment</span>
                         </div>
-                        <button class="flex items-center gap-2 group">
+                        <button id="addUpiAccountBtn" class="flex items-center gap-2 group">
                             <i
                                 class="fa-regular fa-square-plus fa-lg pt-0.5 text-neutral-500 group-hover:text-main effect"></i>
                             <span class="text-p3 text-neutral-500 group-hover:text-main effect">Add</span>
@@ -725,7 +725,7 @@
                             </svg>
                             <span class="text-p2">Credit & Debit Card</span>
                         </div>
-                        <button class="flex items-center gap-2 group">
+                        <button id="addNewCardBtn" class="flex items-center gap-2 group">
                             <i
                                 class="fa-regular fa-square-plus fa-lg pt-0.5 text-neutral-500 group-hover:text-main effect"></i>
                             <span class="text-p3 text-neutral-500 group-hover:text-main effect">Add</span>
@@ -757,6 +757,168 @@
             </section>
         </section>
     </section>
+
+    <!-- Add New Card Popup Modal -->
+    <div id="addNewCardPopup" class="fixed inset-0 flex items-center justify-center bg-black bg-opacity-50 hidden z-50">
+        <div class="bg-white rounded-xl max-w-xs sm:max-w-sm md:max-w-md w-full py-4 md:py-8">
+            <div class="flex flex-col gap-4 px-4 md:px-6">
+                <!-- Heading -->
+                <div class="flex items-center justify-between border-b pb-2">
+                    <h3 class="text-h5s font-medium">Add New Card</h3>
+                    <!-- Close Btn -->
+                    <button id="closeNewCardPopup" class="ml-auto">
+                        <i class="fa-solid fa-close fa-lg text-neutral-500"></i>
+                    </button>
+                </div>
+                <!-- Card Form -->
+                <form class="flex flex-col gap-6">
+                    <div class="flex flex-col gap-2">
+                        <h4 class="text-p3 text-neutral-600">Number</h4>
+                        <div class="flex items-center justify-between px-4">
+                            <input type="number" placeholder="1234 5678 9876 5432"
+                                class="border-l border-neutral-700 pl-1 text-p3 text-neutral-600 outline-none">
+                            <svg id="visa_1_2" data-name="visa (1) 2" xmlns="http://www.w3.org/2000/svg"
+                                xmlns:xlink="http://www.w3.org/1999/xlink" width="24" height="24" viewBox="0 0 24 24">
+                                <defs>
+                                    <clipPath id="clip-path">
+                                        <rect id="visa_1_2_Background_Mask_" data-name="visa (1) 2 (Background/Mask)"
+                                            width="24" height="24" fill="none"></rect>
+                                    </clipPath>
+                                </defs>
+                                <rect id="visa_1_2_Background_Mask_2" data-name="visa (1) 2 (Background/Mask)"
+                                    width="24" height="24" fill="none"></rect>
+                                <g id="visa_1_2-2" data-name="visa (1) 2" clip-path="url(#clip-path)">
+                                    <path id="Vector"
+                                        d="M11.611,9.191l.351-2.055a3.434,3.434,0,0,0,1.993.592c.558-.012,1.156-.287,1.16-.915,0-.412-.249-.706-1.005-1.166a2.987,2.987,0,0,1-1.7-2.55A3.067,3.067,0,0,1,15.689,0,4.314,4.314,0,0,1,17.5.415L17.162,2.4a3.014,3.014,0,0,0-1.912-.419.859.859,0,0,0-.822.786c-.02,1.105,2.726,1.24,2.716,3.712a3.1,3.1,0,0,1-3.376,3.209A4.9,4.9,0,0,1,11.611,9.191Zm10.595.35-.233-1.4H19.484l-.4,1.4H17.044L19.953.858A.907.907,0,0,1,20.778.17h1.656L24,9.541Zm-13.866,0L9.945.17h1.939l-1.6,9.371Zm-4.419,0L2.376,2.064c-.1-.462-.176-.629-.462-.825A7.093,7.093,0,0,0,0,.443L.048.17h3.3c.421,0,.8.351.895.956l.816,5.423L7.075.17H9.113L5.971,9.541Z"
+                                        transform="translate(0 7)" fill="#5367ff"></path>
+                                </g>
+                            </svg>
+                        </div>
+                    </div>
+                    <div class="flex flex-col gap-2">
+                        <h4 class="text-p3 text-neutral-600">Valid</h4>
+                        <div class="flex items-center justify-between px-4">
+                            <input type="date" class="w-full text-p3 text-neutral-600 outline-none">
+                        </div>
+                    </div>
+                    <div class="flex flex-col gap-2">
+                        <h4 class="text-p3 text-neutral-600">CVV</h4>
+                        <div class="flex items-center justify-between px-4">
+                            <input type="number" placeholder="..." class="text-p3 text-neutral-600 outline-none">
+                            <svg id="visa_1_2" data-name="visa (1) 2" xmlns="http://www.w3.org/2000/svg" width="24"
+                                height="24" viewBox="0 0 24 24">
+                                <rect id="visa_1_2_Background_" data-name="visa (1) 2 (Background)" width="24"
+                                    height="24" fill="none"></rect>
+                                <path id="Mask"
+                                    d="M9,18a9,9,0,1,1,9-9A9.01,9.01,0,0,1,9,18ZM9,1.8A7.2,7.2,0,1,0,16.2,9,7.208,7.208,0,0,0,9,1.8ZM9,13.5a.9.9,0,0,1-.9-.9V8.1a.9.9,0,0,1,1.8,0v4.5A.9.9,0,0,1,9,13.5ZM9,6.3a.9.9,0,1,1,.9-.9A.9.9,0,0,1,9,6.3Z"
+                                    transform="translate(3 3)" class="fill-neutral-500"></path>
+                            </svg>
+                        </div>
+                    </div>
+                    <div class="flex flex-col gap-2">
+                        <h4 class="text-p3 text-neutral-600">Name</h4>
+                        <div class="flex items-center justify-between px-4">
+                            <input type="text" placeholder="Card Holder"
+                                class="w-full text-p3 text-neutral-600 outline-none">
+                        </div>
+                    </div>
+                    <!-- Proceed Button -->
+                    <button type="submit" class="flex items-center justify-center bg-main rounded-md text-white py-3">
+                        Proceed
+                    </button>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <!-- Add UPI Account Popup Modal -->
+    <div id="addUpiAccountPopup"
+        class="fixed inset-0 flex items-center justify-center bg-black bg-opacity-50 hidden z-50">
+        <div class="bg-white rounded-xl max-w-xs sm:max-w-sm md:max-w-md w-full py-4 md:py-8">
+            <div class="flex flex-col gap-4 px-4 md:px-6">
+                <!-- Heading -->
+                <div class="flex items-center justify-between border-b pb-2">
+                    <h3 class="text-h5s font-medium">Add UPI Account</h3>
+                    <!-- Close Btn -->
+                    <button id="closeUpiAccountPopup" class="ml-auto">
+                        <i class="fa-solid fa-close fa-lg text-neutral-500"></i>
+                    </button>
+                </div>
+                <!-- Card Form -->
+                <form class="flex flex-col gap-6">
+                    <div class="flex flex-col gap-2">
+                        <h4 class="text-p3 text-neutral-600">UPI App</h4>
+                        <div class="flex items-center justify-between px-4">
+                            <select name="" id="" class="w-full text-p3 text-neutral-600 outline-none">
+                                <option value="" class="">Paytm</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="flex flex-col gap-2">
+                        <h4 class="text-p3 text-neutral-600">Name</h4>
+                        <div class="flex items-center justify-between px-4">
+                            <input type="text" placeholder="Name" class="w-full text-p3 text-neutral-600 outline-none">
+                        </div>
+                    </div>
+                    <div class="flex flex-col gap-2">
+                        <h4 class="text-p3 text-neutral-600">UPI Id</h4>
+                        <div class="flex items-center justify-between px-4">
+                            <input type="text" placeholder="Upi Id"
+                                class="w-full text-p3 text-neutral-600 outline-none">
+                        </div>
+                    </div>
+                    <!-- Proceed Button -->
+                    <button type="submit" class="flex items-center justify-center bg-main rounded-md text-white py-3">
+                        Proceed
+                    </button>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <!-- Add Bank Details Popup Modal -->
+    <div id="addBankDetailsPopup"
+        class="fixed inset-0 flex items-center justify-center bg-black bg-opacity-50 hidden z-50">
+        <div class="bg-white rounded-xl max-w-xs sm:max-w-sm md:max-w-md w-full py-4 md:py-8">
+            <div class="flex flex-col gap-6 px-4 md:px-6">
+                <!-- Heading -->
+                <div class="flex items-center justify-between border-b pb-2">
+                    <h3 class="text-h5s font-medium">Bank Details</h3>
+                    <!-- Close Btn -->
+                    <button id="closeBankDetailsPopup" class="ml-auto">
+                        <i class="fa-solid fa-close fa-lg text-neutral-500"></i>
+                    </button>
+                </div>
+                <!-- Card Form -->
+                <form class="flex flex-col gap-6">
+                    <select class="w-full text-p3 text-neutral-500 outline-none px-1">
+                        <option value="">Bank Name</option>
+                    </select>
+                    <input type="number" placeholder="Account Number"
+                        class="w-full text-p3 text-neutral-600 outline-none px-2">
+                    <div class="flex items-center justify-between">
+                        <input type="number" placeholder="Re-enter Account Number"
+                            class="w-full text-p3 text-neutral-600 outline-none px-2">
+                        <i class="fa-regular fa-circle-check text-neutral-600"></i>
+                    </div>
+                    <input type="number" placeholder="IFSC Code*"
+                        class="w-full text-p3 text-neutral-600 outline-none px-2">
+                    <!-- Proceed Button -->
+                    <button type="submit" class="flex items-center justify-center bg-main rounded-md text-white py-3">
+                        Proceed
+                    </button>
+                </form>
+                <div class="flex flex-col gap-2">
+                    <span class="text-p3 border-b pb-2">Disclaimer</span>
+                    <p class="text-caption text-neutral-600">
+                        Lorem ipsum dolor sit amet consectetur, adipisicing elit. Aut laudantium ut accusamus atque
+                        excepturi, error veritatis aperiam sapiente amet nam eum voluptatibus itaque praesentium
+                        molestiae quam cumque dolore. Amet, inventore!
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
 
     <!-- Footer -->
     <footer id="footer" class="bg-[#121318] md:bg-[#0D0D2B] dark:bg-dark-backgroung pt-10 md:pt-20 pb-8">
@@ -1070,6 +1232,67 @@
             </div>
         </div>
     </footer>
+
+    <script>
+        // Add new card popup
+        document
+            .getElementById("addNewCardBtn")
+            .addEventListener("click", function () {
+                document.getElementById("addNewCardPopup").classList.remove("hidden");
+            });
+        document
+            .getElementById("closeNewCardPopup")
+            .addEventListener("click", function () {
+                document.getElementById("addNewCardPopup").classList.add("hidden");
+            });
+
+        // Add UPI account popup
+        document
+            .getElementById("addUpiAccountBtn")
+            .addEventListener("click", function () {
+                document.getElementById("addUpiAccountPopup").classList.remove("hidden");
+            });
+        document
+            .getElementById("closeUpiAccountPopup")
+            .addEventListener("click", function () {
+                document.getElementById("addUpiAccountPopup").classList.add("hidden");
+            });
+
+        // Add bank details popup
+        document
+            .getElementById("addBankDetailsBtn")
+            .addEventListener("click", function () {
+                document.getElementById("addBankDetailsPopup").classList.remove("hidden");
+            });
+        document
+            .getElementById("closeBankDetailsPopup")
+            .addEventListener("click", function () {
+                document.getElementById("addBankDetailsPopup").classList.add("hidden");
+            });
+
+        // Close popup when clicking outside the modal
+        document
+            .getElementById("addNewCardPopup")
+            .addEventListener("click", function (event) {
+                if (event.target === this) {
+                    this.classList.add("hidden");
+                }
+            });
+        document
+            .getElementById("addUpiAccountPopup")
+            .addEventListener("click", function (event) {
+                if (event.target === this) {
+                    this.classList.add("hidden");
+                }
+            });
+        document
+            .getElementById("addBankDetailsPopup")
+            .addEventListener("click", function (event) {
+                if (event.target === this) {
+                    this.classList.add("hidden");
+                }
+            });
+    </script>
 
     <script src="./script.js"></script>
 </body>

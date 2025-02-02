@@ -585,7 +585,7 @@
                                 Need Help?
                             </p>
                             <div class="w-full md:w-fit flex items-center gap-4">
-                                <button type="submit"
+                                <button id="createApiKeyBtn"
                                     class="w-full md:w-fit bg-main text-white rounded-lg px-8 py-3 text-p3 hover:opacity-80 effect">
                                     Create Private API Key
                                 </button>
@@ -596,6 +596,34 @@
             </section>
         </section>
     </section>
+
+    <!-- Create Private API Key Popup Modal -->
+    <div id="createApiKeyPopup"
+        class="fixed inset-0 flex items-center justify-center bg-black bg-opacity-50 hidden z-50">
+        <div class="bg-white rounded-xl max-w-xs sm:max-w-sm md:max-w-md w-full py-4 md:py-8">
+            <div class="flex flex-col gap-6 px-4 md:px-6">
+                <!-- Close Btn -->
+                <button id="closeCreateApiKeyPopup" class="ml-auto">
+                    <i class="fa-solid fa-close fa-lg text-neutral-500"></i>
+                </button>
+                <!-- API Key -->
+                <div class="flex flex-col gap-2 items-center">
+                    <h3 class="text-h4s font-medium">Create Private API Key</h3>
+                    <p class="text-p3 text-neutral-600 text-center">
+                        Lorem ipsum, dolor sit amet consectetur adipisicing elit. Repellendus voluptatem, provident
+                        accusamus dolorum.
+                    </p>
+                </div>
+                <form class="flex flex-col gap-4">
+                    <input type="text" class="bg-primary-50 rounded-md h-12 px-4 outline-none">
+                    <!-- Create Api Key Button -->
+                    <button type="submit" class="flex items-center justify-center bg-main rounded-md text-white py-3">
+                        Create Private API Key
+                    </button>
+                </form>
+            </div>
+        </div>
+    </div>
 
     <!-- Footer -->
     <footer id="footer" class="bg-[#121318] md:bg-[#0D0D2B] dark:bg-dark-backgroung pt-10 md:pt-20 pb-8">
@@ -909,6 +937,29 @@
             </div>
         </div>
     </footer>
+
+    <script>
+        // Create API key popup
+        document
+            .getElementById("createApiKeyBtn")
+            .addEventListener("click", function () {
+                document.getElementById("createApiKeyPopup").classList.remove("hidden");
+            });
+        document
+            .getElementById("closeCreateApiKeyPopup")
+            .addEventListener("click", function () {
+                document.getElementById("createApiKeyPopup").classList.add("hidden");
+            });
+
+        // Close popup when clicking outside the modal
+        document
+            .getElementById("createApiKeyPopup")
+            .addEventListener("click", function (event) {
+                if (event.target === this) {
+                    this.classList.add("hidden");
+                }
+            });
+    </script>
 
     <script src="./script.js"></script>
 </body>

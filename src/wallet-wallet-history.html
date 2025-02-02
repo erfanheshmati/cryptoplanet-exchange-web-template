@@ -1165,13 +1165,183 @@
                 </div>
             </div>
         </section>
-
-        <!-- Buy & Sell Button -->
-        <button id="buySellBtn"
-            class="flex md:hidden items-center justify-center text-p1 font-medium text-white bg-main rounded-lg py-3 fixed bottom-4 left-1/2 transform -translate-x-1/2 w-[calc(100%-2rem)] effect">
-            Add Money
-        </button>
     </section>
+
+    <!-- Add Money Button -->
+    <button id="addMoneyBtn"
+        class="flex md:hidden items-center justify-center text-p1 font-medium text-white bg-main rounded-lg py-3 fixed bottom-4 left-1/2 transform -translate-x-1/2 w-[calc(100%-2rem)] effect">
+        Add Money
+    </button>
+
+    <!-- Add Money Popup Modal -->
+    <div id="addMoneyPopup" class="fixed inset-0 flex items-center justify-center bg-black bg-opacity-50 hidden z-50">
+        <div class="bg-white rounded-xl max-w-xs sm:max-w-sm md:max-w-md w-full py-4 md:py-8">
+            <div class="flex flex-col gap-6 md:gap-10 px-4 md:px-6">
+                <!-- Title -->
+                <div class="flex items-center">
+                    <h3 class="text-p1 font-medium">Select Currency and Payment</h3>
+                    <!-- Close Btn -->
+                    <button id="closeAddMoneyBtn" class="ml-auto">
+                        <i class="fa-solid fa-close fa-lg text-neutral-500"></i>
+                    </button>
+                </div>
+                <!-- Currency -->
+                <div class="flex flex-col gap-6">
+                    <div class="flex flex-col gap-4">
+                        <span class="text-p3 text-neutral-500">Select Currency</span>
+                        <div class="flex items-center gap-1 px-2">
+                            <img src="../public/usd.png" alt="Crypto Icon" width="24" height="24">
+                            <select class="text-p3 text-neutral-700 w-full outline-none cursor-pointer">
+                                <option value="" class="text-p3 text-neutral-700">USD</option>
+                                <option value="" class="text-p3 text-neutral-700">EUR</option>
+                                <option value="" class="text-p3 text-neutral-700">USDT</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="flex flex-col gap-4">
+                        <span class="text-p3 text-neutral-500">Amount</span>
+                        <input type="text" placeholder="$0"
+                            class="text-p2 font-medium mx-2 border-l border-neutral-700 pl-1 focus:outline-none">
+                    </div>
+                </div>
+                <!-- Payment -->
+                <div class="flex flex-col gap-4">
+                    <span class="text-p3 text-neutral-500">Choose Payment Method:</span>
+                    <div class="flex items-center justify-between">
+                        <div class="flex items-center gap-2 cursor-pointer">
+                            <input type="radio" name="selection" class="peer cursor-pointer">
+                            <span class="text-p3 text-neutral-700 peer-checked:text-main">Pay Pal</span>
+                        </div>
+                        <svg id="Group_1273" data-name="Group 1273" xmlns="http://www.w3.org/2000/svg" width="80.001"
+                            height="20.001" viewBox="0 0 80.001 20.001">
+                            <path id="Vector"
+                                d="M.381,11.8A.333.333,0,0,1,0,11.429L1.778.5A.842.842,0,0,1,2.413,0H6.73a5.2,5.2,0,0,1,3.3.994,3.2,3.2,0,0,1,.508,2.733q-.572,4.1-4.953,4.1H4.19a.577.577,0,0,0-.635.5l-.509,3.106a.333.333,0,0,1-.381.373Z"
+                                transform="translate(55.109 5.217)" fill="#139ad6" />
+                            <g id="Group" transform="translate(24 5.217)">
+                                <path id="Vector-2" data-name="Vector"
+                                    d="M.381,11.8A.333.333,0,0,1,0,11.429L1.778.5A.842.842,0,0,1,2.413,0H6.73a4.952,4.952,0,0,1,3.3.994,3.2,3.2,0,0,1,.508,2.733q-.572,4.1-4.953,4.1H4.19a.577.577,0,0,0-.635.5L3.047,11.3a.84.84,0,0,1-.635.5Z"
+                                    fill="#263b80" />
+                                <path id="Vector-3" data-name="Vector"
+                                    d="M.842,7.205A3.643,3.643,0,0,1,.079,4.1,4.844,4.844,0,0,1,4.778,0,3.025,3.025,0,0,1,7.191.869l.127.248L7.445.5c0-.124.254-.248.381-.248H9.858c.127,0,.381.248.508.373L9.222,7.578a.84.84,0,0,1-.635.5H6.683A.333.333,0,0,1,6.3,7.7l.127-.621A4.1,4.1,0,0,1,3.508,8.2,3.237,3.237,0,0,1,.842,7.205Z"
+                                    transform="translate(9.953 3.727)" fill="#263b80" />
+                            </g>
+                            <path id="Vector-4" data-name="Vector"
+                                d="M.842,7.205A3.643,3.643,0,0,1,.079,4.1,4.844,4.844,0,0,1,4.778,0,3.025,3.025,0,0,1,7.191.869l.127.248L7.445.5c0-.124.254-.248.381-.248H9.858c.254,0,.381.248.508.373L9.222,7.578a.84.84,0,0,1-.635.5H6.683A.333.333,0,0,1,6.3,7.7l.127-.621A4.1,4.1,0,0,1,3.508,8.2,3.237,3.237,0,0,1,.842,7.205Z"
+                                transform="translate(64.936 8.943)" fill="#139ad6" />
+                            <path id="Vector-5" data-name="Vector"
+                                d="M7.619,0a.664.664,0,0,0-.508.248L4.317,4.472,3.048.5A.588.588,0,0,0,2.413.124H.381C.127.124,0,.373,0,.621L2.286,7.205.127,10.187c-.127.248,0,.621.254.621H2.413a.664.664,0,0,0,.508-.248L9.9.745C10.286.373,10.032,0,9.778,0Z"
+                                transform="translate(45.078 9.193)" fill="#263b80" />
+                            <path id="Vector-6" data-name="Vector"
+                                d="M0,11.478a.333.333,0,0,0,.381.373H2.159a.841.841,0,0,0,.635-.5L4.571.421A.333.333,0,0,0,4.19.049H2.159C2.032-.075,1.9.049,1.778.3Z"
+                                transform="translate(75.43 5.293)" fill="#139ad6" />
+                            <path id="Vector-7" data-name="Vector"
+                                d="M9.778,0H3.429A1.083,1.083,0,0,0,2.54.745L0,17.019a.572.572,0,0,0,.508.621H4.444L5.46,11.553V11.8a1.083,1.083,0,0,1,.889-.745h1.9c3.683,0,6.476-1.491,7.365-5.59V5.093h0a4.274,4.274,0,0,0-1.016-3.6C13.714.5,12.063,0,9.778,0Z"
+                                fill="#263b80" />
+                            <path id="Vector-8" data-name="Vector"
+                                d="M11.429.373C10.54,4.6,7.746,5.963,4.063,5.963h-1.9a1.083,1.083,0,0,0-.889.745L0,14.286a.46.46,0,0,0,.508.5h3.3a.707.707,0,0,0,.762-.621v-.124l.635-3.851V9.938a.707.707,0,0,1,.762-.621h.508c3.175,0,5.714-1.242,6.349-4.969A4.486,4.486,0,0,0,12.19.621,1.293,1.293,0,0,0,11.429,0Z"
+                                transform="translate(4.064 5.094)" fill="#139ad6" />
+                            <path id="Vector-9" data-name="Vector"
+                                d="M8.762.248A.473.473,0,0,1,8.381.124,6.854,6.854,0,0,0,6.73,0H1.778A.473.473,0,0,0,1.4.124a.681.681,0,0,0-.381.621L0,7.205v.248a1.083,1.083,0,0,1,.889-.745h1.9c3.683,0,6.476-1.491,7.365-5.59a.45.45,0,0,1,.127-.373C10.032.621,9.9.5,9.651.5,9.27.373,9.27.373,9.143.373S8.889.248,8.762.248Z"
+                                transform="translate(5.457 4.348)" fill="#232c65" />
+                        </svg>
+                    </div>
+                    <div class="flex items-center justify-between">
+                        <div class="flex items-center gap-2 cursor-pointer">
+                            <input type="radio" name="selection" class="peer cursor-pointer">
+                            <span class="text-p3 text-neutral-700 peer-checked:text-main">Credit & Debit Card</span>
+                        </div>
+                        <div class="flex items-center gap-2">
+                            <svg id="Group" xmlns="http://www.w3.org/2000/svg" width="48.75" height="15"
+                                viewBox="0 0 48.75 15">
+                                <path id="Vector" d="M2.478,0,0,14.537H3.96L6.445,0Z"
+                                    transform="translate(17.043 0.248)" fill="#0091ff" />
+                                <path id="Vector-2" data-name="Vector"
+                                    d="M13.982,0h-4.2L5.9,9.915l-.414-1.5A15.512,15.512,0,0,0,0,2.393L3.548,14.518l4.195,0Z"
+                                    transform="translate(3.938 0.258)" fill="#0091ff" />
+                                <path id="Vector-3" data-name="Vector"
+                                    d="M7.985,6.085C6.6,5.413,5.751,4.965,5.762,4.284c0-.6.716-1.249,2.269-1.249A7.318,7.318,0,0,1,11,3.592l.358.164L11.892.607A10.276,10.276,0,0,0,8.339,0c-3.916,0-6.673,1.97-6.7,4.8-.025,2.09,1.971,3.254,3.473,3.95,1.542.71,2.06,1.164,2.05,1.8-.01.974-1.229,1.418-2.369,1.418A8.316,8.316,0,0,1,1.064,11.2L.557,10.97,0,14.228A12.505,12.505,0,0,0,4.413,15c4.165,0,6.872-1.945,6.9-4.966C11.329,8.383,10.269,7.124,7.985,6.085Z"
+                                    transform="translate(23.488)" fill="#0091ff" />
+                                <path id="Vector-4" data-name="Vector"
+                                    d="M10.554,14.527s-.364-1.672-.483-2.179L5,12.344c-.155.393-.831,2.183-.831,2.183H0L5.887,1.2A1.97,1.97,0,0,1,7.961,0h3.06l3.209,14.527Z"
+                                    transform="translate(34.52 0.264)" fill="#0091ff" />
+                                <path id="Vector-5" data-name="Vector"
+                                    d="M7.922,1.184A1.6,1.6,0,0,0,6.194,0H.055L0,.293C4.782,1.453,7.946,4.249,9.261,7.607Z"
+                                    transform="translate(0 0.119)" fill="#f79f1a" />
+                            </svg>
+                            <svg id="Maestro" xmlns="http://www.w3.org/2000/svg" width="31.999" height="20"
+                                viewBox="0 0 31.999 20">
+                                <g id="Group">
+                                    <path id="Vector"
+                                        d="M19.15,10.009A10.233,10.233,0,0,0,16,2.586,9.27,9.27,0,0,0,9.584,0,9.81,9.81,0,0,0,0,10.009,9.792,9.792,0,0,0,9.584,20,9.264,9.264,0,0,0,16,17.413,10.154,10.154,0,0,0,19.15,10.009Z"
+                                        fill="#25a1ff" />
+                                    <path id="Vector-2" data-name="Vector"
+                                        d="M3.152,7.424A10.233,10.233,0,0,0,0,0V14.828A10.154,10.154,0,0,0,3.152,7.424Z"
+                                        transform="translate(15.998 2.586)" fill="#009ddd" />
+                                </g>
+                                <path id="Vector-3" data-name="Vector"
+                                    d="M2.925,2.586a12.631,12.631,0,0,0-.957,1.058H3.9A12.84,12.84,0,0,1,4.632,4.7h-3.4Q.928,5.23.674,5.759h4.5c.151.352.3.706.413,1.058H.282A9.908,9.908,0,0,0,0,7.894H5.87a11.1,11.1,0,0,1,.207,2.115,10.472,10.472,0,0,1-.489,3.174H.282q.167.528.393,1.058h4.5A11.036,11.036,0,0,1,4.632,15.3h-3.4a10.621,10.621,0,0,0,.732,1.058H3.9a10.11,10.11,0,0,1-.975,1.058A9.348,9.348,0,0,0,9.359,20a9.776,9.776,0,0,0,9.566-9.99A9.794,9.794,0,0,0,9.359,0,9.351,9.351,0,0,0,2.925,2.586Z"
+                                    transform="translate(13.074)" fill="#ef4444" />
+                                <g id="Group-2" data-name="Group" transform="translate(3.191 7.426)">
+                                    <path id="Vector-4" data-name="Vector"
+                                        d="M0,.313A.319.319,0,0,1,.319,0a.3.3,0,0,1,.3.313.319.319,0,0,1-.3.333A.336.336,0,0,1,0,.313Z"
+                                        transform="translate(25.508 4.426)" fill="#fff" />
+                                    <path id="Vector-5" data-name="Vector"
+                                        d="M4,5.073l.712-3.9-1.631,3.9H1.988L1.8,1.194,1.088,5.073H0L.919,0H2.794l.094,3.133L4.2,0h1.93L5.2,5.073Z"
+                                        fill="#fff" />
+                                    <path id="Vector-6" data-name="Vector"
+                                        d="M.938,5.151A.829.829,0,0,1,0,4.25a2.89,2.89,0,0,1,.038-.373l.075-.411L.17,3.153.713,0H1.894L1.726.939h.618l-.168,1H1.557l-.3,1.723a.986.986,0,0,0-.038.176c0,.216.132.313.413.313a1.307,1.307,0,0,0,.319-.039l-.15.9A2.926,2.926,0,0,1,.938,5.151Z"
+                                        transform="translate(16.709)" fill="#fff" />
+                                    <path id="Vector-7" data-name="Vector"
+                                        d="M2.965.039C2.908.019,2.87.019,2.87,0H2.74c-.395,0-.676.176-1.032.665L1.819.039H.731L0,4.172H1.2c.431-2.528.6-2.978,1.181-2.978.038,0,.095.02.15.02l.132.039L3.1.079A.309.309,0,0,0,2.965.039Z"
+                                        transform="translate(18.887 0.9)" fill="#fff" />
+                                    <path id="Vector-8" data-name="Vector"
+                                        d="M1.37,2.526c.488.215.563.274.563.47,0,.254-.226.372-.694.372A3.715,3.715,0,0,1,.15,3.193L0,4.153H.057l.206.058c.075,0,.187.02.319.02a4.7,4.7,0,0,0,.676.038c1.257,0,1.857-.431,1.857-1.371a1.139,1.139,0,0,0-.863-1.156c-.507-.2-.563-.255-.563-.451,0-.215.206-.333.6-.333a7.527,7.527,0,0,1,.862.058L3.32.078A6.9,6.9,0,0,0,2.269,0C.919,0,.45.626.45,1.389.45,1.9.732,2.271,1.37,2.526Z"
+                                        transform="translate(13.336 0.861)" fill="#fff" />
+                                    <path id="Vector-9" data-name="Vector"
+                                        d="M0,3.153c0-1,.768-1.587,2.1-1.587a4.325,4.325,0,0,1,.488.021.831.831,0,0,0,.037-.255c0-.275-.207-.373-.77-.373a4.869,4.869,0,0,0-.975.1l-.168.059L.6,1.136.769.215A5.182,5.182,0,0,1,2.2,0c1.03,0,1.556.41,1.556,1.194a4.573,4.573,0,0,1-.094.823l-.244,1.47-.038.254-.038.217-.019.136L3.3,4.211H2.325l.02-.431a1.592,1.592,0,0,1-1.257.49A1.052,1.052,0,0,1,0,3.153Z"
+                                        transform="translate(5.758 0.861)" fill="#fff" />
+                                    <path id="Vector-10" data-name="Vector"
+                                        d="M0,2.449A2.22,2.22,0,0,1,2.083,0,1.446,1.446,0,0,1,3.677,1.489a4.363,4.363,0,0,1-.131,1.019H1.163v.138c0,.47.338.724,1.032.724a3.056,3.056,0,0,0,1.237-.254L3.245,4.134a4.386,4.386,0,0,1-1.22.176C.7,4.309,0,3.663,0,2.449Z"
+                                        transform="translate(9.73 0.842)" fill="#fff" />
+                                    <path id="Vector-11" data-name="Vector"
+                                        d="M0,2.45A2.266,2.266,0,0,1,2.344,0,1.762,1.762,0,0,1,4.238,1.861a2.227,2.227,0,0,1-.038.51A2.135,2.135,0,0,1,1.874,4.349,1.719,1.719,0,0,1,0,2.45Z"
+                                        transform="translate(21.494 0.82)" fill="#fff" />
+                                </g>
+                            </svg>
+                            <svg xmlns="http://www.w3.org/2000/svg" width="23.999" height="20" viewBox="0 0 23.999 20">
+                                <g id="Group_1274" data-name="Group 1274" transform="translate(0 0)">
+                                    <path id="Vector"
+                                        d="M4.018,16.642a1.872,1.872,0,0,1-2.172-1.494L.029,5.022A1.845,1.845,0,0,1,1.55,2.888L18.056.028a1.872,1.872,0,0,1,2.172,1.494l1.817,10.125a1.845,1.845,0,0,1-1.521,2.134h0Z"
+                                        transform="translate(1.926)" fill="#3555a2" />
+                                    <path id="Vector-2" data-name="Vector"
+                                        d="M0,1.458,2.468,15.212l8.253-1.43a1.845,1.845,0,0,0,1.521-2.134L10.425,1.523A1.872,1.872,0,0,0,8.253.028h0Z"
+                                        transform="translate(11.729)" fill="#1b3555" />
+                                    <path id="Vector-3" data-name="Vector"
+                                        d="M1.875,13.713A1.859,1.859,0,0,1,0,11.87V1.842A1.859,1.859,0,0,1,1.875,0H18.281a1.859,1.859,0,0,1,1.875,1.842V11.87a1.859,1.859,0,0,1-1.875,1.842Z"
+                                        transform="translate(0 6.287)" fill="#64ced7" />
+                                    <path id="Vector-4" data-name="Vector"
+                                        d="M0,0V13.713H8.2a1.859,1.859,0,0,0,1.875-1.842V1.842A1.859,1.859,0,0,0,8.2,0H0Z"
+                                        transform="translate(10.078 6.287)" fill="#18a8c9" />
+                                    <path id="Vector-5" data-name="Vector" d="M20.156,0V3.134H0V0Z"
+                                        transform="translate(0 9.422)" fill="#ecf6fd" />
+                                    <path id="Vector-6" data-name="Vector"
+                                        d="M.7,0A.7.7,0,0,0,0,.691a.7.7,0,0,0,.7.691h3.19A.7.7,0,0,0,4.6.691.7.7,0,0,0,3.893,0H.7Z"
+                                        transform="translate(1.689 16.959)" fill="#eaf6ff" />
+                                    <path id="Vector-7" data-name="Vector" d="M10.078,0V3.134H0V0Z"
+                                        transform="translate(10.078 9.422)" fill="#d6e8fe" />
+                                </g>
+                            </svg>
+                        </div>
+                    </div>
+                </div>
+                <!-- Btn -->
+                <button
+                    class="flex items-center justify-center bg-main rounded-lg text-white py-3 hover:opacity-80 effect">
+                    Add Money
+                </button>
+            </div>
+        </div>
+    </div>
 
     <!-- Footer -->
     <footer id="footer" class="bg-[#121318] md:bg-[#0D0D2B] dark:bg-dark-backgroung pt-10 md:pt-20 pb-8">
@@ -1485,6 +1655,45 @@
             </div>
         </div>
     </footer>
+
+    <script>
+        // Hide add money button on footer viewport
+        function toggleButtonVisibility() {
+            const button = document.getElementById("addMoneyBtn");
+            const footer = document.getElementById("footer");
+            const footerTop = footer.getBoundingClientRect().top;
+            const windowHeight = window.innerHeight;
+            if (footerTop <= windowHeight) {
+                button.classList.add("opacity-0", "pointer-events-none"); // Hide button
+            } else {
+                button.classList.remove("opacity-0", "pointer-events-none"); // Show button
+            }
+        }
+        window.addEventListener("scroll", toggleButtonVisibility);
+
+        // ****************************************************************
+
+        // Add money popup
+        document
+            .getElementById("addMoneyBtn")
+            .addEventListener("click", function () {
+                document.getElementById("addMoneyPopup").classList.remove("hidden");
+            });
+        document
+            .getElementById("closeAddMoneyBtn")
+            .addEventListener("click", function () {
+                document.getElementById("addMoneyPopup").classList.add("hidden");
+            });
+
+        // Close popup when clicking outside the modal
+        document
+            .getElementById("addMoneyPopup")
+            .addEventListener("click", function (event) {
+                if (event.target === this) {
+                    this.classList.add("hidden");
+                }
+            });
+    </script>
 
     <script src="./script.js"></script>
 </body>
