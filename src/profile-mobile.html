@@ -8,7 +8,7 @@
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
     <link rel="stylesheet" href="../dist/style.css">
     <link rel="stylesheet" href="./custom.css">
-    <title>Crypto Planet - Payment Option</title>
+    <title>Crypto Planet - Profile</title>
 </head>
 
 <body class="bg-[#E6E9F1] dark:bg-dark-backgroung">
@@ -475,286 +475,92 @@
     <!-- Content -->
     <section class="flex wrapper gap-6 my-8">
         <!-- Sidebar -->
-        <section class="w-3/12 hidden lg:flex flex-col gap-6">
-            <div class="bg-white rounded-xl py-8 h-full">
-                <div class="flex flex-col gap-6 px-6">
+        <section class="w-full flex flex-col gap-6">
+            <div class="bg-white rounded-xl py-4 h-full">
+                <div class="flex flex-col gap-4 px-4">
                     <!-- User Info -->
                     <div class="flex flex-col items-center gap-4">
-                        <img src="../public/avatar.png" alt="avatar" width="125" height="125">
+                        <img src="../public/avatar.png" alt="avatar" width="84" height="84">
                         <div class="flex flex-col">
-                            <span class="text-h5 font-medium">Allie Grater</span>
-                            <span class="text-p2 text-neutral-600">AllieGrater123@</span>
+                            <span class="text-h5s font-medium">Allie Grater</span>
+                            <span class="text-p3 text-neutral-600">AllieGrater123@</span>
                         </div>
                     </div>
                     <!-- Navbar -->
                     <ul class="flex flex-col gap-2">
                         <a href="./profile-my-profile.html">
                             <li
-                                class="flex items-center gap-4 rounded-md px-4 py-3 hover:bg-neutral-100 hover:opacity-80 effect">
-                                <i class="fa-regular fa-user text-neutral-600"></i>
-                                <span class="text-p2 text-neutral-600">My Profile</span>
+                                class="flex items-center justify-between rounded-md px-2 py-3 hover:bg-neutral-100 hover:opacity-80 effect">
+                                <span class="flex items-center gap-4">
+                                    <i class="fa-regular fa-user text-neutral-600"></i>
+                                    <span class="text-p3 text-neutral-600">My Profile</span>
+                                </span>
+                                <i class="fa-solid fa-chevron-right fa-xs text-neutral-600"></i>
                             </li>
                         </a>
                         <a href="./profile-security.html">
                             <li
-                                class="flex items-center gap-4 rounded-md px-4 py-3 hover:bg-neutral-100 hover:opacity-80 effect">
-                                <i class="fa-solid fa-lock text-neutral-600"></i>
-                                <span class="text-p2 text-neutral-600">Security</span>
+                                class="flex items-center justify-between rounded-md px-2 py-3 hover:bg-neutral-100 hover:opacity-80 effect">
+                                <span class="flex items-center gap-4">
+                                    <i class="fa-solid fa-lock text-neutral-600"></i>
+                                    <span class="text-p3 text-neutral-600">Security</span>
+                                </span>
+                                <i class="fa-solid fa-chevron-right fa-xs text-neutral-600"></i>
                             </li>
                         </a>
                         <a href="./profile-notification-preferences.html">
                             <li
-                                class="flex items-center gap-4 rounded-md px-4 py-3 hover:bg-neutral-100 hover:opacity-80 effect">
-                                <i class="fa-regular fa-bell text-neutral-600"></i>
-                                <span class="text-p2 text-neutral-600">Notification Preferences</span>
+                                class="flex items-center justify-between rounded-md px-2 py-3 hover:bg-neutral-100 hover:opacity-80 effect">
+                                <span class="flex items-center gap-4">
+                                    <i class="fa-regular fa-bell text-neutral-600"></i>
+                                    <span class="text-p3 text-neutral-600">Notification Preferences</span>
+                                </span>
+                                <i class="fa-solid fa-chevron-right fa-xs text-neutral-600"></i>
                             </li>
                         </a>
                         <a href="./profile-currency-preferences.html">
                             <li
-                                class="flex items-center gap-4 rounded-md px-4 py-3 hover:bg-neutral-100 hover:opacity-80 effect">
-                                <i class="fa-solid fa-dollar-sign text-neutral-600"></i>
-                                <span class="text-p2 text-neutral-600">Currency Preferences</span>
+                                class="flex items-center justify-between rounded-md px-2 py-3 hover:bg-neutral-100 hover:opacity-80 effect">
+                                <span class="flex items-center gap-4">
+                                    <i class="fa-solid fa-dollar-sign text-neutral-600"></i>
+                                    <span class="text-p3 text-neutral-600">Currency Preferences</span>
+                                </span>
+                                <i class="fa-solid fa-chevron-right fa-xs text-neutral-600"></i>
                             </li>
                         </a>
                         <a href="./profile-kyc-verification.html">
                             <li
-                                class="flex items-center gap-4 rounded-md px-4 py-3 hover:bg-neutral-100 hover:opacity-80 effect">
-                                <i class="fa-regular fa-file-lines text-neutral-600"></i>
-                                <span class="text-p2 text-neutral-600">KYC Verification</span>
+                                class="flex items-center justify-between rounded-md px-2 py-3 hover:bg-neutral-100 hover:opacity-80 effect">
+                                <span class="flex items-center gap-4">
+                                    <i class="fa-regular fa-file-lines text-neutral-600"></i>
+                                    <span class="text-p3 text-neutral-600">KYC Verification</span>
+                                </span>
+                                <i class="fa-solid fa-chevron-right fa-xs text-neutral-600"></i>
                             </li>
                         </a>
                         <a href="./profile-payment-option.html">
                             <li
-                                class="flex items-center gap-4 rounded-md px-4 py-3 bg-primary-50 hover:opacity-80 effect">
-                                <i class="fa-solid fa-wallet text-main"></i>
-                                <span class="text-p2 text-main">Payment Option</span>
+                                class="flex items-center justify-between rounded-md px-2 py-3 hover:bg-neutral-100 hover:opacity-80 effect">
+                                <span class="flex items-center gap-4">
+                                    <i class="fa-solid fa-wallet text-neutral-600"></i>
+                                    <span class="text-p3 text-neutral-600">Payment Option</span>
+                                </span>
+                                <i class="fa-solid fa-chevron-right fa-xs text-neutral-600"></i>
                             </li>
                         </a>
                         <a href="./profile-api-managment.html">
                             <li
-                                class="flex items-center gap-4 rounded-md px-4 py-3 hover:bg-neutral-100 hover:opacity-80 effect">
-                                <i class="fa-solid fa-table text-neutral-600"></i>
-                                <span class="text-p2 text-neutral-600">Api Managment</span>
+                                class="flex items-center justify-between rounded-md px-2 py-3 hover:bg-neutral-100 hover:opacity-80 effect">
+                                <span class="flex items-center gap-4">
+                                    <i class="fa-solid fa-table text-neutral-600"></i>
+                                    <span class="text-p3 text-neutral-600">Api Managment</span>
+                                </span>
+                                <i class="fa-solid fa-chevron-right fa-xs text-neutral-600"></i>
                             </li>
                         </a>
                     </ul>
                 </div>
             </div>
-        </section>
-
-        <!--  Payment Option -->
-        <section class="w-full lg:w-9/12 flex flex-col gap-6">
-            <section class="bg-white rounded-xl py-4 md:py-8 h-full">
-                <div class="flex flex-col gap-8 px-4 md:px-8">
-                    <!-- Heading -->
-                    <div class="flex items-center">
-                        <!-- Title -->
-                        <div class="flex flex-col">
-                            <h2 class="text-h5 font-medium">Payment Option</h2>
-                        </div>
-                    </div>
-                    <div class="flex items-center justify-between">
-                        <div class="flex items-center gap-4">
-                            <svg id="Icon" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
-                                width="40" height="40" viewBox="0 0 40 40">
-                                <defs>
-                                    <clipPath id="clip-path">
-                                        <rect id="bank_1_2_Background_Mask_" data-name="bank (1) 2 (Background/Mask)"
-                                            width="24" height="24" fill="none" />
-                                    </clipPath>
-                                </defs>
-                                <rect id="Icon_Background_" data-name="Icon (Background)" width="40" height="40" rx="5"
-                                    fill="#56b2ff" />
-                                <g id="bank_1_2" data-name="bank (1) 2" transform="translate(8 8)">
-                                    <rect id="bank_1_2_Background_Mask_2" data-name="bank (1) 2 (Background/Mask)"
-                                        width="24" height="24" fill="none" />
-                                    <g id="bank_1_2-2" data-name="bank (1) 2" clip-path="url(#clip-path)">
-                                        <path id="Vector"
-                                            d="M.8,19.2a.8.8,0,0,1,0-1.6H18.4a.8.8,0,0,1,0,1.6ZM1.6,16a.8.8,0,0,1,0-1.6h.8V8H2.167A2.171,2.171,0,0,1,.234,6.843,1.956,1.956,0,0,1,.356,4.79a3.765,3.765,0,0,1,1.335-1.2l6-3.123a4.136,4.136,0,0,1,3.819,0l6,3.125a3.765,3.765,0,0,1,1.334,1.2,1.954,1.954,0,0,1,.122,2.052A2.17,2.17,0,0,1,17.033,8H16.8v6.4h.8a.8.8,0,1,1,0,1.6Z"
-                                            transform="translate(2.398 2.4)" fill="#fff" />
-                                    </g>
-                                </g>
-                            </svg>
-                            <span class="text-p2">Bank Account</span>
-                        </div>
-                        <button class="flex items-center gap-2 group">
-                            <i
-                                class="fa-regular fa-square-plus fa-lg pt-0.5 text-neutral-500 group-hover:text-main effect"></i>
-                            <span class="text-p3 text-neutral-500 group-hover:text-main effect">Add</span>
-                        </button>
-                    </div>
-                    <!-- Cards -->
-                    <div class="grid grid-cols-1 md:grid-cols-3 gap-5">
-                        <!-- HDFC Bank -->
-                        <div class="flex flex-col gap-5 bg-gray-100 rounded-lg p-4">
-                            <div class="flex items-center justify-between">
-                                <div class="flex items-center gap-2">
-                                    <img src="../public/hdfc.png" alt="Bank Logo">
-                                    <span class="text-p2 font-medium">HDFC Bank</span>
-                                </div>
-                                <div class="flex items-center gap-2">
-                                    <button class="group rounded-md px-2 py-1 hover:bg-main effect">
-                                        <i
-                                            class="fa-regular fa-pen-to-square text-neutral-600 group-hover:text-white effect"></i>
-                                    </button>
-                                    <button class="group rounded-md px-2 py-1 hover:bg-main effect">
-                                        <i
-                                            class="fa-regular fa-trash-can text-neutral-600 group-hover:text-white effect"></i>
-                                    </button>
-                                </div>
-                            </div>
-                            <div class="flex flex-col gap-1">
-                                <div class="flex items-center gap-2">
-                                    <span class="text-caption text-neutral-600">Account Holder Name:</span>
-                                    <span class="text-caption">Allie Grater</span>
-                                </div>
-                                <div class="flex items-center gap-2">
-                                    <span class="text-caption text-neutral-600">Account Number:</span>
-                                    <span class="text-caption">12345678909876</span>
-                                </div>
-                                <div class="flex items-center gap-2">
-                                    <span class="text-caption text-neutral-600">IFSC Code:</span>
-                                    <span class="text-caption">Sd12345673</span>
-                                </div>
-                            </div>
-                        </div>
-                        <!-- ICICI Bank -->
-                        <div class="flex flex-col gap-5 bg-gray-100 rounded-lg p-4">
-                            <div class="flex items-center justify-between">
-                                <div class="flex items-center gap-2">
-                                    <img src="../public/icici.png" alt="Bank Logo">
-                                    <span class="text-p2 font-medium">ICICI Bank</span>
-                                </div>
-                                <div class="flex items-center gap-2">
-                                    <button class="group rounded-md px-2 py-1 hover:bg-main effect">
-                                        <i
-                                            class="fa-regular fa-pen-to-square text-neutral-600 group-hover:text-white effect"></i>
-                                    </button>
-                                    <button class="group rounded-md px-2 py-1 hover:bg-main effect">
-                                        <i
-                                            class="fa-regular fa-trash-can text-neutral-600 group-hover:text-white effect"></i>
-                                    </button>
-                                </div>
-                            </div>
-                            <div class="flex flex-col gap-1">
-                                <div class="flex items-center gap-2">
-                                    <span class="text-caption text-neutral-600">Account Holder Name:</span>
-                                    <span class="text-caption">Allie Grater</span>
-                                </div>
-                                <div class="flex items-center gap-2">
-                                    <span class="text-caption text-neutral-600">Account Number:</span>
-                                    <span class="text-caption">12345678909876</span>
-                                </div>
-                                <div class="flex items-center gap-2">
-                                    <span class="text-caption text-neutral-600">IFSC Code:</span>
-                                    <span class="text-caption">Sd12345673</span>
-                                </div>
-                            </div>
-                        </div>
-                        <!-- Axis Bank -->
-                        <div class="flex flex-col gap-5 bg-gray-100 rounded-lg p-4">
-                            <div class="flex items-center justify-between">
-                                <div class="flex items-center gap-2">
-                                    <img src="../public/axis.png" alt="Bank Logo">
-                                    <span class="text-p2 font-medium">Axis Bank</span>
-                                </div>
-                                <div class="flex items-center gap-2">
-                                    <button class="group rounded-md px-2 py-1 hover:bg-main effect">
-                                        <i
-                                            class="fa-regular fa-pen-to-square text-neutral-600 group-hover:text-white effect"></i>
-                                    </button>
-                                    <button class="group rounded-md px-2 py-1 hover:bg-main effect">
-                                        <i
-                                            class="fa-regular fa-trash-can text-neutral-600 group-hover:text-white effect"></i>
-                                    </button>
-                                </div>
-                            </div>
-                            <div class="flex flex-col gap-1">
-                                <div class="flex items-center gap-2">
-                                    <span class="text-caption text-neutral-600">Account Holder Name:</span>
-                                    <span class="text-caption">Allie Grater</span>
-                                </div>
-                                <div class="flex items-center gap-2">
-                                    <span class="text-caption text-neutral-600">Account Number:</span>
-                                    <span class="text-caption">12345678909876</span>
-                                </div>
-                                <div class="flex items-center gap-2">
-                                    <span class="text-caption text-neutral-600">IFSC Code:</span>
-                                    <span class="text-caption">Sd12345673</span>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <hr>
-                    <div class="flex items-center justify-between">
-                        <div class="flex items-center gap-4">
-                            <svg id="Icon" xmlns="http://www.w3.org/2000/svg" width="40" height="40"
-                                viewBox="0 0 40 40">
-                                <rect id="Icon_Background_" data-name="Icon (Background)" width="40" height="40" rx="5"
-                                    fill="#6ee7b7" />
-                                <g id="Icon-2" data-name="Icon" transform="translate(8 8)">
-                                    <rect id="Icon_Background_2" data-name="Icon (Background)" width="24" height="24"
-                                        fill="none" />
-                                    <text id="UPI" transform="translate(12 10)" fill="#fff" font-size="13"
-                                        font-family="SegoeUI, Segoe UI" letter-spacing="-0.08em">
-                                        <tspan x="-8.796" y="0">UPI</tspan>
-                                    </text>
-                                </g>
-                            </svg>
-                            <span class="text-p2">UPI Payment</span>
-                        </div>
-                        <button class="flex items-center gap-2 group">
-                            <i
-                                class="fa-regular fa-square-plus fa-lg pt-0.5 text-neutral-500 group-hover:text-main effect"></i>
-                            <span class="text-p3 text-neutral-500 group-hover:text-main effect">Add</span>
-                        </button>
-                    </div>
-                    <div class="flex items-center justify-between">
-                        <div class="flex items-center gap-4">
-                            <svg id="Icon" xmlns="http://www.w3.org/2000/svg" width="40" height="40"
-                                viewBox="0 0 40 40">
-                                <rect id="Icon_Background_" data-name="Icon (Background)" width="40" height="40" rx="5"
-                                    fill="#25a1ff" />
-                                <g id="Icon-2" data-name="Icon" transform="translate(8 8)">
-                                    <rect id="Icon_Background_2" data-name="Icon (Background)" width="24" height="24"
-                                        fill="none" />
-                                    <path id="Mask"
-                                        d="M17,14H3a3,3,0,0,1-3-3V3A3,3,0,0,1,3,0H17a3,3,0,0,1,3,3v8A3,3,0,0,1,17,14ZM2,6v5a1,1,0,0,0,1,1H17a1,1,0,0,0,1-1V6ZM3,2A1,1,0,0,0,2,3V4H18V3a1,1,0,0,0-1-1Zm12,8H13a1,1,0,0,1,0-2h2a1,1,0,1,1,0,2ZM9,10H5A1,1,0,1,1,5,8H9a1,1,0,0,1,0,2Z"
-                                        transform="translate(2 5)" fill="#fff" />
-                                </g>
-                            </svg>
-                            <span class="text-p2">Credit & Debit Card</span>
-                        </div>
-                        <button class="flex items-center gap-2 group">
-                            <i
-                                class="fa-regular fa-square-plus fa-lg pt-0.5 text-neutral-500 group-hover:text-main effect"></i>
-                            <span class="text-p3 text-neutral-500 group-hover:text-main effect">Add</span>
-                        </button>
-                    </div>
-                    <div class="flex items-center justify-between">
-                        <div class="flex items-center gap-4">
-                            <svg id="Icon" xmlns="http://www.w3.org/2000/svg" width="40" height="40"
-                                viewBox="0 0 40 40">
-                                <rect id="Icon_Background_" data-name="Icon (Background)" width="40" height="40" rx="5"
-                                    fill="#f87171" />
-                                <g id="Icon-2" data-name="Icon" transform="translate(8 8)">
-                                    <rect id="Icon_Background_2" data-name="Icon (Background)" width="24" height="24"
-                                        fill="none" />
-                                    <path id="icon-3" data-name="icon"
-                                        d="M2,19.674a2,2,0,0,1-2-2H.027A1.985,1.985,0,0,1,0,17.349V5.429A2.008,2.008,0,0,1,1.451,3.506l12-3.429A2,2,0,0,1,16,2V13.92a2.01,2.01,0,0,1-1.451,1.923L8.142,17.674H18v-8H16v-2h2v-2H16v-2h2a2,2,0,0,1,2,2v12a2,2,0,0,1-2,2ZM2,5.429v11.92L14,13.92V2Zm8,2.245a1,1,0,1,1,1,1A1,1,0,0,1,10,7.673Z"
-                                        transform="translate(2 1.326)" fill="#fff" />
-                                </g>
-                            </svg>
-                            <span class="text-p2">Another Payment Method</span>
-                        </div>
-                        <button class="flex items-center gap-2 group">
-                            <i
-                                class="fa-regular fa-square-plus fa-lg pt-0.5 text-neutral-500 group-hover:text-main effect"></i>
-                            <span class="text-p3 text-neutral-500 group-hover:text-main effect">Add</span>
-                        </button>
-                    </div>
-                </div>
-            </section>
         </section>
     </section>
 
