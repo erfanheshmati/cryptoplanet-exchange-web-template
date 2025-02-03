@@ -1,4 +1,4 @@
-// Toggle the dropdown menu visibility
+// Toggle the language-currency dropdown menu visibility
 function toggleDropdown(event) {
   const dropdownMenu = document.getElementById("dropdown-language-currency");
   const chevronIcon = document.querySelector(
@@ -153,10 +153,30 @@ document.addEventListener("DOMContentLoaded", function () {
 
 // **********************************************************
 
-// Toggle light and dark mode
+// Toggle light and dark mode in desktop
 function toggleTheme() {
   const htmlElement = document.documentElement;
   const themeIcon = document.getElementById("theme-icon");
+
+  if (htmlElement.classList.contains("dark")) {
+    // Switch to Light Mode
+    htmlElement.classList.remove("dark");
+    themeIcon.classList.remove("fa-sun");
+    themeIcon.classList.add("fa-moon");
+    localStorage.setItem("theme", "light");
+  } else {
+    // Switch to Dark Mode
+    htmlElement.classList.add("dark");
+    themeIcon.classList.remove("fa-moon");
+    themeIcon.classList.add("fa-sun");
+    localStorage.setItem("theme", "dark");
+  }
+}
+
+// Toggle light and dark mode in mobile
+function toggleThemeMobile() {
+  const htmlElement = document.documentElement;
+  const themeIcon = document.getElementById("theme-icon-mobile");
 
   if (htmlElement.classList.contains("dark")) {
     // Switch to Light Mode
@@ -178,15 +198,20 @@ document.addEventListener("DOMContentLoaded", () => {
   const savedTheme = localStorage.getItem("theme");
   const htmlElement = document.documentElement;
   const themeIcon = document.getElementById("theme-icon");
+  const themeIconMobile = document.getElementById("theme-icon-mobile");
 
   if (savedTheme === "dark") {
     htmlElement.classList.add("dark");
     themeIcon.classList.remove("fa-moon");
     themeIcon.classList.add("fa-sun");
+    themeIconMobile.classList.remove("fa-moon");
+    themeIconMobile.classList.add("fa-sun");
   } else {
     htmlElement.classList.remove("dark");
     themeIcon.classList.remove("fa-sun");
     themeIcon.classList.add("fa-moon");
+    themeIconMobile.classList.remove("fa-sun");
+    themeIconMobile.classList.add("fa-moon");
   }
 });
 

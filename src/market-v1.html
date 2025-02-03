@@ -17,8 +17,9 @@
     <header class="flex items-center w-full md:bg-white md:dark:bg-dark-main sticky top-0 z-50">
         <nav
             class="flex items-center justify-between wrapper bg-white dark:bg-dark-backgroung md:dark:bg-dark-main py-6 rounded-b-3xl md:rounded-none shadow-md md:shadow-none z-50">
-            <!-- Logo -->
+            <!-- Left Side -->
             <div class="flex items-center gap-8">
+                <!-- Logo -->
                 <a href="./index.html" class="md:hidden lg:block border-r pr-2 md:pr-7">
                     <svg id="Logo" xmlns="http://www.w3.org/2000/svg" width="182.186" height="40.001"
                         viewBox="0 0 182.186 40.001" class="text-lightLogo dark:text-darkLogo">
@@ -44,14 +45,15 @@
                 <!-- Menu -->
                 <div class="hidden md:flex items-center">
                     <ul class="flex items-center gap-6 xl:gap-8">
-                        <li class="text-p2">
-                            <a href="#" class="hover:text-main effect">Market</a>
+                        <li class="text-p2 ">
+                            <a href="./market-v1.html"
+                                class="text-main dark:text-main border-b-2 border-main pb-8 hover:text-main effect">Market</a>
                         </li>
                         <li class="text-p2">
-                            <a href="#" class="hover:text-main effect">Watchlist</a>
+                            <a href="./watchlist.html" class="hover:text-main effect">Watchlist</a>
                         </li>
                         <li class="text-p2">
-                            <a href="#" class="hover:text-main effect">Portfolio</a>
+                            <a href="./portfolio.html" class="hover:text-main effect">Portfolio</a>
                         </li>
                         <li class="text-p2">
                             <a href="#" class="hover:text-main effect">Learn</a>
@@ -151,18 +153,19 @@
                 </button>
                 <!-- Sign-in & Register -->
                 <div class="flex items-center gap-4">
-                    <a href="#"
+                    <a href="./login.html"
                         class="bg-neutral-200 dark:bg-neutral-800 text-main dark:text-main rounded-lg px-8 py-3 text-p3 hover:opacity-80 effect">
                         Sign in
                     </a>
-                    <a href="#" class="bg-main text-white rounded-lg px-8 py-3 text-p3 hover:opacity-80 effect">
+                    <a href="./register.html"
+                        class="bg-main text-white rounded-lg px-8 py-3 text-p3 hover:opacity-80 effect">
                         Register
                     </a>
                 </div>
             </div>
             <!-- Mobile Buttons -->
             <div class="flex md:hidden items-center gap-6">
-                <button class="w-6 h-6">
+                <button id="searchToggle" class="w-6 h-6">
                     <i class="fa-solid fa-search fa-lg text-neutral-700"></i>
                 </button>
                 <button id="menuToggle" class="w-6 h-6">
@@ -175,16 +178,16 @@
             class="wrapper fixed top-0 left-0 w-full h-full overflow-y-auto pt-[7.5rem] pb-4 bg-[#E6E9F1] dark:bg-dark-main hidden z-40">
             <ul class="bg-white dark:bg-dark-backgroung rounded-xl flex flex-col gap-6 p-4">
                 <li class="flex items-center justify-between">
-                    <a href="./profile-my-profile.html" class="flex items-center gap-3">
+                    <a href="./profile-mobile.html" class="flex items-center gap-3">
                         <img src="../public/avatar.png" alt="Avatar" class="w-12 h-12">
                         <span class="flex flex-col">
                             <span class="text-p2 font-medium text-neutral-700">Allie Grater</span>
                             <span class="text-p3 text-neutral-600 dark:text-neutral-500">AllieGrater123@</span>
                         </span>
                     </a>
-                    <button id="theme-toggle" onclick="toggleTheme()"
+                    <button id="theme-toggle" onclick="toggleThemeMobile()"
                         class="w-12 h-12 bg-neutral-200 dark:bg-neutral-800 rounded-md">
-                        <span id="theme-icon"
+                        <span id="theme-icon-mobile"
                             class="fa-solid fa-moon fa-xl text-neutral-700 dark:text-neutral-300"></span>
                     </button>
                 </li>
@@ -198,11 +201,11 @@
                                     height="24" fill="none" />
                                 <path id="Mask"
                                     d="M7.111,22a1,1,0,0,1-.994-1.107L6.886,13.8H1a1,1,0,0,1-.831-1.556L8.058.445a1,1,0,0,1,1.825.663L9.114,8.2H15a1,1,0,0,1,.831,1.556l-7.889,11.8A1,1,0,0,1,7.111,22ZM7.455,4.944,2.871,11.8H8a1,1,0,0,1,.994,1.107l-.448,4.15L13.129,10.2H8a1,1,0,0,1-.994-1.107l.448-4.149Z"
-                                    transform="translate(4 1)" class="fill-neutral-500" />
+                                    transform="translate(4 1)" class="fill-main" />
                             </svg>
-                            <span class="text-p2 text-neutral-500">Market</span>
+                            <span class="text-p2 text-main dark:text-main">Market</span>
                         </span>
-                        <span><i class="fa-solid fa-chevron-right fa-xs text-neutral-500"></i></span>
+                        <span><i class="fa-solid fa-chevron-right fa-xs text-main dark:text-main"></i></span>
                     </a>
                 </li>
                 <li class="flex">
@@ -238,7 +241,7 @@
                     </a>
                 </li>
                 <li class="flex">
-                    <a href="./trade.html" class="flex items-center justify-between w-full">
+                    <a href="./trade-history-order-history.html" class="flex items-center justify-between w-full">
                         <span class="flex items-center gap-3">
                             <svg id="Icon_Trade" data-name="Icon Trade" xmlns="http://www.w3.org/2000/svg" width="24"
                                 height="24" viewBox="0 0 24 24">
@@ -410,6 +413,64 @@
                         <i
                             class="fa-brands fa-linkedin fa-lg text-neutral-600 dark:text-neutral-500 hover:text-blue-500 effect"></i>
                     </a>
+                </div>
+            </div>
+        </div>
+        <!-- Mobile Search -->
+        <div id="searchModal" class="fixed top-0 w-full h-full hidden z-50">
+            <div class="bg-white dark:bg-dark-backgroung rounded-b-2xl shadow-lg w-full py-6">
+                <div class="flex flex-col gap-6 px-4">
+                    <!-- Search Box -->
+                    <div class="flex relative">
+                        <input type="text"
+                            class="bg-neutral-200 dark:bg-dark-main w-full rounded-lg h-11 px-4 outline-none">
+                        <button>
+                            <i class="fa-solid fa-search fa-lg text-neutral-700 absolute right-4 top-5"></i>
+                        </button>
+                    </div>
+                    <!-- Search Items -->
+                    <div class="flex flex-col gap-1">
+                        <div class="flex items-center justify-between">
+                            <div class="flex items-center gap-2 py-4">
+                                <img src="../public/Ethereum.png" alt="Crypto Logo" width="30" height="30">
+                                <div class="flex flex-col lg:flex-row lg:items-center lg:gap-2">
+                                    <span class="text-p3 md:text-p2">Ethereum</span>
+                                    <span class="text-caption text-primary-500 dark:text-primary-500">ETH</span>
+                                </div>
+                            </div>
+                            <div class="flex items-center">
+                                <img src="../public/graph-blue.png" alt="Blue Graph" width="100" height="40">
+                            </div>
+                            <div class="flex flex-col">
+                                <span class="text-p3 md:text-p2 text-neutral-600">$2,857.21</span>
+                                <div class="flex items-center gap-1">
+                                    <span
+                                        class="text-caption md:text-p3 text-green-600 dark:text-green-600">+0.60%</span>
+                                    <i class="fa-solid fa-arrow-trend-up fa-xs text-green-600 dark:text-green-600"></i>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="flex items-center justify-between">
+                            <div class="flex items-center gap-2 py-4">
+                                <img src="../public/Ethereum.png" alt="Crypto Logo" width="30" height="30">
+                                <div class="flex flex-col lg:flex-row lg:items-center lg:gap-2">
+                                    <span class="text-p3 md:text-p2">Ethereum</span>
+                                    <span class="text-caption text-primary-500 dark:text-primary-500">ETH</span>
+                                </div>
+                            </div>
+                            <div class="flex items-center">
+                                <img src="../public/graph-blue.png" alt="Blue Graph" width="100" height="40">
+                            </div>
+                            <div class="flex flex-col">
+                                <span class="text-p3 md:text-p2 text-neutral-600">$2,857.21</span>
+                                <div class="flex items-center gap-1">
+                                    <span
+                                        class="text-caption md:text-p3 text-green-600 dark:text-green-600">+0.60%</span>
+                                    <i class="fa-solid fa-arrow-trend-up fa-xs text-green-600 dark:text-green-600"></i>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
@@ -1014,12 +1075,10 @@
                 </div>
                 <!-- Buy & Sell Buttons -->
                 <div class="flex items-center gap-4">
-                    <button
-                        class="w-1/2 flex items-center justify-center bg-main rounded-md text-white py-3">
+                    <button class="w-1/2 flex items-center justify-center bg-main rounded-md text-white py-3">
                         Buy BTC
                     </button>
-                    <button
-                        class="w-1/2 flex items-center justify-center bg-red-500 rounded-md text-white py-3">
+                    <button class="w-1/2 flex items-center justify-center bg-red-500 rounded-md text-white py-3">
                         Sell BTC
                     </button>
                 </div>
@@ -1341,6 +1400,24 @@
     </footer>
 
     <script>
+        // Search modal in mobile view
+        document
+            .getElementById("searchToggle")
+            .addEventListener("click", function () {
+                document.getElementById("searchModal").classList.remove("hidden");
+            });
+
+        // Close search modal when clicking outside it
+        document
+            .getElementById("searchModal")
+            .addEventListener("click", function (event) {
+                if (event.target === this) {
+                    this.classList.add("hidden");
+                }
+            });
+
+        // ****************************************************************
+
         // Hide buy & sell button on footer viewport
         function toggleButtonVisibility() {
             const button = document.getElementById("buySellBtn");

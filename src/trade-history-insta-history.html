@@ -17,8 +17,9 @@
     <header class="flex items-center w-full lg:bg-white lg:dark:bg-dark-main sticky top-0 z-50">
         <nav
             class="flex items-center justify-between wrapper bg-white dark:bg-dark-backgroung lg:dark:bg-dark-main py-6 rounded-b-3xl lg:rounded-none shadow-md lg:shadow-none z-50">
-            <!-- Logo -->
+            <!-- Left Side -->
             <div class="flex items-center gap-8">
+                <!-- Logo -->
                 <a href="./index.html" class="lg:hidden xl:block border-r pr-2 md:pr-7">
                     <svg id="Logo" xmlns="http://www.w3.org/2000/svg" width="182.186" height="40.001"
                         viewBox="0 0 182.186 40.001" class="text-lightLogo dark:text-darkLogo">
@@ -42,16 +43,16 @@
                     </svg>
                 </a>
                 <!-- Menu -->
-                <div class="hidden lg:flex items-center">
+                <div class="hidden md:flex items-center">
                     <ul class="flex items-center gap-6 xl:gap-8">
-                        <li class="text-p2">
-                            <a href="#" class="hover:text-main effect">Market</a>
+                        <li class="text-p2 ">
+                            <a href="./market-v1.html" class="hover:text-main effect">Market</a>
                         </li>
                         <li class="text-p2">
-                            <a href="#" class="hover:text-main effect">Watchlist</a>
+                            <a href="./watchlist.html" class="hover:text-main effect">Watchlist</a>
                         </li>
                         <li class="text-p2">
-                            <a href="#" class="hover:text-main effect">Portfolio</a>
+                            <a href="./portfolio.html" class="hover:text-main effect">Portfolio</a>
                         </li>
                         <li class="text-p2">
                             <a href="#" class="hover:text-main effect">Learn</a>
@@ -150,21 +151,21 @@
                     </span>
                 </button>
                 <!-- Trade History -->
-                <button
-                    class="flex items-center gap-3 bg-neutral-200 dark:bg-neutral-800 rounded-md px-4 py-2 hover:opacity-80 effect">
+                <a href="./trade-history-order-history.html"
+                    class="flex items-center gap-3 bg-primary-50 dark:bg-dark-backgroung border border-main rounded-md px-4 py-2 hover:opacity-80 effect">
                     <svg id="Icon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
                         <g id="Icon_Trade" data-name="Icon Trade">
                             <rect id="Icon_Trade_Background_" data-name="Icon Trade (Background)" width="24" height="24"
                                 fill="none" />
                             <path id="Mask"
                                 d="M7.111,22a1,1,0,0,1-.994-1.107L6.886,13.8H1a1,1,0,0,1-.831-1.556L8.058.445a1,1,0,0,1,1.825.663L9.114,8.2H15a1,1,0,0,1,.831,1.556l-7.889,11.8A1,1,0,0,1,7.111,22ZM7.455,4.944,2.871,11.8H8a1,1,0,0,1,.994,1.107l-.448,4.151L13.129,10.2H8a1,1,0,0,1-.994-1.107l.448-4.149Z"
-                                transform="translate(4 1)" fill="#9295a6" />
+                                transform="translate(4 1)" class="fill-main" />
                         </g>
                     </svg>
-                    <span class="text-p3 text-neutral-700">Trade History</span>
-                </button>
+                    <span class="text-p3 text-main dark:text-main">Trade History</span>
+                </a>
                 <!-- Wallet -->
-                <button
+                <a href="./wallet-wallet-history.html"
                     class="flex items-center gap-3 bg-neutral-200 dark:bg-neutral-800 rounded-md px-4 py-2 hover:opacity-80 effect">
                     <svg id="Icon_Wallet" data-name="Icon Wallet" xmlns="http://www.w3.org/2000/svg" width="24"
                         height="24" viewBox="0 0 24 24">
@@ -175,10 +176,10 @@
                             transform="translate(2 1.326)" fill="#9295a6" />
                     </svg>
                     <span class="text-p3 text-neutral-700">Wallet</span>
-                </button>
+                </a>
                 <!-- User Profile -->
                 <div class="flex items-center">
-                    <button class="flex items-center gap-2 hover:opacity-80 effect">
+                    <a href="./profile-my-profile.html" class="flex items-center gap-2 hover:opacity-80 effect">
                         <svg id="Icon" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
                             width="45" height="45" viewBox="0 0 64 64">
                             <defs>
@@ -214,12 +215,12 @@
                         </svg>
                         <span class="text-p3 text-neutral-700">Allie Grater</span>
                         <i class="fa-solid fa-chevron-down fa-2xs text-neutral-700"></i>
-                    </button>
+                    </a>
                 </div>
             </div>
             <!-- Mobile Buttons -->
             <div class="flex lg:hidden items-center gap-6">
-                <button class="w-6 h-6">
+                <button id="searchToggle" class="w-6 h-6">
                     <i class="fa-solid fa-search fa-lg text-neutral-700"></i>
                 </button>
                 <button id="menuToggle" class="w-6 h-6">
@@ -232,16 +233,16 @@
             class="wrapper fixed top-0 left-0 w-full h-full overflow-y-auto pt-[7.5rem] pb-4 bg-[#E6E9F1] dark:bg-dark-main hidden z-40">
             <ul class="bg-white dark:bg-dark-backgroung rounded-xl flex flex-col gap-6 p-4">
                 <li class="flex items-center justify-between">
-                    <a href="./profile-my-profile.html" class="flex items-center gap-3">
+                    <a href="./profile-mobile.html" class="flex items-center gap-3">
                         <img src="../public/avatar.png" alt="Avatar" class="w-12 h-12">
                         <span class="flex flex-col">
                             <span class="text-p2 font-medium text-neutral-700">Allie Grater</span>
                             <span class="text-p3 text-neutral-600 dark:text-neutral-500">AllieGrater123@</span>
                         </span>
                     </a>
-                    <button id="theme-toggle" onclick="toggleTheme()"
+                    <button id="theme-toggle" onclick="toggleThemeMobile()"
                         class="w-12 h-12 bg-neutral-200 dark:bg-neutral-800 rounded-md">
-                        <span id="theme-icon"
+                        <span id="theme-icon-mobile"
                             class="fa-solid fa-moon fa-xl text-neutral-700 dark:text-neutral-300"></span>
                     </button>
                 </li>
@@ -295,7 +296,7 @@
                     </a>
                 </li>
                 <li class="flex">
-                    <a href="./trade.html" class="flex items-center justify-between w-full">
+                    <a href="./trade-history-order-history.html" class="flex items-center justify-between w-full">
                         <span class="flex items-center gap-3">
                             <svg id="Icon_Trade" data-name="Icon Trade" xmlns="http://www.w3.org/2000/svg" width="24"
                                 height="24" viewBox="0 0 24 24">
@@ -303,11 +304,11 @@
                                     height="24" fill="none" />
                                 <path id="Mask"
                                     d="M7.111,22a1,1,0,0,1-.994-1.107L6.886,13.8H1a1,1,0,0,1-.831-1.556L8.058.445a1,1,0,0,1,1.825.663L9.114,8.2H15a1,1,0,0,1,.831,1.556l-7.889,11.8A1,1,0,0,1,7.111,22ZM7.455,4.944,2.871,11.8H8a1,1,0,0,1,.994,1.107l-.448,4.15L13.129,10.2H8a1,1,0,0,1-.994-1.107l.448-4.149Z"
-                                    transform="translate(4 1)" class="fill-neutral-500" />
+                                    transform="translate(4 1)" class="fill-main" />
                             </svg>
-                            <span class="text-p2 text-neutral-500">Trade History</span>
+                            <span class="text-p2 text-main dark:text-main">Trade History</span>
                         </span>
-                        <span><i class="fa-solid fa-chevron-right fa-xs text-neutral-500"></i></span>
+                        <span><i class="fa-solid fa-chevron-right fa-xs text-main dark:text-main"></i></span>
                     </a>
                 </li>
                 <li class="flex">
@@ -470,6 +471,64 @@
                 </div>
             </div>
         </div>
+        <!-- Mobile Search -->
+        <div id="searchModal" class="fixed top-0 w-full h-full hidden z-50">
+            <div class="bg-white dark:bg-dark-backgroung rounded-b-2xl shadow-lg w-full py-6">
+                <div class="flex flex-col gap-6 px-4">
+                    <!-- Search Box -->
+                    <div class="flex relative">
+                        <input type="text"
+                            class="bg-neutral-200 dark:bg-dark-main w-full rounded-lg h-11 px-4 outline-none">
+                        <button>
+                            <i class="fa-solid fa-search fa-lg text-neutral-700 absolute right-4 top-5"></i>
+                        </button>
+                    </div>
+                    <!-- Search Items -->
+                    <div class="flex flex-col gap-1">
+                        <div class="flex items-center justify-between">
+                            <div class="flex items-center gap-2 py-4">
+                                <img src="../public/Ethereum.png" alt="Crypto Logo" width="30" height="30">
+                                <div class="flex flex-col lg:flex-row lg:items-center lg:gap-2">
+                                    <span class="text-p3 md:text-p2">Ethereum</span>
+                                    <span class="text-caption text-primary-500 dark:text-primary-500">ETH</span>
+                                </div>
+                            </div>
+                            <div class="flex items-center">
+                                <img src="../public/graph-blue.png" alt="Blue Graph" width="100" height="40">
+                            </div>
+                            <div class="flex flex-col">
+                                <span class="text-p3 md:text-p2 text-neutral-600">$2,857.21</span>
+                                <div class="flex items-center gap-1">
+                                    <span
+                                        class="text-caption md:text-p3 text-green-600 dark:text-green-600">+0.60%</span>
+                                    <i class="fa-solid fa-arrow-trend-up fa-xs text-green-600 dark:text-green-600"></i>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="flex items-center justify-between">
+                            <div class="flex items-center gap-2 py-4">
+                                <img src="../public/Ethereum.png" alt="Crypto Logo" width="30" height="30">
+                                <div class="flex flex-col lg:flex-row lg:items-center lg:gap-2">
+                                    <span class="text-p3 md:text-p2">Ethereum</span>
+                                    <span class="text-caption text-primary-500 dark:text-primary-500">ETH</span>
+                                </div>
+                            </div>
+                            <div class="flex items-center">
+                                <img src="../public/graph-blue.png" alt="Blue Graph" width="100" height="40">
+                            </div>
+                            <div class="flex flex-col">
+                                <span class="text-p3 md:text-p2 text-neutral-600">$2,857.21</span>
+                                <div class="flex items-center gap-1">
+                                    <span
+                                        class="text-caption md:text-p3 text-green-600 dark:text-green-600">+0.60%</span>
+                                    <i class="fa-solid fa-arrow-trend-up fa-xs text-green-600 dark:text-green-600"></i>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
     </header>
 
     <!-- Content -->
@@ -512,18 +571,18 @@
                         <!-- Tabs -->
                         <div class="flex items-center overflow-x-auto" style="scrollbar-width: none;">
                             <ul class="flex items-center gap-10">
-                                <li
+                                <a href="./trade-history-order-history.html"
                                     class="truncate text-p2 text-neutral-700 hover:opacity-80 hover:text-main effect cursor-pointer pb-4 md:pb-6">
                                     Order History
-                                </li>
-                                <li
+                                </a>
+                                <a href="./trade-history-insta-history.html"
                                     class="truncate text-p2 text-main hover:opacity-80 hover:text-main effect cursor-pointer border-b-2 border-main pb-4 md:pb-6">
                                     Insta History
-                                </li>
-                                <li
+                                </a>
+                                <a href="./trade-history-wallet-history.html"
                                     class="truncate text-p2 text-neutral-700 hover:opacity-80 hover:text-main effect cursor-pointer pb-4 md:pb-6">
                                     Wallet History
-                                </li>
+                                </a>
                             </ul>
                         </div>
                         <!-- Buttons -->
@@ -1135,6 +1194,339 @@
             </div>
         </div>
     </footer>
+
+    <script>
+        // Toggle the dropdown menu visibility
+        function toggleDropdown(event) {
+            const dropdownMenu = document.getElementById("dropdown-language-currency");
+            const chevronIcon = document.querySelector(
+                ".fa-chevron-down , .fa-chevron-up"
+            );
+            const button = event.currentTarget;
+            const spans = button.querySelectorAll("span");
+
+            // Toggle the visibility of the dropdown
+            dropdownMenu.classList.toggle("hidden");
+
+            // Toggle the button class
+            if (dropdownMenu.classList.contains("hidden")) {
+                spans.forEach((span) =>
+                    span.classList.remove("text-main", "dark:text-main")
+                );
+                spans.forEach((span) => span.classList.add("text-neutral-700"));
+                chevronIcon.classList.remove("fa-chevron-up");
+                chevronIcon.classList.add("fa-chevron-down");
+            } else {
+                spans.forEach((span) => span.classList.add("text-main", "dark:text-main"));
+                spans.forEach((span) => span.classList.remove("text-neutral-700"));
+                chevronIcon.classList.remove("fa-chevron-down");
+                chevronIcon.classList.add("fa-chevron-up");
+            }
+
+            // Prevent event propagation
+            event.stopPropagation();
+        }
+
+        // Close dropdown when clicking outside
+        window.addEventListener("click", function () {
+            const dropdownMenu = document.getElementById("dropdown-language-currency");
+            const chevronIcon = document.querySelector(
+                ".fa-chevron-down, .fa-chevron-up"
+            );
+            const button = document.querySelector(
+                "button[onclick='toggleDropdown(event)']"
+            );
+            const spans = button.querySelectorAll("span");
+
+            if (!dropdownMenu.classList.contains("hidden")) {
+                dropdownMenu.classList.add("hidden");
+                spans.forEach((span) =>
+                    span.classList.remove("text-main", "dark:text-main")
+                );
+                spans.forEach((span) => span.classList.add("text-neutral-700"));
+                chevronIcon.classList.remove("fa-chevron-up");
+                chevronIcon.classList.add("fa-chevron-down");
+            }
+        });
+
+        // Close dropdown when clicking on any <li>
+        const listItems = document.querySelectorAll("#dropdown-language-currency li");
+        listItems.forEach((item) => {
+            item.addEventListener("click", function () {
+                const dropdownMenu = document.getElementById("dropdown-language-currency");
+                const chevronIcon = document.querySelector(
+                    ".fa-chevron-down, .fa-chevron-up"
+                );
+
+                // Close the dropdown
+                dropdownMenu.classList.add("hidden");
+
+                // Reset styles
+                chevronIcon.classList.remove("fa-chevron-up");
+                chevronIcon.classList.add("fa-chevron-down");
+
+                const spans = document.querySelector("button").querySelectorAll("span");
+                spans.forEach((span) =>
+                    span.classList.remove("text-main", "dark:text-main")
+                );
+                spans.forEach((span) => span.classList.add("text-neutral-700"));
+            });
+        });
+
+        // Prevent closing the dropdown when interacting with it
+        document
+            .getElementById("dropdown-language-currency")
+            .addEventListener("click", function (event) {
+                event.stopPropagation(); // Prevent event from reaching the window listener
+            });
+
+        // Function to switch between Language and Currency tabs
+        function switchTab(tab) {
+            const languageTab = document.getElementById("language-tab");
+            const currencyTab = document.getElementById("currency-tab");
+            const languageTabBtn = document.getElementById("language-tab-btn");
+            const currencyTabBtn = document.getElementById("currency-tab-btn");
+
+            if (tab === "language") {
+                // Show Language tab, hide Currency tab
+                languageTab.classList.remove("hidden");
+                currencyTab.classList.add("hidden");
+                // Update active styles for Language tab button
+                languageTabBtn.classList.add(
+                    "text-main",
+                    "dark:text-main",
+                    "border-b-2",
+                    "dark:border-b-2",
+                    "border-b-main",
+                    "dark:border-b-main"
+                );
+                languageTabBtn.classList.remove("text-neutral-600");
+                // Update inactive styles for Currency tab button
+                currencyTabBtn.classList.remove(
+                    "text-main",
+                    "dark:text-main",
+                    "border-b-2",
+                    "dark:border-b-2",
+                    "border-b-main",
+                    "dark:border-b-main"
+                );
+                currencyTabBtn.classList.add("text-neutral-600");
+            } else if (tab === "currency") {
+                // Show Currency tab, hide Language tab
+                currencyTab.classList.remove("hidden");
+                languageTab.classList.add("hidden");
+                // Update active styles for Currency tab button
+                currencyTabBtn.classList.add(
+                    "text-main",
+                    "dark:text-main",
+                    "border-b-2",
+                    "dark:border-b-2",
+                    "border-b-main",
+                    "dark:border-b-main"
+                );
+                currencyTabBtn.classList.remove("text-neutral-600");
+                // Update inactive styles for Language tab button
+                languageTabBtn.classList.remove(
+                    "text-main",
+                    "dark:text-main",
+                    "border-b-2",
+                    "dark:border-b-2",
+                    "border-b-main",
+                    "dark:border-b-main"
+                );
+                languageTabBtn.classList.add("text-neutral-600");
+            }
+        }
+
+        // Initialize default tab (Language) on page load
+        document.addEventListener("DOMContentLoaded", function () {
+            switchTab("language");
+            document
+                .getElementById("language-tab-btn")
+                .addEventListener("click", () => switchTab("language"));
+            document
+                .getElementById("currency-tab-btn")
+                .addEventListener("click", () => switchTab("currency"));
+        });
+
+        // ********************************************************
+
+        // Toggle mobile menu
+        const menuToggle = document.getElementById("menuToggle");
+        const menuIcon = document.getElementById("menuIcon");
+        const fullscreenMenu = document.getElementById("fullscreenMenu");
+
+        menuToggle.addEventListener("click", () => {
+            if (fullscreenMenu.classList.contains("hidden")) {
+                fullscreenMenu.classList.remove("hidden"); // Show the menu
+                menuIcon.classList.remove("fa-bars");
+                menuIcon.classList.add("fa-xmark"); // Change to "close" icon
+            } else {
+                fullscreenMenu.classList.add("hidden"); // Hide the menu
+                menuIcon.classList.remove("fa-xmark");
+                menuIcon.classList.remove("text-white"); // Reset icon color
+                menuIcon.classList.add("fa-bars"); // Change to "menu" icon
+            }
+        });
+
+        // **********************************************************
+
+        // Toggle light and dark mode in desktop
+        function toggleTheme() {
+            const htmlElement = document.documentElement;
+            const themeIcon = document.getElementById("theme-icon");
+
+            if (htmlElement.classList.contains("dark")) {
+                // Switch to Light Mode
+                htmlElement.classList.remove("dark");
+                themeIcon.classList.remove("fa-sun");
+                themeIcon.classList.add("fa-moon");
+                localStorage.setItem("theme", "light");
+            } else {
+                // Switch to Dark Mode
+                htmlElement.classList.add("dark");
+                themeIcon.classList.remove("fa-moon");
+                themeIcon.classList.add("fa-sun");
+                localStorage.setItem("theme", "dark");
+            }
+        }
+
+        // Toggle light and dark mode in mobile
+        function toggleThemeMobile() {
+            const htmlElement = document.documentElement;
+            const themeIcon = document.getElementById("theme-icon-mobile");
+
+            if (htmlElement.classList.contains("dark")) {
+                // Switch to Light Mode
+                htmlElement.classList.remove("dark");
+                themeIcon.classList.remove("fa-sun");
+                themeIcon.classList.add("fa-moon");
+                localStorage.setItem("theme", "light");
+            } else {
+                // Switch to Dark Mode
+                htmlElement.classList.add("dark");
+                themeIcon.classList.remove("fa-moon");
+                themeIcon.classList.add("fa-sun");
+                localStorage.setItem("theme", "dark");
+            }
+        }
+
+        // Initialize theme on page load
+        document.addEventListener("DOMContentLoaded", () => {
+            const savedTheme = localStorage.getItem("theme");
+            const htmlElement = document.documentElement;
+            const themeIcon = document.getElementById("theme-icon");
+            const themeIconMobile = document.getElementById("theme-icon-mobile");
+
+            if (savedTheme === "dark") {
+                htmlElement.classList.add("dark");
+                themeIcon.classList.remove("fa-moon");
+                themeIcon.classList.add("fa-sun");
+                themeIconMobile.classList.remove("fa-moon");
+                themeIconMobile.classList.add("fa-sun");
+            } else {
+                htmlElement.classList.remove("dark");
+                themeIcon.classList.remove("fa-sun");
+                themeIcon.classList.add("fa-moon");
+                themeIconMobile.classList.remove("fa-sun");
+                themeIconMobile.classList.add("fa-moon");
+            }
+        });
+
+        // *****************************************************
+
+        // Toggle accordion (Language | Currency) in mobile menu
+        function toggleAccordion(element) {
+            const title = element.querySelector("#accordion-title-mobile"); // Get the accordion title
+            const icon = element.querySelector(".accordion-icon-mobile"); // Get the accordion icon
+            const content = element.nextElementSibling; // Get the accordion content
+            const chevron = element.querySelector(".chevron i"); // Get the chevron icon
+
+            // Toggle content visibility
+            content.classList.toggle("hidden");
+
+            // Change chevron direction
+            if (content.classList.contains("hidden")) {
+                chevron.classList.remove("fa-chevron-up", "text-main", "dark:text-main");
+                chevron.classList.add("fa-chevron-right", "text-neutral-500");
+                title.classList.remove("text-main", "dark:text-main");
+                title.classList.add("text-neutral-500");
+                icon.classList.remove("fill-main", "dark:fill-main");
+                icon.classList.add("fill-neutral-500");
+            } else {
+                chevron.classList.remove("fa-chevron-right", "text-neutral-500");
+                chevron.classList.add("fa-chevron-up", "text-main", "dark:text-main");
+                title.classList.remove("text-neutral-500");
+                title.classList.add("text-main", "dark:text-main");
+                icon.classList.remove("fill-neutral-500");
+                icon.classList.add("fill-main", "dark:fill-main");
+            }
+        }
+
+        // Switch Tabs
+        function switchTabMobile(tab) {
+            // Remove active class from all tab buttons
+            document.querySelectorAll(".tab-btn-mobile").forEach((btn) => {
+                btn.classList.remove(
+                    "text-main",
+                    "dark:text-main",
+                    "border-b-2",
+                    "dark:border-b-2",
+                    "border-b-main",
+                    "dark:border-b-main"
+                );
+                btn.classList.add("text-neutral-600", "dark:text-neutral-500");
+            });
+
+            // Add active class to clicked tab button
+            document
+                .getElementById(`${tab}-tab-btn-mobile`)
+                .classList.add(
+                    "text-main",
+                    "dark:text-main",
+                    "border-b-2",
+                    "dark:border-b-2",
+                    "border-b-main",
+                    "dark:border-b-main"
+                );
+            document
+                .getElementById(`${tab}-tab-btn-mobile`)
+                .classList.remove("text-neutral-600", "dark:text-neutral-500");
+
+            // Hide all tab content
+            document.querySelectorAll(".tab-content-mobile").forEach((content) => {
+                content.classList.add("hidden");
+                content.classList.remove("block");
+            });
+
+            // Show the selected tab's content
+            document.getElementById(`${tab}-tab-mobile`).classList.remove("hidden");
+            document.getElementById(`${tab}-tab-mobile`).classList.add("block");
+        }
+
+        // Set the default tab to be language when the page loads
+        document.addEventListener("DOMContentLoaded", function () {
+            switchTabMobile("language");
+        });
+
+        // ************************************************************
+
+        // Search modal in mobile view
+        document
+            .getElementById("searchToggle")
+            .addEventListener("click", function () {
+                document.getElementById("searchModal").classList.remove("hidden");
+            });
+
+        // Close search modal when clicking outside it
+        document
+            .getElementById("searchModal")
+            .addEventListener("click", function (event) {
+                if (event.target === this) {
+                    this.classList.add("hidden");
+                }
+            });
+    </script>
 
     <script src="./script.js"></script>
 </body>
