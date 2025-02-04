@@ -1,3 +1,55 @@
+// Toggle the user profile dropdown visibility
+function toggleProfile(event) {
+  event.stopPropagation(); // Prevent event bubbling
+
+  const dropdownProfile = document.getElementById("dropdown-profile");
+  const button = event.currentTarget; // Get the clicked button
+  const chevronIcon = button.querySelector(".fa-chevron-down, .fa-chevron-up");
+  const spans = button.querySelectorAll("span");
+
+  // Toggle dropdown visibility
+  const isHidden = dropdownProfile.classList.toggle("hidden");
+
+  // Toggle styles based on visibility
+  if (isHidden) {
+    spans.forEach((span) =>
+      span.classList.remove("text-main", "dark:text-main")
+    );
+    chevronIcon.classList.replace("fa-chevron-up", "fa-chevron-down");
+  } else {
+    spans.forEach((span) => span.classList.add("text-main", "dark:text-main"));
+    chevronIcon.classList.replace("fa-chevron-down", "fa-chevron-up");
+  }
+}
+
+// Close dropdown when clicking outside
+window.addEventListener("click", function (event) {
+  const dropdownProfile = document.getElementById("dropdown-profile");
+  const button = document.querySelector(
+    "button[onclick='toggleProfile(event)']"
+  );
+
+  // Close dropdown only if clicking outside the button and dropdown
+  if (
+    !dropdownProfile.classList.contains("hidden") &&
+    event.target !== button &&
+    !dropdownProfile.contains(event.target)
+  ) {
+    dropdownProfile.classList.add("hidden");
+    const chevronIcon = button.querySelector(
+      ".fa-chevron-down, .fa-chevron-up"
+    );
+    const spans = button.querySelectorAll("span");
+
+    spans.forEach((span) =>
+      span.classList.remove("text-main", "dark:text-main")
+    );
+    chevronIcon.classList.replace("fa-chevron-up", "fa-chevron-down");
+  }
+});
+
+// ********************************************************************
+
 // Toggle the language-currency dropdown menu visibility
 function toggleDropdown(event) {
   const dropdownMenu = document.getElementById("dropdown-language-currency");

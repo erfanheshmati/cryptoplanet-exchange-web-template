@@ -65,7 +65,7 @@
             <div class="hidden lg:flex items-center gap-4">
                 <!-- Language & Currency -->
                 <div class="flex items-center relative">
-                    <button onclick="toggleDropdown(event)" class="flex items-center gap-2 hover:opacity-70 effect">
+                    <button onclick="toggleDropdown(event)" class="flex items-center gap-2 hover:opacity-80 effect">
                         <span class="text-p3">English</span>
                         <span class="text-p3">|</span>
                         <span class="text-p3">USD</span>
@@ -179,8 +179,8 @@
                     <span class="text-p3 text-neutral-700">Wallet</span>
                 </a>
                 <!-- User Profile -->
-                <div class="flex items-center">
-                    <a href="./profile-my-profile.html" class="flex items-center gap-2 hover:opacity-80 effect">
+                <div class="flex items-center relative">
+                    <button onclick="toggleProfile(event)" class="flex items-center gap-2 hover:opacity-80 effect">
                         <svg id="Icon" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
                             width="45" height="45" viewBox="0 0 64 64">
                             <defs>
@@ -214,9 +214,108 @@
                                 </g>
                             </g>
                         </svg>
-                        <span class="text-p3 text-neutral-700">Allie Grater</span>
-                        <i class="fa-solid fa-chevron-down fa-2xs text-neutral-700"></i>
-                    </a>
+                        <span class="text-p3">Allie Grater</span>
+                        <span class="fa-solid fa-chevron-down fa-2xs"></span>
+                    </button>
+                    <!-- Dropdown Content -->
+                    <div id="dropdown-profile"
+                        class="absolute top-12 right-0 w-[240px] bg-white dark:bg-dark-backgroung shadow-lg rounded-md hidden">
+                        <ul class="flex flex-col gap-1 py-2">
+                            <a href="#"
+                                class="flex items-center gap-4 px-4 py-3 rounded-l-md hover:bg-primary-50 hover:border-r-2 hover:border-main dark:hover:bg-dark-main effect group">
+                                <svg id="Icon" xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+                                    viewBox="0 0 24 24">
+                                    <g id="Icon-2" data-name="Icon">
+                                        <rect id="Icon_Background_" data-name="Icon (Background)" width="24" height="24"
+                                            fill="none" />
+                                        <path id="Mask"
+                                            d="M6.616,20a2.22,2.22,0,0,1-1.356-.461L3.188,17.966A2.361,2.361,0,0,1,2.7,14.75a2.038,2.038,0,0,0,.231-1.857l-.055-.168a1.838,1.838,0,0,0-1.118-1.211l-.164-.057A2.345,2.345,0,0,1,.112,8.517L.928,5.922A2.226,2.226,0,0,1,2.052,4.588a2.148,2.148,0,0,1,.977-.235,2.179,2.179,0,0,1,.706.118,1.872,1.872,0,0,0,.606.1,1.948,1.948,0,0,0,1.17-.4l.129-.1a1.911,1.911,0,0,0,.734-1.51V2.326A2.313,2.313,0,0,1,8.658,0l2.551,0a2.245,2.245,0,0,1,1.6.671,2.341,2.341,0,0,1,.682,1.675l0,.279a1.782,1.782,0,0,0,.694,1.429l.107.081a1.762,1.762,0,0,0,1.051.352,1.7,1.7,0,0,0,.542-.088l.339-.113a2.252,2.252,0,0,1,.711-.116,2.218,2.218,0,0,1,1.02.248A2.3,2.3,0,0,1,19.107,5.8l.787,2.521a2.353,2.353,0,0,1-1.465,2.929l-.2.067A1.922,1.922,0,0,0,17.017,12.6a1.954,1.954,0,0,0,.259,1.652l.26.374a2.383,2.383,0,0,1-.508,3.229l-2.061,1.556a2.226,2.226,0,0,1-1.352.457,2.3,2.3,0,0,1-.359-.028,2.261,2.261,0,0,1-1.509-.958l-.118-.172a1.742,1.742,0,0,0-1.41-.779l-.087,0A1.768,1.768,0,0,0,8.7,18.7l-.231.328a2.264,2.264,0,0,1-1.51.944A2.292,2.292,0,0,1,6.616,20ZM3.03,6.354a.166.166,0,0,0-.076.019.24.24,0,0,0-.118.148l-.816,2.6a.357.357,0,0,0,.22.449l.164.056a3.841,3.841,0,0,1,2.377,2.5l.041.12a4.049,4.049,0,0,1-.461,3.623.365.365,0,0,0,.036.508l2.072,1.574A.252.252,0,0,0,6.623,18l.033,0a.274.274,0,0,0,.182-.12l.231-.328a3.792,3.792,0,0,1,2.971-1.614h.085a3.777,3.777,0,0,1,3.149,1.64l.118.171a.274.274,0,0,0,.182.12.2.2,0,0,0,.04,0,.24.24,0,0,0,.148-.053l2.061-1.555a.373.373,0,0,0,.069-.494l-.26-.375a3.969,3.969,0,0,1-.532-3.359,3.914,3.914,0,0,1,2.492-2.614l.2-.068a.347.347,0,0,0,.191-.437L17.2,6.393a.319.319,0,0,0-.155-.193.238.238,0,0,0-.111-.028.241.241,0,0,0-.076.013l-.34.113a3.715,3.715,0,0,1-1.175.19,3.775,3.775,0,0,1-2.255-.755l-.108-.081a3.787,3.787,0,0,1-1.489-3.035l0-.28a.353.353,0,0,0-.1-.254A.25.25,0,0,0,11.205,2L8.658,2a.313.313,0,0,0-.283.333v.242A3.927,3.927,0,0,1,6.851,5.669l-.129.1a3.956,3.956,0,0,1-2.38.8,3.88,3.88,0,0,1-1.255-.208.175.175,0,0,0-.057-.01ZM10,13.5A3.5,3.5,0,1,1,13.5,10,3.5,3.5,0,0,1,10,13.5Zm0-5A1.5,1.5,0,1,0,11.5,10,1.5,1.5,0,0,0,10,8.5Z"
+                                            transform="translate(1.998 2)"
+                                            class="fill-neutral-500 group-hover:fill-main" />
+                                    </g>
+                                </svg>
+                                <span class="text-p2 text-neutral-500 dark:text-neutral-500 group-hover:text-main">
+                                    Account Setting
+                                </span>
+                            </a>
+                            <a href="./portfolio.html"
+                                class="flex items-center gap-4 px-4 py-3 rounded-l-md hover:bg-primary-50 hover:border-r-2 hover:border-main dark:hover:bg-dark-main effect group">
+                                <svg id="Icon" xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+                                    viewBox="0 0 24 24">
+                                    <g id="Icon-2" data-name="Icon">
+                                        <rect id="Icon_Background_" data-name="Icon (Background)" width="24" height="24"
+                                            fill="none" />
+                                        <path id="Mask"
+                                            d="M17,18H3a3,3,0,0,1-3-3V7A3,3,0,0,1,3,4H6V2.5A2.5,2.5,0,0,1,8.5,0h3A2.5,2.5,0,0,1,14,2.5V4h3a3,3,0,0,1,3,3v8A3,3,0,0,1,17,18ZM15,6V16h2a1,1,0,0,0,1-1V7a1,1,0,0,0-1-1ZM7,6V16h6V6ZM3,6A1,1,0,0,0,2,7v8a1,1,0,0,0,1,1H5V6ZM8.5,2a.5.5,0,0,0-.5.5V4h4V2.5a.5.5,0,0,0-.5-.5Z"
+                                            transform="translate(2 3)" class="fill-neutral-500 group-hover:fill-main" />
+                                    </g>
+                                </svg>
+                                <span class="text-p2 text-neutral-500 dark:text-neutral-500 group-hover:text-main">
+                                    Portfolio
+                                </span>
+                            </a>
+                            <a href="./profile-my-profile.html"
+                                class="flex items-center gap-4 px-4 py-3 rounded-l-md hover:bg-primary-50 hover:border-r-2 hover:border-main dark:hover:bg-dark-main effect group">
+                                <svg id="Icon" xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+                                    viewBox="0 0 24 24">
+                                    <rect id="Icon_Background_" data-name="Icon (Background)" width="24" height="24"
+                                        fill="none" />
+                                    <path id="Mask"
+                                        d="M16.111,19.988H1.888a1.949,1.949,0,0,1-1.888-2V9.612A2.074,2.074,0,0,1,.575,8.174L8.285.289a1.028,1.028,0,0,1,1.429,0l7.709,7.884A2.076,2.076,0,0,1,18,9.612v8.375A1.95,1.95,0,0,1,16.111,19.988ZM6,9.988h6a1,1,0,0,1,1,1v7H15.99L16,9.612,9,2.42,2.006,9.571,2,17.988H5v-7A1,1,0,0,1,6,9.988Zm1,2v6h4v-6Z"
+                                        transform="translate(3 2.012)" class="fill-neutral-500 group-hover:fill-main" />
+                                </svg>
+                                <span class="text-p2 text-neutral-500 dark:text-neutral-500 group-hover:text-main">
+                                    Dashboard
+                                </span>
+                            </a>
+                            <a href="#"
+                                class="flex items-center gap-4 px-4 py-3 rounded-l-md hover:bg-primary-50 hover:border-r-2 hover:border-main dark:hover:bg-dark-main effect group">
+                                <svg id="Icon" xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+                                    viewBox="0 0 24 24">
+                                    <g id="Icon-2" data-name="Icon">
+                                        <rect id="Icon_Background_" data-name="Icon (Background)" width="24" height="24"
+                                            fill="none" />
+                                        <path id="Mask"
+                                            d="M12,17A5,5,0,1,0,2,17a1,1,0,0,1-2,0,7,7,0,1,1,14,0,1,1,0,0,1-2,0ZM3,4A4,4,0,1,1,7,8,4,4,0,0,1,3,4ZM5,4A2,2,0,1,0,7,2,2,2,0,0,0,5,4ZM15,6V5H14a1,1,0,1,1,0-2h1V2a1,1,0,0,1,2,0V3h1a1,1,0,0,1,0,2H17V6a1,1,0,1,1-2,0Z"
+                                            transform="translate(3 3)" class="fill-neutral-500 group-hover:fill-main" />
+                                    </g>
+                                </svg>
+                                <span class="text-p2 text-neutral-500 dark:text-neutral-500 group-hover:text-main">
+                                    Referral
+                                </span>
+                            </a>
+                            <a href="#"
+                                class="flex items-center gap-4 px-4 py-3 rounded-l-md hover:bg-primary-50 hover:border-r-2 hover:border-main dark:hover:bg-dark-main effect group">
+                                <svg id="Icon" xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+                                    viewBox="0 0 24 24">
+                                    <g id="Icon-2" data-name="Icon">
+                                        <rect id="Icon_Background_" data-name="Icon (Background)" width="24" height="24"
+                                            fill="none" />
+                                        <path id="Mask"
+                                            d="M8.866,18a1.808,1.808,0,0,1-1.283-.53L1.166,11.051a.994.994,0,0,1-.289-.614L0,1.093a1,1,0,0,1,.289-.8.982.982,0,0,1,.8-.288l9.344.871a1,1,0,0,1,.614.288l6.417,6.417a1.819,1.819,0,0,1,0,2.57l-7.317,7.316A1.805,1.805,0,0,1,8.866,18ZM2.108,2.108l.726,7.783,6.033,6.034,7.058-7.058L9.893,2.833ZM6.5,8a1.5,1.5,0,1,1,1.061-.439A1.49,1.49,0,0,1,6.5,8Z"
+                                            transform="translate(3 3)" class="fill-neutral-500 group-hover:fill-main" />
+                                    </g>
+                                </svg>
+                                <span class="text-p2 text-neutral-500 dark:text-neutral-500 group-hover:text-main">
+                                    Fees
+                                </span>
+                            </a>
+                            <a href="#"
+                                class="flex items-center gap-4 px-4 py-3 rounded-l-md hover:bg-primary-50 hover:border-r-2 hover:border-main dark:hover:bg-dark-main effect group">
+                                <svg id="Icon" xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+                                    viewBox="0 0 24 24">
+                                    <rect id="Icon_Background_" data-name="Icon (Background)" width="24" height="24"
+                                        fill="none" />
+                                    <path id="Mask"
+                                        d="M1,16a1,1,0,0,1-1-1V1A1,1,0,0,1,1,0H3A1,1,0,1,1,3,2H2V14H3a1,1,0,1,1,0,2Zm11.4-3.2a1,1,0,0,1-.2-1.4L14,9H6A1,1,0,0,1,6,7h8c.03,0,.056.015.085.018L12.368,4.576A1,1,0,1,1,14,3.425l2.814,4A1,1,0,0,1,16.8,8.6l-3,4a1,1,0,0,1-1.4.2Z"
+                                        transform="translate(4 4)" class="fill-neutral-500 group-hover:fill-main" />
+                                </svg>
+                                <span class="text-p2 text-neutral-500 dark:text-neutral-500 group-hover:text-main">
+                                    Log out
+                                </span>
+                            </a>
+                        </ul>
+                    </div>
                 </div>
             </div>
             <!-- Mobile Buttons -->
@@ -1606,6 +1705,49 @@
     </footer>
 
     <script>
+        // Toggle the user profile dropdown visibility
+        function toggleProfile(event) {
+            event.stopPropagation(); // Prevent event bubbling
+
+            const dropdownProfile = document.getElementById("dropdown-profile");
+            const button = event.currentTarget; // Get the clicked button
+            const chevronIcon = button.querySelector(".fa-chevron-down, .fa-chevron-up");
+            const spans = button.querySelectorAll("span");
+
+            // Toggle dropdown visibility
+            const isHidden = dropdownProfile.classList.toggle("hidden");
+
+            // Toggle styles based on visibility
+            if (isHidden) {
+                spans.forEach((span) => span.classList.remove("text-main", "dark:text-main"));
+                chevronIcon.classList.replace("fa-chevron-up", "fa-chevron-down");
+            } else {
+                spans.forEach((span) => span.classList.add("text-main", "dark:text-main"));
+                chevronIcon.classList.replace("fa-chevron-down", "fa-chevron-up");
+            }
+        }
+
+        // Close dropdown when clicking outside
+        window.addEventListener("click", function (event) {
+            const dropdownProfile = document.getElementById("dropdown-profile");
+            const button = document.querySelector("button[onclick='toggleProfile(event)']");
+
+            // Close dropdown only if clicking outside the button and dropdown
+            if (!dropdownProfile.classList.contains("hidden") &&
+                event.target !== button &&
+                !dropdownProfile.contains(event.target)
+            ) {
+                dropdownProfile.classList.add("hidden");
+                const chevronIcon = button.querySelector(".fa-chevron-down, .fa-chevron-up");
+                const spans = button.querySelectorAll("span");
+
+                spans.forEach((span) => span.classList.remove("text-main", "dark:text-main"));
+                chevronIcon.classList.replace("fa-chevron-up", "fa-chevron-down");
+            }
+        });
+
+        // ********************************************************************
+
         // Toggle the dropdown menu visibility
         function toggleDropdown(event) {
             const dropdownMenu = document.getElementById("dropdown-language-currency");
