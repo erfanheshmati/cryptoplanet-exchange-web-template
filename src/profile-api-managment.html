@@ -11,12 +11,12 @@
     <title>Crypto Planet - API Managment</title>
 </head>
 
-<body class="bg-[#E6E9F1] dark:bg-dark-backgroung">
+<body class="bg-[#E6E9F1] dark:bg-dark-main">
 
     <!-- Header -->
-    <header class="flex items-center w-full lg:bg-white lg:dark:bg-dark-main sticky top-0 z-50">
+    <header class="flex items-center w-full lg:bg-white lg:dark:bg-dark-backgroung sticky top-0 z-50">
         <nav
-            class="flex items-center justify-between wrapper bg-white dark:bg-dark-backgroung lg:dark:bg-dark-main py-6 rounded-b-3xl lg:rounded-none shadow-md lg:shadow-none z-50">
+            class="flex items-center justify-between wrapper bg-white dark:bg-dark-backgroung lg:dark:bg-dark-backgroung py-6 rounded-b-3xl lg:rounded-none shadow-md lg:shadow-none z-50">
             <!-- Logo -->
             <div class="hidden lg:flex items-center gap-8">
                 <a href="./index.html" class="lg:hidden xl:block border-r pr-2 md:pr-7">
@@ -333,65 +333,66 @@
     <section class="flex wrapper gap-6 my-8">
         <!-- Sidebar -->
         <section class="w-3/12 hidden lg:flex flex-col gap-6">
-            <div class="bg-white rounded-xl py-8 h-full">
+            <div class="bg-white dark:bg-dark-backgroung rounded-xl py-8 h-full">
                 <div class="flex flex-col gap-6 px-6">
                     <!-- User Info -->
                     <div class="flex flex-col items-center gap-4">
                         <img src="../public/avatar.png" alt="avatar" width="125" height="125">
                         <div class="flex flex-col">
                             <span class="text-h5 font-medium">Allie Grater</span>
-                            <span class="text-p2 text-neutral-600">AllieGrater123@</span>
+                            <span class="text-p2 text-neutral-600 dark:text-neutral-500">AllieGrater123@</span>
                         </div>
                     </div>
                     <!-- Navbar -->
                     <ul class="flex flex-col gap-2">
                         <a href="./profile-my-profile.html">
                             <li
-                                class="flex items-center gap-4 rounded-md px-4 py-3 hover:bg-neutral-100 hover:opacity-80 effect">
-                                <i class="fa-regular fa-user text-neutral-600"></i>
-                                <span class="text-p2 text-neutral-600">My Profile</span>
+                                class="flex items-center gap-4 rounded-md px-4 py-3 hover:bg-neutral-100 hover:dark:bg-neutral-800 hover:opacity-80 effect">
+                                <i class="fa-regular fa-user text-neutral-600 dark:text-neutral-500"></i>
+                                <span class="text-p2 text-neutral-600 dark:text-neutral-500">My Profile</span>
                             </li>
                         </a>
                         <a href="./profile-security.html">
                             <li
-                                class="flex items-center gap-4 rounded-md px-4 py-3 hover:bg-neutral-100 hover:opacity-80 effect">
-                                <i class="fa-solid fa-lock text-neutral-600"></i>
-                                <span class="text-p2 text-neutral-600">Security</span>
+                                class="flex items-center gap-4 rounded-md px-4 py-3 hover:bg-neutral-100 hover:dark:bg-neutral-800 hover:opacity-80 effect">
+                                <i class="fa-solid fa-lock text-neutral-600 dark:text-neutral-500"></i>
+                                <span class="text-p2 text-neutral-600 dark:text-neutral-500">Security</span>
                             </li>
                         </a>
                         <a href="./profile-notification-preferences.html">
                             <li
-                                class="flex items-center gap-4 rounded-md px-4 py-3 hover:bg-neutral-100 hover:opacity-80 effect">
-                                <i class="fa-regular fa-bell text-neutral-600"></i>
-                                <span class="text-p2 text-neutral-600">Notification Preferences</span>
+                                class="flex items-center gap-4 rounded-md px-4 py-3 hover:bg-neutral-100 hover:dark:bg-neutral-800 hover:opacity-80 effect">
+                                <i class="fa-regular fa-bell text-neutral-600 dark:text-neutral-500"></i>
+                                <span class="text-p2 text-neutral-600 dark:text-neutral-500">Notification
+                                    Preferences</span>
                             </li>
                         </a>
                         <a href="./profile-currency-preferences.html">
                             <li
-                                class="flex items-center gap-4 rounded-md px-4 py-3 hover:bg-neutral-100 hover:opacity-80 effect">
-                                <i class="fa-solid fa-dollar-sign text-neutral-600"></i>
-                                <span class="text-p2 text-neutral-600">Currency Preferences</span>
+                                class="flex items-center gap-4 rounded-md px-4 py-3 hover:bg-neutral-100 hover:dark:bg-neutral-800 hover:opacity-80 effect">
+                                <i class="fa-solid fa-dollar-sign text-neutral-600 dark:text-neutral-500"></i>
+                                <span class="text-p2 text-neutral-600 dark:text-neutral-500">Currency Preferences</span>
                             </li>
                         </a>
                         <a href="./profile-kyc-verification.html">
                             <li
-                                class="flex items-center gap-4 rounded-md px-4 py-3 hover:bg-neutral-100 hover:opacity-80 effect">
-                                <i class="fa-regular fa-file-lines text-neutral-600"></i>
-                                <span class="text-p2 text-neutral-600">KYC Verification</span>
+                                class="flex items-center gap-4 rounded-md px-4 py-3 hover:bg-neutral-100 hover:dark:bg-neutral-800 hover:opacity-80 effect">
+                                <i class="fa-regular fa-file-lines text-neutral-600 dark:text-neutral-500"></i>
+                                <span class="text-p2 text-neutral-600 dark:text-neutral-500">KYC Verification</span>
                             </li>
                         </a>
                         <a href="./profile-payment-option.html">
                             <li
-                                class="flex items-center gap-4 rounded-md px-4 py-3 hover:bg-neutral-100 hover:opacity-80 effect">
-                                <i class="fa-solid fa-wallet text-neutral-600"></i>
-                                <span class="text-p2 text-neutral-600">Payment Option</span>
+                                class="flex items-center gap-4 rounded-md px-4 py-3 hover:bg-neutral-100 hover:dark:bg-neutral-800 hover:opacity-80 effect">
+                                <i class="fa-solid fa-wallet text-neutral-600 dark:text-neutral-500"></i>
+                                <span class="text-p2 text-neutral-600 dark:text-neutral-500">Payment Option</span>
                             </li>
                         </a>
                         <a href="./profile-api-managment.html">
                             <li
-                                class="flex items-center gap-4 rounded-md px-4 py-3 bg-primary-50 hover:opacity-80 effect">
-                                <i class="fa-solid fa-table text-main"></i>
-                                <span class="text-p2 text-main">Api Managment</span>
+                                class="flex items-center gap-4 rounded-md px-4 py-3 bg-primary-50 dark:bg-dark-main hover:opacity-80 effect">
+                                <i class="fa-solid fa-table text-main dark:text-main"></i>
+                                <span class="text-p2 text-main dark:text-main">Api Managment</span>
                             </li>
                         </a>
                     </ul>
@@ -401,7 +402,7 @@
 
         <!-- Api Managment -->
         <section class="w-full lg:w-9/12 flex flex-col gap-6">
-            <section class="bg-white rounded-xl py-4 md:py-8 h-full">
+            <section class="bg-white dark:bg-dark-backgroung rounded-xl py-4 md:py-8 h-full">
                 <div class="flex flex-col justify-between gap-4 md:gap-8 px-4 md:px-8 h-full">
                     <div class="flex flex-col gap-4 md:gap-8">
                         <!-- Heading -->
@@ -436,9 +437,9 @@
                         </div>
                     </div>
                     <div class="flex flex-col gap-6">
-                        <hr>
+                        <hr class="dark:border-neutral-800">
                         <div class="flex flex-col-reverse gap-4 md:flex-row items-center justify-between">
-                            <p class="text-p3 text-neutral-500">
+                            <p class="text-p3 text-neutral-500 dark:text-neutral-500">
                                 Need Help?
                             </p>
                             <div class="w-full md:w-fit flex items-center gap-4">

@@ -11,12 +11,12 @@
     <title>Crypto Planet - Wallet History</title>
 </head>
 
-<body class="bg-[#E6E9F1] dark:bg-dark-backgroung">
+<body class="bg-[#E6E9F1] dark:bg-dark-main">
 
     <!-- Header -->
-    <header class="flex items-center w-full lg:bg-white lg:dark:bg-dark-main sticky top-0 z-50">
+    <header class="flex items-center w-full lg:bg-white lg:dark:bg-dark-backgroung sticky top-0 z-50">
         <nav
-            class="flex items-center justify-between wrapper bg-white dark:bg-dark-backgroung lg:dark:bg-dark-main py-6 rounded-b-3xl lg:rounded-none shadow-md lg:shadow-none z-50">
+            class="flex items-center justify-between wrapper bg-white dark:bg-dark-backgroung lg:dark:bg-dark-backgroung py-6 rounded-b-3xl lg:rounded-none shadow-md lg:shadow-none z-50">
             <!-- Left Side -->
             <div class="flex items-center gap-8">
                 <!-- Logo -->
@@ -634,7 +634,7 @@
     <section class="flex wrapper gap-6 my-8">
         <section class="w-full flex flex-col gap-6">
             <!-- Trade History -->
-            <section class="bg-white rounded-xl py-4 md:py-8">
+            <section class="bg-white dark:bg-dark-backgroung rounded-xl py-4 md:py-8">
                 <div class="flex flex-col gap-4 md:gap-8 px-4 md:px-8">
                     <!-- Heading -->
                     <div class="flex items-center justify-between">
@@ -642,44 +642,33 @@
                         <!-- Search -->
                         <div class="hidden md:block relative">
                             <i
-                                class="fa fa-search absolute left-3 top-1/2 transform -translate-y-1/2 text-neutral-500 cursor-pointer"></i>
-                            <input type="text" placeholder="Search Coin Name" class="border rounded-lg pl-10 pr-4 py-3">
+                                class="fa fa-search absolute left-3 top-1/2 transform -translate-y-1/2 text-neutral-500 dark:text-neutral-500 cursor-pointer"></i>
+                            <input type="text" placeholder="Search Coin Name"
+                                class="border dark:border-neutral-600 dark:bg-dark-backgroung rounded-lg pl-10 pr-4 py-3">
                         </div>
                         <!-- Mobile Options -->
                         <div class="flex md:hidden relative">
-                            <button onclick="toggleDropdown()" class="group flex effect">
+                            <button class="group flex effect">
                                 <span
                                     class="fa-solid fa-ellipsis-v fa-lg text-neutral-500 group-hover:text-main"></span>
                             </button>
-                            <!-- Dropdown Content -->
-                            <div id="dropdown-language-currency"
-                                class="absolute top-10 -right-28 w-[340px] bg-white shadow-lg rounded-lg hidden">
-                                <div class="p-4">
-                                    <div class="flex items-center gap-8 border-b">
-                                        <span id="language-tab-btn"
-                                            class="text-neutral-600 text-p2 cursor-pointer hover:opacity-80 pb-5">Language</span>
-                                        <span id="currency-tab-btn"
-                                            class="text-neutral-600 text-p2 cursor-pointer hover:opacity-80 pb-5">Currency</span>
-                                    </div>
-                                </div>
-                            </div>
                         </div>
                     </div>
                     <!-- Options -->
-                    <div class="flex items-center justify-between border-b">
+                    <div class="flex items-center justify-between border-b dark:border-neutral-800">
                         <!-- Tabs -->
                         <div class="flex items-center overflow-x-auto" style="scrollbar-width: none;">
                             <ul class="flex items-center gap-10">
                                 <a href="./trade-history-order-history.html"
-                                    class="truncate text-p2 text-neutral-700 hover:opacity-80 hover:text-main effect cursor-pointer pb-4 md:pb-6">
+                                    class="truncate text-p2 text-neutral-700 dark:text-neutral-500 hover:opacity-80 hover:text-main effect cursor-pointer pb-4 md:pb-6">
                                     Order History
                                 </a>
                                 <a href="./trade-history-insta-history.html"
-                                    class="truncate text-p2 text-neutral-700 hover:opacity-80 hover:text-main effect cursor-pointer pb-4 md:pb-6">
+                                    class="truncate text-p2 text-neutral-700 dark:text-neutral-500 hover:opacity-80 hover:text-main effect cursor-pointer pb-4 md:pb-6">
                                     Insta History
                                 </a>
                                 <a href="./trade-history-wallet-history.html"
-                                    class="truncate text-p2 text-main hover:opacity-80 hover:text-main effect cursor-pointer border-b-2 border-main pb-4 md:pb-6">
+                                    class="truncate text-p2 text-main dark:text-main hover:opacity-80 hover:text-main effect cursor-pointer border-b-2 border-main pb-4 md:pb-6">
                                     Wallet History
                                 </a>
                             </ul>
@@ -697,7 +686,7 @@
                                         class="group-hover:fill-main effect" />
                                 </svg>
                                 <select
-                                    class="text-neutral-500 outline-none group-hover:text-main effect cursor-pointer">
+                                    class="text-neutral-500 dark:text-neutral-500 dark:bg-dark-backgroung outline-none group-hover:text-main effect cursor-pointer">
                                     <option value="">Month</option>
                                     <option value="">Year</option>
                                     <option value="">Day</option>
@@ -714,7 +703,7 @@
                                         class="group-hover:fill-main effect" />
                                 </svg>
                                 <select
-                                    class="text-neutral-500 outline-none group-hover:text-main effect cursor-pointer">
+                                    class="text-neutral-500 dark:text-neutral-500 dark:bg-dark-backgroung outline-none group-hover:text-main effect cursor-pointer">
                                     <option value="">Filter</option>
                                     <option value="">Filter</option>
                                     <option value="">Filter</option>
@@ -722,55 +711,65 @@
                             </button>
                             <button type="button" class="flex items-center gap-2">
                                 <i
-                                    class="fa-solid fa-ellipsis-vertical fa-lg text-neutral-500 hover:text-main effect"></i>
+                                    class="fa-solid fa-ellipsis-vertical fa-lg text-neutral-500 dark:text-neutral-500 hover:text-main effect"></i>
                             </button>
                         </div>
                     </div>
                     <!-- Crypto Table -->
                     <div class="overflow-x-auto">
-                        <table class="table-auto w-full -mt-4 border-b">
-                            <thead class="border-b">
+                        <table class="table-auto w-full -mt-4 border-b dark:border-neutral-800">
+                            <thead class="border-b dark:border-neutral-800">
                                 <tr>
                                     <td class="truncate pr-8 lg:pr-0">
                                         <div class="flex items-center gap-2 py-4">
-                                            <span class="text-p3 text-neutral-500">Pair</span>
-                                            <i class="fa-solid fa-caret-up text-neutral-500 fa-xs pt-1"></i>
+                                            <span class="text-p3 text-neutral-500 dark:text-neutral-500">Pair</span>
+                                            <i
+                                                class="fa-solid fa-caret-up text-neutral-500 dark:text-neutral-500 fa-xs pt-1"></i>
                                         </div>
                                     </td>
                                     <td class="truncate px-8 lg:px-0">
                                         <div class="flex items-center gap-2 py-4">
-                                            <span class="text-p3 text-neutral-500">Action</span>
-                                            <i class="fa-solid fa-caret-up text-neutral-500 fa-xs pt-1"></i>
+                                            <span class="text-p3 text-neutral-500 dark:text-neutral-500">Action</span>
+                                            <i
+                                                class="fa-solid fa-caret-up text-neutral-500 dark:text-neutral-500 fa-xs pt-1"></i>
                                         </div>
                                     </td>
                                     <td class="truncate xr-8 lg:px-0">
                                         <div class="flex items-center gap-2 py-4">
-                                            <span class="text-p3 text-neutral-500">IP Address</span>
-                                            <i class="fa-solid fa-caret-up text-neutral-500 fa-xs pt-1"></i>
+                                            <span class="text-p3 text-neutral-500 dark:text-neutral-500">IP
+                                                Address</span>
+                                            <i
+                                                class="fa-solid fa-caret-up text-neutral-500 dark:text-neutral-500 fa-xs pt-1"></i>
                                         </div>
                                     </td>
                                     <td class="truncate px-8 lg:px-0">
                                         <div class="flex items-center gap-2 py-4">
-                                            <span class="text-p3 text-neutral-500">Amount</span>
-                                            <i class="fa-solid fa-caret-up text-neutral-500 fa-xs pt-1"></i>
+                                            <span class="text-p3 text-neutral-500 dark:text-neutral-500">Amount</span>
+                                            <i
+                                                class="fa-solid fa-caret-up text-neutral-500 dark:text-neutral-500 fa-xs pt-1"></i>
                                         </div>
                                     </td>
                                     <td class="truncate px-8 lg:px-0">
                                         <div class="flex items-center gap-2 py-4">
-                                            <span class="text-p3 text-neutral-500">Qty. Executed</span>
-                                            <i class="fa-solid fa-caret-up text-neutral-500 fa-xs pt-1"></i>
+                                            <span class="text-p3 text-neutral-500 dark:text-neutral-500">Qty.
+                                                Executed</span>
+                                            <i
+                                                class="fa-solid fa-caret-up text-neutral-500 dark:text-neutral-500 fa-xs pt-1"></i>
                                         </div>
                                     </td>
                                     <td class="truncate px-8 lg:px-0">
                                         <div class="flex items-center gap-2 py-4">
-                                            <span class="text-p3 text-neutral-500">Date / Time</span>
-                                            <i class="fa-solid fa-caret-up text-neutral-500 fa-xs pt-1"></i>
+                                            <span class="text-p3 text-neutral-500 dark:text-neutral-500">Date /
+                                                Time</span>
+                                            <i
+                                                class="fa-solid fa-caret-up text-neutral-500 dark:text-neutral-500 fa-xs pt-1"></i>
                                         </div>
                                     </td>
                                     <td class="truncate pl-4 lg:pr-0">
                                         <div class="flex items-center justify-end gap-2 py-4">
-                                            <span class="text-p3 text-neutral-500">Status</span>
-                                            <i class="fa-solid fa-caret-up text-neutral-500 fa-xs pt-1"></i>
+                                            <span class="text-p3 text-neutral-500 dark:text-neutral-500">Status</span>
+                                            <i
+                                                class="fa-solid fa-caret-up text-neutral-500 dark:text-neutral-500 fa-xs pt-1"></i>
                                         </div>
                                     </td>
                                 </tr>
@@ -783,7 +782,7 @@
                                             <div class="flex flex-col lg:flex-row lg:items-center lg:gap-2">
                                                 <span class="text-p3 md:text-p2 lg:text-p1">Ethereum</span>
                                                 <span
-                                                    class="lg:bg-neutral-200 lg:rounded-lg lg:px-3 md:py-1 text-footer lg:text-p3 text-primary-500 lg:text-main">
+                                                    class="lg:bg-neutral-200 lg:dark:bg-dark-main lg:rounded-lg lg:px-3 md:py-1 text-footer lg:text-p3 text-primary-500 lg:text-main">
                                                     ETH
                                                 </span>
                                             </div>
@@ -817,7 +816,7 @@
                                     <td class="truncate pl-4 lg:pl-0">
                                         <div class="flex items-center justify-end py-4">
                                             <span
-                                                class="text-p2 text-green-600 bg-green-100 rounded-md px-3 py-1">Successful</span>
+                                                class="text-p2 text-green-600 dark:text-green-600 bg-green-100 dark:bg-dark-main rounded-md px-3 py-1">Successful</span>
                                         </div>
                                     </td>
                                 </tr>
@@ -828,7 +827,7 @@
                                             <div class="flex flex-col lg:flex-row lg:items-center lg:gap-2">
                                                 <span class="text-p3 md:text-p2 lg:text-p1">Ethereum</span>
                                                 <span
-                                                    class="lg:bg-neutral-200 lg:rounded-lg lg:px-3 md:py-1 text-footer lg:text-p3 text-primary-500 lg:text-main">
+                                                    class="lg:bg-neutral-200 lg:dark:bg-dark-main lg:rounded-lg lg:px-3 md:py-1 text-footer lg:text-p3 text-primary-500 lg:text-main">
                                                     ETH
                                                 </span>
                                             </div>
@@ -862,7 +861,7 @@
                                     <td class="truncate pl-4 lg:pl-0">
                                         <div class="flex items-center justify-end py-4">
                                             <span
-                                                class="text-p2 text-green-600 bg-green-100 rounded-md px-3 py-1">Successful</span>
+                                                class="text-p2 text-green-600 dark:text-green-600 bg-green-100 dark:bg-dark-main rounded-md px-3 py-1">Successful</span>
                                         </div>
                                     </td>
                                 </tr>
@@ -872,7 +871,7 @@
                     <!-- Pagination -->
                     <div class="flex flex-col-reverse md:flex-row gap-2 items-center justify-between">
                         <div class="flex items-center">
-                            <span class="text-p3 text-neutral-600">52 assets</span>
+                            <span class="text-p3 text-neutral-600 dark:text-neutral-500">52 assets</span>
                         </div>
                         <div class="flex items-center md:gap-6">
                             <button type="button" class="px-4 py-2">
@@ -893,7 +892,7 @@
                                 </button>
                             </div>
                             <button type="button" class="px-4 py-2">
-                                <i class="fa-solid fa-chevron-right fa-xs text-main"></i>
+                                <i class="fa-solid fa-chevron-right fa-xs text-main dark:text-main"></i>
                             </button>
                         </div>
                     </div>
@@ -1258,7 +1257,7 @@
         });
 
         // ********************************************************************
-        
+
         // Toggle the dropdown menu visibility
         function toggleDropdown(event) {
             const dropdownMenu = document.getElementById("dropdown-language-currency");

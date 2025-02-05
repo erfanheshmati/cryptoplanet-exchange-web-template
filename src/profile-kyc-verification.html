@@ -11,12 +11,12 @@
     <title>Crypto Planet - KYC Verification</title>
 </head>
 
-<body class="bg-[#E6E9F1] dark:bg-dark-backgroung">
+<body class="bg-[#E6E9F1] dark:bg-dark-main">
 
     <!-- Header -->
-    <header class="flex items-center w-full lg:bg-white lg:dark:bg-dark-main sticky top-0 z-50">
+    <header class="flex items-center w-full lg:bg-white lg:dark:bg-dark-backgroung sticky top-0 z-50">
         <nav
-            class="flex items-center justify-between wrapper bg-white dark:bg-dark-backgroung lg:dark:bg-dark-main py-6 rounded-b-3xl lg:rounded-none shadow-md lg:shadow-none z-50">
+            class="flex items-center justify-between wrapper bg-white dark:bg-dark-backgroung lg:dark:bg-dark-backgroung py-6 rounded-b-3xl lg:rounded-none shadow-md lg:shadow-none z-50">
             <!-- Logo -->
             <div class="hidden lg:flex items-center gap-8">
                 <a href="./index.html" class="lg:hidden xl:block border-r pr-2 md:pr-7">
@@ -333,65 +333,66 @@
     <section class="flex wrapper gap-6 my-8">
         <!-- Sidebar -->
         <section class="w-3/12 hidden lg:flex flex-col gap-6">
-            <div class="bg-white rounded-xl py-8 h-full">
+            <div class="bg-white dark:bg-dark-backgroung rounded-xl py-8 h-full">
                 <div class="flex flex-col gap-6 px-6">
                     <!-- User Info -->
                     <div class="flex flex-col items-center gap-4">
                         <img src="../public/avatar.png" alt="avatar" width="125" height="125">
                         <div class="flex flex-col">
                             <span class="text-h5 font-medium">Allie Grater</span>
-                            <span class="text-p2 text-neutral-600">AllieGrater123@</span>
+                            <span class="text-p2 text-neutral-600 dark:text-neutral-500">AllieGrater123@</span>
                         </div>
                     </div>
                     <!-- Navbar -->
                     <ul class="flex flex-col gap-2">
                         <a href="./profile-my-profile.html">
                             <li
-                                class="flex items-center gap-4 rounded-md px-4 py-3 hover:bg-neutral-100 hover:opacity-80 effect">
-                                <i class="fa-regular fa-user text-neutral-600"></i>
-                                <span class="text-p2 text-neutral-600">My Profile</span>
+                                class="flex items-center gap-4 rounded-md px-4 py-3 hover:bg-neutral-100 hover:dark:bg-neutral-800 hover:opacity-80 effect">
+                                <i class="fa-regular fa-user text-neutral-600 dark:text-neutral-500"></i>
+                                <span class="text-p2 text-neutral-600 dark:text-neutral-500">My Profile</span>
                             </li>
                         </a>
                         <a href="./profile-security.html">
                             <li
-                                class="flex items-center gap-4 rounded-md px-4 py-3 hover:bg-neutral-100 hover:opacity-80 effect">
-                                <i class="fa-solid fa-lock text-neutral-600"></i>
-                                <span class="text-p2 text-neutral-600">Security</span>
+                                class="flex items-center gap-4 rounded-md px-4 py-3 hover:bg-neutral-100 hover:dark:bg-neutral-800 hover:opacity-80 effect">
+                                <i class="fa-solid fa-lock text-neutral-600 dark:text-neutral-500"></i>
+                                <span class="text-p2 text-neutral-600 dark:text-neutral-500">Security</span>
                             </li>
                         </a>
                         <a href="./profile-notification-preferences.html">
                             <li
-                                class="flex items-center gap-4 rounded-md px-4 py-3 hover:bg-neutral-100 hover:opacity-80 effect">
-                                <i class="fa-regular fa-bell text-neutral-600"></i>
-                                <span class="text-p2 text-neutral-600">Notification Preferences</span>
+                                class="flex items-center gap-4 rounded-md px-4 py-3 hover:bg-neutral-100 hover:dark:bg-neutral-800 hover:opacity-80 effect">
+                                <i class="fa-regular fa-bell text-neutral-600 dark:text-neutral-500"></i>
+                                <span class="text-p2 text-neutral-600 dark:text-neutral-500">Notification
+                                    Preferences</span>
                             </li>
                         </a>
                         <a href="./profile-currency-preferences.html">
                             <li
-                                class="flex items-center gap-4 rounded-md px-4 py-3 hover:bg-neutral-100 hover:opacity-80 effect">
-                                <i class="fa-solid fa-dollar-sign text-neutral-600"></i>
-                                <span class="text-p2 text-neutral-600">Currency Preferences</span>
+                                class="flex items-center gap-4 rounded-md px-4 py-3 hover:bg-neutral-100 hover:dark:bg-neutral-800 hover:opacity-80 effect">
+                                <i class="fa-solid fa-dollar-sign text-neutral-600 dark:text-neutral-500"></i>
+                                <span class="text-p2 text-neutral-600 dark:text-neutral-500">Currency Preferences</span>
                             </li>
                         </a>
                         <a href="./profile-kyc-verification.html">
                             <li
-                                class="flex items-center gap-4 rounded-md px-4 py-3 bg-primary-50 hover:opacity-80 effect">
-                                <i class="fa-regular fa-file-lines text-main"></i>
-                                <span class="text-p2 text-main">KYC Verification</span>
+                                class="flex items-center gap-4 rounded-md px-4 py-3 bg-primary-50 dark:bg-dark-main hover:opacity-80 effect">
+                                <i class="fa-regular fa-file-lines text-main dark:text-main"></i>
+                                <span class="text-p2 text-main dark:text-main">KYC Verification</span>
                             </li>
                         </a>
                         <a href="./profile-payment-option.html">
                             <li
-                                class="flex items-center gap-4 rounded-md px-4 py-3 hover:bg-neutral-100 hover:opacity-80 effect">
-                                <i class="fa-solid fa-wallet text-neutral-600"></i>
-                                <span class="text-p2 text-neutral-600">Payment Option</span>
+                                class="flex items-center gap-4 rounded-md px-4 py-3 hover:bg-neutral-100 hover:dark:bg-neutral-800 hover:opacity-80 effect">
+                                <i class="fa-solid fa-wallet text-neutral-600 dark:text-neutral-500"></i>
+                                <span class="text-p2 text-neutral-600 dark:text-neutral-500">Payment Option</span>
                             </li>
                         </a>
                         <a href="./profile-api-managment.html">
                             <li
-                                class="flex items-center gap-4 rounded-md px-4 py-3 hover:bg-neutral-100 hover:opacity-80 effect">
-                                <i class="fa-solid fa-table text-neutral-600"></i>
-                                <span class="text-p2 text-neutral-600">Api Managment</span>
+                                class="flex items-center gap-4 rounded-md px-4 py-3 hover:bg-neutral-100 hover:dark:bg-neutral-800 hover:opacity-80 effect">
+                                <i class="fa-solid fa-table text-neutral-600 dark:text-neutral-500"></i>
+                                <span class="text-p2 text-neutral-600 dark:text-neutral-500">Api Managment</span>
                             </li>
                         </a>
                     </ul>
@@ -401,7 +402,7 @@
 
         <!--  KYC Verification -->
         <section class="w-full lg:w-9/12 flex flex-col gap-4 md:gap-6">
-            <section class="bg-white rounded-xl py-4 md:py-8 h-full">
+            <section class="bg-white dark:bg-dark-backgroung rounded-xl py-4 md:py-8 h-full">
                 <div class="flex flex-col gap-4 md:gap-8 px-4 md:px-8">
                     <!-- Heading -->
                     <div class="flex items-center justify-between">
@@ -412,15 +413,16 @@
                         <!-- Button -->
                         <button class="flex items-center gap-2 group">
                             <i
-                                class="fa-regular fa-pen-to-square pt-1 text-neutral-500 group-hover:text-main effect"></i>
-                            <span class="text-p3 text-neutral-500 group-hover:text-main effect">Edit</span>
+                                class="fa-regular fa-pen-to-square pt-1 text-neutral-500 dark:text-neutral-500 group-hover:text-main effect"></i>
+                            <span
+                                class="text-p3 text-neutral-500 dark:text-neutral-500 group-hover:text-main effect">Edit</span>
                         </button>
                     </div>
                     <!-- Information -->
                     <form class="flex flex-col gap-6">
                         <div class="flex flex-col gap-1 w-full md:max-w-sm relative">
                             <select
-                                class="appearance-none text-p3 text-neutral-500 bg-neutral-100 rounded-md p-3 outline-none cursor-pointer border border-neutral-100 focus:border-main focus:bg-primary-50 effect">
+                                class="appearance-none text-p3 text-neutral-500 dark:text-neutral-500 bg-neutral-100 dark:bg-dark-main rounded-md p-3 outline-none cursor-pointer border border-neutral-100 dark:border-neutral-950 focus:border-main focus:dark:border-main focus:bg-primary-50 effect">
                                 <option value="" class="text-p3">Choose Document Type</option>
                                 <option value="" class="text-p3">ID Card</option>
                                 <option value="" class="text-p3">Passport</option>
@@ -430,55 +432,60 @@
                         </div>
                         <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
                             <div class="flex flex-col gap-1">
-                                <label class="text-p3 text-neutral-600">ID Card Number</label>
+                                <label class="text-p3 text-neutral-600 dark:text-neutral-500">ID Card Number</label>
                                 <input type="text" placeholder="ID Number"
-                                    class="text-p3 bg-neutral-100 rounded-md p-3 outline-none border border-neutral-100 focus:border-main focus:bg-primary-50 effect">
+                                    class="text-p3 bg-neutral-100 dark:bg-dark-main rounded-md p-3 outline-none border border-neutral-100 dark:border-neutral-950 focus:border-main focus:dark:border-main focus:bg-primary-50 effect">
                             </div>
                             <div class="flex flex-col gap-1">
-                                <label class="text-p3 text-neutral-600">Full name on card</label>
+                                <label class="text-p3 text-neutral-600 dark:text-neutral-500">Full name on card</label>
                                 <input type="text" placeholder="Name"
-                                    class="text-p3 bg-neutral-100 rounded-md p-3 outline-none border border-neutral-100 focus:border-main focus:bg-primary-50 effect">
+                                    class="text-p3 bg-neutral-100 dark:bg-dark-main rounded-md p-3 outline-none border border-neutral-100 dark:border-neutral-950 focus:border-main focus:dark:border-main focus:bg-primary-50 effect">
                             </div>
                         </div>
-                        <hr class="my-4">
+                        <hr class="my-4 dark:border-neutral-800">
                         <div class="flex flex-col gap-2">
                             <h3 class="text-p2">Upload ID Card</h3>
                         </div>
                         <div class="grid grid-cols-1 md:grid-cols-3 gap-5">
                             <!-- Identity Document Front Side -->
                             <div class="flex flex-col gap-2">
-                                <h4 class="text-p3 text-neutral-700">Identity Document Front Side</h4>
+                                <h4 class="text-p3 text-neutral-700 dark:text-neutral-500">Identity Document Front Side
+                                </h4>
                                 <label for="file-upload"
-                                    class="flex flex-col gap-1 items-center rounded-lg border-2 border-dashed py-10 hover:bg-primary-50 effect cursor-pointer">
+                                    class="flex flex-col gap-1 items-center rounded-lg border-2 border-dashed dark:border-neutral-800 py-10 hover:bg-primary-50 effect cursor-pointer">
                                     <div class="flex items-center gap-1">
                                         <span class="text-p2 text-neutral-600">Drop your file upload or</span>
-                                        <span class="text-p2 text-main">Browse</span>
+                                        <span class="text-p2 text-main dark:text-main">Browse</span>
                                     </div>
-                                    <span class="text-caption text-neutral-600">Maximum size of image 1MB</span>
+                                    <span class="text-caption text-neutral-600 dark:text-neutral-500">Maximum size of
+                                        image 1MB</span>
                                     <input id="file-upload" type="file" class="hidden" />
                                 </label>
                             </div>
                             <!-- Identity Document Back Side -->
                             <div class="flex flex-col gap-2">
-                                <h4 class="text-p3 text-neutral-700">Identity Document Back Side</h4>
+                                <h4 class="text-p3 text-neutral-700 dark:text-neutral-500">Identity Document Back Side
+                                </h4>
                                 <label for="file-upload"
-                                    class="flex flex-col gap-1 items-center rounded-lg border-2 border-dashed py-10 hover:bg-primary-50 effect cursor-pointer">
+                                    class="flex flex-col gap-1 items-center rounded-lg border-2 border-dashed dark:border-neutral-800 py-10 hover:bg-primary-50 effect cursor-pointer">
                                     <div class="flex items-center gap-1">
                                         <span class="text-p2 text-neutral-600">Drop your file upload or</span>
-                                        <span class="text-p2 text-main">Browse</span>
+                                        <span class="text-p2 text-main dark:text-main">Browse</span>
                                     </div>
-                                    <span class="text-caption text-neutral-600">Maximum size of image 1MB</span>
+                                    <span class="text-caption text-neutral-600 dark:text-neutral-500">Maximum size of
+                                        image 1MB</span>
                                     <input id="file-upload" type="file" class="hidden" />
                                 </label>
                             </div>
                             <!-- A Selfie with your identity -->
                             <div class="flex flex-col gap-2">
-                                <h4 class="text-p3 text-neutral-700">A Selfie with your identity</h4>
+                                <h4 class="text-p3 text-neutral-700 dark:text-neutral-500">A Selfie with your identity
+                                </h4>
                                 <label for="file-upload"
-                                    class="flex flex-col gap-1 items-center rounded-lg border-2 border-dashed py-4 hover:bg-primary-50 effect cursor-pointer">
+                                    class="flex flex-col gap-1 items-center rounded-lg border-2 border-dashed dark:border-neutral-800 py-4 hover:bg-primary-50 effect cursor-pointer">
                                     <img src="../public/identity.png" alt="Identity Image">
                                     <div class="text-center leading-4">
-                                        <span class="text-caption text-neutral-600">
+                                        <span class="text-caption text-neutral-600 dark:text-neutral-500">
                                             Please, make sure that every detail of the ID document is clearly visible.
                                         </span>
                                         <span class="text-caption text-main">Browse</span>
@@ -487,9 +494,9 @@
                                 </label>
                             </div>
                         </div>
-                        <hr class="my-4">
+                        <hr class="my-4 dark:border-neutral-800">
                         <div class="flex flex-col-reverse gap-4 md:flex-row items-center justify-between">
-                            <p class="text-p3 text-neutral-500 text-center">
+                            <p class="text-p3 text-neutral-500 dark:text-neutral-500 text-center">
                                 This account was created on January 10, 2022, 02:12 PM
                             </p>
                             <div class="w-full md:w-min flex items-center gap-4">
