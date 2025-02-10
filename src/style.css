@@ -1,0 +1,15 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+* {
+  @apply text-neutral-800 dark:text-neutral-200;
+}
+
+.wrapper {
+  @apply w-full max-w-[1364px] px-4 2xl:px-0 md:mx-auto;
+}
+
+.effect {
+  @apply transition-all duration-300 ease-in-out;
+}
