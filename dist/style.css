@@ -2071,6 +2071,11 @@ video {
   border-color: rgb(10 10 10 / var(--tw-border-opacity, 1));
 }
 
+.dark\:border-main:is(.dark *) {
+  --tw-border-opacity: 1;
+  border-color: rgb(83 103 255 / var(--tw-border-opacity, 1));
+}
+
 .dark\:border-b-main:is(.dark *) {
   --tw-border-opacity: 1;
   border-bottom-color: rgb(83 103 255 / var(--tw-border-opacity, 1));

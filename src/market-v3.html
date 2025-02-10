@@ -1097,98 +1097,148 @@
 
         <!-- Sidebar -->
         <section class="w-full lg:w-3/12 hidden lg:flex flex-col gap-6">
-            <!-- Buy Crypto -->
+
+            <!-- Buy/Sell Crypto Container -->
             <div class="bg-white dark:bg-dark-backgroung rounded-xl py-8">
                 <div class="flex flex-col gap-6 px-6">
+
                     <!-- Tabs -->
                     <div class="flex items-center border-b dark:border-neutral-800 w-full">
                         <ul class="flex items-center gap-4 w-full">
-                            <li
-                                class="w-1/2 text-center text-p3 text-main dark:text-main border-b-2 border-main pb-4 hover:opacity-80 hover:text-main effect cursor-pointer">
+                            <!-- Buy BTC Tab -->
+                            <li id="buyTab"
+                                class="w-1/2 text-center text-p3 text-main dark:text-main border-b-2 border-main pb-4 hover:opacity-80 hover:text-main cursor-pointer">
                                 Buy BTC
                             </li>
-                            <li
-                                class="w-1/2 text-center text-p3 text-neutral-700 dark:text-neutral-500 pb-4 hover:opacity-80 hover:text-main effect cursor-pointer">
+                            <!-- Sell BTC Tab -->
+                            <li id="sellTab"
+                                class="w-1/2 text-center text-p3 text-neutral-700 dark:text-neutral-500 pb-4 hover:opacity-80 hover:text-main cursor-pointer">
                                 Sell BTC
                             </li>
                         </ul>
                     </div>
-                    <!-- Buttons -->
-                    <form class="flex items-center w-full gap-4">
-                        <label class="flex items-center justify-center gap-2 w-1/2 cursor-pointer">
-                            <div class="flex items-center gap-2 px-4 py-2 rounded-md peer-checked:bg-main">
-                                <input type="radio" name="selection" class="peer cursor-pointer">
-                                <i
-                                    class="fa-solid fa-flag fa-xs text-neutral-500 peer-checked:text-main -rotate-12"></i>
-                                <span class="text-p2 text-neutral-500 peer-checked:text-main">Limit</span>
+
+                    <!-- Buy BTC Content -->
+                    <div id="buyContent" class="flex flex-col gap-6 buy-sell-content">
+                        <!-- Buttons -->
+                        <form class="flex items-center w-full gap-4">
+                            <label class="flex items-center justify-center gap-2 w-1/2 cursor-pointer">
+                                <div class="flex items-center gap-2 px-4 py-2 rounded-md peer-checked:bg-main">
+                                    <input type="radio" name="selection" class="peer cursor-pointer">
+                                    <i
+                                        class="fa-solid fa-flag fa-xs text-neutral-500 peer-checked:text-main -rotate-12"></i>
+                                    <span class="text-p2 text-neutral-500 peer-checked:text-main">Limit</span>
+                                </div>
+                            </label>
+                            <label class="flex items-center justify-center gap-2 w-1/2 cursor-pointer">
+                                <div class="flex items-center gap-2 px-4 py-2 rounded-md peer-checked:bg-main">
+                                    <input type="radio" name="selection" class="peer cursor-pointer">
+                                    <i
+                                        class="fa-solid fa-bolt fa-xs text-neutral-500 peer-checked:text-main -rotate-12"></i>
+                                    <span class="text-p2 text-neutral-500 peer-checked:text-main">Market</span>
+                                </div>
+                            </label>
+                        </form>
+                        <!-- Assets -->
+                        <div class="flex items-center justify-between">
+                            <div class="flex items-center justify-center gap-2">
+                                <svg id="Icon" xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+                                    viewBox="0 0 24 24">
+                                    <rect id="Icon_Background_" data-name="Icon (Background)" width="24" height="24"
+                                        fill="none" />
+                                    <path id="icon-2" data-name="icon"
+                                        d="M2,19.674a2,2,0,0,1-2-2H.027A1.985,1.985,0,0,1,0,17.349V5.429A2.008,2.008,0,0,1,1.451,3.506l12-3.429A2,2,0,0,1,16,2V13.92a2.01,2.01,0,0,1-1.451,1.923L8.142,17.674H18v-8H16v-2h2v-2H16v-2h2a2,2,0,0,1,2,2v12a2,2,0,0,1-2,2ZM2,5.429v11.92L14,13.92V2Zm8,2.245a1,1,0,1,1,1,1A1,1,0,0,1,10,7.673Z"
+                                        transform="translate(2 1.326)" fill="#9295a6" />
+                                </svg>
+                                <span class="text-p2 font-medium text-neutral-700">$38,447.54</span>
                             </div>
-                        </label>
-                        <label class="flex items-center justify-center gap-2 w-1/2 cursor-pointer">
-                            <div class="flex items-center gap-2 px-4 py-2 rounded-md peer-checked:bg-main">
-                                <input type="radio" name="selection" class="peer cursor-pointer">
-                                <i
-                                    class="fa-solid fa-bolt fa-xs text-neutral-500 peer-checked:text-main -rotate-12"></i>
-                                <span class="text-p2 text-neutral-500 peer-checked:text-main">Market</span>
+                            <div class="flex items-center justify-center gap-2">
+                                <img src="../public/Bitcoin.png" alt="Crypto Icon" width="30" height="30">
+                                <span class="text-p2 font-medium text-neutral-700">$38,447.54</span>
                             </div>
-                        </label>
-                    </form>
-                    <!-- Assets -->
-                    <div class="flex items-center justify-between">
-                        <div class="flex items-center justify-center gap-2">
-                            <svg id="Icon" xmlns="http://www.w3.org/2000/svg" width="24" height="24"
-                                viewBox="0 0 24 24">
-                                <rect id="Icon_Background_" data-name="Icon (Background)" width="24" height="24"
-                                    fill="none" />
-                                <path id="icon-2" data-name="icon"
-                                    d="M2,19.674a2,2,0,0,1-2-2H.027A1.985,1.985,0,0,1,0,17.349V5.429A2.008,2.008,0,0,1,1.451,3.506l12-3.429A2,2,0,0,1,16,2V13.92a2.01,2.01,0,0,1-1.451,1.923L8.142,17.674H18v-8H16v-2h2v-2H16v-2h2a2,2,0,0,1,2,2v12a2,2,0,0,1-2,2ZM2,5.429v11.92L14,13.92V2Zm8,2.245a1,1,0,1,1,1,1A1,1,0,0,1,10,7.673Z"
-                                    transform="translate(2 1.326)" fill="#9295a6" />
-                            </svg>
-                            <span class="text-p2 font-medium text-neutral-700">$38,447.54</span>
                         </div>
-                        <div class="flex items-center justify-center gap-2">
-                            <img src="../public/Bitcoin.png" alt="Crypto Icon" width="30" height="30">
-                            <span class="text-p2 font-medium text-neutral-700">$38,447.54</span>
+                        <!-- Quantity -->
+                        <div class="flex items-center justify-between">
+                            <div class="flex flex-col gap-1">
+                                <span class="text-p3 text-neutral-500">Quantity (BTC)</span>
+                                <input type="text" placeholder="$0"
+                                    class="text-p3 text-neutral-500 dark:bg-dark-backgroung border-l border-neutral-600 pl-1 focus:outline-none">
+                            </div>
+                            <button class="flex items-center gap-2 hover:opacity-80 effect">
+                                <img src="../public/Bitcoin.png" alt="Crypto Icon" width="24" height="24">
+                                <span class="text-p3 text-neutral-500">BTC</span>
+                                <span class="fa-solid fa-chevron-down fa-2xs text-neutral-500"></span>
+                            </button>
                         </div>
-                    </div>
-                    <!-- Quantity -->
-                    <div class="flex items-center justify-between">
-                        <div class="flex flex-col gap-1">
-                            <span class="text-p3 text-neutral-500">Quantity (BTC)</span>
-                            <input type="text" placeholder="$0"
-                                class="text-p3 text-neutral-500 border-l border-neutral-600 pl-1 focus:outline-none dark:bg-dark-backgroung">
+                        <!-- Unit -->
+                        <div class="flex items-center justify-between">
+                            <div class="flex flex-col gap-1">
+                                <span class="text-p3 text-neutral-500">Buy for (USD)</span>
+                                <input type="text" placeholder="$0"
+                                    class="text-p3 text-neutral-500 dark:bg-dark-backgroung border-l border-neutral-600 pl-1 focus:outline-none">
+                            </div>
+                            <button class="flex items-center gap-2 hover:opacity-80 effect">
+                                <img src="../public/usd.png" alt="Crypto Icon" width="24" height="24">
+                                <span class="text-p3 text-neutral-500">USD</span>
+                                <span class="fa-solid fa-chevron-down fa-2xs text-neutral-500"></span>
+                            </button>
                         </div>
-                        <button class="flex items-center gap-2 hover:opacity-80 effect">
-                            <img src="../public/Bitcoin.png" alt="Crypto Icon" width="24" height="24">
-                            <span class="text-p3 text-neutral-500">BTC</span>
-                            <span class="fa-solid fa-chevron-down fa-2xs text-neutral-500"></span>
+                        <!-- Total -->
+                        <div class="flex items-center gap-2">
+                            <span class="text-p3 text-neutral-500">Total:</span>
+                            <span class="text-p3 text-neutral-500">(+Fee 0.2)</span>
+                            <span class="text-p3 text-neutral-500">0.00</span>
+                        </div>
+                        <!-- Btn -->
+                        <button
+                            class="flex items-center justify-center bg-main rounded-lg text-white py-3 hover:opacity-80 effect">
+                            Buy BTC
                         </button>
                     </div>
-                    <!-- Unit -->
-                    <div class="flex items-center justify-between">
-                        <div class="flex flex-col gap-1">
-                            <span class="text-p3 text-neutral-500">Buy for (USD)</span>
-                            <input type="text" placeholder="$0"
-                                class="text-p3 text-neutral-500 border-l border-neutral-600 pl-1 focus:outline-none dark:bg-dark-backgroung">
+
+                    <!-- Sell BTC Content -->
+                    <div id="sellContent" class="flex flex-col gap-6 buy-sell-content hidden">
+                        <!-- Sell BTC specific content goes here -->
+                        <div class="flex items-center justify-between">
+                            <div class="flex flex-col gap-1">
+                                <span class="text-p3 text-neutral-500">Quantity (BTC)</span>
+                                <input type="text" placeholder="$0"
+                                    class="text-p3 text-neutral-500 dark:bg-dark-backgroung border-l border-neutral-600 pl-1 focus:outline-none">
+                            </div>
+                            <button class="flex items-center gap-2 hover:opacity-80 effect">
+                                <img src="../public/Bitcoin.png" alt="Crypto Icon" width="24" height="24">
+                                <span class="text-p3 text-neutral-500">BTC</span>
+                                <span class="fa-solid fa-chevron-down fa-2xs text-neutral-500"></span>
+                            </button>
                         </div>
-                        <button class="flex items-center gap-2 hover:opacity-80 effect">
-                            <img src="../public/usd.png" alt="Crypto Icon" width="24" height="24">
-                            <span class="text-p3 text-neutral-500">USD</span>
-                            <span class="fa-solid fa-chevron-down fa-2xs text-neutral-500"></span>
+                        <!-- Unit -->
+                        <div class="flex items-center justify-between">
+                            <div class="flex flex-col gap-1">
+                                <span class="text-p3 text-neutral-500">Sell for (USD)</span>
+                                <input type="text" placeholder="$0"
+                                    class="text-p3 text-neutral-500 dark:bg-dark-backgroung border-l border-neutral-600 pl-1 focus:outline-none">
+                            </div>
+                            <button class="flex items-center gap-2 hover:opacity-80 effect">
+                                <img src="../public/usd.png" alt="Crypto Icon" width="24" height="24">
+                                <span class="text-p3 text-neutral-500">USD</span>
+                                <span class="fa-solid fa-chevron-down fa-2xs text-neutral-500"></span>
+                            </button>
+                        </div>
+                        <!-- Total -->
+                        <div class="flex items-center gap-2">
+                            <span class="text-p3 text-neutral-500">Total:</span>
+                            <span class="text-p3 text-neutral-500">(+Fee 0.2)</span>
+                            <span class="text-p3 text-neutral-500">0.00</span>
+                        </div>
+                        <!-- Btn -->
+                        <button
+                            class="flex items-center justify-center bg-red-500 rounded-lg text-white py-3 hover:opacity-80 effect">
+                            Sell BTC
                         </button>
                     </div>
-                    <!-- Total -->
-                    <div class="flex items-center gap-2">
-                        <span class="text-p3 text-neutral-500">Total:</span>
-                        <span class="text-p3 text-neutral-500">(+Fee 0.2)</span>
-                        <span class="text-p3 text-neutral-500">0.00</span>
-                    </div>
-                    <!-- Btn -->
-                    <button
-                        class="flex items-center justify-center bg-main rounded-lg text-white py-3 hover:opacity-80 effect">
-                        Buy BTC
-                    </button>
                 </div>
             </div>
+
             <!-- Watchlist -->
             <div class="bg-white dark:bg-dark-backgroung rounded-xl py-8">
                 <div class="flex flex-col gap-4 px-5">
@@ -2285,6 +2335,39 @@
                     this.classList.add("hidden");
                 }
             });
+
+        // ************************************************************
+
+        document.addEventListener('DOMContentLoaded', function () {
+            const buyTab = document.getElementById('buyTab');
+            const sellTab = document.getElementById('sellTab');
+            const buyContent = document.getElementById('buyContent');
+            const sellContent = document.getElementById('sellContent');
+
+            // Function to switch tabs
+            function switchTab(selectedTab, selectedContent, otherTab, otherContent) {
+                selectedTab.classList.add('border-b-2', 'border-main', 'dark:border-main', 'text-main', 'dark:text-main');
+                selectedTab.classList.remove('text-neutral-700', 'dark:text-neutral-500');
+                selectedContent.classList.remove('hidden');
+
+                otherTab.classList.remove('border-b-2', 'border-main', 'dark:border-main', 'text-main', 'dark:text-main');
+                otherTab.classList.add('text-neutral-700', 'dark:text-neutral-500');
+                otherContent.classList.add('hidden');
+            }
+
+            // Buy BTC Tab Click
+            buyTab.addEventListener('click', function () {
+                switchTab(buyTab, buyContent, sellTab, sellContent);
+            });
+
+            // Sell BTC Tab Click
+            sellTab.addEventListener('click', function () {
+                switchTab(sellTab, sellContent, buyTab, buyContent);
+            });
+
+            // Initialize default state (Buy BTC active)
+            switchTab(buyTab, buyContent, sellTab, sellContent);
+        });
     </script>
 
     <script src="./script.js"></script>
