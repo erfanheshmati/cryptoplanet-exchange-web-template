@@ -7,11 +7,10 @@ yarn-error.log*
 node_modules/
 
 # Tailwind CSS build artifacts
-# *.css.map
-# *.css
+*.css.map
 
 # Generated output (e.g., from PostCSS, Tailwind CLI, etc.)
-# dist/
+dist/
 build/
 
 # Environment files
