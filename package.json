@@ -6,8 +6,8 @@
     "dev": "npx tailwindcss -i ./src/style.css -o ./dist/style.css --watch",
     "build:tailwind": "npx tailwindcss -i ./src/style.css -o ./dist/style.css",
     "fix:paths": "node fix-paths.js",
-    "copy:assets": "shx mkdir -p dist/public && shx cp -r public/* dist/public/ && shx cp src/*.html dist/ && shx cp src/*.js dist/ && shx cp src/*.css dist/",
-    "build": "shx rm -rf dist && npm run build:tailwind && npm run fix:paths && npm run copy:assets",
+    "copy:assets": "shx mkdir -p dist/public && shx cp -r public/* dist/public/ && shx cp src/*.html dist/ && shx cp src/*.js dist/ && shx cp src/custom.css dist/",
+    "build": "shx rm -rf dist && npm run copy:assets && npm run build:tailwind && npm run fix:paths",
     "start": "serve dist",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
